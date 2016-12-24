@@ -9,3 +9,7 @@ The hospital physician (HP) writing a discharge letter has to put the most impor
 ## Additional material
 
 Under Rechner/Skalen you can find now two medical calculators. I am not sure if I should make more calculators. 
+
+## N-Brief-App online
+
+<a href="NBrief.html">N-Brief</a>
