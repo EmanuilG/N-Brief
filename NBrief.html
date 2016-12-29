@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="description" content="Mustertexte und Textbausteine für einen neurologischen Arztbrief in Bad Hersfeld">
     <meta name="author" content="Emanuil Giuris">
+    <meta license="GNU General Public License 3">
     <title>N-Brief</title>
     <style>
         body {
@@ -37,6 +38,13 @@
             width: 100%;
             overflow: auto;
             display: none;
+            margin-top: 40px;
+        }
+
+        .wrap2_1 {
+            width: 100%;
+            overflow: auto;
+            display: block;
             margin-top: 40px;
         }
 
@@ -148,14 +156,14 @@
 <body>
 
     <noscript>
-        <p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen. <br>
+        <p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Die Texte sind bisher durch Emanuil Giuris und Dirk Bahner (MS, BSV, BPLS) verfasst worden. <br>
             Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. <br>
             Dieser Code wird von Ihrem Browser interpretiert. Firefox portable, Version 45 oder neuer wenn möglich, auf den Klinikumsrechnern meist vorhanden, ist sehr gut. Internet Explorer 11 ist auch in Ordnung. <br>
             Bei älteren Browsern oder Browsern mit deaktiviertem Javascript funktioniert das Programm leider nicht.
             <br> Emanuil Giuris
             <br>giuris@gmail.com
             <br>
-            <br> N-Brief 0.1, Letzte Aktualisierung: 24.12.2016
+            <br> N-Brief 0.1, Letzte Aktualisierung: 28.12.2016
         </p>
     </noscript>
 
@@ -165,10 +173,10 @@
         <button class="bt1" onclick="ez2()">Rechner / Skalen</button>
     </div>
 
-    <div id="nbrief" class="wrap">
+    <!-- <div id="nbrief" class="wrap">
         <h1 class="h1_1">N-Brief 0.1</h1>
 
-    </div>
+    </div> -->
 
 
     <div id="zweit" class="wrap2">
@@ -210,91 +218,91 @@
 
             <div class="wrap2" id="levodopa">
 
-            <h4>Levodopa-Äquivalenzdosis</h4>
-            <fieldset>
-                <form id="levodopaEqDosis">
-                    <table class="ldopatable">
+                <h4>Levodopa-Äquivalenzdosis</h4>
+                <fieldset>
+                    <form id="levodopaEqDosis">
+                        <table class="ldopatable">
 
-                        <tr>
-                            <th>Substanz</th>
-                            <th>Dosis (mg)</th>
-                            <th>Konversionsfaktor</th>
-                        </tr>
+                            <tr>
+                                <th>Substanz</th>
+                                <th>Dosis (mg)</th>
+                                <th>Konversionsfaktor</th>
+                            </tr>
 
-                        <tr>
-                            <td>Levodopa</td>
-                            <td><input type="number" id="Levodopa" name="Levodopa" min="0" max="2000" value="0" step="25" onfocus="this.form.Levodopa.value='99 '"></td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>Levodopa ret</td>
-                            <td><input type="number" id="Levodopa_ret" name="Levodopa_ret" min="0" max="2000" value="0" step="25" onfocus="this.form.Levodopa_ret.value=' '"></td>
-                            <td>0,75</td>
-                        </tr>
-                        <tr>
-                            <td>Duodopa</td>
-                            <td><input type="number" id="Duodopa" name="Duodopa" value="0" min="0" max="2000" step="10" onfocus="this.form.Duodopa.value=''"></td>
-                            <td>1,1</td>
-                        </tr>
-                        <tr>
-                            <td>Levodopa_Entacapon</td>
-                            <td><input type="number" id="Levodopa_Entacapon" name="Levodopa_Entacapon" value="0" min="0" max="2000" step="25" onfocus="this.form.Levodopa_Entacapon.value=''"></td>
-                            <td>1,33</td>
-                        </tr>
-                        <tr>
-                            <td>Pramipexolsalz</td>
-                            <td><input type="number" id="Pramipexolsalz" name="Pramipexolsalz" value="0" min="0" max="5" step="0.375" onfocus="this.form.Pramipexolsalz.value=''"></td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>Ropinirol</td>
-                            <td><input type="number" id="Ropinirol" name="Ropinirol" value="0" min="0" max="20" step="1" onfocus="this.form.Ropinirol.value=''"></td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Rotigotin</td>
-                            <td><input type="number" id="Rotigotin" name="Rotigotin" value="0" min="0" max="100" step="1" onfocus="this.form.Rotigotin.value=''"></td>
-                            <td>30</td>
-                        </tr>
-                        <tr>
-                            <td>Piribedil</td>
-                            <td><input type="number" id="Piribedil" name="Piribedil" value="0" min="0" max="1000" step="25" onfocus="this.form.Piribedil.value=''"></td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>Rasagilin</td>
-                            <td><input type="number" id="Rasagilin" name="Rasagilin" value="0" step="" onfocus="this.form.Rasagilin.value=''"></td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>Amantadin</td>
-                            <td><input type="number" id="Amantadin" name="Amantadin" value="0" min="0" max="500" step="50" onfocus="this.form.Amantadin.value=''"></td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>Apomorphin</td>
-                            <td><input type="number" id="Apomorphin" name="Apomorphin" value="0" min="0" max="400" step="1" onfocus="this.form.Apomorphin.value=''"></td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;&nbsp;</td>
-                            <td>&nbsp;&nbsp;</td>
-                            <td>&nbsp;&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td><button type="button" class="bt1" onclick = "ldopaCalc()">Levodopa-Äquivalent</button></td>
-                            <td><textarea class="gfrclass" id="led"></textarea></td>
-                            <td>mg</td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;&nbsp;</td>
-                            <td>&nbsp;&nbsp;</td>
-                            <td><button type="button" class="bt1" onclick = "parkMed()">Alles löschen</button></td>
-                        </tr>
-                    </table>
-                </form>
-            </fieldset>
-        </div>
+                            <tr>
+                                <td>Levodopa</td>
+                                <td><input type="number" id="Levodopa" name="Levodopa" min="0" max="2000" value="0" step="25" onfocus="this.form.Levodopa.value='99 '"></td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Levodopa ret</td>
+                                <td><input type="number" id="Levodopa_ret" name="Levodopa_ret" min="0" max="2000" value="0" step="25" onfocus="this.form.Levodopa_ret.value=' '"></td>
+                                <td>0,75</td>
+                            </tr>
+                            <tr>
+                                <td>Duodopa</td>
+                                <td><input type="number" id="Duodopa" name="Duodopa" value="0" min="0" max="2000" step="10" onfocus="this.form.Duodopa.value=''"></td>
+                                <td>1,1</td>
+                            </tr>
+                            <tr>
+                                <td>Levodopa_Entacapon</td>
+                                <td><input type="number" id="Levodopa_Entacapon" name="Levodopa_Entacapon" value="0" min="0" max="2000" step="25" onfocus="this.form.Levodopa_Entacapon.value=''"></td>
+                                <td>1,33</td>
+                            </tr>
+                            <tr>
+                                <td>Pramipexolsalz</td>
+                                <td><input type="number" id="Pramipexolsalz" name="Pramipexolsalz" value="0" min="0" max="5" step="0.375" onfocus="this.form.Pramipexolsalz.value=''"></td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>Ropinirol</td>
+                                <td><input type="number" id="Ropinirol" name="Ropinirol" value="0" min="0" max="20" step="1" onfocus="this.form.Ropinirol.value=''"></td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>Rotigotin</td>
+                                <td><input type="number" id="Rotigotin" name="Rotigotin" value="0" min="0" max="100" step="1" onfocus="this.form.Rotigotin.value=''"></td>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>Piribedil</td>
+                                <td><input type="number" id="Piribedil" name="Piribedil" value="0" min="0" max="1000" step="25" onfocus="this.form.Piribedil.value=''"></td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Rasagilin</td>
+                                <td><input type="number" id="Rasagilin" name="Rasagilin" value="0" step="" onfocus="this.form.Rasagilin.value=''"></td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>Amantadin</td>
+                                <td><input type="number" id="Amantadin" name="Amantadin" value="0" min="0" max="500" step="50" onfocus="this.form.Amantadin.value=''"></td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Apomorphin</td>
+                                <td><input type="number" id="Apomorphin" name="Apomorphin" value="0" min="0" max="400" step="1" onfocus="this.form.Apomorphin.value=''"></td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;&nbsp;</td>
+                                <td>&nbsp;&nbsp;</td>
+                                <td>&nbsp;&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td><button type="button" class="bt1" onclick="ldopaCalc()">Levodopa-Äquivalent</button></td>
+                                <td><textarea class="gfrclass" id="led"></textarea></td>
+                                <td>mg</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;&nbsp;</td>
+                                <td>&nbsp;&nbsp;</td>
+                                <td><button type="button" class="bt1" onclick="parkMed()">Alles löschen</button></td>
+                            </tr>
+                        </table>
+                    </form>
+                </fieldset>
+            </div>
         </div>
 
     </div>
@@ -303,13 +311,12 @@
         <div class="fleft50">
             <h3>Hilfe - Zusammenfassung</h3>
             <p>
-                Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br> Das Programm befindet sich in Entwicklung.<br> Auf Knopf-Klick wird der Text (s. die Sprechblase) eingefügt.<br> Bitte lesen Sie den eingefügten Text im weißen
-                Text-Bereich und bearbeiten Sie ihn sorgfältig.<br> Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br> Das Programm verändert nichts an Ihrem Rechner,
-                es speichert nichts, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert.
-                Firefox portable, Version 45 oder neuer wenn möglich, auf den Klinikumsrechnern meist vorhanden, ist sehr gut. Internet Explorer 11 ist auch in Ordnung.<br> Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br> Emanuil
-                Giuris
-                <br> giuris@gmail.com
-                <br><br> N-Brief 0.1, Letzte Aktualisierung: 24.12.2016
+                Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br> Das Programm befindet sich in Entwicklung.<br>Die Texte sind bisher durch Emanuil Giuris und Dirk Bahner (MS, BSV, BPLS) verfasst worden.<br> Auf Knopf-Klick wird
+                der Text (s. die Sprechblase) eingefügt.<br> Bitte lesen Sie den eingefügten Text im weißen Text-Bereich und bearbeiten Sie ihn sorgfältig.<br> Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert.
+                Dann kann er z.B. ins Orbis eingefügt werden.<br>Wenn der Patient ein Mann bzw. Frau ist, klicken Sie auf die runden Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht in den Arztbrief-Texten eingestellt.<br> Das Programm
+                verändert nichts an Ihrem Rechner, es speichert nichts, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code
+                wird von Ihrem Browser interpretiert.<br>Firefox portable, Version 45 oder neuer wenn möglich, auf den Klinikumsrechnern meist vorhanden, ist sehr gut. Internet Explorer 11 ist auch in Ordnung.<br> Das Programm soll nützlich sein, sagen
+                Sie bitte, was Sie sich wünschen.<br> Emanuil Giuris<br> giuris@gmail.com<br><br> N-Brief 0.1, Letzte Aktualisierung: 28.12.2016
             </p>
         </div>
 
@@ -331,7 +338,7 @@
         </div>
     </div>
 
-    <div id="erst" class="wrap2">
+    <div id="erst" class="wrap2_1">
 
         <div class="fleft">
             <button class="bt1 nbblock" onclick="showAnr()">Anrede</button>
@@ -340,8 +347,8 @@
             <button class="bt1 nbblock" onclick="showMedi()">Medikamente</button>
             <button class="bt1 nbblock" onclick="showEpikr()">Epikrise</button>
             <button class="bt1 nbblock" onclick="showMS()">MS</button>
-            <button class="bt1 nbblock" onclick="showRS()">BSV Fazialis</button>
-            <button class="bt1 nbblock" onclick="showDemPark()">Dem-Park</button>
+            <button class="bt1 nbblock" onclick="showRS()">BSV-Fazialis-BPLS</button>
+            <button class="bt1 nbblock" onclick="showDemPark()">Demenz-Parkinson</button>
 
             <div class="wrap3" id="Anrede">
                 <p class="stamp">Anrede</p>
@@ -384,11 +391,11 @@
 
                 <p class="stamp">Epikrise</p>
 
-                <button class="bt1" onclick="ed1('Vorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte wegen Kopfschmerzen Schwäche der rechten linken  Körperseite, Schwindels, eines Bewusstseinsverlustes, Taubheitsgefühls der rechten linken Körperseite. \r\nAm Datum ca. Uhrzeit merkte der Patient die Patientin, dass \r\nAm Datum ca. Uhrzeit wurde der Patient die Patientin vorgefunden. \r\nDer Patient Die Patientin wurde durch den Rettungsdienst gebracht. \r\nDer Patient Die Patientin stellte sich am Datum in der Notaufnahme vor. \r\nEr Sie klagt über xxx seit xxx Stunden Tagen Wochen. \r\nDer Patient Die Patientin berichtet, dass er sie \r\nDie Angehörigen berichten dass, \r\nDer Patient Die Patientin lebt zu Hause, arbeitet als xxx und kann sich selbst versorgen. \r\nDer Patient Die Patientin im Heim. \r\nEr Sie konnte sich teilweise selbst versorgen. Er Sie ging ohne Hilfsmittel am Rollator am Stock. \r\nwar harninkontinent harnkontinent\r\nAngabe von Nichtrauchen 20 Zigaretten täglich und von 2 Glas Wein Bier täglich in der Woche von seltenem keinem Alkoholgenuss. \r\nEs gibt eine Vorsorgevollmacht und eine Patientenverfügung\r\n')">Anamnese</button>
+                <button class="bt1" onclick="ed1(anamnese1)">Anamnese</button>
 
-                <button class="bt1" onclick="ed1('Die klinische Untersuchung deckte kein neurologisches Defizit auf. \r\nIn der klinischen Untersuchung war der Patient die Patientin wach, orientiert und hatte xxx. \r\nDas Schädel-CT zeigte\r\nkeine frische Ischämie oder Blutung. \r\neinen Hirninfarkt im Stromgebiet der Arteria cerebri media posterior anterior rechts links \r\nDas Schädel-CT zeigte Marklagerveränderungen einen Hirninfarkt eine Blutung. \r\nDas Schädel-MRT zeigte \r\nDas Labor war im Normbereich zeigte \r\nDie transthorakale Echokardiographie zeigte keine Emboliequelle. \r\nDie transösophageale Echokardiographie zeigte keine Emboliequelle. \r\nDie Neurosonographie zeigte Plaques und geringgradige Stenose der Karotiden. \r\nDie Elektrophysiologie\r\nwar regelrecht\r\nwaren regelrecht. wegweisend. \r\nWährend der Monitor-Überwachung von Datum bis Datum stellten wir kein Vorhofflimmern fest. \r\nIm Laufe des stationären Aufenthaltes \r\n')">Befunde</button>
+                <button class="bt1" onclick="ed1(Befunde1)">Befunde</button>
 
-                <button class="bt1" onclick="ed1('Wir gehen bei bestehendem Vorhofflimmern von einem embolischen Hirninfarkt aus. \r\nWir gehen von einem atherothrombotischen Prozess aus. \r\nUrsächlich für den Hirninfarkt war die Stenose der \r\nWir klärten den Patienten die Patientin über einen gesunden  Lebensstil im kardiovaskulären Sinn auf. \r\nNach ausführlichen Gesprächen mit der Familie entschieden wir uns gemeinsam gemäß dem mutmaßlichen Willen des Patienten der Patientin für eine rein palliative Behandlung. \r\nEine ambulante Kontrolle des der wird empfohlen. \r\nHerr Frau wird am Datum in Ihre Weiterbehandlung entlassen. \r\nwie vereinbart in Ihre Rehabilitations-Klinik zurück verlegt. \r\nWir danken für die freundliche Übernahme. \r\nWir stehen für Fragen gerne zur Verfügung. \r\n')">Schluss</button>
+                <button class="bt1" onclick="ed1(Schluss1)">Schluss</button>
 
             </div>
 
@@ -418,11 +425,11 @@
 
                 <p class="stamp">Klinischer Befund</p>
 
-                <button class="bt1" onclick="ed1('Wach, kooperativ, zeitlich und örtlich orientiert. Affekt normal, kein Hinweis für Depression. Pat. wiederholt 6-stellige Zahl, sagt die Monate des Jahres in umgekehrter Reihenfolge, buchstabiert umgekehrt das Wort RADIO, zählt von 20 bis 10 rückwärts, erinnert sich an 3 von 3 Wörtern nach 3 Minuten. Rechtshänder Linkshänder Rechtshänderin Linkshänderin\r\nSprachverständnis und sprachlicher Ausdruck normal.\r\nStehen und Gehen nicht untersucht normal, Einbeinstand, Rombergversuch, Zehen- und Hackengang, Strichgang, Aufstehen vom Stuhl normal. Augen: Bewegung, Pupillen, Gesichtsfelder fingerperimetrisch normal. Visus mit Brille R und L mindestens 4 mm große Buchstaben in Leseentfernung Fingerzählen.\r\nMimik normal, die Zunge wird geradeaus herausgestreckt, der weiche Gaumen hebt sich symmetrisch. Kein Nystagmus. Kein Meningismus. Hören von Fingerreiben beiderseits normal. Kraft, Trophik, Tonus, Muskeldehnungsreflexe, Plantarreflex normal.\r\nArmhalteversuch, Beinhalteversuch, Finger-Nase-Versuch, Knie-Hacke-Versuch o.B. Lagesinn im Zeigefinger und im großen Zeh normal. Vibrationssinn im Zeigefinger /8 und im großen Zeh /8. Algesie, Ästhesie normal. Kein Tremor, keine unwillkürlichen Bewegungen.\r\nRR / mmHg, Herzfrequenz /min, Temperatur 3, C, SpO2  % bei Raumluft unter O2 nasal über Maske 2 L/min.\r\n')">Befund</button>
+                <button class="bt1" onclick="ed1(Befund1)">Befund</button>
 
                 <button class="bt1" onclick="ed1('Schulterblattstabilisierung durch Serratus ant. normal, Schulterhebung 5, Armabduktion 5, Armadduktion 5, Arminnenrotation 5, Armaußenrotation 5, Armbeugung 5, Armstreckung 5, Unterarmpronation 5, Unterarmsupination 5, Handbeugung 5, Handstreckung 5, Fingerstreckung 5, Fingerbeugung 5, Abduktion der Finger II und V 5, Beugung der MCP-Gelenke 5, Streckung der MCP-Gelenke 5, Beugung der IP-Gelenke 5, Streckung der IP-Gelenke 5 nach MRC.\r\n\r\nHüftbeugung 5, Hüftstreckung 5, Hüftinnenrotation 5, Hüftaußenrotation 5, Kniebeugung 5, Kniestreckung 5, Fußhebung 5, Fußsenkung 5, Fußpronation 5, Fußsupination 5, Zehenstreckung 5, Zehenbeugung 5.\r\n\r\nMuskeldehnungsreflexe:  (0: fehlend, 1: schwach, 2: mittellebhaft, 3: lebhaft ohne Klonus, 4: mit Klonus)\r\n')">Peripher</button><br>
 
-                <button class="bt1" onclick="ed1('Der Patient Die Patientin liegt im Bett,\r\natmet spontan wird über einen endotrachealen Tubus Tracheostoma beatmet.\r\nDie Augen sind geschlossen, er sie reagiert nicht auf Ansprache und Berührung. Nach mäßigem Schmerzreiz bewegt er sie Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen nimmt er sie keinen Blickkontakt auf, die Augen sind parallel, der okulozephale Reflex, horizontal und vertikal, ist auslösbar. Die Pupillen sind rund und gleich groß, ca. 3 mm, und reagieren auf Licht. Die Muskeldehnungsreflexe lassen sich nicht lebhaft auslösen. Der Plantarreflex ist stumm normal. Babinski-Zeichen rechts links.\r\nGlasgow-Coma-Scale: --. \r\n')">Koma</button>
+                <button class="bt1" onclick="ed1(Koma1)">Koma</button>
 
                 <!-- <button class="bt1" onclick="ed1('\r\n')">mmmmmm</button><br> -->
 
@@ -430,15 +437,17 @@
 
             <div class="wrap3" id="MS">
 
-                <button class="bt1" onclick="ed1('Die Aufnahme erfolgte bei Verdacht auf das Vorliegen einer entzündlichen ZNS-Erkrankung \r\nDie Aufnahme des Patienten der Patientin erfolgte bei Verdacht auf erneuten Schub einer bekannten schubförmig remittierenden Multiplen Sklerose.\r\n\r\nDie Aufnahme des Patienten der Patientin erfolgte geplant zur erneuten Steroidpulstherapie bei bekannter sekundär chronisch progredienter Multipler Sklerose.\r\n\r\nIm klinischen Untersuchungsbefund zeigte sich\r\nDie Gehstrecke betrug aktuell    \r\nDer EDDS lag aktuell bei\r\n\r\n\r\nDer Patient Die Patientin erhielt eine Steroidpulstherapie mit Methylprednisolon 1000 mg über drei Tage unter Magenschutz mit Omeprazol, Thromboseprophylaxe und Blutzuckerkontrollen.\r\nDie Infusionen wurden von der Patientin gut vertragen\r\ndie Beschwerden erschienen im Verlauf rückläufig.\r\n\r\nIm cMRT zeigten sich mehrere Balkenassoziierte Demyelinisierungen, typisch für eine Enzephalomyelitis Disseminata    \r\nund Zeichen einer räumlichen Dissemination\r\nund Zeichen einer räumlichen und zeitlichen Dissemination\r\nes waren keine Zeichen einer räumlichen Dissemination nachweisbar\r\n\r\nIm MRT der HWS zeigte sich eine Demyelinisierung in Höhe\r\n\r\nEs erfolgte ein erneutes MRT mit KM, in der keine sicheren kontrastmittelaufnehmenden Läsionen dargestellt werden konnten    \r\n\r\nElektrophysiologische Untersuchungen zeigten\r\neine Leitungsstörung beider Nervi optici wie bei chronischer Retrobulbärneuritis.\r\neine Hintestrangläsion\r\neine Pyramidenbahnläsion\r\n\r\nDie oligoklonalen Banden im Liquor waren positiv/negativ\r\nDie erneute Liquordiagnostik erfolgte zur ergänzenden Bestimmung von JC-Virus-DNA und fiel negativ aus.\r\n\r\nZusammenfassend gingen wir bei Frau Herrn XX von einem erneuten Schub bei bekannter Multiple Sklerose aus.\r\nWir empfehlen\r\n\r\neine ambulante neurologische Anbindung und Verlaufskontrollen.\r\nein Fortführen der Intervalltherapie mit\r\n\r\nden Beginn einer immunmodulatorischen Therapie mit\r\n\r\nDer Patient Die Patientin wurde über die möglichen therapeutischen Optionen aufgeklärt.\r\n\r\nAm Datum entließen wir den Patienten die Patientin in Ihre weitere Betreuung und stehen für Rückfragen gerne zur Verfügung. \r\n')">MS-Brief</button>
+                <button class="bt1" onclick="ed1(MSBrief1)">MS-Brief</button>
 
             </div>
 
             <div class="wrap3" id="RS">
 
-                <button class="bt1" onclick="ed1('Text Rücken\r\n')">BSV</button><br>
+                <button class="bt1" onclick="ed1('Die stationäre Aufnahme erfolgte zur Abklärung von starken, immobilisierenden Rückenschmerzen. \r\nDer Patient Die Patientin berichtete, dass er / sie seit ca. xxx Tagen Wochen Rückenschmerzen mit Ausstrahlung in das rechte/linke Bein habe. Spritzen durch den  Hausarzt, Wärmeanwendungen und eine konservative Schmerzmedikation hätte bisher zu keiner ausreichenden Besserung geführt. \r\nHerr / Frau gab eine Schmerzausstrahlung in die Lateralseite des rechten linken Oberschenkels und in die Ventralseite des rechten linken Unterschenkels an (dem Dermatom L4/L5 rechts links entsprechend). \r\nIm klinisch neurologischen Befund zeigten sich keine Paresen, die Muskeleigenreflexe (PSR und ASR) waren seitengleich und mittellebhaft. \r\nWir führten ein MRT der LWS durch, hier zeigte sich xxx \r\nDurch eine Schmerzmedikation mit Naproxen und Metamizol sowie begleitender Physiotherapie und Wärmeanwendungen besserten sich die Schmerzen deutlich. \r\nWir stellten den Patienten die Patientin neurochirurgisch vor. Es wurde die Indikation zu einer operativen Behandlung gestellt und es erfolgte die Übernahme. \r\n Der Patient Die Patientin wurde über die operative Behandlung aufgeklärt, wünschte jedoch zunächst Bedenkzeit. Die hier angefertigten MRT wurde dem Patienten der Patientin auf CD mitgegeben. \r\nWir danken für die freundliche Weiterbehandlung.\r\nWir empfehlen eine Fortführung der konservativen Therapie mit an die Beschwerden adaptierter Schmerzmedikation sowie die Fortführung der Physiotherapie (insbesondere Rückenschule) und Wärmeanwendungen (Fango). \r\nWir konnten Herrn /Frau am Datum in Ihre ambulante Weiterbetreuung entlassen und stehen Ihnen für Rückfragen gerne zur Verfügung.\r\n')">BSV</button><br>
 
                 <button class="bt1" onclick="ed1('Schwäche im Gesicht rechts links seit Datum.\r\nIn der klinischen Untersuchung war der Patient die Patientin wach, orientiert und hatte eine periphere Fazialisparese rechts links. Es bestand kein anderes neurologisches Defizit.\r\nDer Lidschluss war komplett aber schwach / inkomplett, die Lidspalte beim versuchten Lidschluss betrug mm. Der Mundwinkel konnte etwas bewegt werden, war völlig gelähmt.\r\nEs bestand eine Hyperakusis rechts links und eine Verminderung des Geschmacksempfindens in der Zunge rechts links.\r\nEs bestand keine Rötung und keine Bläschen im äußeren Gehörgang oder im Gesicht.\r\nDer Liquor war normal.\r\nWir diagnostizierten eine idiopathische Fazialisparese und setzten Prednisolon 60 mg p.o. für 5 Tage (Beginn: Datum) an, das ab Datum täglich um 10 mg reduziert werden soll. Der Augenschuzt ist besonders wichtig. Wir begannen mit künstlichen Tränen tagsüber sowie Dexpanthenol-Augensalbe und Uhrglasverband zur Nacht. Der Augenschuzt sollte solange durchgeführt werden bis der Lidschluss objektiv komplett ist.\r\nWir bitten um eine ambulante neurologische und augenärztliche Vorstellung im Verlauf.\r\n')">Fazialis</button><br>
+
+                <button class="bt1" onclick="ed1('Vorläufiger Arztbrief \r\nDie stationäre Aufnahme erfolgte wegen rezidivierender, lageabhängiger Drehschwindelattacken. \r\nIn der klinisch-neurologischen Untersuchung zeigte sich kein Nystagmus / ein rotatorischer Nystagmus im Uhrzeigersinn/ gegen den Uhrzeigersinn bei Rechtslagerung/ Linkslagerung. \r\nDer Patient Die Patientin gab verstärkten Schwindel nach Rechtslagerung/Linkslagerung an. \r\nIn den apparativen Untersuchungen (CCT, Neurodopplersonographie, cMRT) ergaben sich keine Auffälligkeiten, insbesondere kein Hinweis auf eine zentrale Genese des Schwindels. \r\nWir gingen von einem benignen paroxysmalen Lagerungsschwindel aus. \r\nDer Patient Die Patientin wurde physiotherapeutisch behandelt und in den Lagerungsmanövern nach Semont / nach Epley angeleitet. Wir empfehlen weitere ambulante Physiotherapie. \r\nWir konnten Herrn / Frau am Datum in Ihre ambulante Weiterbetreuung entlassen und stehen Ihnen für Rückfragen gerne zur Verfügung. \r\n')">BPLS</button><br>
 
             </div>
 
@@ -456,6 +465,13 @@
         </div>
 
         <div class="fright">
+            <fieldset>
+                Patient ist:
+                <form id="gw">
+                    <input type="radio" name="sx" value="mann" onclick="reload()">Mann
+                    <input type="radio" name="sx" value="frau" onclick="reload()">Frau
+                </form>
+            </fieldset><br>
             <button class="bt1" onclick="ed1(dateGerman() + ' ')">Datum heute</button><br>
             <button class="bt1" onclick="ed1(timeGerman() + ' ')">Uhrzeit jetzt</button><br>
             <button class="bt1" onclick="ed1('\r\n')">Zeilenwechsel</button><br>
@@ -465,7 +481,7 @@
             <!-- <button class="bt1" onclick ="">test</button><br> -->
             <br><br>
             <button class="bt1" onclick="ed1('Neurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen\r\n\r\nEigenanamnese (Angaben des Patienten der Patientin):\r\n\r\nFremdanamnese (Angaben des der ):\r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button>
-            <button class="bt1" onclick="ed1('\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links  \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\nDer Patient Die Patientin wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. Er Sie wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war er sie wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiogrfie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\nDer Patient Die Patientin lebt zu Hause und kann sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir den Patienten die Patientin notfallmäßig zur Thrombektomie. Wir bedanken uns für die Übernahme.\r\n\r\n')">Thrombektomie</button>
+            <button class="bt1" onclick="ed1('\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links  \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\nDer Patient Die Patientin wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. Er Sie wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war er sie wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiografie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\nDer Patient Die Patientin lebt zu Hause und kann sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir den Patienten die Patientin notfallmäßig zur Thrombektomie. Wir bedanken uns für die Übernahme.\r\n\r\n')">Thrombektomie</button>
             <button class="bt1" onclick="ed1('Labor: Großes Blutbild, Elektrolyte, Leberwerte, Nierenwerte, TSH, Gerinnung, Entzündungsparameter und Urinstatus unauffällig. HbA1c xxx (4,8-5,9) %, Triglyceride xxx (<200) mg/dl, Cholesterin gesamt xxx (<220) mg/dl, LDL-Cholesterin xxx (<150) mg/dl.\r\n\r\n\r\nLiquor: Kernhaltige Zellen xxx/µl, davon xxx % Lymphozyten, Erythrozyten xxx/µl keine, Glukose xxx (40-70) mg/dl, Laktat xxx (10-22) mg/dl, Eiweiß xxx (150-450) mg/l. \r\n\r\n\Lumbalpunktion \r\n\r\nPunkteur: Name (Assistenzarzt Assistenzärztin)\r\n\r\nVorgehen: \r\nAufsuchen der Stichstelle in der unteren LWS, Desinfektion, sterile Abgedeckung, Punktion und Entnahme vom 8 ml klarem Liquor, Entfernung der Nadel, steriler Verband. Keine unmittelbaren Komplikationen. \r\nDer Patient Die Patientin verneint Schmerzen, Schwindel, Übelkeit oder Unwohlsein.\r\n\r\n')">Labor und Liquor</button>
             <br>
             <br>
@@ -479,13 +495,79 @@
             <br>
             <br>
             <br>
-            <span>N-Brief 0.1<br>24.12.2016</span>
+            <span>N-Brief 0.1<br>28.12.2016</span>
 
         </div>
 
     </div>
 
     <script>
+        var Der_Patient;
+        var der_Patient;
+        var Er;
+        var dem_Patienten;
+        var den_Patienten;
+        var des_Patienten;
+        var Herr;
+        var Rechtshaender;
+        var Linkshaender;
+        var Rechtshaenderin;
+        var Linkshaenderin;
+
+        function reload() {
+            location.reload()
+        };
+
+        var z = document.getElementById("gw").elements["sx"].value;
+
+        if (z === "mann") {
+            Der_Patient = "Der Patient";
+            der_Patient = "der Patient";
+            Er = "Er";
+            er = "er";
+            des_Patienten = "des Patienten";
+            den_Patienten = "den Patienten";
+            dem_Patienten = "dem Patienten";
+            Herr = "Herr";
+            Herrn = "Herrn";
+            Rechtshaender = "Rechtshänder";
+            Linkshaender = "Linkshänder";
+
+        }
+
+        if (z === "frau") {
+            Der_Patient = "Die Patientin";
+            der_Patient = "die Patientin";
+            Er = "Sie";
+            er = "sie";
+            des_Patienten = "der Patientin";
+            den_Patienten = "die Patientin";
+            dem_Patienten = "der Patientin";
+            Herr = "Frau";
+            Herrn = "Frau";
+            Rechtshaender = "Rechtshänderin";
+            Linkshaender = "Linkshänderin";
+        };
+
+        // Texte //
+
+        var anamnese1 =
+            "Vorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte wegen Kopfschmerzen Schwäche der rechten linken  Körperseite, Schwindels, eines Bewusstseinsverlustes, Taubheitsgefühls der rechten linken Körperseite. \r\nAm Datum ca. Uhrzeit merkte " +
+            der_Patient + ", dass \r\nAm Datum ca. Uhrzeit wurde " + der_Patient + " vorgefunden. \r\n" + Der_Patient + " wurde durch den Rettungsdienst gebracht. \r\n" + Der_Patient + " stellte sich am Datum in der Notaufnahme vor. \r\n" + Er +
+            " klagt über xxx seit xxx Stunden Tagen Wochen. \r\n" + Der_Patient + " berichtet, dass " + er + " \r\nDie Angehörigen berichten dass, \r\n" + Der_Patient + " lebt zu Hause, arbeitet als xxx und kann sich selbst versorgen. \r\n" +
+            Der_Patient + " im Heim. \r\n" + Er + " konnte sich teilweise selbst versorgen. " + Er +
+            " ging ohne Hilfsmittel am Rollator am Stock. \r\nwar harninkontinent harnkontinent\r\nAngabe von Nichtrauchen 20 Zigaretten täglich und von 2 Glas Wein Bier täglich in der Woche von seltenem keinem Alkoholgenuss. \r\nEs gibt eine Vorsorgevollmacht und eine Patientenverfügung\r\n";
+
+        var Befunde1 = "Die klinische Untersuchung deckte kein neurologisches Defizit auf. \r\nIn der klinischen Untersuchung war "+der_Patient+" wach, orientiert und hatte xxx. \r\nDas Schädel-CT zeigte\r\nkeine frische Ischämie oder Blutung. \r\neinen Hirninfarkt im Stromgebiet der Arteria cerebri media posterior anterior rechts links \r\nDas Schädel-CT zeigte Marklagerveränderungen einen Hirninfarkt eine Blutung. \r\nDas Schädel-MRT zeigte \r\nDas Labor war im Normbereich zeigte \r\nDie transthorakale Echokardiographie zeigte keine Emboliequelle. \r\nDie transösophageale Echokardiographie zeigte keine Emboliequelle. \r\nDie Neurosonographie zeigte Plaques und geringgradige Stenose der Karotiden. \r\nDie Elektrophysiologie\r\nwar regelrecht\r\nwaren regelrecht. wegweisend. \r\nWährend der Monitor-Überwachung von Datum bis Datum stellten wir kein Vorhofflimmern fest. \r\nIm Laufe des stationären Aufenthaltes \r\n";
+
+        var Schluss1 = "Wir gehen bei bestehendem Vorhofflimmern von einem embolischen Hirninfarkt aus. \r\nWir gehen von einem atherothrombotischen Prozess aus. \r\nUrsächlich für den Hirninfarkt war die Stenose der xxx\r\nWir klärten "+den_Patienten+" über einen gesunden Lebensstil im kardiovaskulären Sinn auf. \r\nNach ausführlichen Gesprächen mit der Familie entschieden wir uns gemeinsam gemäß dem mutmaßlichen Willen "+des_Patienten+" für eine rein palliative Behandlung. \r\nEine ambulante Kontrolle von xxx wird empfohlen. \r\n"+Herr+" xxx wird am Datum in Ihre Weiterbehandlung entlassen. \r\nwie vereinbart in Ihre Rehabilitations-Klinik zurück verlegt. \r\nWir danken für die freundliche Übernahme. \r\nWir stehen für Fragen gerne zur Verfügung. \r\n"
+
+        var Befund1 = "Wach, kooperativ, zeitlich und örtlich orientiert. Affekt normal, kein Hinweis für Depression. "+Der_Patient+" wiederholt eine 6-stellige Zahl, sagt die Monate des Jahres in umgekehrter Reihenfolge, buchstabiert umgekehrt das Wort RADIO, zählt von 20 bis 10 rückwärts, erinnert sich an 3 von 3 Wörtern nach 3 Minuten. "+Rechtshaender+" "+Linkshaender+" \r\nSprachverständnis und sprachlicher Ausdruck normal.\r\nStehen und Gehen nicht untersucht normal, Einbeinstand, Rombergversuch, Zehen- und Hackengang, Strichgang, Aufstehen vom Stuhl normal. Augen: Bewegung, Pupillen, Gesichtsfelder fingerperimetrisch normal. Visus mit Brille R und L mindestens 4 mm große Buchstaben in Leseentfernung Fingerzählen.\r\nMimik normal, die Zunge wird geradeaus herausgestreckt, der weiche Gaumen hebt sich symmetrisch. Kein Nystagmus. Kein Meningismus. Hören von Fingerreiben beiderseits normal. Kraft, Trophik, Tonus, Muskeldehnungsreflexe, Plantarreflex normal.\r\nArmhalteversuch, Beinhalteversuch, Finger-Nase-Versuch, Knie-Hacke-Versuch o.B. Lagesinn im Zeigefinger und im großen Zeh normal. Vibrationssinn im Zeigefinger /8 und im großen Zeh /8. Algesie, Ästhesie normal. Kein Tremor, keine unwillkürlichen Bewegungen.\r\nRR / mmHg, Herzfrequenz /min, Temperatur 3, C, SpO2  % bei Raumluft unter O2 nasal über Maske 2 L/min.\r\n"
+
+        var Koma1 = ""+Der_Patient+" liegt im Bett,\r\natmet spontan wird über einen endotrachealen Tubus / Tracheostoma beatmet.\r\nDie Augen sind geschlossen, "+er+" reagiert nicht auf Ansprache und Berührung. Nach mäßigem Schmerzreiz bewegt "+er+" Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen nimmt "+er+" keinen Blickkontakt auf, die Augen sind parallel, der okulozephale Reflex, horizontal und vertikal, ist auslösbar. Die Pupillen sind rund und gleich groß, ca. xxx mm, und reagieren auf Licht. Die Muskeldehnungsreflexe lassen sich nicht lebhaft auslösen. Der Plantarreflex ist stumm normal. Babinski-Zeichen rechts links.\r\nGlasgow-Coma-Scale: --. \r\n"
+
+        var MSBrief1 = "Die Aufnahme erfolgte bei Verdacht auf eine entzündliche ZNS-Erkrankung. \r\nDie Aufnahme "+des_Patienten+" erfolgte bei Verdacht auf erneuten Schub einer bekannten schubförmig remittierenden Multiplen Sklerose.\r\n\r\nDie Aufnahme "+des_Patienten+" erfolgte geplant zur erneuten Steroidpulstherapie bei bekannter sekundär chronisch progredienter Multipler Sklerose.\r\n\r\nIm klinischen Untersuchungsbefund zeigte sich\r\nDie Gehstrecke betrug aktuell xxx m.\r\nDer EDDS lag aktuell bei xxx.\r\n\r\n\r\n"+Der_Patient+" erhielt eine Steroidpulstherapie mit Methylprednisolon 1000 mg über drei Tage unter Magenschutz, Thromboseprophylaxe und Blutzuckerkontrollen.\r\nDie Infusionen wurden von "+dem_Patienten+" gut vertragen. \r\nDie Beschwerden erschienen im Verlauf rückläufig.\r\n\r\nIm cMRT zeigten sich mehrere Balken-assoziierte Demyelinisierungen, typisch für eine Enzephalomyelitis Disseminata \r\nund Zeichen einer räumlichen Dissemination\r\nund Zeichen einer räumlichen und zeitlichen Dissemination\r\nes waren keine Zeichen einer räumlichen Dissemination nachweisbar\r\n\r\nIm MRT der HWS zeigte sich eine Demyelinisierung in Höhe\r\n\r\nEs erfolgte ein erneutes MRT mit KM, in dem keine sicheren kontrastmittelaufnehmenden Läsionen dargestellt werden konnten    \r\n\r\nElektrophysiologische Untersuchungen zeigten\r\neine Leitungsstörung beider Nervi optici wie bei chronischer Retrobulbärneuritis.\r\neine Hintestrangläsion\r\neine Pyramidenbahnläsion \r\n\r\nDie oligoklonalen Banden im Liquor waren positiv negativ \r\nDie erneute Liquordiagnostik erfolgte zur ergänzenden Bestimmung von JC-Virus-DNA und fiel negativ aus.\r\n\r\nZusammenfassend gingen wir bei "+Herrn+" xxx von einem erneuten Schub bei bekannter Multiple Sklerose aus.\r\nWir empfehlen\r\n\r\neine ambulante neurologische Anbindung und Verlaufskontrollen.\r\nein Fortführen der Intervalltherapie mit\r\n\r\nden Beginn einer immunmodulatorischen Therapie mit\r\n\r\n"+Der_Patient+" wurde über die möglichen therapeutischen Optionen aufgeklärt.\r\n\r\nAm Datum entließen wir "+den_Patienten+" in Ihre weitere Betreuung und stehen für Rückfragen gerne zur Verfügung. \r\n";
+
         function ez1() {
             document.getElementById('erst').style.display = 'block';
             document.getElementById('zweit').style.display = 'none';
@@ -621,9 +703,10 @@
 
         function parkMed() {
             let allParkMed = document.getElementById('levodopaEqDosis').elements;
-            for (let i=0; i<allParkMed.length-2; i++){
-                allParkMed[i].value=0;
-        }       };
+            for (let i = 0; i < allParkMed.length - 2; i++) {
+                allParkMed[i].value = 0;
+            }
+        };
 
         function gfrCalc() {
             var krea1 = document.getElementById("gfr").elements['a'].value;
@@ -653,8 +736,12 @@
             let d = new Date;
             let hours = d.getHours();
             let minutes = d.getMinutes();
-            if (hours<10){hours="0"+hours};
-            if (minutes<10){minutes="0"+minutes};
+            if (hours < 10) {
+                hours = "0" + hours
+            };
+            if (minutes < 10) {
+                minutes = "0" + minutes
+            };
             let timeGerman = hours + ":" + minutes + " Uhr ";
             return timeGerman;
         }
