@@ -8,7 +8,7 @@ The hospital physician (HP) writing a discharge letter has to put the most impor
 
 There is a big textarea in the middle. You can insert text into the textarea on the push of a button. You have to read the inserted text carefully and change it so that it becomes a correct real letter.
 
-You can tell the app whether the patient is male or female. Please press the radio button on the right upper side of the screen. The texts will be modified accordingly.
+You can tell the app whether the patient is male or female. Please press the  correct button on the right upper side of the screen. The texts will be modified accordingly.
 
 ## Additional material
 
