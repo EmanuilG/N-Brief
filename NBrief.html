@@ -497,8 +497,7 @@
             <button class="bt1" onclick="selCopTx()">Alles Kopieren</button><br>
             <!-- <button class="bt1" onclick ="">test</button><br> -->
             <br><br>
-            <button class="bt1" onclick="ed1('\r\nNeurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen\r\n\r\nEigenanamnese (Angaben ' + des_Patienten +
-    ' ):\r\n\r\nFremdanamnese (Angaben des der ):\r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button>
+            <button class="bt1" onclick="ed1('\r\nNeurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen\r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'):\r\n\r\nFremdanamnese (Angaben des der ):\r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button>
             <button class="bt1" onclick="ed1('\r\nVorläufiger Arztbrief\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links  \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\n' +
             Der_Patient + ' wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er +
             ' wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiografie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\n' +
@@ -541,7 +540,7 @@
         var Rechtshaenderin;
         var Linkshaenderin;
 
-
+        // all male forms are set
         function mannSx() {
         var i1 = document.getElementById('gesX');
         i1.innerHTML = "Mann";
@@ -560,6 +559,7 @@
         Linkshaender = "Linkshänder";
         };
 
+        // all female forms are set
         function frauSx() {
         var i1 = document.getElementById('gesX');
         i1.innerHTML = "Frau";
@@ -578,69 +578,26 @@
         Linkshaender = "Linkshänderin";
         };
 
-
-        // it reloads the page, doing so makes the m/f value null in browsers other than Firefox
-        function reload() {
-            location.reload()
-        };
-        // z gets the m/f-value. Works only in Firefox, I do not know why.
-        // var z = document.getElementById("gw").elements["sx"].value;
-
-        // if (z === "mann") {
-        //     Der_Patient = "Der Patient";
-        //     der_Patient = "der Patient";
-        //     Er = "Er";
-        //     er = "er";
-        //     ihm = "ihm";
-        //     ihn = "ihn";
-        //     des_Patienten = "des Patienten";
-        //     den_Patienten = "den Patienten";
-        //     dem_Patienten = "dem Patienten";
-        //     Herr = "Herr";
-        //     Herrn = "Herrn";
-        //     Rechtshaender = "Rechtshänder";
-        //     Linkshaender = "Linkshänder";
-        //
-        // }
-        //
-        // if (z === "frau") {
-        //     Der_Patient = "Die Patientin";
-        //     der_Patient = "die Patientin";
-        //     Er = "Sie";
-        //     er = "sie";
-        //     ihm = "ihr";
-        //     ihn = "sie";
-        //     des_Patienten = "der Patientin";
-        //     den_Patienten = "die Patientin";
-        //     dem_Patienten = "der Patientin";
-        //     Herr = "Frau";
-        //     Herrn = "Frau";
-        //     Rechtshaender = "Rechtshänderin";
-        //     Linkshaender = "Linkshänderin";
-        // };
-
-        // it shows the erst
-        function ez1() {
-            document.getElementById('erst').style.display = 'block';
+        // hides erst, zweit, viert
+        function showNil2() {
+            document.getElementById('erst').style.display = 'none';
             document.getElementById('zweit').style.display = 'none';
             document.getElementById('viert').style.display = 'none';
-            document.getElementById('nbrief').style.display = 'none';
         }
-
+        // it shows the erst
+        function ez1() {
+            showNil2();
+            document.getElementById('erst').style.display = 'block';
+        }
         // it shows the zweit
         function ez2() {
-            showNilSkalen();
+            showNil2();
             document.getElementById('zweit').style.display = 'block';
-            document.getElementById('erst').style.display = 'none';
-            document.getElementById('viert').style.display = 'none';
-            document.getElementById('nbrief').style.display = 'none';
         }
         // it shows the viert
         function ez4() {
-            document.getElementById('zweit').style.display = 'none';
-            document.getElementById('erst').style.display = 'none';
+            showNil2();
             document.getElementById('viert').style.display = 'block';
-            document.getElementById('nbrief').style.display = 'none';
         }
         // it hides all named elements
         function showNil1() {
@@ -655,42 +612,42 @@
         }
         // it does what it says
         function showAnr() {
-            showNil1()
+            showNil1();
             document.getElementById("Anrede").style.display = "block";
         }
         // it does what it says
         function showDiagn() {
-            showNil1()
+            showNil1();
             document.getElementById("Diagnosen").style.display = "block";
         }
         // it does what it says
         function showEpikr() {
-            showNil1()
+            showNil1();
             document.getElementById("Epikrise").style.display = "block";
         }
         // it does what it says
         function showMS() {
-            showNil1()
+            showNil1();
             document.getElementById("MS").style.display = "block";
         }
         // it does what it says
         function showRS() {
-            showNil1()
+            showNil1();
             document.getElementById("RS").style.display = "block";
         }
         // it does what it says
         function showDemPark() {
-            showNil1()
+            showNil1();
             document.getElementById("DemPark").style.display = "block";
         }
         // it does what it says
         function showMedi() {
-            showNil1()
+            showNil1();
             document.getElementById("Medikamente").style.display = "block";
         }
         // it does what it says
         function showKlBef() {
-            showNil1()
+            showNil1();
             document.getElementById("Klinischer_Befund").style.display = "block";
         }
         // it does what it says
@@ -724,7 +681,7 @@
 
         // delete all text from the textarea
         function ddel() {
-            document.getElementById("hh").value = null
+            document.getElementById("hh").value = "";
         }
 
         // copy all text from the textarea
