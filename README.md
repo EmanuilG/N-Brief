@@ -16,5 +16,4 @@ Under Rechner/Skalen you can find now two medical calculators. I thought we need
 
 ## N-Brief-App online
 
-You can try the N-Brief-App: <a href="NBrief.html">N-Brief</a>.  
-For the time being N-Brief works only with Firefox 45 or newer.
+You can try the N-Brief-App: <a href="NBrief.html">N-Brief</a>.
