@@ -26,7 +26,7 @@
             height: 700px;
             padding: 6px;
             border: none;
-        }
+		}
 
         .wrap {
             margin-top: 45px;
@@ -105,12 +105,24 @@
             background-color: #4CAF50;
             color: white;
         }
-
-        .bt1:hover {
+		.bt1:hover {
             background-color: red;
             color: white;
         }
-
+		.bt2 {
+            height: 30px;
+            width: 73px;
+            color: white;
+            font-family: sans-serif;
+            font-size: 0.9em;
+            border-style: none;
+            background-color: #4CAF50;
+            color: white;
+        }
+		.bt2:hover {
+            background-color: red;
+            color: white;
+        }
         .stamp {
             background: ;
             color: ;
@@ -308,10 +320,8 @@
         <div class="fleft50">
             <h3>Hilfe - Zusammenfassung</h3>
             <p>
-                Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br> Das Programm befindet sich in Entwicklung.<br>Die Texte sind in Zusammenarbeit entstanden. Dirk Bahner verfasste die Texte MS, BSV und BPLS. Am Text  <b>Klinischer Befund</b> schrieb Csilla Vincze mit. <br> Auf Knopf-Klick wird der Text (s. die Sprechblase) eingefügt.<br> Bitte lesen Sie den eingefügten Text im weißen Text-Bereich und bearbeiten Sie ihn sorgfältig.<br>Wer lieber
-                diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Wenn der Patient ein Mann
-                bzw. Frau ist, klicken Sie auf die runden Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht in den Arztbrief-Texten eingestellt.<br> Das Programm verändert nichts an Ihrem Rechner, es speichert nichts, es verbindet sich
-                nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert.<br>Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br> Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br> Emanuil Giuris<br> giuris@gmail.com<br><br>                N-Brief 0.2, Letzte Aktualisierung: 01.01.2017
+                Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br> Das Programm befindet sich in Entwicklung.<br>Die Texte sind in Zusammenarbeit entstanden. Dirk Bahner verfasste die Texte MS, BSV und BPLS. Den Text <b>Klinischer Befund</b> schrieben Csilla Vincze und Dirk Bahner mit. <br> Auf Knopf-Klick wird der Text eingefügt.<br> Bitte lesen Sie den eingefügten Text im weißen Text-Bereich und bearbeiten Sie ihn sorgfältig.<br>Wer lieber
+                diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br> Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert.<br>Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br> Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br> Emanuil Giuris<br> giuris@gmail.com<br><br>                N-Brief 0.2, Letzte Aktualisierung: 01.01.2017
             </p>
         </div>
 
@@ -329,7 +339,7 @@
             Zeile auswählen<br> 'Umschalt' + 'Ende' : Bis zum Ende der Zeile auswählen<br> 'Strg' + 'Umschalt' + 'Pos1' : Bis zum Beginn des Textes auswählen<br> 'Strg' + 'Umschalt' + 'Ende' : Bis zum Ende des Textes auswählen<br> Doppelklick auf ein
             Wort : Das Wort auswählen
 
-            <h4>Tab</h4> Im Text-Bereich funktioniert die Taste 'Tab' nicht wie in einem Textverarbeitungsprogramm. Mit dem Knopf 'Tab' (auf der rechten Seite, unter dem Knopf 'Zeilenwechsel') können Sie einen Tab einfügen.
+            <h4>Tab</h4> Im Text-Bereich funktioniert die Tastatur-Tab-Taste nicht wie in einem Textverarbeitungsprogramm. Mit dem Knopf 'Tab-Taste' (auf der rechten Seite, unter dem Knopf 'Eingabetaste') können Sie einen Tab einfügen.
         </div>
     </div>
 
@@ -425,7 +435,7 @@
 
                 <p class="stamp">Klinischer Befund</p>
 
-                <button class="bt1" onclick="ed1('\r\nWach, kooperativ, zeitlich und örtlich orientiert, aufmerksam. Rechtshänder Linkshänder. \r\nSprachverständnis und sprachlicher Ausdruck normal.\r\nStehen und Gehen normal, Einbeinstand, Rombergversuch, Zehen- und Hackengang, Strichgang, Aufstehen vom Stuhl normal. \r\nAugen: Bewegung, Pupillen, Gesichtsfelder fingerperimetrisch normal.\r\nVisus mit Brille R und L mindestens xxx mm große Buchstaben in Leseentfernung.\r\nMimik normal, die Zunge wird geradeaus herausgestreckt, der weiche Gaumen hebt sich symmetrisch. Kein Nystagmus. Kein Meningismus. Hören von Fingerreiben beiderseits normal. Kraft, Trophik, Tonus, Muskeldehnungsreflexe, Plantarreflex normal.\r\nArmhalteversuch, Beinhalteversuch, Finger-Nase-Versuch, Knie-Hacke-Versuch o.B. Lagesinn im Zeigefinger und im großen Zeh normal. Vibrationssinn im Zeigefinger /8 und im großen Zeh /8. Algesie, Ästhesie normal. Kein Tremor, keine unwillkürlichen Bewegungen.\r\n\r\nAllgemeinzustand gut, Ernährungszustand gut. Haut und Schleimhäute normal. Lunge auskultatorisch normales Atemgeräusch, Herzaktion rhythmisch, keine Herzgeräusche, Bauch weich mit Darmgeräuschen, periphere Pulse tastbar. RR / mmHg, Herzfrequenz /min, Temperatur 36, C, SpO2 xxx % bei Raumluft.\r\n\r\n')">Befund</button>
+                <button class="bt1" onclick="ed1('\r\nWach, kooperativ, zeitlich, örtlich und situativ orientiert.\r\nAufmerksamkeit, Merkfähigkeit, Stimmung normal. \r\nRechtshänder Linkshänder. \r\nSprachverständnis, sprachlicher Ausdruck sowie Artikulation normal. \r\nAugen: Bewegung, Pupillen, Gesichtsfelder fingerperimetrisch normal. Kein pathologischer Nystagmus. Sehkraft mit Brille R und L mindestens xxx mm große Buchstaben in Leseentfernung. \r\nMimik normal, die Zunge wird geradeaus herausgestreckt, der weiche Gaumen hebt sich symmetrisch. Hören von Fingerreiben beiderseits normal. Kein Meningismus. \r\nArmhalteversuch, Beinhalteversuch, Kraft, Trophik, Tonus, Muskeldehnungsreflexe lebhaft/mittellebhaft/schwach, stgl., Plantarreflex normal.\r\nFinger-Nase-Versuch, Knie-Hacke-Versuch o.B. Kein Tremor, keine unwillkürlichen Bewegungen.\r\nAlgesie, Ästhesie normal. Lagesinn im Zeigefinger und im großen Zeh normal. Vibrationssinn im Zeigefinger /8 und im großen Zeh /8. \r\nStehen und Gehen normal, Einbeinstand, Rombergversuch, Zehen- und Hackengang, Strichgang, Aufstehen vom Stuhl normal. \r\n\r\nAllgemeinzustand gut, Ernährungszustand gut. Haut und Schleimhäute normal. Lunge auskultatorisch normales Atemgeräusch, Herzaktion rhythmisch, keine Herzgeräusche, Bauch weich mit Darmgeräuschen, keine Ödeme, große Gelenke frei beweglich, Wirbelsäule ohne Klopfschmerz. \r\nRR / mmHg, Herzfrequenz /min, Temperatur 36, C, SpO2 xxx % bei Raumluft.\r\n\r\n')">Befund</button>
 
                 <button class="bt1" onclick="ed1('\r\nSchulterblattstabilisierung durch Serratus ant. normal, Schulterhebung 5, Armabduktion 5, Armadduktion 5, Arminnenrotation 5, Armaußenrotation 5, Armbeugung 5, Armstreckung 5, Unterarmpronation 5, Unterarmsupination 5, Handbeugung 5, Handstreckung 5, Fingerstreckung 5, Fingerbeugung 5, Abduktion der Finger II und V 5, Beugung der MCP-Gelenke 5, Streckung der MCP-Gelenke 5, Beugung der IP-Gelenke 5, Streckung der IP-Gelenke 5 nach MRC.\r\n\r\nHüftbeugung 5, Hüftstreckung 5, Hüftinnenrotation 5, Hüftaußenrotation 5, Kniebeugung 5, Kniestreckung 5, Fußhebung 5, Fußsenkung 5, Fußpronation 5, Fußsupination 5, Zehenstreckung 5, Zehenbeugung 5.\r\n\r\nMuskeldehnungsreflexe:  (0: fehlend, 1: schwach, 2: mittellebhaft, 3: lebhaft ohne Klonus, 4: mit Klonus)\r\n')">Peripher</button><br>
 
@@ -481,23 +491,24 @@
         </div>
 
         <div class="fcenter" id="Brief">
-            <textarea id="hh"></textarea><br>
+            <textarea id="hh" spellcheck="false"></textarea><br>
         </div>
 
         <div class="fright">
-            <button class="bt1" onclick="mannSx()">Mann</button>
-            <button class="bt1" onclick="frauSx()">Frau</button>
-<p>Patient:</p>
-             <p id="gesX" style="color:red;font-weight:bold;background-color:white;text-align:center;">noch unbestimmt</p>
+			<p>Patient:</p>
+            <p id="gesX" style="color:red;font-weight:bold;background-color:white;text-align:center;width:150px;height:18px;">M oder F?</p>
+            <button class="bt2" onclick="mannSx()">Mann</button>
+            <button class="bt2" onclick="frauSx()">Frau</button>
+			<br><br><br>
             <button class="bt1" onclick="ed1(dateGerman() + ' ')">Datum heute</button><br>
             <button class="bt1" onclick="ed1(timeGerman() + ' ')">Uhrzeit jetzt</button><br>
-            <button class="bt1" onclick="ed1('\r\n')">Zeilenwechsel</button><br>
-            <button class="bt1" onclick="ed1('\t')">Tab</button><br>
+            <button class="bt1" onclick="ed1('\r\n')">Eingabe-Taste</button><br>
+            <button class="bt1" onclick="ed1('\t')">Tab-Taste</button><br>
             <button class="bt1" onclick="ddel()">Alles Löschen</button><br>
             <button class="bt1" onclick="selCopTx()">Alles Kopieren</button><br>
             <!-- <button class="bt1" onclick ="">test</button><br> -->
             <br><br>
-            <button class="bt1" onclick="ed1('\r\nNeurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen\r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'):\r\n\r\nFremdanamnese (Angaben des der ):\r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button>
+            <button class="bt1" onclick="ed1('\r\nNeurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'):\r\n\r\nFremdanamnese (Angaben des der ):\r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button>
             <button class="bt1" onclick="ed1('\r\nVorläufiger Arztbrief\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links  \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\n' +
             Der_Patient + ' wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er +
             ' wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiografie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\n' +
