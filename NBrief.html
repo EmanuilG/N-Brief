@@ -160,7 +160,15 @@
             width: 50px;
         }
 
-        .nbblock {}
+.gfrtable {
+        padding: 10px;
+        text-align: left;
+        vertical-align: text-bottom;
+        }
+.gfrtable th, .gfrtable td {
+        padding: 10px;
+        }
+.nbblock {}
     </style>
 </head>
 
@@ -171,7 +179,7 @@
             <br> Emanuil Giuris
             <br>giuris@gmail.com
             <br>
-            <br> N-Brief 0.2, Letzte Aktualisierung: 11.01.2017
+            <br> N-Brief 0.2, Letzte Aktualisierung: 12.01.2017
         </p>
     </noscript>
 
@@ -202,24 +210,59 @@
                 <h4>GFR</h4>
                 <fieldset>
                     <form id="gfr">
-                        <label for="a"><b>Kreatinin</b> (Zahl 0-9 vor dem Komma)</label>&nbsp;
-                        <input type="number" id="a" name="a" value="1" min="0" max="9" onfocus="this.form.a.value=''">
-                        <br><br>
-                        <label for="b"><b>Kreatinin</b> (Zahl 0-9 nach dem Komma)</label>&nbsp;
-                        <input type="number" id="b" name="b" value="0" min="0" max="9">
-                        <br><br>
-                        <label for="c"><b>Alter</b> (18 bis 99)</label>&nbsp;
+<table class="gfrtable">
+    <tr>
+        <th>Kreatinin<br>mg/dl</th>
+        <th>Alter<br>(Jahre)</th>
+        <th>Geschlecht</th>
+        <th>Hautfarbe</th>
+        <th>GFR nach MDRD<br>ml/min/1,73 m<sup>2</sup></th>
+    </tr>
+<tr>
+    <td><label for="a"></label>
+                        <select id="a" onfocus="this.form.a.value='1'">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            </select>
+
+                        <label for="b"><b>,</b></label>
+                        <select id="b" onfocus="this.form.b.value='0'">
+                            <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                        </select></td>
+    <td><label for="c"></label>
                         <input type="number" id="c" name="c" value="60" min="18" max="99" onfocus="this.form.c.value='65'">
                         <output name="x" for="a, b"></output>
-                        <br><br>
-                        <label for="geschlecht"><b>Geschlecht</b></label>
-                        <input type="radio" name="geschlecht" value="mann" checked>Mann
-                        <input type="radio" name="geschlecht" value="frau">Frau <br><br>
-                        <label for="farbe"><b>Hautfarbe</b></label>
-                        <input type="radio" name="farbe" value="weiss" checked="checked">Nicht schwarz
-                        <input type="radio" name="farbe" value="schwarz">Schwarz <br><br>
-                        <button type="button" class="bt1" onclick="gfrCalc()">GFR nach MRRD</button>&nbsp;&nbsp;
-                        <textarea class="gfrclass" id="gfrp"></textarea> &nbsp;&nbsp; ml/min/1,73 m<sup>2</sup>
+                    </td>
+    <td>    <label for="geschlecht"></label>
+                        <input type="radio" name="geschlecht" value="mann" checked>Mann<br>
+                        <input type="radio" name="geschlecht" value="frau">Frau</td>
+    <td><label for="farbe"></label>
+                        <input type="radio" name="farbe" value="weiss" checked="checked">Nicht schwarz<br>
+                        <input type="radio" name="farbe" value="schwarz">Schwarz</td>
+                        <td><textarea class="gfrclass" id="gfrp"></textarea>
+                            <br><br><button type="button" class="bt1" onclick="gfrCalc()">GFR</button>
+                        </td>
+</tr>
+
+</table>
+
                     </form>
                 </fieldset>
             </div>
@@ -321,7 +364,7 @@
             <p>
                 Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br> Das Programm befindet sich in Entwicklung.<br>Die Texte sind in Zusammenarbeit entstanden. Dirk Bahner verfasste die Texte MS, BSV und BPLS. Den Text <b>Klinischer Befund</b> verbesserten Csilla Vincze, Dirk Bahner und Axel Saure. Marc Hennies hat viele gute Verbesserungsvorschläge zur Sprache der Texte gemacht.<br>
 				Auf Knopf-Klick wird der Text eingefügt.<br> Bitte lesen Sie den eingefügten Text im weißen Text-Bereich und bearbeiten Sie ihn sorgfältig.<br>Wer lieber
-                diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br> Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert.<br>Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br> Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br> Emanuil Giuris<br> giuris@gmail.com<br><br>N-Brief 0.2, Letzte Aktualisierung: 11.01.2017
+                diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br> Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert.<br>Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br> Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br> Emanuil Giuris<br> giuris@gmail.com<br><br>N-Brief 0.2, Letzte Aktualisierung: 12.01.2017
 				<br>GNU General Public License, Version 3
 				<br>
 				<a href="https://emanuilg.github.io/N-Brief/">N-Brief-Webseite</a>
@@ -532,7 +575,7 @@
             <br>
             <br>
             <br>
-            <span>N-Brief 0.2<br>11.01.2017</span>
+            <span>N-Brief 0.2<br>12.01.2017</span>
 
         </div>
 
@@ -747,10 +790,10 @@
             var al_2 = parseInt(al_1);
             var krea = parseInt(krea1) + parseInt(krea2) / 10;
             var gfr1 = 175 * Math.pow(krea, -1.154) * Math.pow(al_2, -0.203);
-            if (parseInt(krea2)>9){
-                alert("Bitte bei 'Kreatinin - Zahl nach dem Komma' nur eine Zahl zwischen 0 und 9");
-                return false;
-            };
+            // if (parseInt(krea2)>9){
+            //     alert("Bitte bei 'Kreatinin - Zahl nach dem Komma' nur eine Zahl zwischen 0 und 9");
+            //     return false;
+            // };
             if (ges == 'frau') {
                 gfr1 = gfr1 * 0.742;
             };
