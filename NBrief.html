@@ -185,7 +185,7 @@
             <br> Emanuil Giuris
             <br>giuris@gmail.com
             <br>
-            <br> N-Brief 0.2, Letzte Aktualisierung: 13.01.2017
+            <br> N-Brief 0.2, Letzte Aktualisierung: 15.01.2017
         </p>
     </noscript>
 
@@ -370,7 +370,7 @@
             <p>
                 Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br> Das Programm befindet sich in Entwicklung.<br>Die Texte sind in Zusammenarbeit entstanden. Dirk Bahner verfasste die Texte MS, BSV und BPLS. Den Text <b>Klinischer Befund</b> verbesserten Csilla Vincze, Dirk Bahner und Axel Saure. Marc Hennies hat viele gute Verbesserungsvorschläge zur Sprache der Texte gemacht.<br>
 				Auf Knopf-Klick wird der Text eingefügt.<br> Bitte lesen Sie den eingefügten Text im weißen Text-Bereich und bearbeiten Sie ihn sorgfältig.<br>Wer lieber
-                diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br> Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert.<br>Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br> Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br> Emanuil Giuris<br> giuris@gmail.com<br><br>N-Brief 0.2, Letzte Aktualisierung: 13.01.2017
+                diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br> Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert.<br>Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br> Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br> Emanuil Giuris<br> giuris@gmail.com<br><br>N-Brief 0.2, Letzte Aktualisierung: 15.01.2017
 				<br>GNU General Public License, Version 3
 				<br>
 				<a href="https://emanuilg.github.io/N-Brief/">N-Brief-Webseite</a>
@@ -403,9 +403,15 @@
             <button class="bt1 nbblock" onclick="showKlBef()">Klinischer Befund</button>
             <button class="bt1 nbblock" onclick="showMedi()">Medikamente</button>
             <button class="bt1 nbblock" onclick="showEpikr()">Epikrise</button>
+            <button class="bt1 nbblock" onclick="showBefunde()">Apparativ</button>
+
+            <br><br>
             <button class="bt1 nbblock" onclick="showMS()">MS</button>
             <button class="bt1 nbblock" onclick="showRS()">BSV-Fazialis-BPLS</button>
             <button class="bt1 nbblock" onclick="showDemPark()">Demenz-Parkinson</button>
+            <button class="bt1 nbblock" onclick="showKopfEpi()">Kopfschm - Epil</button>
+            <button class="bt1 nbblock" onclick="showGeri()">Geriatrie</button>
+            <hr>
 
             <div class="wrap3" id="Anrede">
                 <p class="stamp">Anrede</p>
@@ -500,6 +506,7 @@
             </div>
 
             <div class="wrap3" id="MS">
+                <p class="stamp">Multiple Sklerose</p>
 
                 <button class="bt1" onclick="ed1('\r\nVorläufiger Arztbrief\r\nDie Aufnahme erfolgte bei Verdacht auf eine entzündliche ZNS-Erkrankung. \r\nDie Aufnahme ' + des_Patienten +
                     ' erfolgte bei Verdacht auf erneuten Schub einer bekannten schubförmig remittierenden Multiplen Sklerose.\r\n\r\nDie Aufnahme ' + des_Patienten +
@@ -514,6 +521,8 @@
 
             <div class="wrap3" id="RS">
 
+                <p class="stamp">Bandscheibenvorfall, Fazialisparese, Lagerungsschwindel</p>
+
                 <button class="bt1" onclick="ed1('\r\nVorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte zur Abklärung von starken, immobilisierenden Rückenschmerzen. \r\n' + Der_Patient + ' berichtete, dass ' + er + ' seit ca. xxx Tagen Wochen Rückenschmerzen mit Ausstrahlung in das rechte/linke Bein habe. Spritzen durch den  Hausarzt, Wärmeanwendungen und eine konservative Schmerzmedikation hätte bisher zu keiner ausreichenden Besserung geführt. \r\n' + Herr + ' gab eine Schmerzausstrahlung in die Lateralseite des rechten linken Oberschenkels und in die Ventralseite des rechten linken Unterschenkels an (dem Dermatom L4/L5 rechts links entsprechend). \r\nIm klinisch neurologischen Befund zeigten sich keine Paresen, die Muskeleigenreflexe (PSR und ASR) waren seitengleich und mittellebhaft. \r\nWir führten ein MRT der LWS durch, hier zeigte sich xxx \r\nDurch eine Schmerzmedikation mit Naproxen und Metamizol sowie begleitender Physiotherapie und Wärmeanwendungen besserten sich die Schmerzen deutlich. \r\nWir stellten ' + den_Patienten + ' neurochirurgisch vor. Es wurde die Indikation zu einer operativen Behandlung gestellt und es erfolgte die Übernahme. \r\n' + Der_Patient + ' wurde über die operative Behandlung aufgeklärt, wünschte jedoch zunächst Bedenkzeit. Die hier angefertigten MRT wurde ' + dem_Patienten + ' auf CD mitgegeben. \r\nWir danken für die freundliche Weiterbehandlung.\r\nWir empfehlen eine Fortführung der konservativen Therapie mit an die Beschwerden adaptierter Schmerzmedikation sowie die Fortführung der Physiotherapie (insbesondere Rückenschule) und Wärmeanwendungen (Fango). \r\nWir konnten ' + Herrn + ' xxx am Datum in Ihre ambulante Weiterbetreuung entlassen und stehen Ihnen für Rückfragen gerne zur Verfügung.\r\n')">BSV</button><br>
 
                 <button class="bt1" onclick="ed1('\r\nVorläufiger Arztbrief\r\nSchwäche im Gesicht rechts links seit Datum.\r\nIn der klinischen Untersuchung war '+ der_Patient +' wach, orientiert und hatte eine periphere Fazialisparese rechts links. Es bestand kein anderes neurologisches Defizit.\r\nDer Lidschluss war komplett aber schwach / inkomplett, die Lidspalte beim versuchten Lidschluss betrug mm. Der Mundwinkel konnte etwas bewegt werden, war völlig gelähmt.\r\nEs bestand eine Hyperakusis rechts links und eine Verminderung des Geschmacksempfindens in der Zunge rechts links.\r\nEs bestand keine Rötung und keine Bläschen im äußeren Gehörgang oder im Gesicht.\r\nDer Liquor war normal.\r\nWir diagnostizierten eine idiopathische Fazialisparese und setzten Prednisolon 60 mg p.o. für 5 Tage (Beginn: Datum) an, das ab Datum täglich um 10 mg reduziert werden soll. Der Augenschutz ist besonders wichtig. Wir begannen mit künstlichen Tränen tagsüber sowie Dexpanthenol-Augensalbe und Uhrglasverband zur Nacht. Der Augenschutz sollte solange durchgeführt werden bis der Lidschluss objektiv komplett ist.\r\nWir bitten um eine ambulante neurologische und augenärztliche Vorstellung im Verlauf.\r\n')">Fazialis</button><br>
@@ -522,12 +531,47 @@
 
             </div>
 
+<div class="wrap3" id="Geri">
+
+    <p class="stamp">Geriatrie</p>
+
+    <button class="bt1" onclick="ed1('Geriatrie Text 1 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 1</button>
+    <button class="bt1" onclick="ed1('Geriatrie Text 2 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 2</button>
+    <button class="bt1" onclick="ed1('Geriatrie Text 3 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 3</button>
+
+</div>
+
+
             <div class="wrap3" id="DemPark">
 
-                <button class="bt1" onclick="ed1('Demenz\r\n')">Demenz</button><br>
-                <button class="bt1" onclick="ed1('Parkinson\r\n')">Parkinson</button><br>
+                <p class="stamp">Demenz und Parkinson</p>
+
+                <button class="bt1" onclick="ed1('Demenz - Ein Textbaustein ist in Vorbereitung\r\n')">Demenz</button><br>
+                <button class="bt1" onclick="ed1('Parkinson - Ein Textbaustein ist in Vorbereitung\r\n')">Parkinson</button><br>
 
             </div>
+
+            <div class="wrap3" id="KopfEpi">
+
+                <p class="stamp">Kopfschmerz und Epilepsie</p>
+                <button class="bt1" onclick="ed1('Kopfschmerz - Ein Textbaustein ist in Vorbereitung\r\n')">Kopfschmerz</button><br>
+                <button class="bt1" onclick="ed1('Epilepsie - Ein Textbaustein ist in Vorbereitung\r\n')">Epilepsie</button><br>
+            </div>
+
+            <div class="wrap3" id="Bef">
+
+                <p class="stamp">Apparative Befunde</p>
+
+                <button class="bt1" onclick="ed1('EEG - Ein Textbaustein ist in Vorbereitung\r\n')">EEG</button>
+                <button class="bt1" onclick="ed1('Neurosonografie - Ein Textbaustein ist in Vorbereitung\r\n')">Neurosonografie</button>
+                <button class="bt1" onclick="ed1('Neurografie - Ein Textbaustein ist in Vorbereitung\r\n')">Neurografie</button>
+                <button class="bt1" onclick="ed1('EMG - Ein Textbaustein ist in Vorbereitung\r\n')">EMG</button>
+                <button class="bt1" onclick="ed1('EP - Ein Textbaustein ist in Vorbereitung\r\n')">EP</button>
+                <button class="bt1" onclick="ed1('EKG - Ein Textbaustein ist in Vorbereitung\r\n')">EKG</button>
+                <button class="bt1" onclick="ed1('\r\nLabor: Großes Blutbild, Elektrolyte, Leberwerte, Nierenwerte, TSH, Gerinnung, Entzündungsparameter und Urinstatus unauffällig. HbA1c xxx (4,8-5,9) %, Triglyzeride xxx (<200) mg/dl, Cholesterin gesamt xxx (<220) mg/dl, LDL-Cholesterin xxx (<150) mg/dl.\r\n\r\n\r\nLiquor: Kernhaltige Zellen xxx/µl, davon xxx % Lymphozyten, Erythrozyten xxx/µl keine, Glukose xxx (40-70) mg/dl, Laktat xxx (10-22) mg/dl, Eiweiß xxx (150-450) mg/l. \r\n\r\n\Lumbalpunktion \r\n\r\nPunkteur: Name (Assistenzarzt Assistenzärztin)\r\n\r\nVorgehen: \r\nAufsuchen der Stichstelle in der unteren LWS, Desinfektion, sterile Abgedeckung, Punktion und Entnahme vom 8 ml klarem Liquor, Entfernung der Nadel, steriler Verband. Keine unmittelbaren Komplikationen. \r\n' +
+                Der_Patient + ' verneint Schmerzen, Schwindel, Übelkeit oder Unwohlsein.\r\n\r\n')">Labor und Liquor</button>
+            </div>
+
 
         </div>
 
@@ -541,34 +585,29 @@
             <p id="gesX" style="color:red;font-weight:bold;background-color:white;text-align:center;width:150px;height:18px;">M oder F?</p>
             <button class="bt2" onclick="mannSx()">Mann</button>
             <button class="bt2" onclick="frauSx()">Frau</button>
-			<br><br><br>
-            <button class="bt1" onclick="ed1(dateGerman() + ' ')">Datum heute</button><br>
-            <button class="bt1" onclick="ed1(timeGerman() + ' ')">Uhrzeit jetzt</button><br>
-            <button class="bt1" onclick="ed1('\r\n')">Eingabe-Taste</button><br>
-            <button class="bt1" onclick="ed1('\t')">Tab-Taste</button><br>
-            <button class="bt1" onclick="ddel()">Alles Löschen</button><br>
-            <button class="bt1" onclick="selCopTx()">Alles Kopieren</button><br>
+			<br><br>
+            <button class="bt2" onclick="ed1(dateGerman() + ' ')">Datum</button>
+            <button class="bt2" onclick="ed1('\r\n')">Eingabe</button>
+            <button class="bt2" onclick="ed1(timeGerman() + ' ')">Uhrzeit</button>
+            <button class="bt2" onclick="ed1('\t')">Tab</button><br><br>
+            <button class="bt1" onclick="ddel()">Lösch alles</button>
+            <button class="bt1" onclick="selCopTx()">Kopiere alles</button><br>
             <!-- <button class="bt1" onclick ="">test</button><br> -->
-            <br><br>
+            <br>
+            <br>
+            <br>
             <button class="bt1" onclick="ed1('\r\nNeurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'):\r\n\r\nFremdanamnese (Angaben des der ):\r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button>
             <button class="bt1" onclick="ed1('\r\nVorläufiger Arztbrief\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links  \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\n' +
             Der_Patient + ' wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er +
             ' wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiografie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\n' +
             Der_Patient + ' lebt zu Hause und kann sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten +
             ' notfallmäßig zur Thrombektomie. Wir bedanken uns für die Übernahme.\r\n\r\n')">Thrombektomie</button>
-            <button class="bt1" onclick="ed1('\r\nLabor: Großes Blutbild, Elektrolyte, Leberwerte, Nierenwerte, TSH, Gerinnung, Entzündungsparameter und Urinstatus unauffällig. HbA1c xxx (4,8-5,9) %, Triglyzeride xxx (<200) mg/dl, Cholesterin gesamt xxx (<220) mg/dl, LDL-Cholesterin xxx (<150) mg/dl.\r\n\r\n\r\nLiquor: Kernhaltige Zellen xxx/µl, davon xxx % Lymphozyten, Erythrozyten xxx/µl keine, Glukose xxx (40-70) mg/dl, Laktat xxx (10-22) mg/dl, Eiweiß xxx (150-450) mg/l. \r\n\r\n\Lumbalpunktion \r\n\r\nPunkteur: Name (Assistenzarzt Assistenzärztin)\r\n\r\nVorgehen: \r\nAufsuchen der Stichstelle in der unteren LWS, Desinfektion, sterile Abgedeckung, Punktion und Entnahme vom 8 ml klarem Liquor, Entfernung der Nadel, steriler Verband. Keine unmittelbaren Komplikationen. \r\n' +
-            Der_Patient + ' verneint Schmerzen, Schwindel, Übelkeit oder Unwohlsein.\r\n\r\n')">Labor und Liquor</button>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <button class="bt1" onclick="ed1('Geriatrie Text\r\n\r\n')">Geriatrie</button>
+
             <br>
             <br>
             <br>
             <p>&nbsp;&nbsp;&nbsp;<svg height="40" width="40"><polygon points="20.0,2.0 8.0,39.6 38.0,15.6 2.0,15.6 32.0,39.6" style="fill:gold;"/></svg></p>
-            <span>N-Brief 0.2 <br>13.01.2017</span>
+            <span>N-Brief 0.2 <br>15.01.2017</span>
 
         </div>
 
@@ -660,6 +699,9 @@
             document.getElementById("MS").style.display = "none";
             document.getElementById("RS").style.display = "none";
             document.getElementById("DemPark").style.display = "none";
+            document.getElementById("Bef").style.display = "none";
+            document.getElementById("KopfEpi").style.display = "none";
+            document.getElementById("Geri").style.display = "none";
         }
         // it does what it says
         function showAnr() {
@@ -691,6 +733,22 @@
             showNil1();
             document.getElementById("DemPark").style.display = "block";
         }
+
+        function showBefunde() {
+            showNil1();
+            document.getElementById("Bef").style.display = "block";
+        }
+
+        function showKopfEpi() {
+            showNil1();
+            document.getElementById("KopfEpi").style.display = "block";
+        }
+
+        function showGeri() {
+            showNil1();
+            document.getElementById("Geri").style.display = "block";
+        }
+
         // it does what it says
         function showMedi() {
             showNil1();
