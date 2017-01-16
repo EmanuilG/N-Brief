@@ -122,6 +122,11 @@
             background-color: red;
             color: white;
         }
+		
+		.btgrey {
+		background-color: grey;
+		}
+		
         .stamp {
             background: ;
             color: ;
@@ -185,7 +190,7 @@
             <br> Emanuil Giuris
             <br>giuris@gmail.com
             <br>
-            <br> N-Brief 0.2, Letzte Aktualisierung: 15.01.2017
+            <br> N-Brief 0.2, Letzte Aktualisierung: 16.01.2017
         </p>
     </noscript>
 
@@ -366,11 +371,11 @@
 
     <div id="viert" class="wrap2">
         <div class="fleft50">
-            <h3>Hilfe - Zusammenfassung</h3>
+            <h3>Hilfe</h3>
             <p>
                 Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br> Das Programm befindet sich in Entwicklung.<br>Die Texte sind in Zusammenarbeit entstanden. Dirk Bahner verfasste die Texte MS, BSV und BPLS. Den Text <b>Klinischer Befund</b> verbesserten Csilla Vincze, Dirk Bahner und Axel Saure. Marc Hennies hat viele gute Verbesserungsvorschläge zur Sprache der Texte gemacht.<br>
-				Auf Knopf-Klick wird der Text eingefügt.<br> Bitte lesen Sie den eingefügten Text im weißen Text-Bereich und bearbeiten Sie ihn sorgfältig.<br>Wer lieber
-                diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br> Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert.<br>Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br> Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br> Emanuil Giuris<br> giuris@gmail.com<br><br>N-Brief 0.2, Letzte Aktualisierung: 15.01.2017
+				Auf Knopf-Klick wird der Text eingefügt.<br> Grauer Knopf bedeutet, dass der Textbaustein noch in Vorbereitung ist. <br>Bitte lesen Sie den eingefügten Text im weißen Text-Bereich und bearbeiten Sie ihn sorgfältig.<br>Wer lieber
+                diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br> Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert.<br>Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br> Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br> Emanuil Giuris<br> giuris@gmail.com<br><br>N-Brief 0.2, Letzte Aktualisierung: 16.01.2017
 				<br>GNU General Public License, Version 3
 				<br>
 				<a href="https://emanuilg.github.io/N-Brief/">N-Brief-Webseite</a>
@@ -399,17 +404,17 @@
 
         <div class="fleft">
             <button class="bt1 nbblock" onclick="showAnr()">Anrede</button>
-            <button class="bt1 nbblock" onclick="showDiagn()">Diagnosen</button>
+            <button class="bt1 nbblock" onclick="showDiagn()">Diagnosen</button><br>
             <button class="bt1 nbblock" onclick="showKlBef()">Klinischer Befund</button>
-            <button class="bt1 nbblock" onclick="showMedi()">Medikamente</button>
+            <button class="bt1 nbblock" onclick="showMedi()">Medikamente</button><br>
             <button class="bt1 nbblock" onclick="showEpikr()">Epikrise</button>
             <button class="bt1 nbblock" onclick="showBefunde()">Apparativ</button>
 
             <br><br>
             <button class="bt1 nbblock" onclick="showMS()">MS</button>
-            <button class="bt1 nbblock" onclick="showRS()">BSV-Fazialis-BPLS</button>
+            <button class="bt1 nbblock" onclick="showRS()">BSV-Fazialis-BPLS</button><br>
             <button class="bt1 nbblock" onclick="showDemPark()">Demenz-Parkinson</button>
-            <button class="bt1 nbblock" onclick="showKopfEpi()">Kopfschm - Epil</button>
+            <button class="bt1 nbblock" onclick="showKopfEpi()">Kopfschm - Epil</button><br>
             <button class="bt1 nbblock" onclick="showGeri()">Geriatrie</button>
             <hr>
 
@@ -535,9 +540,10 @@
 
     <p class="stamp">Geriatrie</p>
 
-    <button class="bt1" onclick="ed1('Geriatrie Text 1 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 1</button>
-    <button class="bt1" onclick="ed1('Geriatrie Text 2 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 2</button>
-    <button class="bt1" onclick="ed1('Geriatrie Text 3 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 3</button>
+    <button class="bt1 btgrey" onclick="ed1('Geriatrie Text 1 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 1</button>
+    <button class="bt1 btgrey" onclick="ed1('Geriatrie Text 2 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 2</button>
+    <button class="bt1 btgrey" onclick="ed1('Geriatrie Text 3 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 3</button>
+    <button class="bt1 btgrey" onclick="ed1('Geriatrie Text 4 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 4</button>
 
 </div>
 
@@ -546,28 +552,28 @@
 
                 <p class="stamp">Demenz und Parkinson</p>
 
-                <button class="bt1" onclick="ed1('Demenz - Ein Textbaustein ist in Vorbereitung\r\n')">Demenz</button><br>
-                <button class="bt1" onclick="ed1('Parkinson - Ein Textbaustein ist in Vorbereitung\r\n')">Parkinson</button><br>
+                <button class="bt1 btgrey" onclick="ed1('Demenz - Ein Textbaustein ist in Vorbereitung\r\n')">Demenz</button><br>
+                <button class="bt1 btgrey" onclick="ed1('Parkinson - Ein Textbaustein ist in Vorbereitung\r\n')">Parkinson</button><br>
 
             </div>
 
             <div class="wrap3" id="KopfEpi">
 
                 <p class="stamp">Kopfschmerz und Epilepsie</p>
-                <button class="bt1" onclick="ed1('Kopfschmerz - Ein Textbaustein ist in Vorbereitung\r\n')">Kopfschmerz</button><br>
-                <button class="bt1" onclick="ed1('Epilepsie - Ein Textbaustein ist in Vorbereitung\r\n')">Epilepsie</button><br>
+                <button class="bt1 btgrey" onclick="ed1('Kopfschmerz - Ein Textbaustein ist in Vorbereitung\r\n')">Kopfschmerz</button><br>
+                <button class="bt1 btgrey" onclick="ed1('Epilepsie - Ein Textbaustein ist in Vorbereitung\r\n')">Epilepsie</button><br>
             </div>
 
             <div class="wrap3" id="Bef">
 
                 <p class="stamp">Apparative Befunde</p>
 
-                <button class="bt1" onclick="ed1('EEG - Ein Textbaustein ist in Vorbereitung\r\n')">EEG</button>
-                <button class="bt1" onclick="ed1('Neurosonografie - Ein Textbaustein ist in Vorbereitung\r\n')">Neurosonografie</button>
-                <button class="bt1" onclick="ed1('Neurografie - Ein Textbaustein ist in Vorbereitung\r\n')">Neurografie</button>
-                <button class="bt1" onclick="ed1('EMG - Ein Textbaustein ist in Vorbereitung\r\n')">EMG</button>
-                <button class="bt1" onclick="ed1('EP - Ein Textbaustein ist in Vorbereitung\r\n')">EP</button>
-                <button class="bt1" onclick="ed1('EKG - Ein Textbaustein ist in Vorbereitung\r\n')">EKG</button>
+                <button class="bt1 btgrey" onclick="ed1('EEG - Ein Textbaustein ist in Vorbereitung\r\n')">EEG</button>
+                <button class="bt1 btgrey" onclick="ed1('Neurosonografie - Ein Textbaustein ist in Vorbereitung\r\n')">Neurosonografie</button>
+                <button class="bt1 btgrey" onclick="ed1('Neurografie - Ein Textbaustein ist in Vorbereitung\r\n')">Neurografie</button>
+                <button class="bt1 btgrey" onclick="ed1('EMG - Ein Textbaustein ist in Vorbereitung\r\n')">EMG</button>
+                <button class="bt1 btgrey" onclick="ed1('EP - Ein Textbaustein ist in Vorbereitung\r\n')">EP</button>
+                <button class="bt1 btgrey" onclick="ed1('EKG - Ein Textbaustein ist in Vorbereitung\r\n')">EKG</button>
                 <button class="bt1" onclick="ed1('\r\nLabor: Großes Blutbild, Elektrolyte, Leberwerte, Nierenwerte, TSH, Gerinnung, Entzündungsparameter und Urinstatus unauffällig. HbA1c xxx (4,8-5,9) %, Triglyzeride xxx (<200) mg/dl, Cholesterin gesamt xxx (<220) mg/dl, LDL-Cholesterin xxx (<150) mg/dl.\r\n\r\n\r\nLiquor: Kernhaltige Zellen xxx/µl, davon xxx % Lymphozyten, Erythrozyten xxx/µl keine, Glukose xxx (40-70) mg/dl, Laktat xxx (10-22) mg/dl, Eiweiß xxx (150-450) mg/l. \r\n\r\n\Lumbalpunktion \r\n\r\nPunkteur: Name (Assistenzarzt Assistenzärztin)\r\n\r\nVorgehen: \r\nAufsuchen der Stichstelle in der unteren LWS, Desinfektion, sterile Abgedeckung, Punktion und Entnahme vom 8 ml klarem Liquor, Entfernung der Nadel, steriler Verband. Keine unmittelbaren Komplikationen. \r\n' +
                 Der_Patient + ' verneint Schmerzen, Schwindel, Übelkeit oder Unwohlsein.\r\n\r\n')">Labor und Liquor</button>
             </div>
@@ -587,7 +593,7 @@
             <button class="bt2" onclick="frauSx()">Frau</button>
 			<br><br>
             <button class="bt2" onclick="ed1(dateGerman() + ' ')">Datum</button>
-            <button class="bt2" onclick="ed1('\r\n')">Eingabe</button>
+            <button class="bt2" onclick="ed1('\r\n')">Eingabe</button><br>
             <button class="bt2" onclick="ed1(timeGerman() + ' ')">Uhrzeit</button>
             <button class="bt2" onclick="ed1('\t')">Tab</button><br><br>
             <button class="bt1" onclick="ddel()">Lösch alles</button>
@@ -606,8 +612,14 @@
             <br>
             <br>
             <br>
-            <p>&nbsp;&nbsp;&nbsp;<svg height="40" width="40"><polygon points="20.0,2.0 8.0,39.6 38.0,15.6 2.0,15.6 32.0,39.6" style="fill:gold;"/></svg></p>
-            <span>N-Brief 0.2 <br>15.01.2017</span>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<svg height="40" width="40"><polygon points="20.0,2.0 8.0,39.6 38.0,15.6 2.0,15.6 32.0,39.6" style="fill:gold;"/></svg></p>
+            <span>N-Brief 0.2 <br>16.01.2017</span>
 
         </div>
 
