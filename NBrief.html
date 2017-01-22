@@ -32,28 +32,32 @@ textarea{background-color:white;font-family:sans-serif;font-size:0.9em;color:#55
 input[type="number"]{width:50px;}
 .gfrtable{padding:10px;text-align:left;vertical-align:text-bottom;}
 .gfrtable th,.gfrtable td{padding:10px;}
-#gesX{color:red;font-weight:bold;background-color:white;text-align:center;width:150px;height:18px;}
+#gesX{
+color:red;font-weight:bold;background-color:white;text-align:center;width:150px;height:25px;animation-name:mannfrau;animation-duration:3s;animation-iteration-count:1;}
 hr{display:block;margin-left:0;width:304px;border-style:solid;
 border-width:1px;color:white;} 
-select{-webkit-appearance:none;-moz-appearance:none;appearance:none;
-border:none;border-radius:0;font-size:0.9em;width:100%} 
-select{width:50%;border: 1px solid;padding:.75em 1em .5em 1em;
+.select1{-webkit-appearance:none;-moz-appearance:none;appearance:none;
+border:none;border-radius:0;font-size:0.9em;} 
+.select1{width:50%;border:1px solid;padding:.75em 1em .5em 1em;
 box-shadow:0 0.3px 1px 0;
 background-position:right;background-repeat:no-repeat;}
-select:hover{box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);}
-select::-ms-expand{display:none;}
-.lt-ie10 select{background-image:none;}
-select{border:0.1px grey;padding:.1em 0.1em 0.1em 1em;
-box-shadow: 0 1px 1px 0 grey;background-color:white;color:white;}
-option{background:#003d66;border-top:1px solid #003d66;
-padding:0.5em;}
+.select1:hover{box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);}
+.select1::-ms-expand{display:none;}
+.select1{border:0;padding:.1em 0.1em 0.1em 1em;background-color:#003d66;color:white;}
+.select1 option{background:#003d66;padding:0.5em;}
+@keyframes mannfrau{
+0%{background-color:red;}
+10%{background-color:orange;}
+20%{background-color:yellow;}
+100%{background-color:white;}}
+.vertal{vertical-align:middle;} 
 </style>
 </head>
 <body>
 <noscript><p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. <br>Dieser Code wird von Ihrem Browser interpretiert. <br>Sie sehen diesen Text, weil Javascript in Ihrem Browser deaktiviert ist. Erwägen Sie bitte, Javascript zu aktivieren. <br>Der N-Brief braucht einen neuen Browser, am besten funktioniert er mit Firefox 45 oder neuer<br>
-<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.2, Letzte Aktualisierung: 22.01.2017</p></noscript>
+<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.3, Letzte Aktualisierung: 22.01.2017</p></noscript>
 <div id="topBar">
-<button class="bt1" onclick="ez1()">Neuro-Brief</button>
+<button class="bt1" onclick="ez1()">Arztbrief</button>
 <button class="bt1" onclick="ez4()">Hilfe</button>
 <button class="bt1" onclick="ez2()">Rechner / Skalen</button>
 </div>
@@ -62,7 +66,7 @@ padding:0.5em;}
 
 <h3>Skalen und Rechner</h3>
 <div class="fleft" id="panelSkalen">
-<button class="bt1" onclick="showGfr()">GFR</button><br>
+<button class="bt1" onclick="showGfr()">GFR</button><br><br>
 <button class="bt1" onclick="showLdopa()">L-Dopa-Dosis</button>
 </div>
 
@@ -148,7 +152,7 @@ padding:0.5em;}
 <div class="fleft50">
 <h3>Hilfe</h3>
 <p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm befindet sich in Entwicklung.<br>Die Texte sind in Zusammenarbeit entstanden. Dirk Bahner verfasste die Texte MS, BSV und BPLS. Den Text <b>Klinischer Befund</b> verbesserten Csilla Vincze, Dirk Bahner und Axel Saure. Marc Hennies hat viele gute Verbesserungsvorschläge zur Sprache der Texte gemacht.<br>Die Knöpfe mit der Umrandung fügen Textbausteine in den Textbereich hinzu oder sind die Eingabe- bzw. die Tab-Taste.
-<br>Grauer Knopf bedeutet, dass der Textbaustein noch in Vorbereitung ist. <br>Bitte lesen Sie den eingefügten Text im weißen Textbereich kritisch und bearbeiten Sie ihn sorgfältig.<br>Wer lieber diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert. Wenn Sie HTML-, CSS- und Javascript kostenfrei und ohne Anmeldung lernen möchten, besuchen Sie : <a href="http://www.w3schools.com/">w3schools</a>. Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.2, Letzte Aktualisierung: 22.01.2017<br>GNU General Public License, Version 3
+<br>Grauer Knopf bedeutet, dass der Textbaustein noch in Vorbereitung ist. <br>Bitte lesen Sie den eingefügten Text im weißen Textbereich kritisch und bearbeiten Sie ihn sorgfältig.<br>Wer lieber diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert. Wenn Sie HTML-, CSS- und Javascript kostenfrei und ohne Anmeldung lernen möchten, besuchen Sie : <a href="http://www.w3schools.com/">w3schools</a>. Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.3, Letzte Aktualisierung: 22.01.2017<br>GNU General Public License, Version 3
 <br><a href="https://emanuilg.github.io/N-Brief/">N-Brief-Webseite</a><br></p>
 </div>
 <div class="fright50">
@@ -183,49 +187,70 @@ padding:0.5em;}
 <br><br>
 <!-- <button class="bt1 bttext" onclick="anArzt()">An Arzt/Ärztin:</button> -->
 <form>
-<select id="mySelect" size="4" onclick="anArzt()">
+<select id="mySelect" class="select1" size="6" onclick="anArzt()">
+  <option value="Ajouri">Ajouri</option>
   <option value="Auel">Auel</option>
-  <option value="Brönnecke-Born">Brönnecke-Born</option>
+  <option value="Behr">Behr</option>
+  <option value="Brönneke-Born">Brönneke-Born</option>
+  <option value="Dippel">Dippel</option>
+  <option value="Dürr-Hohenthanner">Dürr-Hohenthanner</option>
   <option value="Englisch">Englisch</option>
+  <option value="Funck">Funck</option>
+  <option value="Götte">Götte</option>
+  <option value="Handke">Handke</option>
+  <option value="Hejazi">Hejazi</option>
+  <option value="Hussainy">Hussainy</option>
+  <option value="Keimer">Keimer</option>
+  <option value="Keymling">Keymling</option>
   <option value="Kuhl">Kuhl</option>
+  <option value="Kirchhoff">Kirchhoff</option>
   <option value="Kurz">Kurz</option>
   <option value="Lotter">Lotter</option>
+  <option value="Müller-Siebert">Müller-Siebert</option>
+  <option value="Nadjm">Nadjm</option>
+  <option value="Nachtmann">Nachtmann</option>
+  <option value="Neumann-Haefelin">Neumann-Haefelin</option>
   <option value="Saure">Saure</option>
+  <option value="Schäfer">Schäfer</option>
+  <option value="Schell">Schell</option>
   <option value="Schieren">Schieren</option>
+  <option value="Schmidtlein">Schmidtlein</option>
   <option value="Schweitzer">Schweitzer</option>
+  <option value="Teetz">Teetz</option>
   <option value="Vargas-Leal">Vargas-Leal</option>
+  <option value="Vogelpohl">Vogelpohl</option>
+  <option value="von Manteuffel">von Manteuffel</option>
  </select>
 </form><br>
-
 </div>
 <div class="wrap3" id="Diagnosen">
 <p class="stamp">Diagnosen</p>
 <button class="bt1 bttext" onclick="ed1('Aktuell:\r\n\r\n\r\nVordiagnosen:\r\n')" title="Aktuell - Vordiagnosen">Aktuell/Vordiagnosen</button>
-<button class="bt1 bttext" onclick="ed1('Hirninfarkt im Stromgebiet der A cerebri media posterior anterior rechts links\r\n')" title="Hirninfarkt im Stromgebiet der A cerebri media posterior anterior rechts links">Hirninfarkt</button><br>
-<button class="bt1 bttext" onclick="ed1('Infarkt im Hirnstamm Kleinhirn rechts links\r\n')" title="Infarkt im Hirnstamm Kleinhirn rechts links">Hirnstamm-Kleinhirn</button>
-<button class="bt1 bttext" onclick="ed1('Hirnblutung ca.  x cm rechts links\r\n')" title="Hirnblutung ca.  x cm rechts links">Hirnblutung</button><br>
-<button class="bt1 bttext" onclick="ed1('Subarachnoidalblutung Hunt Hess mit Ventrikeleinblutung\r\n')" title="Subarachnoidalblutung Hunt Hess mit Ventrikeleinblutung">SAB</button>
-<button class="bt1 bttext" onclick="ed1('Transitorisch-ischämische Attacke\r\n')" title="Transitorisch-ischämische Attacke">TIA</button><br>
-<button class="bt1 bttext" onclick="ed1('Transiente globale Amnesie\r\n')" title="Transiente globale Amnesie">TGA</button>
-<button class="bt1 bttext" onclick="ed1('Vorhofflimmern, Erstdiagnose, ohne unter Antikoagulation mit\r\n')" title="Vorhofflimmern, Erstdiagnose, ohne unter Antikoagulation mit">VHF</button><br>
-<button class="bt1 bttext" onclick="ed1('Epileptischer Anfall\r\n')" title="Epileptischer Anfall">Epil. Anfall</button>
-<button class="bt1 bttext" onclick="ed1('KHK\r\n')" title="KHK">KHK</button><br>
-<button class="bt1 bttext" onclick="ed1('Arterielle Hypertonie\r\n')" title="Arterielle Hypertonie">Art. Hypertonie</button>
-<button class="bt1 bttext" onclick="ed1('Diabetes mellitus Typ 1 2\r\n')" title="Diabetes mellitus Typ 1 2">DM</button><br>
-<button class="bt1 bttext" onclick="ed1('Niereninsuffizienz Stadium\r\n')" title="Niereninsuffizienz Stadium">Niereninsuffizienz</button>
-<button class="bt1 bttext" onclick="ed1('Herzinsuffizienz NYHA\r\n')" title="Herzinsuffizienz NYHA">Herzinsuffizienz</button><br>
-<button class="bt1 bttext" onclick="ed1('COPD Stadium\r\n')" title="COPD Stadium">COPD</button>
 <button class="bt1 bttext" onclick="ed1('Adipositas\r\n')" title="Adipositas">Adipositas</button><br>
-<button class="bt1 bttext" onclick="ed1('Hyperlipidämie\r\n')" title="Hyperlipidämie">Hyperlipidämie</button>
-<button class="bt1 bttext" onclick="ed1('Alkoholkrankheit\r\n')" title="Alkoholkrankheit">Alkoholkrankheit</button><br>
-<button class="bt1 bttext" onclick="ed1('Demenz, leicht, mittelschwer, schwer\r\n')" title="Demenz, leicht, mittelschwer, schwer">Demenz</button>
-<button class="bt1 bttext" onclick="ed1('Idiopathisches Parkinson-Syndrom\r\n')" title="Idiopathisches Parkinson-Syndrom">Parkinson</button><br>
-<button class="bt1 bttext" onclick="ed1('Periphere Fazialisparese\r\n')" title="Periphere Fazialisparese">Fazialisparese</button>
-<button class="bt1 bttext" onclick="ed1('Funktionelle Körperbeschwerden\r\n')" title="Funktionelle Körperbeschwerden">Funktionell</button><br>
-<button class="bt1 bttext" onclick="ed1('Gutartiger Lagerungsschwindel des hinteren Bogengangs rechts links\r\n')" title="Gutartiger Lagerungsschwindel des hinteren Bogengangs rechts links">Lagerungsschwindel</button>
-<button class="bt1 bttext" onclick="ed1('Migräne mit ohne Aura\r\n')" title="Migräne mit ohne Aura">Migräne</button><br>
-<button class="bt1 bttext" onclick="ed1('Depression\r\n')" title="Depression">Depression</button>
+<button class="bt1 bttext" onclick="ed1('Alkoholkrankheit\r\n')" title="Alkoholkrankheit">Alkoholkrankheit</button>
+<button class="bt1 bttext" onclick="ed1('Arterielle Hypertonie\r\n')" title="Arterielle Hypertonie">Art. Hypertonie</button><br>
+<button class="bt1 bttext" onclick="ed1('COPD Stadium\r\n')" title="COPD Stadium">COPD</button>
 <button class="bt1 bttext" onclick="ed1('Delir\r\n')" title="Delir">Delir</button><br>
+<button class="bt1 bttext" onclick="ed1('Demenz, leicht, mittelschwer, schwer\r\n')" title="Demenz, leicht, mittelschwer, schwer">Demenz</button>
+<button class="bt1 bttext" onclick="ed1('Depression\r\n')" title="Depression">Depression</button><br>
+<button class="bt1 bttext" onclick="ed1('Diabetes mellitus Typ 1 2\r\n')" title="Diabetes mellitus Typ 1 2">DM</button>
+<button class="bt1 bttext" onclick="ed1('Epileptischer Anfall\r\n')" title="Epileptischer Anfall">Epil. Anfall</button><br>
+<button class="bt1 bttext" onclick="ed1('Funktionelle Körperbeschwerden\r\n')" title="Funktionelle Körperbeschwerden">Funktionell</button>
+<button class="bt1 bttext" onclick="ed1('Gutartiger Lagerungsschwindel des hinteren Bogengangs rechts links\r\n')" title="Gutartiger Lagerungsschwindel des hinteren Bogengangs rechts links">Lagerungsschwindel</button><br>
+<button class="bt1 bttext" onclick="ed1('Herzinsuffizienz NYHA\r\n')" title="Herzinsuffizienz NYHA">Herzinsuffizienz</button>
+<button class="bt1 bttext" onclick="ed1('Hirnblutung ca.  x cm rechts links\r\n')" title="Hirnblutung ca.  x cm rechts links">Hirnblutung</button><br>
+<button class="bt1 bttext" onclick="ed1('Hirninfarkt im Stromgebiet der A cerebri media posterior anterior rechts links\r\n')" title="Hirninfarkt im Stromgebiet der A cerebri media posterior anterior rechts links">Hirninfarkt</button>
+<button class="bt1 bttext" onclick="ed1('Hyperlipidämie\r\n')" title="Hyperlipidämie">Hyperlipidämie</button><br>
+<button class="bt1 bttext" onclick="ed1('Idiopathisches Parkinson-Syndrom\r\n')" title="Idiopathisches Parkinson-Syndrom">Parkinson</button>
+<button class="bt1 bttext" onclick="ed1('Infarkt im Hirnstamm Kleinhirn rechts links\r\n')" title="Infarkt im Hirnstamm Kleinhirn rechts links">Hirnstamm-Kleinhirn</button><br>
+<button class="bt1 bttext" onclick="ed1('KHK\r\n')" title="KHK">KHK</button>
+<button class="bt1 bttext" onclick="ed1('Migräne mit ohne Aura\r\n')" title="Migräne mit ohne Aura">Migräne</button><br>
+<button class="bt1 bttext" onclick="ed1('Niereninsuffizienz Stadium\r\n')" title="Niereninsuffizienz Stadium">Niereninsuffizienz</button>
+<button class="bt1 bttext" onclick="ed1('Periphere Fazialisparese\r\n')" title="Periphere Fazialisparese">Fazialisparese</button><br>
+<button class="bt1 bttext" onclick="ed1('Subarachnoidalblutung Hunt Hess mit Ventrikeleinblutung\r\n')" title="Subarachnoidalblutung Hunt Hess mit Ventrikeleinblutung">SAB</button>
+<button class="bt1 bttext" onclick="ed1('Transiente globale Amnesie\r\n')" title="Transiente globale Amnesie">TGA</button><br>
+<button class="bt1 bttext" onclick="ed1('Transitorisch-ischämische Attacke\r\n')" title="Transitorisch-ischämische Attacke">TIA</button>
+<button class="bt1 bttext" onclick="ed1('Vorhofflimmern, Erstdiagnose, ohne unter Antikoagulation mit\r\n')" title="Vorhofflimmern, Erstdiagnose, ohne unter Antikoagulation mit">VHF</button><br>
 <button class="bt1 bttext" onclick="ed1('Z.n.\r\n')" title="Z.n.">Z.n.</button><br>
 </div>
 <div class="wrap3" id="Epikrise">
@@ -236,24 +261,39 @@ padding:0.5em;}
 </div>
 <div class="wrap3" id="Medikamente">
 <p class="stamp">Medikamente</p>
-<button class="bt1 bttext" onclick="ed1('ASS 100 mg\t\t\t1-0-0\r\n')" title="ASS 100 mg">ASS</button>
-<button class="bt1 bttext" onclick="ed1('Ramipril 5 mg\t\t\t1-0-0\r\n')" title="Ramipril 5 mg">Ramipril</button>
-<button class="bt1 bttext" onclick="ed1('Amlodipin 5 mg\t\t\t1-0-0\r\n')" title="Amlodipin 5 mg">Amlodipin</button>
-<button class="bt1 bttext" onclick="ed1('Metoprolol 95 mg\t\t\t1-0-0\r\n')" title="Metoprolol 95 mg">Metoprolol</button>
-<button class="bt1 bttext" onclick="ed1('Simvastatin 40 mg\t\t\t0-0-1\r\n')" title="Simvastatin 40 mg">Simvastatin</button>
-<button class="bt1 bttext" onclick="ed1('Atorvastatin 40 mg\t\t\t0-0-1\r\n')" title="Atorvastatin 40 mg">Atorvastatin</button>
-<button class="bt1 bttext" onclick="ed1('Metformin 1000 mg\t\t\t1-0-1\r\n')" title="Metformin 1000 mg">Metformin</button>
-<button class="bt1 bttext" onclick="ed1('Levodopa 100/25 mg\t\t\t1-1-1\r\n')" title="Levodopa 100/25 mg">Levodopa</button>
-<button class="bt1 bttext" onclick="ed1('L-Thyroxin 100 µg\t\t\t1-0-0\r\n')" title="L-Thyroxin 100 µg">L-Thyroxin</button>
-<button class="bt1 bttext" onclick="ed1('HCT 25 mg\t\t\t1-0-0\r\n')" title="HCT 25 mg">HCT</button>
-<button class="bt1 bttext" onclick="ed1('Levetiracetam 1000 mg\t\t\t1-0-1\r\n')" title="Levetiracetam 1000 mg">Levetiracetam</button>
-<button class="bt1 bttext" onclick="ed1('Mirtazapin 30 mg\t\t\t0-0-1\r\n')" title="Mirtazapin">Mirtazapin</button>
-<button class="bt1 bttext" onclick="ed1('Enoxaparin 0,4 ml        \t\t\t0-0-1\r\n')" title="Enoxaparin">Enoxaparin</button>
-<button class="bt1 bttext" onclick="ed1('Apixaban 5 mg\t\t\t1-0-1\r\n')" title="Apixaban">Apixaban</button>
-<button class="bt1 bttext" onclick="ed1('Valproat 500 mg\t\t\t1-0-1\r\n')" title="Valproat">Valproat</button>
+<button class="bt1 bttext" onclick="ed1('Amlodipin 5 mg p.o.\t\t\t1-0-0\r\n')" title="Amlodipin 5 mg">Amlodipin</button>
+<button class="bt1 bttext" onclick="ed1('Apixaban 5 mg p.o.\t\t\t1-0-1\r\n')" title="Apixaban">Apixaban</button>
+<button class="bt1 bttext" onclick="ed1('ASS 100 mg p.o.\t\t\t1-0-0\r\n')" title="ASS 100 mg">ASS</button>
+<button class="bt1 bttext" onclick="ed1('Atorvastatin 20 mg p.o.\t\t\t0-0-1\r\n')" title="Atorvastatin 20 mg">Atorvastatin</button>
+<button class="bt1 bttext" onclick="ed1('Citalopram 20 mg p.o.\t\t\t0-0-1\r\n')" title="Citalopram 20 mg">Citalopram</button>
+<button class="bt1 bttext" onclick="ed1('Clopidogrel 75 mg p.o.\t\t\t0-0-1\r\n')" title="Clopidogrel 75 mg">Clopidogrel</button>
+<button class="bt1 bttext" onclick="ed1('Enoxaparin 0,4 ml s.c.       \t\t\t0-0-1\r\n')" title="Enoxaparin">Enoxaparin</button>
+<button class="bt1 bttext" onclick="ed1('Furosemid 20 mg p.o. i.v.\t\t\t1-0-0\r\n')" title="Furosemid 20 mg">Furosemid</button>
+<button class="bt1 bttext" onclick="ed1('HCT 25 mg p.o.\t\t\t1-0-0\r\n')" title="HCT 25 mg">HCT</button>
+<button class="bt1 bttext" onclick="ed1('Ibuprofen 400 mg p.o.\t\t\t1-1-1\r\n')" title="Ibuprofen">Ibuprofen</button>
+<button class="bt1 bttext" onclick="ed1('Insulin glargin (Lantus) (Abasaglar) I.E. s.c.\t\t\t0-0-10\r\n')" title="Insulin glargin">Insulin glargin</button>
+<button class="bt1 bttext" onclick="ed1('L-Thyroxin 100 µg p.o.\t\t\t1-0-0\r\n')" title="L-Thyroxin 100 µg">L-Thyroxin</button>
+<button class="bt1 bttext" onclick="ed1('Levetiracetam 1000 mg p.o. i.v.\t\t\t1-0-1\r\n')" title="Levetiracetam 1000 mg">Levetiracetam</button>
+<button class="bt1 bttext" onclick="ed1('Levodopa 100/25 mg p.o.\t\t\t1-1-1\r\n')" title="Levodopa 100/25 mg">Levodopa</button>
+<button class="bt1 bttext" onclick="ed1('Lorazepam 1 mg p.o.\t\t\t1-1-1\r\n')" title="Lorazepam 1 mg">Lorazepam</button>
+<button class="bt1 bttext" onclick="ed1('Metformin 1000 mg p.o.\t\t\t1-0-1\r\n')" title="Metformin 1000 mg">Metformin</button>
+<button class="bt1 bttext" onclick="ed1('Metoprolol 95 mg p.o.\t\t\t1-0-0\r\n')" title="Metoprolol 95 mg">Metoprolol</button>
+<button class="bt1 bttext" onclick="ed1('Midazolam-Perfusor\r\n')" title="Midazolam-Perfusor">Midazolam-Perfusor</button>
+<button class="bt1 bttext" onclick="ed1('Mirtazapin 30 mg p.o.\t\t\t0-0-1\r\n')" title="Mirtazapin">Mirtazapin</button>
+<button class="bt1 bttext" onclick="ed1('Paracetamol 500 mg p.o.\t\t\t1-1-1\r\n')" title="Paracetamol">Paracetamol</button>
+<button class="bt1 bttext" onclick="ed1('Phenprocoumon 3 mg p.o.\t\tnach INR (Ziel 2-3)\r\n')" title="Phenprocoumon">Phenprocoumon</button>
+<button class="bt1 bttext" onclick="ed1('Pipamperon Saft (4 mg/ml) 6 ml  p.o.\t\t\t0-0-1\r\n')" title="Pipamperon">Pipamperon</button>
 <button class="bt1 bttext" onclick="ed1('Prednisolon 60 mg p.o.\t\t\t1-0-0 bis Datum,\r\ndanach täglich um 10 mg reduzieren\r\n')" title="Prednisolon">Prednisolon</button>
-<button class="bt1 bttext" onclick="ed1('Ibuprofen 400 mg\t\t\t1-1-1\r\n')" title="Ibuprofen">Ibuprofen</button>
-<button class="bt1 bttext" onclick="ed1('Paracetamol 500 mg\t\t\t1-1-1\r\n')" title="Paracetamol">Paracetamol</button>
+<button class="bt1 bttext" onclick="ed1('Ramipril 5 mg p.o.\t\t\t1-0-0\r\n')" title="Ramipril 5 mg">Ramipril</button>
+<button class="bt1 bttext" onclick="ed1('Risperidon 1 mg p.o.\t\t\t0-0-1\r\n')" title="Risperidon 1 mg">Risperidon</button>
+<button class="bt1 bttext" onclick="ed1('Simvastatin 40 mg p.o.\t\t\t0-0-1\r\n')" title="Simvastatin 40 mg">Simvastatin</button>
+<button class="bt1 bttext" onclick="ed1('Sterofundin \t 2000 ml/d\r\n')" title="Sterofundin">Sterofundin</button>
+<button class="bt1 bttext" onclick="ed1('Sufentanil-Perfusor\r\n')" title="Sufentanil-Perfusor">Sufentanil-Perfusor</button>
+<button class="bt1 bttext" onclick="ed1('Tilidin 50 mg p.o.\t\t\t1-1-1\r\n')" title="Tilidin 50 mg">Tilidin</button>
+<button class="bt1 bttext" onclick="ed1('Torasemid 5 mg p.o.\t\t\t1-0-0\r\n')" title="Torasemid 5 mg">Torasemid</button>
+<button class="bt1 bttext" onclick="ed1('Urapidil-Perfusor\t nach RR\r\n')" title="Urapidil-Perfusor">Urapidil-Perfusor</button>
+<button class="bt1 bttext" onclick="ed1('Valproat 500 mg p.o. i.v.\t\t\t1-0-1\r\n')" title="Valproat">Valproat</button>
+<button class="bt1 bttext" onclick="ed1('Valsartan 40 mg p.o.\t\t\t1-0-1\r\n')" title="Valsartan 40 mg">Valsartan</button>
 </div>
 <div class="wrap3" id="Klinischer_Befund">
 <p class="stamp">Klinischer Befund</p>
@@ -308,7 +348,7 @@ Der_Patient + ' verneint Schmerzen, Schwindel, Übelkeit oder Unwohlsein.\r\n\r\
 </div>
 <div class="fright">
 <p>Patient:</p>
-<p id="gesX">M oder F?</p>
+<p id="gesX"><span class="vertal">Mann oder Frau?</span></p>
 <button class="bt2" onclick="mannSx()">Mann</button>
 <button class="bt2" onclick="frauSx()">Frau</button>
 <br><br>
@@ -318,13 +358,18 @@ Der_Patient + ' verneint Schmerzen, Schwindel, Übelkeit oder Unwohlsein.\r\n\r\
 <button class="bt2 bttext" onclick="ed1('\t')">Tab</button><br><br>
 <button class="bt1" onclick="ddel()">Lösch alles</button>
 <button class="bt1" onclick="selCopTx()">Kopiere alles</button><br>
+<button class="bt1" onclick="location.reload()">N-Brief aktualisieren</button><br>
 <br><br><br>
 <button class="bt1 bttext" onclick="ed1('\r\nNeurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'):\r\n\r\nFremdanamnese (Angaben des der ):\r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button>
 <button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links  \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\n' + Der_Patient + ' wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiografie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\n' + Der_Patient + ' lebt zu Hause und kann sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur Thrombektomie. Wir bedanken uns für die Übernahme.\r\n\r\n')">Thrombektomie</button>
 <button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nSubarachnoidalblutung\r\nV.a. Aneurysma der A. cerebri media interna anterior posterior communicans rechts links \r\n\r\n\r\nSehr geehrter Herr Prof. Behr, \r\n\r\n' + Der_Patient + ' bekam plötzlich starke Kopfschmerzen wurde vorgefunden. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte Nackensteife eine Hemiparese rechts links. \r\nDas Schädel-CT zeigte Blut subarachnoiddal, die CT-Angiografie zeigte ein Aneurysma.\r\nWir senkten den Blutdruck mit Urapidil.\r\nVormedikation: \r\n' + Der_Patient + ' lebte bisher zu Hause und konnte sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur weiteren Behandlung. \r\nBei Verlegung ist ' + Der_Patient + ' spontanatmend intubiert/beatmet, atem/kreislaufstabil, hat einen arteriellen Katheter in der A. radialis rechts links. \r\nWir bedanken uns für die Übernahme.\r\n\r\n')">SAB</button>
-<button class="bt1 bttext" onclick="ed1('\r\nDiagnosen:\r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor. \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\n\r\nEigenanamnese: \r\nFremdanamnese: \r\n\r\nKlinischer Befund: \r\nZusatzdiagnostik \r\nLabor: \r\nEKG: \r\nSchädel-CT: \r\n\r\nEmpfehlungen: \r\n\r\n\r\n' + Herr + ' xxx wurde ambulant belassen. Wir stehen für Fragen gerne zur Verfügung. \r\n')">Kurzbrief ZNA</button><br><br><br><br><br><br><br>
+<button class="bt1 bttext" onclick="ed1('\r\nDiagnosen:\r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor. \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\n\r\nEigenanamnese: \r\nFremdanamnese: \r\nVorerkrankungen: \r\nVormedikation: \r\n\r\nKlinischer Befund: \r\nZusatzdiagnostik \r\nLabor: \r\nEKG: \r\nSchädel-CT: \r\n\r\nEmpfehlungen: \r\n\r\n\r\n' + Herr + ' xxx wurde ambulant belassen. Wir stehen für Fragen gerne zur Verfügung. \r\n')">Kurzbrief ZNA</button><br>
+<button class="bt1 bttext" onclick="ed1('Aufnahme-Diagnose:\r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor.\r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht.\r\nZuletzt ohne die jetzigen Symptome: \r\nEigenanamnese: \r\nFremdanamnese: \r\nVorerkrankungen: \r\nVormedikation: \r\nAlkohol/Rauchen/Drogen: \r\nPsychosoziale Anamnese: \r\n\tLebt zu Hause im Pflegeheim \r\n\tPflegegrad \r\n\tVorsorgevollmacht: Betreuung: Ja Nein \r\n\tBevollmächtigt: \r\n\tAngehöriger (Name): \r\n\tAngehöriger (Tel): \r\n\tHausarzt: \r\n\r\nKlinischer Befund: \r\nLabor: \r\nEKG: \r\nSchädel-CT: \r\n\r\nAufnahme auf OST3 OST1(Stroke) OST1(Intensiv): \r\n')">Aufnahmebogen</button><br>
+<!-- <button class="bt1 bttext" onclick="ed1('\r\nAufnahme-Diagnose:\r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor. \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\nZuletzt ohne die jetzigen Symptome: \r\n\r\nEigenanamnese: \r\nFremdanamnese: \r\nVorerkrankungen: \r\nVormedikation: \r\nAlkohol/Rauchen/Drogen: \r\nPsychosoziale Anamnese: \r\n
+\tLebt zu Hause im Pflegeheim \r\n\tPflegegrad \r\n\tVorsorgevollmacht \r\n\tBetreuuung durch: \r\n\r\n\tAngehöriger (Name): \r\n\tAngehöriger (Tel): \r\n\tHausarzt: \r\n\r\nKlinischer Befund: \r\nZusatzdiagnostik \r\nLabor: \r\nEKG: \r\nSchädel-CT: \r\n\r\nEmpfehlungen: \r\n\')">Aufnahmebogen</button><br> -->
+<br><br><br><br><br><br>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;<svg height="40" width="40"><polygon points="20.0,2.0 8.0,39.6 38.0,15.6 2.0,15.6 32.0,39.6" style="fill:gold;"/></svg></p>
-<span>N-Brief 0.2 <br>22.01.2017</span>
+<span>N-Brief 0.3 <br>22.01.2017</span>
 </div></div>
 <script>
 // the m/f-related variables are declared
@@ -346,8 +391,8 @@ var Linkshaenderin;
 // all male forms are set
 function mannSx() {
 var i1 = document.getElementById('gesX');
-i1.innerHTML = "Mann";
-i1.style = "color:#003d66";
+i1.innerHTML = "<span class='vertal'>Mann</span>";
+i1.style = "color:#003d66;animation-iteration-count:0;";
 Der_Patient = "Der Patient";
 der_Patient = "der Patient";
 Er = "Er";
@@ -366,8 +411,8 @@ Linkshaender = "Linkshänder";
 // all female forms are set
 function frauSx() {
 var i1 = document.getElementById('gesX');
-i1.innerHTML = "Frau";
-i1.style = "color:#003d66";
+i1.innerHTML = "<span class='vertal'>Frau</span>";
+i1.style = "color:#003d66;animation-iteration-count:0;";
 Der_Patient = "Die Patientin";
 der_Patient = "die Patientin";
 Er = "Sie";
@@ -427,15 +472,51 @@ function showKlBef() {showNil1();document.getElementById("Klinischer_Befund").st
 function showNilSkalen() {document.getElementById("levodopa").style.display="none";document.getElementById("Gfr1").style.display = "none";}
 function showGfr() {showNilSkalen();document.getElementById("Gfr1").style.display = "block";}
 function showLdopa() {showNilSkalen();document.getElementById("levodopa").style.display = "block";}
+// it inserts the text at the cursor position, after the insertion the cursor stays at the end of the inserted text in the textarea.
+function ed1(text) {
+        var txtarea = document.getElementById("hh");
+        var scrollPos = txtarea.scrollTop;
+        var strPos = 0;
+        var br = ((txtarea.selectionStart || txtarea.selectionStart == '0') ?
+                "ff" : (document.selection ? "ie" : false));
+        if (br == "ie") {
+            txtarea.focus();
+            var range = document.selection.createRange();
+            range.moveStart('character', -txtarea.value.length);
+            strPos = range.text.length;
+        }
+        else if (br == "ff")
+            strPos = txtarea.selectionStart;
+        var front = (txtarea.value).substring(0, strPos);
+        var back = (txtarea.value).substring(strPos, txtarea.value.length);
+        txtarea.value = front + text + back;
+        strPos = strPos + text.length;
+        if (br == "ie") {
+            txtarea.focus();
+            var range = document.selection.createRange();
+            range.moveStart('character', -txtarea.value.length);
+            range.moveStart('character', strPos);
+            range.moveEnd('character', -1);
+            range.select();
+        }
+        else if (br == "ff") {
+            txtarea.selectionStart = strPos;
+            txtarea.selectionEnd = strPos-1;
+            txtarea.focus();
+        }
+        txtarea.scrollTop = scrollPos;
+    }
 // it inserts the myValue at the cursor position, after an insertion the cursor jumps to the end of the text in the textarea.
-function ed1(myValue) {
-var myField = document.getElementById("hh")
-if (myField.selectionStart || myField.selectionStart == '0') {
-var startPos = myField.selectionStart;
-var endPos = myField.selectionEnd;
-myField.value = myField.value.substring(0, startPos) +
-myValue + myField.value.substring(endPos, myField.value.length);
-} else {myField.value += myValue;}}
+// function ed1(myValue) {
+// var myField = document.getElementById("hh")
+// if (myField.selectionStart || myField.selectionStart == '0') {
+// var startPos = myField.selectionStart;
+// var endPos = myField.selectionEnd;
+// myField.value = myField.value.substring(0, startPos) +
+// myValue + myField.value.substring(endPos, myField.value.length);
+// } else {myField.value += myValue;}}
+
+
 // delete all text from the textarea
 function ddel() {document.getElementById("hh").value = "";}
 // copy all text from the textarea
@@ -478,7 +559,7 @@ if (farbe == 'schwarz') {gfr1 = gfr1 * 1.212;};
 var gfr4 = Math.round(gfr1);document.getElementById("gfrp").innerHTML = gfr4;}
 // date according to usual German format
 function dateGerman() {
-let str = new Date().toISOString();return str.replace(/(\d{4})-(\d{2})-(\d{2}).*$/, "$3.$2.$1");}
+let str = new Date().toISOString();return str.replace(/(\d{4})-(\d{2})-(\d{2}).*$/, "$3.$2.$1 ");}
 // time according to usual German format
 function timeGerman() {
 let d = new Date;let hours = d.getHours();let minutes = d.getMinutes();
