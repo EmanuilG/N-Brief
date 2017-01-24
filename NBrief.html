@@ -32,8 +32,7 @@ textarea{background-color:white;font-family:sans-serif;font-size:0.9em;color:#55
 input[type="number"]{width:50px;}
 .gfrtable{padding:10px;text-align:left;vertical-align:text-bottom;}
 .gfrtable th,.gfrtable td{padding:10px;}
-#gesX{
-color:#003d66;font-weight:bold;background-color:white;text-align:center;width:150px;height:25px;animation-name:mannfrau;animation-duration:3s;animation-iteration-count:2;}
+#gesX{color:red;font-weight:bold;background-color:white;text-align:center;width:150px;height:25px;animation-name:mannfrau;animation-duration:3s;animation-iteration-count:3;}
 hr{display:block;margin-left:0;width:304px;border-style:solid;
 border-width:1px;color:white;} 
 .select1{-webkit-appearance:none;-moz-appearance:none;appearance:none;
@@ -43,19 +42,21 @@ box-shadow:0 0.3px 1px 0;
 background-position:right;background-repeat:no-repeat;}
 .select1:hover{box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);}
 .select1::-ms-expand{display:none;}
-.select1{border:0;padding:.1em 0.1em 0.1em 1em;background-color:#003d66;color:white;}
-.select1 option{background:#003d66;padding:0.5em;}
+.select1{border:10;padding:0.1em 0.1em 0.1em 1em;background-color:#003d66;color:white;}
+.select1 option{background:#003d66;padding:0.2em;}
+.select2{width:90%}
 @keyframes mannfrau{
 0%{background-color:red;}
 10%{background-color:orange;}
-20%{background-color:yellow;}
+30%{background-color:yellow;}
 100%{background-color:white;}}
 .vertal{vertical-align:middle;} 
+
 </style>
 </head>
 <body>
 <noscript><p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. <br>Dieser Code wird von Ihrem Browser interpretiert. <br>Sie sehen diesen Text, weil Javascript in Ihrem Browser deaktiviert ist. Erwägen Sie bitte, Javascript zu aktivieren. <br>Der N-Brief braucht einen neuen Browser, am besten funktioniert er mit Firefox 45 oder neuer<br>
-<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.3, Letzte Aktualisierung: 23.01.2017</p></noscript>
+<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.3, Letzte Aktualisierung: 24.01.2017</p></noscript>
 <div id="topBar">
 <button class="bt1" onclick="ez1()">Arztbrief</button>
 <button class="bt1" onclick="ez4()">Hilfe</button>
@@ -152,14 +153,14 @@ background-position:right;background-repeat:no-repeat;}
 <div class="fleft50">
 <h3>Hilfe</h3>
 <p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm befindet sich in Entwicklung.<br>Die Texte sind in Zusammenarbeit entstanden. Dirk Bahner verfasste die Texte MS, BSV und BPLS. Den Text <b>Klinischer Befund</b> verbesserten Csilla Vincze, Dirk Bahner und Axel Saure. Marc Hennies hat viele gute Verbesserungsvorschläge zur Sprache der Texte gemacht.<br>Die Knöpfe mit der Umrandung fügen Textbausteine in den Textbereich hinzu oder sind die Eingabe- bzw. die Tab-Taste.
-<br>Grauer Knopf bedeutet, dass der Textbaustein noch in Vorbereitung ist. <br>Bitte lesen Sie den eingefügten Text im weißen Textbereich kritisch und bearbeiten Sie ihn sorgfältig.<br>Wer lieber diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert. Wenn Sie HTML-, CSS- und Javascript kostenfrei und ohne Anmeldung lernen möchten, besuchen Sie : <a href="http://www.w3schools.com/">w3schools</a>. Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.3, Letzte Aktualisierung: 23.01.2017<br>GNU General Public License, Version 3
+<br>Grauer Knopf bedeutet, dass der Textbaustein noch in Vorbereitung ist. <br>Bitte lesen Sie den eingefügten Text im weißen Textbereich kritisch und bearbeiten Sie ihn sorgfältig.<br>Wer lieber diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert. Wenn Sie HTML-, CSS- und Javascript kostenfrei und ohne Anmeldung lernen möchten, besuchen Sie : <a href="http://www.w3schools.com/">w3schools</a>. Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.3, Letzte Aktualisierung: 24.01.2017<br>GNU General Public License, Version 3
 <br><a href="https://emanuilg.github.io/N-Brief/">N-Brief-Webseite</a><br></p>
 </div>
 <div class="fright50">
 <h3>Tastenkkombinationen</h3> Die folgenden Tastenkkombinationen gelten in den meisten Windows-Anwendungen.<br>Sie helfen bei der Textbearbeitung.<br>Sie gelten auch für das weiße Textfeld im 'N-Brief'.
 <h4>Kopieren, Einfügen, Finden</h4> 'Strg' + C : Die Auswahl kopieren <br>'Strg' + X : Die Auswahl ausschneiden <br>'Strg' + V : Die Auswahl einfügen <br>'Strg' + F : Suchen
 <h4>Rückgängig</h4> 'Strg' + Z : Die vorherige Aktion rückgängig machen <br>'Strg' + Y : Die zurückgenommene Aktion wiederherstellen
-<h4>Cursor-Bewegung</h4> 'Strg' + 'Pfeil rechts' : Cursor ein Wort nach rechts<br>'Strg' + 'Pfeil links' : Cursor ein Wort nach links<br>'Pos1' : Cursor zum Beginn der Zeile<br>'Ende' : Cursor zum Ende der Zeile<br>'Strg' + 'Pos1' : Cursor zum Beginn des Textes<br>'Strg' + 'Ende' : Cursor zum Ende des Textes<br>'Tab' : Die Tab-Taste funktioniert normal.
+<h4>Cursor-Bewegung</h4> 'Strg' + 'Pfeil rechts' : Cursor ein Wort nach rechts<br>'Strg' + 'Pfeil links' : Cursor ein Wort nach links<br>'Pos1' : Cursor zum Beginn der Zeile<br>'Ende' : Cursor zum Ende der Zeile<br>'Strg' + 'Pos1' : Cursor zum Beginn des Textes<br>'Strg' + 'Ende' : Cursor zum Ende des Textes<br>'Tab' : Die Tab-Taste funktioniert nun normal.
 <h4>Auswählen</h4>'Strg' + A : Den gesamten Text auswählen<br>'Umschalt' + 'Pfeil rechts' : Eine Stelle rechts vom Cursor auswählen<br>'Strg' + 'Umschalt' + 'Pfeil rechts' : Das Wort rechts vom Cursor auswählen<br>'Umschalt' + 'Pos1' : Bis zum Beginn der Zeile auswählen<br>'Umschalt' + 'Ende' : Bis zum Ende der Zeile auswählen<br>'Strg' + 'Umschalt' + 'Pos1' : Bis zum Beginn des Textes auswählen<br>'Strg' + 'Umschalt' + 'Ende' : Bis zum Ende des Textes auswählen<br>Doppelklick auf ein Wort : Das Wort auswählen 
 </div></div>
 <div id="erst" class="wrap2_1">
@@ -168,7 +169,7 @@ background-position:right;background-repeat:no-repeat;}
 <button class="bt1 nbblock" onclick="showDiagn()">Diagnosen</button><br>
 <button class="bt1 nbblock" onclick="showKlBef()">Klinischer Befund</button>
 <button class="bt1 nbblock" onclick="showMedi()">Medikamente</button><br>
-<button class="bt1 nbblock" onclick="showEpikr()">Epikrise</button>
+<button class="bt1 nbblock" onclick="showEpikr()">Epikrise/Symptome</button>
 <button class="bt1 nbblock" onclick="showBefunde()">Apparativ</button>
 <br><br>
 <button class="bt1 nbblock" onclick="showMS()">MS</button>
@@ -186,7 +187,7 @@ background-position:right;background-repeat:no-repeat;}
 <br><br>
 <!-- <button class="bt1 bttext" onclick="anArzt()">An Arzt/Ärztin:</button> -->
 <form>
-<select id="mySelect" class="select1" size="6" onclick="anArzt()">
+<select id="mySelect" class="select1" size="10" onclick="anArzt()">
   <option value="Ajouri">Ajouri</option>
   <option value="Auel">Auel</option>
   <option value="Behr">Behr</option>
@@ -254,12 +255,75 @@ background-position:right;background-repeat:no-repeat;}
 </div>
 <div class="wrap3" id="Epikrise">
 <p class="stamp">Epikrise</p>
-<button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte wegen Kopfschmerzen Schwäche der rechten linken  Körperseite, Schwindels, eines Bewusstseinsverlustes, Taubheitsgefühls der rechten linken Körperseite. \r\nAm Datum ca. Uhrzeit merkte ' + der_Patient + ', dass \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vorgefunden. \r\n' + Der_Patient + ' wurde durch den Rettungsdienst gebracht. \r\n' + Der_Patient + ' stellte sich am Datum in der Notaufnahme vor. \r\n' + Er + ' klagt über xxx seit xxx Stunden Tagen Wochen. \r\n' + Der_Patient + ' berichtet, dass ' + er + ' \r\nDie Angehörigen berichten dass, \r\n' + Der_Patient + ' lebte bisher zu Hause, arbeitete als xxx und konnte sich selbst versorgen. \r\n' + Der_Patient + ' lebte bisher im Heim, hatte Pflegegrad . \r\n' + Er + ' konnte sich teilweise selbst versorgen. ' + Er + ' ging ohne Hilfsmittel am Rollator am Stock. \r\nwar harninkontinent harnkontinent. \r\nAngabe von Nichtrauchen xxx Zigaretten täglich und von xxx Glas Wein Bier täglich in der Woche von seltenem keinem Alkoholgenuss. \r\nEs gibt eine Vorsorgevollmacht (bevollmächtigt: ) und eine Patientenverfügung\r\n')">Anamnese</button>
+<button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte wegen Kopfschmerzen Schwäche der rechten linken Körperseite, Schwindels, eines Bewusstseinsverlustes, Taubheitsgefühls der rechten linken Körperseite. \r\nAm Datum ca. Uhrzeit merkte ' + der_Patient + ', dass \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vorgefunden. \r\n' + Der_Patient + ' wurde durch den Rettungsdienst gebracht. \r\n' + Der_Patient + ' stellte sich am Datum in der Notaufnahme vor. \r\n' + Er + ' klagt über xxx seit xxx Stunden Tagen Wochen. \r\n' + Der_Patient + ' berichtet, dass ' + er + ' \r\nDie Angehörigen berichten dass, \r\n' + Der_Patient + ' lebte bisher zu Hause, arbeitete als xxx und konnte sich selbst versorgen. \r\n' + Der_Patient + ' lebte bisher im Heim, hatte Pflegegrad . \r\n' + Er + ' konnte sich teilweise selbst versorgen. ' + Er + ' ging ohne Hilfsmittel am Rollator am Stock. \r\nwar harninkontinent harnkontinent. \r\nAngabe von Nichtrauchen xxx Zigaretten täglich und von xxx Glas Wein Bier täglich in der Woche von seltenem keinem Alkoholgenuss. \r\nEs gibt eine Vorsorgevollmacht (bevollmächtigt: ) und eine Patientenverfügung\r\n\r\nMedikation bei Aufnahme\r\n')">Anamnese</button>
 <button class="bt1 bttext" onclick="ed1('\r\nDie klinische Untersuchung deckte kein neurologisches Defizit auf. \r\nIn der klinischen Untersuchung war ' + der_Patient + ' wach, orientiert und hatte xxx. \r\nDas Schädel-CT zeigte\r\nkeine frische Ischämie oder Blutung. \r\neinen Hirninfarkt im Stromgebiet der Arteria cerebri media posterior anterior rechts links \r\nDas Schädel-CT zeigte Marklagerveränderungen einen Hirninfarkt eine Blutung. \r\nDas Schädel-MRT zeigte \r\nDas Labor war im Normbereich zeigte \r\nDie transthorakale Echokardiografie zeigte keine Emboliequelle. \r\nDie transösophageale Echokardiografie zeigte keine Emboliequelle. \r\nDie Neurosonografie zeigte Plaques und geringgradige Stenose der Karotiden. \r\nDie Elektrophysiologie\r\nwar regelrecht\r\nwaren regelrecht. wegweisend. \r\nWährend der Monitor-Überwachung von Datum bis Datum stellten wir kein Vorhofflimmern fest. \r\nIm Laufe des stationären Aufenthaltes \r\n')">Befunde</button>
 <button class="bt1 bttext" onclick="ed1('\r\nWir gehen bei bestehendem Vorhofflimmern von einem embolischen Hirninfarkt aus. \r\nWir gehen von einem atherothrombotischen Prozess aus. \r\nUrsächlich für den Hirninfarkt war die Stenose der xxx\r\nWir klärten ' + den_Patienten + ' über einen gesunden Lebensstil im kardiovaskulären Sinn auf. \r\nNach ausführlichen Gesprächen mit der Familie entschieden wir uns gemeinsam gemäß dem mutmaßlichen Willen ' + des_Patienten + ' für eine rein palliative Behandlung. \r\nEine ambulante Kontrolle von xxx wird empfohlen. \r\n' + Herr + ' xxx wird am Datum in Ihre Weiterbehandlung entlassen. \r\nwie vereinbart in Ihre Rehabilitations-Klinik zurück verlegt. \r\nWir danken für die freundliche Übernahme. \r\nWir stehen für Fragen gerne zur Verfügung. \r\n')">Schluss</button>
+<p class="stamp">Subjektive Symptome</p>
+<form>
+<select id="symptSubj" class="select1 select2" size="7" onclick="symptSu()">
+<option value="im Arm im Gesicht im Bein im Bauch in der Brust ">Arm Gesicht  Bein Bauch Brust</option>
+<option value="rechts links ">rechts links</option>
+<option value="seit: Dauer: Häufigkeit: / Stärke: (in der Skala 0-10) Linderung durch: Verchlimmerung durch: ">seit: Dauer: Häufigkeit: Stärke: Linderung durch: schlimmer durch:</option>
+<option value="Schmerz ">Schmerz</option>
+<option value="Rückenschmerzen ">Rückenschmerzen</option>
+<option value="Kopfschmerzen ">Kopfschmerzen</option>
+<option value="Schwierigkeit beim Gehen ">Schwierigkeit beim Gehen</option>
+<option value="Schwierigkeit beim Sehen ">Schwierigkeit beim Sehen</option>
+<option value="Schwierigkeit beim Sprechen ">Schwierigkeit beim Sprechen</option>
+<option value="Schwierigkeit beim Erinnern ">Schwierigkeit beim Erinnern</option>
+<option value="Schwierigkeit beim Schlucken ">Schwierigkeit beim Schlucken</option>
+<option value="Schwierigkeit mit dem Wasserlassen ">Schwierigkeit mit dem Wasserlassen</option>
+<option value="Übelkeit ">Übelkeit</option>
+<option value="Erbrechen ">Erbrechen</option>
+<option value="Schwindel ">Schwindel</option>
+<option value="Taubheitsgefühl ">Taubheitsgefühl</option>
+<option value="Kribbeln ">Kribbeln</option>
+<option value="Angst ">Angst</option>
+<option value="Niedergeschlagenheit ">Niedergeschlagenheit</option>
+<option value="Schwäche ">Schwäche </option>
+<option value="Ohnmacht ">Ohnmacht</option>
+<option value="Bewusstseinsverlust ">Bewusstseinsverlust</option>
+<option value="Zuckungen ">Zuckungen</option>
+<option value="Luftnot ">Luftnot</option>
+<option value="Doppeltsehen ">Doppeltsehen</option>
+<option value="Verschwommensehen ">Verschwommensehen</option>
+<option value="Zittern ">Zittern</option>
+</select>
+</form>
+<p class="stamp">Objektive Symptome</p>
+<form>
+<select id="symptObj" class="select1 select2" size="7" onclick="symptOb()">
+<option value="Somnolenz ">Somnolenz</option>
+<option value="Koma ">Koma</option>
+<option value="Störung der Aufmerksamkeit ">Störung der Aufmerksamkeit </option>
+<option value="Störung des Kurzzeitgedächtnisses ">Störung des Kurzzeitgedächtnisses</option>
+<option value="Depression ">Depression</option>
+<option value="Erregung ">Erregung</option>
+<option value="Aggressivität ">Aggressivität</option>
+<option value="Parese ">Parese</option>
+<option value="Diplopie ">Diplopie</option>
+<option value="Kopfimpulstest negativ positiv ">Kopfimpulstest</option>
+<option value="Blickparese ">Blickparese</option>
+<option value="Dysarthrie ">Dysarthrie</option>
+<option value="Aphasie, der Ausdruck das Verständnis leicht schwer beeinträchtigt ">Aphasie</option>
+<option value="Hemiparese ">Hemiparese </option>
+<option value="Rigor ">Rigor</option>
+<option value="Tremor ">Tremor</option>
+<option value="Hemihypästhesie ">Hemihypästhesie </option>
+<option value="Hemianopsie ">Hemianopsie </option>
+<option value="Auslöschungsphänomen visuell taktil ">Auslöschungsphänomen </option>
+<option value="Gangstörung ">Gangstörung</option>
+<option value="Ataxie ">Ataxie</option>
+<option value="Babinski-Zeichen ">Babinski-Zeichen</option>
+<option value="Rasselgeräusche ">Rasselgeräusche</option>
+ </select>
+</form><br>
+
+
+
 </div>
 <div class="wrap3" id="Medikamente">
-<p class="stamp">Medikamente</p>
+<!-- <p class="stamp">Medikamente</p> -->
 <button class="bt1 bttext" onclick="edein('Amlodipin 5 mg p.o.\t\t\t1-0-0\r\n')" title="Amlodipin 5 mg">Amlodipin</button>
 <button class="bt1 bttext" onclick="edein('Apixaban 5 mg p.o.\t\t\t1-0-1\r\n')" title="Apixaban">Apixaban</button>
 <button class="bt1 bttext" onclick="edein('ASS 100 mg p.o.\t\t\t1-0-0\r\n')" title="ASS 100 mg">ASS</button>
@@ -347,7 +411,7 @@ er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen n
 </div>
 <div class="fright">
 <p>Patient:</p>
-<p id="gesX"><span class="vertal">Mann oder Frau?</span></p>
+<p id="gesX"><span class="vertal" id="mof">Mann oder Frau?</span></p>
 <button class="bt2" onclick="mannSx()">Mann</button>
 <button class="bt2" onclick="frauSx()">Frau</button>
 <br><br>
@@ -357,6 +421,7 @@ er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen n
 <button class="bt2 bttext" onclick="ed1('\t')">Tab</button><br><br>
 <button class="bt1" onclick="ddel()">Lösch alles</button>
 <button class="bt1" onclick="selCopTx()">Kopiere alles</button><br>
+<button class="bt1" onclick="winscroll()">Window hoch</button>
 <button class="bt1" onclick="location.reload()">N-Brief aktualisieren</button><br>
 <br><br><br>
 <button class="bt1 bttext" onclick="ed1('\r\nNeurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'): \r\n\r\nFremdanamnese (Angaben des der ): \r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button>
@@ -364,9 +429,11 @@ er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen n
 <button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nSubarachnoidalblutung\r\nV.a. Aneurysma der A. cerebri media interna anterior posterior communicans rechts links \r\n\r\n\r\nSehr geehrter Herr Prof. Behr, \r\n\r\n' + Der_Patient + ' bekam plötzlich starke Kopfschmerzen wurde vorgefunden. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte Nackensteife eine Hemiparese rechts links. \r\nDas Schädel-CT zeigte Blut subarachnoiddal, die CT-Angiografie zeigte ein Aneurysma.\r\nWir senkten den Blutdruck mit Urapidil.\r\nVormedikation: \r\n' + Der_Patient + ' lebte bisher zu Hause und konnte sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur weiteren Behandlung. \r\nBei Verlegung ist ' + der_Patient + ' spontanatmend intubiert/beatmet, atem/kreislaufstabil, hat einen arteriellen Katheter in der A. radialis rechts links. \r\nWir bedanken uns für die Übernahme.\r\n\r\n')">SAB</button>
 <button class="bt1 bttext" onclick="ed1('\r\nDiagnosen:\r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor. \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\n\r\nEigenanamnese: \r\nFremdanamnese: \r\nVorerkrankungen: \r\nVormedikation: \r\n\r\nKlinischer Befund: \r\nZusatzdiagnostik \r\nLabor: \r\nEKG: \r\nSchädel-CT: \r\n\r\nEmpfehlungen: \r\n\r\n\r\n' + Herr + ' xxx wurde ambulant belassen. Wir stehen für Fragen gerne zur Verfügung. \r\n')">Kurzbrief ZNA</button><br>
 <button class="bt1 bttext" onclick="ed1('Klinik für Neurologie - Aufnahmebogen\r\n\r\nUntersucher: \r\nUntersuchungs-Datum: \r\nUntersuchungs-Uhrzeit: \r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor.\r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\nAufnahme-Diagnose: V.a. \r\n\r\nZuletzt ohne die jetzigen Symptome: \r\nEigenanamnese: \r\n\r\nFremdanamnese: \r\n\r\nVorerkrankungen: \r\n\r\nVormedikation: \r\n\r\nAlkohol/Rauchen/Drogen: \r\n\r\nPsychosoziale Anamnese: \r\n\tLebt zu Hause im Pflegeheim \r\n\tPflegegrad \r\n\tVorsorgevollmacht: Betreuung: Ja Nein \r\n\tBevollmächtigt: \r\n\tAngehöriger (Name): \r\n\tAngehöriger (Tel): \r\n\tHausarzt: \r\n\r\nKlinischer Befund: \r\n\r\nLabor: \r\n\r\nEKG: \r\n\r\nSchädel-CT: \r\n\r\nAufnahme auf \r\nOST1(Stroke) \r\nOST3 \r\n\OST1(Intensiv)\r\n')">Aufnahmebogen</button>
+
+
 <br><br><br><br>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;<svg height="40" width="40"><polygon points="20.0,2.0 8.0,39.6 38.0,15.6 2.0,15.6 32.0,39.6" style="fill:gold;"/></svg></p>
-<span>N-Brief 0.3 <br>23.01.2017</span>
+<span>N-Brief 0.3 <br>24.01.2017</span>
 </div></div>
 <script>
 // the m/f-related variables are declared
@@ -469,55 +536,8 @@ function showKlBef() {showNil1();document.getElementById("Klinischer_Befund").st
 function showNilSkalen() {document.getElementById("levodopa").style.display="none";document.getElementById("Gfr1").style.display = "none";}
 function showGfr() {showNilSkalen();document.getElementById("Gfr1").style.display = "block";}
 function showLdopa() {showNilSkalen();document.getElementById("levodopa").style.display = "block";}
-// it inserts the text at the cursor position, after the insertion the cursor stays at the end of the inserted text in the textarea.
-// function ed1(text) {
-//         var txtarea = document.getElementById("hh");
-//         var scrollPos = txtarea.scrollTop;
-//         var strPos = 0;
-//         var br = ((txtarea.selectionStart || txtarea.selectionStart == '0') ?
-//                 "ff" : (document.selection ? "ie" : false));
-//         if (br == "ie") {
-//             txtarea.focus();
-//             var range = document.selection.createRange();
-//             range.moveStart('character', -txtarea.value.length);
-//             strPos = range.text.length;
-//         }
-//         else if (br == "ff")
-//             strPos = txtarea.selectionStart;
-//         var front = (txtarea.value).substring(0, strPos);
-//         var back = (txtarea.value).substring(strPos, txtarea.value.length);
-//         txtarea.value = front + text + back;
-//         strPos = strPos + text.length;
-//         if (br == "ie") {
-//             txtarea.focus();
-//             var range = document.selection.createRange();
-//             range.moveStart('character', -txtarea.value.length);
-//             range.moveStart('character', strPos);
-//             range.moveEnd('character', -1);
-//             range.select();
-//         }
-//         else if (br == "ff") {
-//             txtarea.selectionStart = strPos;
-//             txtarea.selectionEnd = strPos-1;
-//             txtarea.focus();
-//         }
-//         txtarea.scrollTop = scrollPos;
-//     }
-// it inserts the myValue at the cursor position, after an insertion the cursor jumps to the end of the text in the textarea.
-// function ed1(myValue) {
-//     var myField = document.getElementById("hh")
-//     if (myField.selectionStart || myField.selectionStart == '0') {
-//         var startPos = myField.selectionStart;
-//         var endPos = myField.selectionEnd;
-//         myField.value = myField.value.substring(0, startPos) +
-//         myValue + myField.value.substring(endPos, myField.value.length);
-//     } 
-//     else {myField.value += myValue;}
-// }
 
-// after I understood fully the selectionStart etc.:
 function ed1(inp) {
-    // get the textarea
     let tarea = document.getElementById("hh");
     // find and define the start and end of selection
     let sst=tarea.selectionStart;
@@ -530,7 +550,7 @@ function ed1(inp) {
     tarea.selectionStart=sst + inp.length;
     tarea.selectionEnd=sst + inp.length;
     tarea.focus();
-}
+    }
 
 function edein(inp) {
     // just the ed1, only the cursor a place to the left
@@ -542,13 +562,12 @@ function edein(inp) {
     tarea.selectionStart=sst + inp.length - 1;
     tarea.selectionEnd=sst + inp.length - 1;
     tarea.focus();
-}
+    }
 
 // delete all text from the textarea
-
 function ddel() {document.getElementById("hh").value = "";}
-// copy all text from the textarea
 
+// copy all text from the textarea
 function selCopTx() {var ta = document.getElementById("hh");
 ta.focus();ta.select();var tz = document.execCommand("copy");return tz;}
 
@@ -556,7 +575,6 @@ ta.focus();ta.select();var tz = document.execCommand("copy");return tz;}
 function getSum(total, num) {return total + num;};
 
 // get the input of the Parkinson medication dose, calculate the LED for each, then for all of them.
-
 function ldopaCalc() {
 let Levodopa1 = document.getElementById('Levodopa').value;
 let Levodopa_ret1 = document.getElementById('Levodopa_ret').value;
@@ -571,15 +589,14 @@ let Aman1 = document.getElementById('Amantadin').value;
 let Apo1 = document.getElementById('Apomorphin').value;
 let parkMed = [Levodopa1 * 1, Levodopa_ret1 * 0.75, Duodopa1 * 1.1, Ld_Ent1 * 1.33, Pram1 * 100, Rop1 * 20, Rot1 * 30, Piri1 * 1, Ras1 * 100, Aman1 * 1, Apo1 * 10];
 document.getElementById("led").innerHTML=Math.round(parkMed.reduce(getSum));};
-// turn all numeric input of the parkinson medication to null
 
+// turn all numeric input of the parkinson medication to null
 function parkMed() {
 let allParkMed = document.getElementById('levodopaEqDosis').elements;
 for (let i = 0; i < allParkMed.length - 2; i++) {
 allParkMed[i].value = 0;}};
 
 // GFR Calculator
-
 function gfrCalc() {
 var krea1 = document.getElementById("gfr").elements['a'].value;
 var krea2 = document.getElementById("gfr").elements['b'].value;
@@ -605,18 +622,18 @@ if (minutes < 10) {minutes = "0" + minutes};
 let timeGerman = hours + ":" + minutes + " Uhr";
 return timeGerman;}
 
-function anArzt() {var x = document.getElementById("mySelect").value;edein(x+',\r\n');}
+function anArzt() {let x = document.getElementById("mySelect").value;edein(x+',\r\n');}
+
+function symptSu() {let y1 =
+document.getElementById("symptSubj").value;ed1(y1);}
+
+function symptOb() {let y2 =
+document.getElementById("symptObj").value;ed1(y2);}
 
 function tabJa(){
-    let textArea = document.getElementById("hh");
-    textArea.onkeydown=function(z){
-        if (z.keyCode === 9) { // 9 is tab
-            let valT=this.value;
-            start=this.selectionStart;
-            end=this.selectionEnd;
-            this.value=valT.substring(0,start)+'\t'+valT.substring(end);
-            this.selectionStart=this.selectionEnd=start+1;
-            return false;}};}
+let textArea=document.getElementById("hh");
+textArea.onkeydown=function(z){if(z.keyCode===9){ed1('\t');return false;}};}
 tabJa();
 
+function winscroll(){window.scrollTo(0,0);}
 </script></body></html>
