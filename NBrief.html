@@ -23,7 +23,7 @@ textarea{background-color:white;font-family:sans-serif;font-size:0.9em;color:#55
 .bt1:hover{background-color:red;color:white;}
 .bt2{height:30px;width:73px;color:white;font-family:sans-serif;font-size:0.9em;border-style:none;background-color:#4CAF50;color:white;}
 .bt2:hover{background-color:red;color:white;}
-/*.btgrey{background-color:grey;}*/
+.btgrey{background-color:grey;}
 .bttext{border-style:ridge;border-width:3px;border-color:#4CAF50;}
 .stamp{background:;color:;font-family:sans-serif;font-size:0.9em;margin-left:2px;width:40%;width:40%;}
 #topBar{position:fixed;top:0;left:0;width:100%;height:2em; background-color:inherit;font-size:0.9em;margin-left:10px;}
@@ -316,66 +316,66 @@ background-position:right;background-repeat:no-repeat;}
 <p class="stamp">Epikrise</p>
 <button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte wegen Kopfschmerzen Schwäche der rechten linken Körperseite, Schwindels, eines Bewusstseinsverlustes, Taubheitsgefühls der rechten linken Körperseite. \r\nAm Datum ca. Uhrzeit merkte ' + der_Patient + ', dass \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vorgefunden. \r\n' + Der_Patient + ' wurde durch den Rettungsdienst gebracht. \r\n' + Der_Patient + ' stellte sich am Datum in der Notaufnahme vor. \r\n' + Er + ' klagt über xxx seit xxx Stunden Tagen Wochen. \r\n' + Der_Patient + ' berichtet, dass ' + er + ' \r\nDie Angehörigen berichten dass, \r\n' + Der_Patient + ' lebte bisher zu Hause, arbeitete als xxx und konnte sich selbst versorgen. \r\n' + Der_Patient + ' lebte bisher im Heim, hatte Pflegegrad . \r\n' + Er + ' konnte sich teilweise selbst versorgen. ' + Er + ' ging ohne Hilfsmittel am Rollator am Stock. \r\nwar harninkontinent harnkontinent. \r\nAngabe von Nichtrauchen xxx Zigaretten täglich und von xxx Glas Wein Bier täglich in der Woche von seltenem keinem Alkoholgenuss. \r\nEs gibt eine Vorsorgevollmacht (bevollmächtigt: ) und eine Patientenverfügung\r\n\r\nMedikation bei Aufnahme\r\n')">Anamnese</button>
 <button class="bt1 bttext" onclick="ed1('\r\nDie klinische Untersuchung deckte kein neurologisches Defizit auf. \r\nIn der klinischen Untersuchung war ' + der_Patient + ' wach, orientiert und hatte xxx. \r\nDas Schädel-CT zeigte\r\nkeine frische Ischämie oder Blutung. \r\neinen Hirninfarkt im Stromgebiet der Arteria cerebri media posterior anterior rechts links \r\nDas Schädel-CT zeigte Marklagerveränderungen einen Hirninfarkt eine Blutung. \r\nDas Schädel-MRT zeigte \r\nDas Labor war im Normbereich zeigte \r\nDie transthorakale Echokardiografie zeigte keine Emboliequelle. \r\nDie transösophageale Echokardiografie zeigte keine Emboliequelle. \r\nDie Neurosonografie zeigte Plaques und geringgradige Stenose der Karotiden. \r\nDie Elektrophysiologie\r\nwar regelrecht\r\nwaren regelrecht. wegweisend. \r\nWährend der Monitor-Überwachung von Datum bis Datum stellten wir kein Vorhofflimmern fest. \r\nIm Laufe des stationären Aufenthaltes \r\n')">Befunde</button>
-<button class="bt1 bttext" onclick="ed1('\r\nWir gehen bei bestehendem Vorhofflimmern von einem embolischen Hirninfarkt aus. \r\nWir gehen von einem atherothrombotischen Prozess aus. \r\nUrsächlich für den Hirninfarkt war die Stenose der xxx\r\nWir klärten ' + den_Patienten + ' über einen gesunden Lebensstil im kardiovaskulären Sinn auf. \r\nNach ausführlichen Gesprächen mit der Familie entschieden wir uns gemeinsam gemäß dem mutmaßlichen Willen ' + des_Patienten + ' für eine rein palliative Behandlung. \r\nEine ambulante Kontrolle von xxx wird empfohlen. \r\n' + Herr + ' xxx wird am Datum in Ihre Weiterbehandlung entlassen. \r\nwie vereinbart in Ihre Rehabilitations-Klinik zurück verlegt. \r\nWir danken für die freundliche Übernahme. \r\nWir stehen für Fragen gerne zur Verfügung. \r\n')">Schluss</button>
+<button class="bt1 bttext" onclick="ed1('\r\nWir gehen bei bestehendem Vorhofflimmern von einem embolischen Hirninfarkt aus. \r\nWir gehen von einem atherothrombotischen Prozess aus. \r\nUrsächlich für den Hirninfarkt war die Stenose der xxx\r\nWir klärten ' + den_Patienten + ' über einen gesunden Lebensstil im kardiovaskulären Sinn auf. \r\nNach ausführlichen Gesprächen mit der Familie entschieden wir uns gemeinsam gemäß dem mutmaßlichen Willen ' + des_Patienten + ' für eine rein palliative Behandlung. \r\nEine ambulante Kontrolle von xxx wird empfohlen. \r\nWir bitten um ein LZ-EKG ambulant.\r\n' + Herr + ' xxx wird am Datum in Ihre Weiterbehandlung entlassen. \r\nwie vereinbart in Ihre Rehabilitations-Klinik zurück verlegt. \r\nWir danken für die freundliche Übernahme. \r\nWir stehen für Fragen gerne zur Verfügung. \r\n')">Schluss</button>
 <p class="stamp">Subjektive Symptome</p>
 <form>
 <select id="symptSubj" class="select1 select2" size="7" onclick="symptSu()">
 <option value="im Arm im Gesicht im Bein im Bauch in der Brust ">Arm Gesicht  Bein Bauch Brust</option>
 <option value="rechts links ">rechts links</option>
 <option value="seit: Dauer: Häufigkeit: / Stärke: (in der Skala 0-10) Linderung durch: Verchlimmerung durch: ">seit: Dauer: Häufigkeit: Stärke: Linderung durch: schlimmer durch:</option>
-<option value="Schmerz ">Schmerz</option>
-<option value="Rückenschmerzen ">Rückenschmerzen</option>
+<option value="Angst ">Angst</option>
+<option value="Bewusstseinsverlust ">Bewusstseinsverlust</option>
+<option value="Doppeltsehen ">Doppeltsehen</option>
+<option value="Erbrechen ">Erbrechen</option>
 <option value="Kopfschmerzen ">Kopfschmerzen</option>
+<option value="Kribbeln ">Kribbeln</option>
+<option value="Luftnot ">Luftnot</option>
+<option value="Niedergeschlagenheit ">Niedergeschlagenheit</option>
+<option value="Ohnmacht ">Ohnmacht</option>
+<option value="Rückenschmerzen ">Rückenschmerzen</option>
+<option value="Schmerz ">Schmerz</option>
+<option value="Schwäche ">Schwäche </option>
+<option value="Schwierigkeit beim Erinnern ">Schwierigkeit beim Erinnern</option>
 <option value="Schwierigkeit beim Gehen ">Schwierigkeit beim Gehen</option>
+<option value="Schwierigkeit beim Schlucken ">Schwierigkeit beim Schlucken</option>
 <option value="Schwierigkeit beim Sehen ">Schwierigkeit beim Sehen</option>
 <option value="Schwierigkeit beim Sprechen ">Schwierigkeit beim Sprechen</option>
-<option value="Schwierigkeit beim Erinnern ">Schwierigkeit beim Erinnern</option>
-<option value="Schwierigkeit beim Schlucken ">Schwierigkeit beim Schlucken</option>
 <option value="Schwierigkeit mit dem Wasserlassen ">Schwierigkeit mit dem Wasserlassen</option>
-<option value="Übelkeit ">Übelkeit</option>
-<option value="Erbrechen ">Erbrechen</option>
 <option value="Schwindel ">Schwindel</option>
 <option value="Taubheitsgefühl ">Taubheitsgefühl</option>
-<option value="Kribbeln ">Kribbeln</option>
-<option value="Angst ">Angst</option>
-<option value="Niedergeschlagenheit ">Niedergeschlagenheit</option>
-<option value="Schwäche ">Schwäche </option>
-<option value="Ohnmacht ">Ohnmacht</option>
-<option value="Bewusstseinsverlust ">Bewusstseinsverlust</option>
-<option value="Zuckungen ">Zuckungen</option>
-<option value="Luftnot ">Luftnot</option>
-<option value="Doppeltsehen ">Doppeltsehen</option>
+<option value="Übelkeit ">Übelkeit</option>
 <option value="Verschwommensehen ">Verschwommensehen</option>
 <option value="Zittern ">Zittern</option>
+<option value="Zuckungen ">Zuckungen</option>
 </select>
 </form>
 <p class="stamp">Objektive Symptome</p>
 <form>
 <select id="symptObj" class="select1 select2" size="7" onclick="symptOb()">
-<option value="Somnolenz ">Somnolenz</option>
-<option value="Koma ">Koma</option>
-<option value="Störung der Aufmerksamkeit ">Störung der Aufmerksamkeit </option>
-<option value="Störung des Kurzzeitgedächtnisses ">Störung des Kurzzeitgedächtnisses</option>
-<option value="Depression ">Depression</option>
-<option value="Erregung ">Erregung</option>
-<option value="Aggressivität ">Aggressivität</option>
-<option value="Parese ">Parese</option>
-<option value="Diplopie ">Diplopie</option>
-<option value="Kopfimpulstest negativ positiv ">Kopfimpulstest</option>
-<option value="Blickparese ">Blickparese</option>
-<option value="Dysarthrie ">Dysarthrie</option>
-<option value="Aphasie, der Ausdruck das Verständnis leicht schwer beeinträchtigt ">Aphasie</option>
-<option value="Hemiparese ">Hemiparese </option>
-<option value="Rigor ">Rigor</option>
-<option value="Tremor ">Tremor</option>
-<option value="Hemihypästhesie ">Hemihypästhesie </option>
-<option value="Hemianopsie ">Hemianopsie </option>
-<option value="Auslöschungsphänomen visuell taktil ">Auslöschungsphänomen </option>
-<option value="Gangstörung ">Gangstörung</option>
-<option value="Ataxie ">Ataxie</option>
-<option value="Babinski-Zeichen ">Babinski-Zeichen</option>
-<option value="Rasselgeräusche ">Rasselgeräusche</option>
- </select>
+	<option value="Aggressivität ">Aggressivität</option>
+	<option value="Aphasie, der Ausdruck das Verständnis leicht schwer beeinträchtigt ">Aphasie</option>
+	<option value="Ataxie ">Ataxie</option>
+	<option value="Auslöschungsphänomen visuell taktil ">Auslöschungsphänomen </option>
+	<option value="Babinski-Zeichen ">Babinski-Zeichen</option>
+	<option value="Blickparese ">Blickparese</option>
+	<option value="Depression ">Depression</option>
+	<option value="Diplopie ">Diplopie</option>
+	<option value="Dysarthrie ">Dysarthrie</option>
+	<option value="Erregung ">Erregung</option>
+	<option value="Gangstörung ">Gangstörung</option>
+	<option value="Hemianopsie ">Hemianopsie </option>
+	<option value="Hemihypästhesie ">Hemihypästhesie </option>
+	<option value="Hemiparese ">Hemiparese </option>
+	<option value="Koma ">Koma</option>
+	<option value="Kopfimpulstest negativ positiv ">Kopfimpulstest</option>
+	<option value="Parese ">Parese</option>
+	<option value="Rasselgeräusche ">Rasselgeräusche</option>
+	<option value="Rigor ">Rigor</option>
+	<option value="Somnolenz ">Somnolenz</option>
+	<option value="Störung der Aufmerksamkeit ">Störung der Aufmerksamkeit </option>
+	<option value="Störung des Kurzzeitgedächtnisses ">Störung des Kurzzeitgedächtnisses</option>
+	<option value="Tremor ">Tremor</option>
+</select>
 </form><br>
 
 </div>
@@ -430,7 +430,7 @@ er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen n
 </div>
 <div class="wrap3" id="MS">
 <p class="stamp">Multiple Sklerose</p>
-<button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nDie Aufnahme erfolgte bei Verdacht auf eine entzündliche ZNS-Erkrankung. \r\nDie Aufnahme ' + des_Patienten + ' erfolgte bei Verdacht auf erneuten Schub einer bekannten schubförmig remittierenden Multiplen Sklerose.\r\n\r\nDie Aufnahme ' + des_Patienten + ' erfolgte geplant zur erneuten Steroidpulstherapie bei bekannter sekundär chronisch progredienter Multipler Sklerose.\r\n\r\nIm klinischen Untersuchungsbefund zeigte sich\r\nDie Gehstrecke betrug aktuell xxx m.\r\nDer EDDS lag aktuell bei xxx.\r\n\r\n\r\n' + Der_Patient + ' erhielt eine Steroidpulstherapie mit Methylprednisolon 1000 mg über drei Tage unter Magenschutz, Thromboseprophylaxe und Blutzuckerkontrollen.\r\nDie Infusionen wurden von ' + dem_Patienten + ' gut vertragen. \r\nDie Beschwerden erschienen im Verlauf rückläufig.\r\n\r\nIm cMRT zeigten sich mehrere Balken-assoziierte Demyelinisierungen, typisch für eine Enzephalomyelitis Disseminata \r\nund Zeichen einer räumlichen Dissemination\r\nund Zeichen einer räumlichen und zeitlichen Dissemination\r\nes waren keine Zeichen einer räumlichen Dissemination nachweisbar\r\n\r\nIm MRT der HWS zeigte sich eine Demyelinisierung in Höhe\r\n\r\nEs erfolgte ein erneutes MRT mit KM, in dem keine sicheren kontrastmittelaufnehmenden Läsionen dargestellt werden konnten\r\n\r\nElektrophysiologische Untersuchungen zeigten\r\neine Leitungsstörung beider Nervi optici wie bei chronischer Retrobulbärneuritis.\r\neine Hintestrangläsion\r\neine Pyramidenbahnläsion \r\n\r\nDie oligoklonalen Banden im Liquor waren positiv negativ \r\nDie erneute Liquordiagnostik erfolgte zur ergänzenden Bestimmung von JC-Virus-DNA und fiel negativ aus.\r\n\r\nZusammenfassend gingen wir bei ' + Herrn + ' xxx von einem erneuten Schub bei bekannter Multiple Sklerose aus.\r\nWir empfehlen\r\n\r\neine ambulante neurologische Anbindung und Verlaufskontrollen.\r\nein Fortführen der Intervalltherapie mit\r\n\r\nden Beginn einer immunmodulatorischen Therapie mit\r\n\r\n' + Der_Patient + ' wurde über die möglichen therapeutischen Optionen aufgeklärt.\r\n\r\nAm Datum entließen wir ' + den_Patienten + ' in Ihre weitere Betreuung und stehen für Rückfragen gerne zur Verfügung. \r\n')">MS-Brief</button>
+<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie Aufnahme erfolgte bei Verdacht auf eine entzündliche ZNS-Erkrankung. \r\nDie Aufnahme ' + des_Patienten + ' erfolgte bei Verdacht auf erneuten Schub einer bekannten schubförmig remittierenden Multiplen Sklerose.\r\nDie Aufnahme ' + des_Patienten + ' erfolgte geplant zur erneuten Steroidpulstherapie bei bekannter sekundär chronisch progredienter Multipler Sklerose.\r\nIm klinischen Untersuchungsbefund zeigte sich\r\nDie Gehstrecke betrug aktuell xxx m.\r\nDer EDDS lag aktuell bei xxx.\r\n\r\n' + Der_Patient + ' erhielt eine Steroidpulstherapie mit Methylprednisolon 1000 mg über drei Tage unter Magenschutz, Thromboseprophylaxe und Blutzuckerkontrollen.\r\nDie Infusionen wurden von ' + dem_Patienten + ' gut vertragen. \r\nDie Beschwerden erschienen im Verlauf rückläufig.\r\nIm cMRT zeigten sich mehrere Balken-assoziierte Demyelinisierungen, typisch für eine Enzephalomyelitis Disseminata \r\nund Zeichen einer räumlichen Dissemination\r\nund Zeichen einer räumlichen und zeitlichen Dissemination\r\nes waren keine Zeichen einer räumlichen Dissemination nachweisbar\r\nIm MRT der HWS zeigte sich eine Demyelinisierung in Höhe\r\nEs erfolgte ein erneutes MRT mit KM, in dem keine sicheren kontrastmittelaufnehmenden Läsionen dargestellt werden konnten\r\nElektrophysiologische Untersuchungen zeigten\r\neine Leitungsstörung beider Nervi optici wie bei chronischer Retrobulbärneuritis.\r\neine Hintestrangläsion\r\neine Pyramidenbahnläsion \r\nDie oligoklonalen Banden im Liquor waren positiv negativ \r\nDie erneute Liquordiagnostik erfolgte zur ergänzenden Bestimmung von JC-Virus-DNA und fiel negativ aus.\r\nZusammenfassend gingen wir bei ' + Herrn + ' xxx von einem erneuten Schub bei bekannter Multiple Sklerose aus.\r\nWir empfehlen\r\neine ambulante neurologische Anbindung und Verlaufskontrollen.\r\nein Fortführen der Intervalltherapie mit\r\nden Beginn einer immunmodulatorischen Therapie mit\r\n' + Der_Patient + ' wurde über die möglichen therapeutischen Optionen aufgeklärt.\r\nAm Datum entließen wir ' + den_Patienten + ' in Ihre weitere Betreuung und stehen für Rückfragen gerne zur Verfügung. \r\n')">MS-Brief</button>
 </div>
 <div class="wrap3" id="RS">
 <p class="stamp">Bandscheibenvorfall, Fazialisparese, Lagerungsschwindel</p>
@@ -441,20 +441,20 @@ er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen n
 <div class="wrap3" id="Geri">
 <p class="stamp">Geriatrie</p>
 
-<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Geriatrie 1</button>
-<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Geriatrie 2</button>
-<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Geriatrie 3</button>
-<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Geriatrie 4</button>
+<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 1</button>
+<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 2</button>
+<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 3</button>
+<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 4</button>
 </div>
 <div class="wrap3" id="DemPark">
 <p class="stamp">Demenz und Parkinson</p>
-<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Demenz</button><br>
-<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Parkinson</button><br>
+<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Demenz</button><br>
+<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Parkinson</button><br>
 </div>
 <div class="wrap3" id="KopfEpi">
 <p class="stamp">Kopfschmerz und Epilepsie</p>
-<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Kopfschmerz</button><br>
-<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Epilepsie</button><br>
+<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Kopfschmerz</button><br>
+<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Epilepsie</button><br>
 </div>
 <div class="wrap3" id="Bef">
 <p class="stamp">Apparative Befunde</p>
@@ -698,10 +698,10 @@ return timeGerman;}
 function anArzt() {let x = document.getElementById("mySelect").value;edein(x+',\r\n');}
 
 function medi() {let y0 =
-document.getElementById("medikamente").value;ed1(y0 + '\r\n');}
+document.getElementById("medikamente").value;edein(y0 + '\r\n');}
 
 function diagn() {let y7 =
-document.getElementById("diagnosen").value;ed1(y7 + '\r\n');}
+document.getElementById("diagnosen").value;edein(y7 + '\r\n');}
 
 function symptSu() {let y1 =
 document.getElementById("symptSubj").value;ed1(y1);}
@@ -714,11 +714,12 @@ let textArea=document.getElementById("hh");
 textArea.onkeydown=function(z){if(z.keyCode===9){ed1('\t');return false;}};}
 tabJa();
 
-function winscroll(){window.scrollTo(0,0);}
-
+function winscroll(){
+	window.scrollTo(0,0);
+	document.getElementById('hh').scrollTo(0,0);}
 
 function themeEG1() {
-    let css = 'body{background-color:#002B36;}textarea{background-color:#002B36;color:#cccccc;border: solid;border-width:1px;border-color:#cccccc;font-family:"dejavu sans mono", "monospace";}.bt1{background-color:#808080;}.bt1:hover {background-color:#b30000;}.bt2{background-color:#808080;}.bt2:hover{background-color:#b30000;}.bttext{border-color:#808080;} .select1 {background-color:#002B36;}.select1 option{background-color:#002B36;}';
+    let css = 'body{background-color:#002B36;}textarea{background-color:#002B36;color:#cccccc;border: solid;border-width:1px;border-color:#cccccc;font-family:"dejavu sans mono", "monospace";}.bt1{background-color:#808080;}.bt1:hover {background-color:#b30000;}.bt2{background-color:#808080;}.bt2:hover{background-color:#b30000;}.bttext{border-color:#808080;} .btgrey{background-color: black;} .select1 {background-color:#002B36;}.select1 option{background-color:#002B36;}';
     style = document.createElement('style');
     if (style.styleSheet){style.styleSheet.cssText = css;}else{style.appendChild(document.createTextNode(css));
     }document.getElementsByTagName('head')[0].appendChild(style);    
@@ -726,7 +727,7 @@ function themeEG1() {
 
 function themeEG2() {
     let css =
-    'body{background-color:#003d66;} textarea {background-color:white;color:#555555;border:none;font-family:sans-serif;} .bt1{background-color:#4CAF50;} .bt1:hover{background-color:red;} .bt2{background-color:#4CAF50;} .bt2:hover{background-color:red;} .bttext{border-color:#4CAF50;}.select1{background-color:#003d66;} .select1 option{background-color:#003d66;}';
+    'body{background-color:#003d66;} textarea {background-color:white;color:#555555;border:none;font-family:sans-serif;} .bt1{background-color:#4CAF50;} .bt1:hover{background-color:red;} .bt2{background-color:#4CAF50;} .bt2:hover{background-color:red;} .bttext{border-color:#4CAF50;} .btgrey{background-color:grey;} .select1{background-color:#003d66;} .select1 option{background-color:#003d66;}';
     style = document.createElement('style');
     if (style.styleSheet){style.styleSheet.cssText = css;}else{style.appendChild(document.createTextNode(css));
     }document.getElementsByTagName('head')[0].appendChild(style);    
