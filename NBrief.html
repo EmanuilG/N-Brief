@@ -279,34 +279,38 @@ background-position:right;background-repeat:no-repeat;}
 </form><br>
 </div>
 <div class="wrap3" id="Diagnosen">
-<p class="stamp">Diagnosen</p>
-<button class="bt1 bttext" onclick="edein('Aktuell:\r\n\r\n\r\nVordiagnosen:\r\n')" title="Aktuell - Vordiagnosen">Aktuell/Vordiagnosen</button>
-<button class="bt1 bttext" onclick="edein('Adipositas\r\n')" title="Adipositas">Adipositas</button><br>
-<button class="bt1 bttext" onclick="edein('Alkoholkrankheit\r\n')" title="Alkoholkrankheit">Alkoholkrankheit</button>
-<button class="bt1 bttext" onclick="edein('Arterielle Hypertonie\r\n')" title="Arterielle Hypertonie">Art. Hypertonie</button><br>
-<button class="bt1 bttext" onclick="edein('COPD Stadium\r\n')" title="COPD Stadium">COPD</button>
-<button class="bt1 bttext" onclick="edein('Delir\r\n')" title="Delir">Delir</button><br>
-<button class="bt1 bttext" onclick="edein('Demenz, leicht, mittelschwer, schwer\r\n')" title="Demenz, leicht, mittelschwer, schwer">Demenz</button>
-<button class="bt1 bttext" onclick="edein('Depression\r\n')" title="Depression">Depression</button><br>
-<button class="bt1 bttext" onclick="edein('Diabetes mellitus Typ 1 2\r\n')" title="Diabetes mellitus Typ 1 2">DM</button>
-<button class="bt1 bttext" onclick="edein('Epileptischer Anfall\r\n')" title="Epileptischer Anfall">Epil. Anfall</button><br>
-<button class="bt1 bttext" onclick="edein('Funktionelle Körperbeschwerden\r\n')" title="Funktionelle Körperbeschwerden">Funktionell</button>
-<button class="bt1 bttext" onclick="edein('Gutartiger Lagerungsschwindel des hinteren Bogengangs rechts links\r\n')" title="Gutartiger Lagerungsschwindel des hinteren Bogengangs rechts links">Lagerungsschwindel</button><br>
-<button class="bt1 bttext" onclick="edein('Herzinsuffizienz NYHA\r\n')" title="Herzinsuffizienz NYHA">Herzinsuffizienz</button>
-<button class="bt1 bttext" onclick="edein('Hirnblutung ca.  x cm rechts links\r\n')" title="Hirnblutung ca.  x cm rechts links">Hirnblutung</button><br>
-<button class="bt1 bttext" onclick="edein('Hirninfarkt im Stromgebiet der A cerebri media posterior anterior rechts links\r\n')" title="Hirninfarkt im Stromgebiet der A cerebri media posterior anterior rechts links">Hirninfarkt</button>
-<button class="bt1 bttext" onclick="edein('Hyperlipidämie\r\n')" title="Hyperlipidämie">Hyperlipidämie</button><br>
-<button class="bt1 bttext" onclick="edein('Idiopathisches Parkinson-Syndrom\r\n')" title="Idiopathisches Parkinson-Syndrom">Parkinson</button>
-<button class="bt1 bttext" onclick="edein('Infarkt im Hirnstamm Kleinhirn rechts links\r\n')" title="Infarkt im Hirnstamm Kleinhirn rechts links">Hirnstamm-Kleinhirn</button><br>
-<button class="bt1 bttext" onclick="edein('KHK\r\n')" title="KHK">KHK</button>
-<button class="bt1 bttext" onclick="edein('Migräne mit ohne Aura\r\n')" title="Migräne mit ohne Aura">Migräne</button><br>
-<button class="bt1 bttext" onclick="edein('Niereninsuffizienz Stadium\r\n')" title="Niereninsuffizienz Stadium">Niereninsuffizienz</button>
-<button class="bt1 bttext" onclick="edein('Periphere Fazialisparese\r\n')" title="Periphere Fazialisparese">Fazialisparese</button><br>
-<button class="bt1 bttext" onclick="edein('Subarachnoidalblutung Hunt Hess mit Ventrikeleinblutung\r\n')" title="Subarachnoidalblutung Hunt Hess mit Ventrikeleinblutung">SAB</button>
-<button class="bt1 bttext" onclick="edein('Transiente globale Amnesie\r\n')" title="Transiente globale Amnesie">TGA</button><br>
-<button class="bt1 bttext" onclick="edein('Transitorisch-ischämische Attacke\r\n')" title="Transitorisch-ischämische Attacke">TIA</button>
-<button class="bt1 bttext" onclick="edein('Vorhofflimmern, Erstdiagnose, ohne unter Antikoagulation mit\r\n')" title="Vorhofflimmern, Erstdiagnose, ohne unter Antikoagulation mit">VHF</button><br>
-<button class="bt1 bttext" onclick="edein('Z.n.\r\n')" title="Z.n.">Z.n.</button><br>
+	<p class="stamp">Diagnosen</p>
+<form>
+<select id="diagnosen" class="select1 select2" size="18" onclick="diagn()">
+<option value="Aktuell:Vordiagnosen:">Aktuell/Vordiagnosen</option>
+<option value="Adipositas">Adipositas</option><br>
+<option value="Alkoholkrankheit">Alkoholkrankheit</option>
+<option value="Arterielle Hypertonie">Art. Hypertonie</option><br>
+<option value="COPD Stadium">COPD</option>
+<option value="Delir">Delir</option><br>
+<option value="Demenz, leicht, mittelschwer, schwer">Demenz</option>
+<option value="Depression">Depression</option><br>
+<option value="Diabetes mellitus Typ 1 2">DM</option>
+<option value="Epileptischer Anfall">Epil. Anfall</option><br>
+<option value="Funktionelle Körperbeschwerden">Funktionell</option>
+<option value="Gutartiger Lagerungsschwindel des hinteren Bogengangs rechts links">Lagerungsschwindel</option><br>
+<option value="Herzinsuffizienz NYHA">Herzinsuffizienz</option>
+<option value="Hirnblutung ca.  x cm rechts links">Hirnblutung</option><br>
+<option value="Hirninfarkt im Stromgebiet der A cerebri media posterior anterior rechts links">Hirninfarkt</option>
+<option value="Hyperlipidämie">Hyperlipidämie</option><br>
+<option value="Idiopathisches Parkinson-Syndrom">Parkinson</option>
+<option value="Infarkt im Hirnstamm Kleinhirn rechts links">Hirnstamm-Kleinhirn</option><br>
+<option value="KHK">KHK</option>
+<option value="Migräne mit ohne Aura">Migräne</option><br>
+<option value="Niereninsuffizienz Stadium">Niereninsuffizienz</option>
+<option value="Periphere Fazialisparese">Fazialisparese</option><br>
+<option value="Subarachnoidalblutung Hunt Hess mit Ventrikeleinblutung">SAB</option>
+<option value="Transiente globale Amnesie">TGA</option><br>
+<option value="Transitorisch-ischämische Attacke">TIA</option>
+<option value="Vorhofflimmern, Erstdiagnose, ohne unter Antikoagulation mit">VHF</option><br>
+<option value="Z.n.">Z.n.</option>
+</select></form>
+<br>
 </div>
 <div class="wrap3" id="Epikrise">
 <p class="stamp">Epikrise</p>
@@ -374,44 +378,47 @@ background-position:right;background-repeat:no-repeat;}
  </select>
 </form><br>
 
-
-
 </div>
 <div class="wrap3" id="Medikamente">
-<!-- <p class="stamp">Medikamente</p> -->
-<button class="bt1 bttext" onclick="edein('Amlodipin 5 mg p.o.\t\t\t1-0-0\r\n')" title="Amlodipin 5 mg">Amlodipin</button>
-<button class="bt1 bttext" onclick="edein('Apixaban 5 mg p.o.\t\t\t1-0-1\r\n')" title="Apixaban">Apixaban</button>
-<button class="bt1 bttext" onclick="edein('ASS 100 mg p.o.\t\t\t1-0-0\r\n')" title="ASS 100 mg">ASS</button>
-<button class="bt1 bttext" onclick="edein('Atorvastatin 20 mg p.o.\t\t\t0-0-1\r\n')" title="Atorvastatin 20 mg">Atorvastatin</button>
-<button class="bt1 bttext" onclick="edein('Citalopram 20 mg p.o.\t\t\t0-0-1\r\n')" title="Citalopram 20 mg">Citalopram</button>
-<button class="bt1 bttext" onclick="edein('Clopidogrel 75 mg p.o.\t\t\t0-0-1\r\n')" title="Clopidogrel 75 mg">Clopidogrel</button>
-<button class="bt1 bttext" onclick="edein('Enoxaparin 0,4 ml s.c.       \t\t\t0-0-1\r\n')" title="Enoxaparin">Enoxaparin</button>
-<button class="bt1 bttext" onclick="edein('Furosemid 20 mg p.o. i.v.\t\t\t1-0-0\r\n')" title="Furosemid 20 mg">Furosemid</button>
-<button class="bt1 bttext" onclick="edein('HCT 25 mg p.o.\t\t\t1-0-0\r\n')" title="HCT 25 mg">HCT</button>
-<button class="bt1 bttext" onclick="edein('Ibuprofen 400 mg p.o.\t\t\t1-1-1\r\n')" title="Ibuprofen">Ibuprofen</button>
-<button class="bt1 bttext" onclick="edein('Insulin glargin (Lantus) (Abasaglar) I.E. s.c.\t\t\t0-0-10\r\n')" title="Insulin glargin">Insulin glargin</button>
-<button class="bt1 bttext" onclick="edein('L-Thyroxin 100 µg p.o.\t\t\t1-0-0\r\n')" title="L-Thyroxin 100 µg">L-Thyroxin</button>
-<button class="bt1 bttext" onclick="edein('Levetiracetam 1000 mg p.o. i.v.\t\t\t1-0-1\r\n')" title="Levetiracetam 1000 mg">Levetiracetam</button>
-<button class="bt1 bttext" onclick="edein('Levodopa 100/25 mg p.o.\t\t\t1-1-1\r\n')" title="Levodopa 100/25 mg">Levodopa</button>
-<button class="bt1 bttext" onclick="edein('Lorazepam 1 mg p.o.\t\t\t1-1-1\r\n')" title="Lorazepam 1 mg">Lorazepam</button>
-<button class="bt1 bttext" onclick="edein('Metformin 1000 mg p.o.\t\t\t1-0-1\r\n')" title="Metformin 1000 mg">Metformin</button>
-<button class="bt1 bttext" onclick="edein('Metoprolol 95 mg p.o.\t\t\t1-0-0\r\n')" title="Metoprolol 95 mg">Metoprolol</button>
-<button class="bt1 bttext" onclick="edein('Midazolam-Perfusor\r\n')" title="Midazolam-Perfusor">Midazolam-Perfusor</button>
-<button class="bt1 bttext" onclick="edein('Mirtazapin 30 mg p.o.\t\t\t0-0-1\r\n')" title="Mirtazapin">Mirtazapin</button>
-<button class="bt1 bttext" onclick="edein('Paracetamol 500 mg p.o.\t\t\t1-1-1\r\n')" title="Paracetamol">Paracetamol</button>
-<button class="bt1 bttext" onclick="edein('Phenprocoumon 3 mg p.o.\t\tnach INR (Ziel 2-3)\r\n')" title="Phenprocoumon">Phenprocoumon</button>
-<button class="bt1 bttext" onclick="edein('Pipamperon Saft (4 mg/ml) 6 ml  p.o.\t\t\t0-0-1\r\n')" title="Pipamperon">Pipamperon</button>
-<button class="bt1 bttext" onclick="edein('Prednisolon 60 mg p.o.\t\t\t1-0-0 bis Datum,\r\ndanach täglich um 10 mg reduzieren\r\n')" title="Prednisolon">Prednisolon</button>
-<button class="bt1 bttext" onclick="edein('Ramipril 5 mg p.o.\t\t\t1-0-0\r\n')" title="Ramipril 5 mg">Ramipril</button>
-<button class="bt1 bttext" onclick="edein('Risperidon 1 mg p.o.\t\t\t0-0-1\r\n')" title="Risperidon 1 mg">Risperidon</button>
-<button class="bt1 bttext" onclick="edein('Simvastatin 40 mg p.o.\t\t\t0-0-1\r\n')" title="Simvastatin 40 mg">Simvastatin</button>
-<button class="bt1 bttext" onclick="edein('Sterofundin \t 2000 ml/d\r\n')" title="Sterofundin">Sterofundin</button>
-<button class="bt1 bttext" onclick="edein('Sufentanil-Perfusor\r\n')" title="Sufentanil-Perfusor">Sufentanil-Perfusor</button>
-<button class="bt1 bttext" onclick="edein('Tilidin 50 mg p.o.\t\t\t1-1-1\r\n')" title="Tilidin 50 mg">Tilidin</button>
-<button class="bt1 bttext" onclick="edein('Torasemid 5 mg p.o.\t\t\t1-0-0\r\n')" title="Torasemid 5 mg">Torasemid</button>
-<button class="bt1 bttext" onclick="edein('Urapidil-Perfusor\t nach RR\r\n')" title="Urapidil-Perfusor">Urapidil-Perfusor</button>
-<button class="bt1 bttext" onclick="edein('Valproat 500 mg p.o. i.v.\t\t\t1-0-1\r\n')" title="Valproat">Valproat</button>
-<button class="bt1 bttext" onclick="edein('Valsartan 40 mg p.o.\t\t\t1-0-1\r\n')" title="Valsartan 40 mg">Valsartan</button>
+<p class="stamp">Medikamente</p>
+<form>
+<select id="medikamente" class="select1 select2" size="17" onclick="medi()">
+<option value="Amlodipin 5 mg p.o.			1-0-0">Amlodipin</option>
+<option value="Apixaban 5 mg p.o.			1-0-1">Apixaban</option>
+<option value="ASS 100 mg p.o.			1-0-0">ASS</option>
+<option value="Atorvastatin 20 mg p.o.			0-0-1">Atorvastatin</option>
+<option value="Citalopram 20 mg p.o.			0-0-1">Citalopram</option>
+<option value="Clopidogrel 75 mg p.o.			0-0-1">Clopidogrel</option>
+<option value="Enoxaparin 0,4 ml s.c.       			0-0-1">Enoxaparin</option>
+<option value="Furosemid 20 mg p.o. i.v.			1-0-0">Furosemid</option>
+<option value="HCT 25 mg p.o.			1-0-0">HCT</option>
+<option value="Ibuprofen 400 mg p.o.			1-1-1">Ibuprofen</option>
+<option value="Insulin glargin (Lantus) (Abasaglar) I.E. s.c.			0-0-10">Insulin glargin</option>
+<option value="L-Thyroxin 100 µg p.o.			1-0-0">L-Thyroxin</option>
+<option value="Levetiracetam 1000 mg p.o. i.v.			1-0-1">Levetiracetam</option>
+<option value="Levodopa 100/25 mg p.o.			1-1-1">Levodopa</option>
+<option value="Lorazepam 1 mg p.o.			1-1-1">Lorazepam</option>
+<option value="Metformin 1000 mg p.o.			1-0-1">Metformin</option>
+<option value="Metoprolol 95 mg p.o.			1-0-0">Metoprolol</option>
+<option value="Midazolam-Perfusor">Midazolam-Perfusor</option>
+<option value="Mirtazapin 30 mg p.o.			0-0-1">Mirtazapin</option>
+<option value="Paracetamol 500 mg p.o.			1-1-1">Paracetamol</option>
+<option value="Phenprocoumon 3 mg p.o.		nach INR (Ziel 2-3)">Phenprocoumon</option>
+<option value="Pipamperon Saft (4 mg/ml) 6 ml  p.o.			0-0-1">Pipamperon</option>
+<option value="Prednisolon 60 mg p.o.			1-0-0 bis Datum,danach täglich um 10 mg reduzieren">Prednisolon</option>
+<option value="Ramipril 5 mg p.o.			1-0-0">Ramipril</option>
+<option value="Risperidon 1 mg p.o.			0-0-1">Risperidon</option>
+<option value="Simvastatin 40 mg p.o.			0-0-1">Simvastatin</option>
+<option value="Sterofundin 	 2000 ml/d">Sterofundin</option>
+<option value="Sufentanil-Perfusor">Sufentanil-Perfusor</option>
+<option value="Tilidin 50 mg p.o.			1-1-1">Tilidin</option>
+<option value="Torasemid 5 mg p.o.			1-0-0">Torasemid</option>
+<option value="Urapidil-Perfusor	 nach RR">Urapidil-Perfusor</option>
+<option value="Valproat 500 mg p.o. i.v.			1-0-1">Valproat</option>
+<option value="Valsartan 40 mg p.o.			1-0-1">Valsartan</option>
+</select>
+</form>
+		
 </div>
 <div class="wrap3" id="Klinischer_Befund">
 <p class="stamp">Klinischer Befund</p>
@@ -690,6 +697,12 @@ return timeGerman;}
 
 function anArzt() {let x = document.getElementById("mySelect").value;edein(x+',\r\n');}
 
+function medi() {let y0 =
+document.getElementById("medikamente").value;ed1(y0 + '\r\n');}
+
+function diagn() {let y7 =
+document.getElementById("diagnosen").value;ed1(y7 + '\r\n');}
+
 function symptSu() {let y1 =
 document.getElementById("symptSubj").value;ed1(y1);}
 
@@ -718,6 +731,5 @@ function themeEG2() {
     if (style.styleSheet){style.styleSheet.cssText = css;}else{style.appendChild(document.createTextNode(css));
     }document.getElementsByTagName('head')[0].appendChild(style);    
 }
-
 
 </script></body></html>
