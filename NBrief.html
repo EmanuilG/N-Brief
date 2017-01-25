@@ -23,16 +23,16 @@ textarea{background-color:white;font-family:sans-serif;font-size:0.9em;color:#55
 .bt1:hover{background-color:red;color:white;}
 .bt2{height:30px;width:73px;color:white;font-family:sans-serif;font-size:0.9em;border-style:none;background-color:#4CAF50;color:white;}
 .bt2:hover{background-color:red;color:white;}
-.btgrey{background-color:grey;}
+/*.btgrey{background-color:grey;}*/
 .bttext{border-style:ridge;border-width:3px;border-color:#4CAF50;}
 .stamp{background:;color:;font-family:sans-serif;font-size:0.9em;margin-left:2px;width:40%;width:40%;}
-#topBar{position:fixed;top:0;left:0;width:100%;height:2em;background-color:#003d66;font-size:0.9em;margin-left:10px;}
+#topBar{position:fixed;top:0;left:0;width:100%;height:2em; background-color:inherit;font-size:0.9em;margin-left:10px;}
 .h1_1{text-align:center;margin-top:5em;font-weight:bold;font-family:monospace;font-size:3em;}
 .gfrclass{background-color:white;color:black;font-weight:bold;padding:4px;display:inline-block;height:15px;width:40px;text-align:right;}
 input[type="number"]{width:50px;}
 .gfrtable{padding:10px;text-align:left;vertical-align:text-bottom;}
 .gfrtable th,.gfrtable td{padding:10px;}
-#gesX{color:red;font-weight:bold;background-color:white;text-align:center;width:150px;height:25px;animation-name:mannfrau;animation-duration:3s;animation-iteration-count:3;}
+#gesX{color:red;font-weight:bold;background-color:white;text-align:center;width:150px;height:25px;animation-name:mannfrau;animation-duration:3s;animation-iteration-count:1;}
 hr{display:block;margin-left:0;width:304px;border-style:solid;
 border-width:1px;color:white;} 
 .select1{-webkit-appearance:none;-moz-appearance:none;appearance:none;
@@ -50,17 +50,72 @@ background-position:right;background-repeat:no-repeat;}
 10%{background-color:orange;}
 30%{background-color:yellow;}
 100%{background-color:white;}}
-.vertal{vertical-align:middle;} 
+#mof{padding-left: 150px;display: none;}
+/**
+ * Tooltip Styles
+ */
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;  bottom: 150%;
+  left: 50%;  margin-left: -5px;  width: 0;
+  border-top: 5px solid #000;  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;  border-left: 5px solid transparent;
+  content: " ";  font-size: 0;  line-height: 0;}
+  
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;}
 
 </style>
 </head>
 <body>
 <noscript><p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. <br>Dieser Code wird von Ihrem Browser interpretiert. <br>Sie sehen diesen Text, weil Javascript in Ihrem Browser deaktiviert ist. Erwägen Sie bitte, Javascript zu aktivieren. <br>Der N-Brief braucht einen neuen Browser, am besten funktioniert er mit Firefox 45 oder neuer<br>
-<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.3, Letzte Aktualisierung: 24.01.2017</p></noscript>
+<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.3, Letzte Aktualisierung: 25.01.2017</p></noscript>
 <div id="topBar">
 <button class="bt1" onclick="ez1()">Arztbrief</button>
 <button class="bt1" onclick="ez4()">Hilfe</button>
 <button class="bt1" onclick="ez2()">Rechner / Skalen</button>
+<span id="mof">Ist der Patient Mann oder Frau?</span>
 </div>
 
 <div id="zweit" class="wrap2">
@@ -153,7 +208,7 @@ background-position:right;background-repeat:no-repeat;}
 <div class="fleft50">
 <h3>Hilfe</h3>
 <p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm befindet sich in Entwicklung.<br>Die Texte sind in Zusammenarbeit entstanden. Dirk Bahner verfasste die Texte MS, BSV und BPLS. Den Text <b>Klinischer Befund</b> verbesserten Csilla Vincze, Dirk Bahner und Axel Saure. Marc Hennies hat viele gute Verbesserungsvorschläge zur Sprache der Texte gemacht.<br>Die Knöpfe mit der Umrandung fügen Textbausteine in den Textbereich hinzu oder sind die Eingabe- bzw. die Tab-Taste.
-<br>Grauer Knopf bedeutet, dass der Textbaustein noch in Vorbereitung ist. <br>Bitte lesen Sie den eingefügten Text im weißen Textbereich kritisch und bearbeiten Sie ihn sorgfältig.<br>Wer lieber diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert. Wenn Sie HTML-, CSS- und Javascript kostenfrei und ohne Anmeldung lernen möchten, besuchen Sie : <a href="http://www.w3schools.com/">w3schools</a>. Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.3, Letzte Aktualisierung: 24.01.2017<br>GNU General Public License, Version 3
+<br>Grauer Knopf bedeutet, dass der Textbaustein noch in Vorbereitung ist. <br>Bitte lesen Sie den eingefügten Text im weißen Textbereich kritisch und bearbeiten Sie ihn sorgfältig.<br>Wer lieber diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert. Wenn Sie HTML-, CSS- und Javascript kostenfrei und ohne Anmeldung lernen möchten, besuchen Sie : <a href="http://www.w3schools.com/">w3schools</a>. Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.3, Letzte Aktualisierung: 25.01.2017<br>GNU General Public License, Version 3
 <br><a href="https://emanuilg.github.io/N-Brief/">N-Brief-Webseite</a><br></p>
 </div>
 <div class="fright50">
@@ -378,20 +433,21 @@ er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen n
 </div>
 <div class="wrap3" id="Geri">
 <p class="stamp">Geriatrie</p>
-<button class="bt1 bttext btgrey" onclick="ed1('Geriatrie Text 1 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 1</button>
-<button class="bt1 bttext btgrey" onclick="ed1('Geriatrie Text 2 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 2</button>
-<button class="bt1 bttext btgrey" onclick="ed1('Geriatrie Text 3 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 3</button>
-<button class="bt1 bttext btgrey" onclick="ed1('Geriatrie Text 4 - Ein Textbaustein ist in Vorbereitung\r\n\r\n')">Geriatrie 4</button>
+
+<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Geriatrie 1</button>
+<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Geriatrie 2</button>
+<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Geriatrie 3</button>
+<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Geriatrie 4</button>
 </div>
 <div class="wrap3" id="DemPark">
 <p class="stamp">Demenz und Parkinson</p>
-<button class="bt1 bttext btgrey" onclick="ed1('Demenz - Ein Textbaustein ist in Vorbereitung\r\n')">Demenz</button><br>
-<button class="bt1 bttext btgrey" onclick="ed1('Parkinson - Ein Textbaustein ist in Vorbereitung\r\n')">Parkinson</button><br>
+<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Demenz</button><br>
+<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Parkinson</button><br>
 </div>
 <div class="wrap3" id="KopfEpi">
 <p class="stamp">Kopfschmerz und Epilepsie</p>
-<button class="bt1 bttext btgrey" onclick="ed1('Kopfschmerz - Ein Textbaustein ist in Vorbereitung\r\n')">Kopfschmerz</button><br>
-<button class="bt1 bttext btgrey" onclick="ed1('Epilepsie - Ein Textbaustein ist in Vorbereitung\r\n')">Epilepsie</button><br>
+<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Kopfschmerz</button><br>
+<button class="bt1 bttext " data-tooltip="Text in Vorbereitung">Epilepsie</button><br>
 </div>
 <div class="wrap3" id="Bef">
 <p class="stamp">Apparative Befunde</p>
@@ -411,7 +467,7 @@ er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen n
 </div>
 <div class="fright">
 <p>Patient:</p>
-<p id="gesX"><span class="vertal" id="mof">Mann oder Frau?</span></p>
+<p id="gesX">Mann oder Frau?</p>
 <button class="bt2" onclick="mannSx()">Mann</button>
 <button class="bt2" onclick="frauSx()">Frau</button>
 <br><br>
@@ -421,8 +477,10 @@ er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen n
 <button class="bt2 bttext" onclick="ed1('\t')">Tab</button><br><br>
 <button class="bt1" onclick="ddel()">Lösch alles</button>
 <button class="bt1" onclick="selCopTx()">Kopiere alles</button><br>
-<button class="bt1" onclick="winscroll()">Window hoch</button>
-<button class="bt1" onclick="location.reload()">N-Brief aktualisieren</button><br>
+<button class="bt1" onclick="winscroll()" data-tooltip="Scrollt alles nach oben">Scroll hoch</button>
+<button class="bt2" onclick="themeEG1()" data-tooltip="Dunkles Theme">Dunkel</button>
+<button class="bt2" onclick="themeEG2()" data-tooltip="Standard-Theme">Standard</button>
+<button class = "bt1" onclick= "location.reload()">N-Brief aktualisieren</button><br>
 <br><br><br>
 <button class="bt1 bttext" onclick="ed1('\r\nNeurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'): \r\n\r\nFremdanamnese (Angaben des der ): \r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button>
 <button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links  \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\n' + Der_Patient + ' wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiografie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\n' + Der_Patient + ' lebt zu Hause und kann sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur Thrombektomie. Wir bedanken uns für die Übernahme.\r\n\r\n')">Thrombektomie</button>
@@ -433,7 +491,7 @@ er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen n
 
 <br><br><br><br>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;<svg height="40" width="40"><polygon points="20.0,2.0 8.0,39.6 38.0,15.6 2.0,15.6 32.0,39.6" style="fill:gold;"/></svg></p>
-<span>N-Brief 0.3 <br>24.01.2017</span>
+<span>N-Brief 0.3 <br>25.01.2017</span>
 </div></div>
 <script>
 // the m/f-related variables are declared
@@ -451,12 +509,14 @@ var Rechtshaender;
 var Linkshaender;
 var Rechtshaenderin;
 var Linkshaenderin;
-
+var mofbestimmt;
 // all male forms are set
 function mannSx() {
 var i1 = document.getElementById('gesX');
-i1.innerHTML = "<span class='vertal'>Mann</span>";
+i1.innerHTML = "Mann";
 i1.style = "color:#003d66;animation-iteration-count:0;";
+mofbestimmt = "1";
+document.getElementById('mof').style.display="none";
 Der_Patient = "Der Patient";
 der_Patient = "der Patient";
 Er = "Er";
@@ -475,8 +535,10 @@ Linkshaender = "Linkshänder";
 // all female forms are set
 function frauSx() {
 var i1 = document.getElementById('gesX');
-i1.innerHTML = "<span class='vertal'>Frau</span>";
+i1.innerHTML = "Frau";
 i1.style = "color:#003d66;animation-iteration-count:0;";
+mofbestimmt = "1";
+document.getElementById('mof').style.display="none";
 Der_Patient = "Die Patientin";
 der_Patient = "die Patientin";
 Er = "Sie";
@@ -538,6 +600,7 @@ function showGfr() {showNilSkalen();document.getElementById("Gfr1").style.displa
 function showLdopa() {showNilSkalen();document.getElementById("levodopa").style.display = "block";}
 
 function ed1(inp) {
+    if (mofbestimmt=="1"){
     let tarea = document.getElementById("hh");
     // find and define the start and end of selection
     let sst=tarea.selectionStart;
@@ -549,11 +612,13 @@ function ed1(inp) {
     // set cursor after the inserted text 
     tarea.selectionStart=sst + inp.length;
     tarea.selectionEnd=sst + inp.length;
-    tarea.focus();
+    tarea.focus();}
+    else{document.getElementById("mof").style.display="inline-block";}
     }
 
 function edein(inp) {
     // just the ed1, only the cursor a place to the left
+    if (mofbestimmt=="1"){
     let tarea = document.getElementById("hh");
     let sst=tarea.selectionStart;
     let sse=tarea.selectionEnd;
@@ -561,7 +626,8 @@ function edein(inp) {
     tarea.value = tarea.value.substring(0,sst) + inp + tarea.value.substring(sse,tvl);
     tarea.selectionStart=sst + inp.length - 1;
     tarea.selectionEnd=sst + inp.length - 1;
-    tarea.focus();
+    tarea.focus();}
+    else{document.getElementById("mof").style.display="inline-block";}
     }
 
 // delete all text from the textarea
@@ -636,4 +702,22 @@ textArea.onkeydown=function(z){if(z.keyCode===9){ed1('\t');return false;}};}
 tabJa();
 
 function winscroll(){window.scrollTo(0,0);}
+
+
+function themeEG1() {
+    let css = 'body{background-color:#002B36;}textarea{background-color:#002B36;color:#cccccc;border: solid;border-width:1px;border-color:#cccccc;font-family:"dejavu sans mono", "monospace";}.bt1{background-color:#808080;}.bt1:hover {background-color:#b30000;}.bt2{background-color:#808080;}.bt2:hover{background-color:#b30000;}.bttext{border-color:#808080;} .select1 {background-color:#002B36;}.select1 option{background-color:#002B36;}';
+    style = document.createElement('style');
+    if (style.styleSheet){style.styleSheet.cssText = css;}else{style.appendChild(document.createTextNode(css));
+    }document.getElementsByTagName('head')[0].appendChild(style);    
+}
+
+function themeEG2() {
+    let css =
+    'body{background-color:#003d66;} textarea {background-color:white;color:#555555;border:none;font-family:sans-serif;} .bt1{background-color:#4CAF50;} .bt1:hover{background-color:red;} .bt2{background-color:#4CAF50;} .bt2:hover{background-color:red;} .bttext{border-color:#4CAF50;}.select1{background-color:#003d66;} .select1 option{background-color:#003d66;}';
+    style = document.createElement('style');
+    if (style.styleSheet){style.styleSheet.cssText = css;}else{style.appendChild(document.createTextNode(css));
+    }document.getElementsByTagName('head')[0].appendChild(style);    
+}
+
+
 </script></body></html>
