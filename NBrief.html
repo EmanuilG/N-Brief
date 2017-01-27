@@ -1,357 +1,655 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-<meta charset="utf-8" />
-<meta name="description" content="Mustertexte und Textbausteine für einen neurologischen Arztbrief in Bad Hersfeld">
-<meta name="author" content="Emanuil Giuris">
-<meta license="GNU General Public License 3">
-<title>N-Brief</title>
-<style>
-body{background-color:#003d66;font-family:sans-serif;font-size:0.9em;color:white;margin-left:10px;}
-a{color:yellow;}
-textarea{background-color:white;font-family:sans-serif;font-size:0.9em;color:#555555;width:100%;height:700px;padding:6px;border:none;}
-.wrap{margin-top:45px;width:100%;overflow:auto;}
-.wrap2{margin-top:40px;display:none;width:100%;overflow:auto;}
-.wrap2_1{margin-top:40px;display:block;width:100%;overflow:auto;}
-.wrap3{margin-top:10px;display:none;width:100%;overflow:auto;}
-.fleft{float:left;width:26%;height:60em;margin:0px;}
-.fcenter{float:left;width:58%;height:60em;margin:0px;}
-.fright{float:right;height:60em;width:14%;margin:0px;}
-.fleft50{float:left;height:60em;width:45%;margin:0px;}
-.fright50{float:right;height:60em;width:45%;margin:0px;}
-.bt1{height:30px;width:150px;color:white;font-family:sans-serif;font-size:0.9em;border-style:none;background-color:#4CAF50;color:white;}
-.bt1:hover{background-color:red;color:white;}
-.bt2{height:30px;width:73px;color:white;font-family:sans-serif;font-size:0.9em;border-style:none;background-color:#4CAF50;color:white;}
-.bt2:hover{background-color:red;color:white;}
-.btgrey{background-color:grey;}
-.bttext{border-style:ridge;border-width:3px;border-color:#4CAF50;}
-.stamp{background:;color:;font-family:sans-serif;font-size:0.9em;margin-left:2px;width:40%;width:40%;}
-#topBar{position:fixed;top:0;left:0;width:100%;height:2em; background-color:inherit;font-size:0.9em;margin-left:10px;}
-.h1_1{text-align:center;margin-top:5em;font-weight:bold;font-family:monospace;font-size:3em;}
-.gfrclass{background-color:white;color:black;font-weight:bold;padding:4px;display:inline-block;height:15px;width:40px;text-align:right;}
-input[type="number"]{width:50px;}
-.gfrtable{padding:10px;text-align:left;vertical-align:text-bottom;}
-.gfrtable th,.gfrtable td{padding:10px;}
-#gesX{color:red;font-weight:bold;background-color:white;text-align:center;width:150px;height:25px;animation-name:mannfrau;animation-duration:3s;animation-iteration-count:1;}
-hr{display:block;margin-left:0;width:304px;border-style:solid;
-border-width:1px;color:white;} 
-.select1{-webkit-appearance:none;-moz-appearance:none;appearance:none;
-border:none;border-radius:0;font-size:0.9em;} 
-.select1{width:50%;border:1px solid;padding:.75em 1em .5em 1em;
-box-shadow:0 0.3px 1px 0;
-background-position:right;background-repeat:no-repeat;}
-.select1:hover{box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);}
-.select1::-ms-expand{display:none;}
-.select1{border:10;padding:0.1em 0.1em 0.1em 1em;background-color:#003d66;color:white;}
-.select1 option{background:#003d66;padding:0.2em;}
-.select2{width:90%}
-@keyframes mannfrau{
-0%{background-color:red;}
-10%{background-color:orange;}
-30%{background-color:yellow;}
-100%{background-color:white;}}
-#mof{padding-left: 150px;display: none;}
-/**
+	<meta charset="utf-8" />
+	<meta name="description" content="Mustertexte und Textbausteine für einen neurologischen Arztbrief in Bad Hersfeld">
+	<meta name="author" content="Emanuil Giuris">
+	<meta license="GNU General Public License 3">
+	<title>N-Brief</title>
+	<style>
+		body {
+			background-color: #003d66;
+			font-family: sans-serif;
+			font-size: 0.9em;
+			color: white;
+			margin-left: 10px;
+		}
+		
+		a {
+			color: yellow;
+		}
+		
+		textarea {
+			background-color: white;
+			font-family: sans-serif;
+			font-size: 0.9em;
+			color: #555555;
+			width: 100%;
+			height: 700px;
+			padding: 6px;
+			border: none;
+			resize: none;
+		}
+		
+		.wrap {
+			margin-top: 45px;
+			width: 100%;
+			overflow: auto;
+		}
+		
+		.wrap2 {
+			margin-top: 40px;
+			display: none;
+			width: 100%;
+			overflow: auto;
+		}
+		
+		.wrap2_1 {
+			margin-top: 40px;
+			display: block;
+			width: 100%;
+			overflow: auto;
+		}
+		
+		.wrap3 {
+			margin-top: 10px;
+			display: none;
+			width: 100%;
+			overflow: auto;
+		}
+		
+		.fleft {
+			float: left;
+			width: 26%;
+			height: 60em;
+			margin: 0px;
+		}
+		
+		.fcenter {
+			float: left;
+			width: 58%;
+			height: 60em;
+			margin: 0px;
+		}
+		
+		.fright {
+			float: right;
+			height: 60em;
+			width: 14%;
+			margin: 0px;
+		}
+		
+		.fleft50 {
+			float: left;
+			height: 60em;
+			width: 45%;
+			margin: 0px;
+		}
+		
+		.fright50 {
+			float: right;
+			height: 60em;
+			width: 45%;
+			margin: 0px;
+		}
+		
+		.bt1 {
+			height: 30px;
+			width: 150px;
+			color: white;
+			font-family: sans-serif;
+			font-size: 0.9em;
+			border-style: none;
+			background-color: #4CAF50;
+			color: white;
+		}
+		
+		.bt1:hover {
+			background-color: red;
+			color: white;
+		}
+		
+		.bt2 {
+			width: 73px;
+		}
+		
+		.btgrey {
+			background-color: grey;
+		}
+		
+		.bttext {
+			border-style: ridge;
+			border-width: 3px;
+			border-color: #4CAF50;
+		}
+		
+		.stamp {
+			font-family: sans-serif;
+			font-size: 0.9em;
+			margin-left: 2px;
+			width: 40%;
+			width: 40%;
+		}
+		
+		#topBar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 2em;
+			background-color: inherit;
+			font-size: 0.9em;
+			margin-left: 10px;
+		}
+		
+		.h1_1 {
+			text-align: center;
+			margin-top: 5em;
+			font-weight: bold;
+			font-family: monospace;
+			font-size: 3em;
+		}
+		
+		.gfrclass {
+			background-color: white;
+			color: black;
+			font-weight: bold;
+			padding: 4px;
+			display: inline-block;
+			height: 15px;
+			width: 40px;
+			text-align: right;
+		}
+		
+		input[type="number"] {
+			width: 50px;
+			height: 15px;
+		}
+		
+		.gfrtable {
+			padding: 10px;
+			text-align: left;
+			vertical-align: text-bottom;
+		}
+		
+		.gfrtable th,
+		.gfrtable td {
+			padding: 10px;
+		}
+		
+		#gesX {
+			color: red;
+			font-weight: bold;
+			background-color: white;
+			text-align: center;
+			width: 150px;
+			height: 25px;
+			animation-name: mannfrau;
+			animation-duration: 3s;
+			animation-iteration-count: 1;
+		}
+		
+		hr {
+			display: block;
+			margin-left: 0;
+			width: 304px;
+			border-style: solid;
+			border-width: 1px;
+			color: white;
+		}
+		
+		.select1 {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			border: none;
+			border-radius: 0;
+			font-size: 0.9em;
+		}
+		
+		.select1 {
+			width: 50%;
+			border: 1px solid;
+			padding: .75em 1em .5em 1em;
+			box-shadow: 0 0.3px 1px 0;
+			background-position: right;
+			background-repeat: no-repeat;
+		}
+		
+		.select1:hover {
+			box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+		}
+		
+		.select1::-ms-expand {
+			display: none;
+		}
+		
+		.select1 {
+			border-width: 1px;
+			padding: 0.1em 0.1em 0.1em 1em;
+			background-color: #003d66;
+			color: white;
+		}
+		
+		.select1 option {
+			background: #003d66;
+			padding: 0.2em;
+		}
+		
+		.select2 {
+			width: 90%
+		}
+		
+		@keyframes mannfrau {
+			0% {
+				background-color: red;
+			}
+			10% {
+				background-color: orange;
+			}
+			30% {
+				background-color: yellow;
+			}
+			100% {
+				background-color: white;
+			}
+		}
+		
+		#mof {
+			padding-left: 150px;
+			display: none;
+		}
+		/**
  * Tooltip Styles
  */
-/* Add this attribute to the element that needs a tooltip */
-[data-tooltip] {
-  position: relative;
-  z-index: 2;
-  cursor: pointer;
-}
-
-/* Hide the tooltip content by default */
-[data-tooltip]:before,
-[data-tooltip]:after {
-  visibility: hidden;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Position tooltip above the element */
-[data-tooltip]:before {
-  position: absolute;
-  bottom: 150%;
-  left: 50%;
-  margin-bottom: 5px;
-  margin-left: -80px;
-  padding: 7px;
-  width: 160px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #000;
-  background-color: hsla(0, 0%, 20%, 0.9);
-  color: #fff;
-  content: attr(data-tooltip);
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.2;}
-
-/* Triangle hack to make tooltip look like a speech bubble */
-[data-tooltip]:after {
-  position: absolute;  bottom: 150%;
-  left: 50%;  margin-left: -5px;  width: 0;
-  border-top: 5px solid #000;  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
-  border-right: 5px solid transparent;  border-left: 5px solid transparent;
-  content: " ";  font-size: 0;  line-height: 0;}
-  
-/* Show tooltip content on hover */
-[data-tooltip]:hover:before,
-[data-tooltip]:hover:after {visibility: visible;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;}
-
-</style>
+		/* Add this attribute to the element that needs a tooltip */
+		
+		[data-tooltip] {
+			position: relative;
+			z-index: 2;
+			cursor: pointer;
+		}
+		/* Hide the tooltip content by default */
+		
+		[data-tooltip]:before,
+		[data-tooltip]:after {
+			visibility: hidden;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+			filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+			opacity: 0;
+			pointer-events: none;
+		}
+		/* Position tooltip above the element */
+		
+		[data-tooltip]:before {
+			position: absolute;
+			bottom: 150%;
+			left: 50%;
+			margin-bottom: 5px;
+			margin-left: -80px;
+			padding: 7px;
+			width: 160px;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			background-color: #000;
+			color: white;
+			content: attr(data-tooltip);
+			text-align: center;
+			font-size: 14px;
+			line-height: 1.2;
+		}
+		/* Triangle hack to make tooltip look like a speech bubble */
+		
+		[data-tooltip]:after {
+			position: absolute;
+			bottom: 150%;
+			left: 50%;
+			margin-left: -5px;
+			width: 0;
+			border-top: 5px solid #000;
+			border-right: 5px solid transparent;
+			border-left: 5px solid transparent;
+			content: " ";
+			font-size: 0;
+			line-height: 0;
+		}
+		/* Show tooltip content on hover */
+		
+		[data-tooltip]:hover:before,
+		[data-tooltip]:hover:after {
+			visibility: visible;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+			filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+			opacity: 1;
+		}
+	</style>
 </head>
+
 <body>
-<noscript><p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. <br>Dieser Code wird von Ihrem Browser interpretiert. <br>Sie sehen diesen Text, weil Javascript in Ihrem Browser deaktiviert ist. Erwägen Sie bitte, Javascript zu aktivieren. <br>Der N-Brief braucht einen neuen Browser, am besten funktioniert er mit Firefox 45 oder neuer<br>
-<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.3, Letzte Aktualisierung: 25.01.2017</p></noscript>
-<div id="topBar">
-<button class="bt1" onclick="ez1()">Arztbrief</button>
-<button class="bt1" onclick="ez4()">Hilfe</button>
-<button class="bt1" onclick="ez2()">Rechner / Skalen</button>
-<span id="mof">Ist der Patient Mann oder Frau?</span>
-</div>
+	<noscript><p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. <br>Dieser Code wird von Ihrem Browser interpretiert. <br>Sie sehen diesen Text, weil Javascript in Ihrem Browser deaktiviert ist. Erwägen Sie bitte, Javascript zu aktivieren. <br>Der N-Brief braucht einen neuen Browser, am besten funktioniert er mit Firefox 45 oder neuer<br>
+<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.4, Letzte Aktualisierung: 26.01.2017</p></noscript>
+	<div id="topBar">
+		<button class="bt1" onclick="ez1()">Arztbrief</button>
+		<button class="bt1" onclick="ez4()">Hilfe</button>
+		<button class="bt1" onclick="ez2()">Rechner / Skalen</button>
+		<span id="mof">Ist der Patient Mann oder Frau?</span>
+	</div>
 
-<div id="zweit" class="wrap2">
+	<div id="zweit" class="wrap2">
 
-<h3>Skalen und Rechner</h3>
-<div class="fleft" id="panelSkalen">
-<button class="bt1" onclick="showGfr()">GFR</button><br><br>
-<button class="bt1" onclick="showLdopa()">L-Dopa-Dosis</button>
-</div>
+		<h3>Skalen und Rechner</h3>
+		<div class="fleft" id="panelSkalen">
+			<button class="bt1" onclick="showGfr()">GFR</button><br><br>
+			<button class="bt1" onclick="showLdopa()">L-Dopa-Dosis</button>
+		</div>
 
-<div class="fcenter" id="Skalen">
+		<div class="fcenter" id="Skalen">
 
-<div class="wrap2" id="Gfr1">
-<h4>GFR</h4>
-<fieldset>
-<form id="gfr">
-<table class="gfrtable">
-<tr>
-<th>Kreatinin<br>mg/dl</th>
-<th>Alter<br>(Jahre)</th>
-<th>Geschlecht</th>
-<th>Hautfarbe</th>
-<th>GFR nach MDRD</th>
-</tr>
-<tr>
-<td><label for="a"></label>
-<select id="a" onfocus="this.form.a.value='1'">
-<option value="0">0</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-</select>
+			<div class="wrap2" id="Gfr1">
+				<h4>GFR</h4>
+				<fieldset>
+					<form id="gfr">
+						<table class="gfrtable">
+							<tr>
+								<th>Kreatinin<br>mg/dl</th>
+								<th>Alter<br>(Jahre)</th>
+								<th>Geschlecht</th>
+								<th>Hautfarbe</th>
+								<th>GFR nach MDRD</th>
+							</tr>
+							<tr>
+								<td><label for="a"></label>
+									<select id="a" onfocus="this.form.a.value='1'">
+										<option value="0">0</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										</select>
 
-<label for="b"><b>,</b></label>
-<select id="b" onfocus="this.form.b.value='0'">
-<option value="0">0</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-</select></td>
-<td><label for="c"></label>
-<input type="number" id="c" name="c" value="60" min="18" max="99" onfocus="this.form.c.value='65'">
-<output name="x" for="a, b"></output>
-</td>
-<td><label for="geschlecht"></label>
-<input type="radio" name="geschlecht" value="mann" checked>Mann<br>
-<input type="radio" name="geschlecht" value="frau">Frau</td>
-<td><label for="farbe"></label>
-<input type="radio" name="farbe" value="weiss" checked="checked">Nicht schwarz<br>
-<input type="radio" name="farbe" value="schwarz">Schwarz</td>
-<td><span class="gfrclass" id="gfrp"></span><span> ml/min/1,73 m<sup>2</sup></span>
-<br><br><button type="button" class="bt1" onclick="gfrCalc()">GFR</button>
-</td></tr></table></form></fieldset></div>
+									<label for="b"><b>,</b></label>
+									<select id="b" onfocus="this.form.b.value='0'">
+										<option value="0">0</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										</select></td>
+								<td><label for="c"></label>
+									<input type="number" id="c" name="c" value="60" min="18" max="99" onfocus="this.form.c.value='65'">
+									<output name="x" for="a, b"></output>
+								</td>
+								<td><label for="geschlecht"></label>
+									<input type="radio" name="geschlecht" value="mann" checked>Mann<br>
+									<input type="radio" name="geschlecht" value="frau">Frau</td>
+								<td><label for="farbe"></label>
+									<input type="radio" name="farbe" value="weiss" checked="checked">Nicht schwarz<br>
+									<input type="radio" name="farbe" value="schwarz">Schwarz</td>
+								<td><span class="gfrclass" id="gfrp"></span><span> ml/min/1,73 m<sup>2</sup></span>
+									<br><br><button type="button" class="bt1" onclick="gfrCalc()">GFR</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</fieldset>
+			</div>
 
-<div class="wrap2" id="levodopa">
-<h4>Levodopa-Äquivalenzdosis</h4>
-<fieldset>
-<form id="levodopaEqDosis">
-<table class="ldopatable">
-<tr><th>Substanz</th><th>Dosis (mg)</th><th>Konversionsfaktor</th></tr>
-<tr><td>Levodopa</td><td><input type="number" id="Levodopa" name="Levodopa" min="0" max="2000" value="0" step="25" onfocus="this.form.Levodopa.value='99 '"></td><td>1</td></tr>
-<tr><td>Levodopa ret</td><td><input type="number" id="Levodopa_ret" name="Levodopa_ret" min="0" max="2000" value="0" step="25" onfocus="this.form.Levodopa_ret.value=' '"></td><td>0,75</td></tr>
-<tr><td>Duodopa</td><td><input type="number" id="Duodopa" name="Duodopa" value="0" min="0" max="2000" step="10" onfocus="this.form.Duodopa.value=''"></td><td>1,1</td></tr>
-<tr><td>Levodopa_Entacapon</td><td><input type="number" id="Levodopa_Entacapon" name="Levodopa_Entacapon" value="0" min="0" max="2000" step="25" onfocus="this.form.Levodopa_Entacapon.value=''"></td><td>1,33</td></tr>
-<tr><td>Pramipexolsalz</td><td><input type="number" id="Pramipexolsalz" name="Pramipexolsalz" value="0" min="0" max="5" step="0.375" onfocus="this.form.Pramipexolsalz.value=''"></td><td>100</td></tr>
-<tr><td>Ropinirol</td><td><input type="number" id="Ropinirol" name="Ropinirol" value="0" min="0" max="20" step="1" onfocus="this.form.Ropinirol.value=''"></td><td>20</td></tr>
-<tr><td>Rotigotin</td><td><input type="number" id="Rotigotin" name="Rotigotin" value="0" min="0" max="100" step="1" onfocus="this.form.Rotigotin.value=''"></td><td>30</td></tr>
-<tr><td>Piribedil</td><td><input type="number" id="Piribedil" name="Piribedil" value="0" min="0" max="1000" step="25" onfocus="this.form.Piribedil.value=''"></td><td>1</td></tr>
-<tr><td>Rasagilin</td><td><input type="number" id="Rasagilin" name="Rasagilin" value="0" step="" onfocus="this.form.Rasagilin.value=''"></td><td>100</td></tr>
-<tr><td>Amantadin</td><td><input type="number" id="Amantadin" name="Amantadin" value="0" min="0" max="500" step="50" onfocus="this.form.Amantadin.value=''"></td><td>1</td></tr>
-<tr><td>Apomorphin</td><td><input type="number" id="Apomorphin" name="Apomorphin" value="0" min="0" max="400" step="1" onfocus="this.form.Apomorphin.value=''"></td><td>10</td></tr>
-<tr><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td></tr>
-<tr><td><button type="button" class="bt1" onclick="ldopaCalc()">Levodopa-Äquivalent</button></td><td><span class="gfrclass" id="led"></span></td><td>mg</td></tr>
-<tr><td>&nbsp;&nbsp;</td><td>&nbsp;&nbsp;</td><td><button type="button" class="bt1" onclick="parkMed()">Alles löschen</button></td></tr>
-</table></form></fieldset>
-</div></div></div>
-<div id="viert" class="wrap2">
-<div class="fleft50">
-<h3>Hilfe</h3>
-<p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm befindet sich in Entwicklung.<br>Die Texte sind in Zusammenarbeit entstanden. Dirk Bahner verfasste die Texte MS, BSV und BPLS. Den Text <b>Klinischer Befund</b> verbesserten Csilla Vincze, Dirk Bahner und Axel Saure. Marc Hennies hat viele gute Verbesserungsvorschläge zur Sprache der Texte gemacht.<br>Die Knöpfe mit der Umrandung fügen Textbausteine in den Textbereich hinzu oder sind die Eingabe- bzw. die Tab-Taste.
-<br>Grauer Knopf bedeutet, dass der Textbaustein noch in Vorbereitung ist. <br>Bitte lesen Sie den eingefügten Text im weißen Textbereich kritisch und bearbeiten Sie ihn sorgfältig.<br>Wer lieber diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textraums in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem Browser interpretiert. Wenn Sie HTML-, CSS- und Javascript kostenfrei und ohne Anmeldung lernen möchten, besuchen Sie : <a href="http://www.w3schools.com/">w3schools</a>. Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.3, Letzte Aktualisierung: 25.01.2017<br>GNU General Public License, Version 3
-<br><a href="https://emanuilg.github.io/N-Brief/">N-Brief-Webseite</a><br></p>
-</div>
-<div class="fright50">
-<h3>Tastenkkombinationen</h3> Die folgenden Tastenkkombinationen gelten in den meisten Windows-Anwendungen.<br>Sie helfen bei der Textbearbeitung.<br>Sie gelten auch für das weiße Textfeld im 'N-Brief'.
-<h4>Kopieren, Einfügen, Finden</h4> 'Strg' + C : Die Auswahl kopieren <br>'Strg' + X : Die Auswahl ausschneiden <br>'Strg' + V : Die Auswahl einfügen <br>'Strg' + F : Suchen
-<h4>Rückgängig</h4> 'Strg' + Z : Die vorherige Aktion rückgängig machen <br>'Strg' + Y : Die zurückgenommene Aktion wiederherstellen
-<h4>Cursor-Bewegung</h4> 'Strg' + 'Pfeil rechts' : Cursor ein Wort nach rechts<br>'Strg' + 'Pfeil links' : Cursor ein Wort nach links<br>'Pos1' : Cursor zum Beginn der Zeile<br>'Ende' : Cursor zum Ende der Zeile<br>'Strg' + 'Pos1' : Cursor zum Beginn des Textes<br>'Strg' + 'Ende' : Cursor zum Ende des Textes<br>'Tab' : Die Tab-Taste funktioniert nun normal.
-<h4>Auswählen</h4>'Strg' + A : Den gesamten Text auswählen<br>'Umschalt' + 'Pfeil rechts' : Eine Stelle rechts vom Cursor auswählen<br>'Strg' + 'Umschalt' + 'Pfeil rechts' : Das Wort rechts vom Cursor auswählen<br>'Umschalt' + 'Pos1' : Bis zum Beginn der Zeile auswählen<br>'Umschalt' + 'Ende' : Bis zum Ende der Zeile auswählen<br>'Strg' + 'Umschalt' + 'Pos1' : Bis zum Beginn des Textes auswählen<br>'Strg' + 'Umschalt' + 'Ende' : Bis zum Ende des Textes auswählen<br>Doppelklick auf ein Wort : Das Wort auswählen 
-</div></div>
-<div id="erst" class="wrap2_1">
-<div class="fleft">
-<button class="bt1 nbblock" onclick="showAnr()">Anrede</button>
-<button class="bt1 nbblock" onclick="showDiagn()">Diagnosen</button><br>
-<button class="bt1 nbblock" onclick="showKlBef()">Klinischer Befund</button>
-<button class="bt1 nbblock" onclick="showMedi()">Medikamente</button><br>
-<button class="bt1 nbblock" onclick="showEpikr()">Epikrise/Symptome</button>
-<button class="bt1 nbblock" onclick="showBefunde()">Apparativ</button>
-<br><br>
-<button class="bt1 nbblock" onclick="showMS()">MS</button>
-<button class="bt1 nbblock" onclick="showRS()">BSV-Fazialis-BPLS</button><br>
-<button class="bt1 nbblock" onclick="showDemPark()">Demenz-Parkinson</button>
-<button class="bt1 nbblock" onclick="showKopfEpi()">Kopfschm - Epil</button><br>
-<button class="bt1 nbblock" onclick="showGeri()">Geriatrie</button>
-<hr>
-<div class="wrap3" id="Anrede">
-<p class="stamp">Anrede</p>
-<button class="bt1 bttext" onclick="ed1('Sehr geehrter Herr Kollege ')" title="Sehr geehrter Herr Kollege">Herr Kollege</button>
-<button class="bt1 bttext" onclick="ed1('Sehr geehrte Frau Kollegin ')" title="Sehr geehrte Frau Kollegin">Frau Kollegin</button><br>
-<button class="bt1 bttext" onclick="ed1('Sehr geehrter Herr Professor ')" title="Sehr geehrter Herr Professor">Herr Professor</button>
-<button class="bt1 bttext" onclick="ed1('Sehr geehrte Frau Professorin ')" title="Sehr geehrte Frau Professorin">Frau Professorin</button>
-<br><br>
-<!-- <button class="bt1 bttext" onclick="anArzt()">An Arzt/Ärztin:</button> -->
-<form>
-<select id="mySelect" class="select1" size="10" onclick="anArzt()">
-  <option value="Ajouri">Ajouri</option>
-  <option value="Auel">Auel</option>
-  <option value="Behr">Behr</option>
-  <option value="Brönneke-Born">Brönneke-Born</option>
-  <option value="Dippel">Dippel</option>
-  <option value="Dürr-Hohenthanner">Dürr-Hohenthanner</option>
-  <option value="Englisch">Englisch</option>
-  <option value="Funck">Funck</option>
-  <option value="Götte">Götte</option>
-  <option value="Handke">Handke</option>
-  <option value="Hejazi">Hejazi</option>
-  <option value="Hussainy">Hussainy</option>
-  <option value="Keimer">Keimer</option>
-  <option value="Keymling">Keymling</option>
-  <option value="Kuhl">Kuhl</option>
-  <option value="Kirchhoff">Kirchhoff</option>
-  <option value="Kurz">Kurz</option>
-  <option value="Lotter">Lotter</option>
-  <option value="Müller-Siebert">Müller-Siebert</option>
-  <option value="Nadjm">Nadjm</option>
-  <option value="Nachtmann">Nachtmann</option>
-  <option value="Neumann-Haefelin">Neumann-Haefelin</option>
-  <option value="Saure">Saure</option>
-  <option value="Schäfer">Schäfer</option>
-  <option value="Schell">Schell</option>
-  <option value="Schieren">Schieren</option>
-  <option value="Schmidtlein">Schmidtlein</option>
-  <option value="Schweitzer">Schweitzer</option>
-  <option value="Teetz">Teetz</option>
-  <option value="Vargas-Leal">Vargas-Leal</option>
-  <option value="Vogelpohl">Vogelpohl</option>
-  <option value="von Manteuffel">von Manteuffel</option>
- </select>
-</form><br>
-</div>
-<div class="wrap3" id="Diagnosen">
-	<p class="stamp">Diagnosen</p>
-<form>
-<select id="diagnosen" class="select1 select2" size="18" onclick="diagn()">
-<option value="Aktuell:Vordiagnosen:">Aktuell/Vordiagnosen</option>
-<option value="Adipositas">Adipositas</option><br>
-<option value="Alkoholkrankheit">Alkoholkrankheit</option>
-<option value="Arterielle Hypertonie">Art. Hypertonie</option><br>
-<option value="COPD Stadium">COPD</option>
-<option value="Delir">Delir</option><br>
-<option value="Demenz, leicht, mittelschwer, schwer">Demenz</option>
-<option value="Depression">Depression</option><br>
-<option value="Diabetes mellitus Typ 1 2">DM</option>
-<option value="Epileptischer Anfall">Epil. Anfall</option><br>
-<option value="Funktionelle Körperbeschwerden">Funktionell</option>
-<option value="Gutartiger Lagerungsschwindel des hinteren Bogengangs rechts links">Lagerungsschwindel</option><br>
-<option value="Herzinsuffizienz NYHA">Herzinsuffizienz</option>
-<option value="Hirnblutung ca.  x cm rechts links">Hirnblutung</option><br>
-<option value="Hirninfarkt im Stromgebiet der A cerebri media posterior anterior rechts links">Hirninfarkt</option>
-<option value="Hyperlipidämie">Hyperlipidämie</option><br>
-<option value="Idiopathisches Parkinson-Syndrom">Parkinson</option>
-<option value="Infarkt im Hirnstamm Kleinhirn rechts links">Hirnstamm-Kleinhirn</option><br>
-<option value="KHK">KHK</option>
-<option value="Migräne mit ohne Aura">Migräne</option><br>
-<option value="Niereninsuffizienz Stadium">Niereninsuffizienz</option>
-<option value="Periphere Fazialisparese">Fazialisparese</option><br>
-<option value="Subarachnoidalblutung Hunt Hess mit Ventrikeleinblutung">SAB</option>
-<option value="Transiente globale Amnesie">TGA</option><br>
-<option value="Transitorisch-ischämische Attacke">TIA</option>
-<option value="Vorhofflimmern, Erstdiagnose, ohne unter Antikoagulation mit">VHF</option><br>
-<option value="Z.n.">Z.n.</option>
-</select></form>
-<br>
-</div>
-<div class="wrap3" id="Epikrise">
-<p class="stamp">Epikrise</p>
-<button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte wegen Kopfschmerzen Schwäche der rechten linken Körperseite, Schwindels, eines Bewusstseinsverlustes, Taubheitsgefühls der rechten linken Körperseite. \r\nAm Datum ca. Uhrzeit merkte ' + der_Patient + ', dass \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vorgefunden. \r\n' + Der_Patient + ' wurde durch den Rettungsdienst gebracht. \r\n' + Der_Patient + ' stellte sich am Datum in der Notaufnahme vor. \r\n' + Er + ' klagt über xxx seit xxx Stunden Tagen Wochen. \r\n' + Der_Patient + ' berichtet, dass ' + er + ' \r\nDie Angehörigen berichten dass, \r\n' + Der_Patient + ' lebte bisher zu Hause, arbeitete als xxx und konnte sich selbst versorgen. \r\n' + Der_Patient + ' lebte bisher im Heim, hatte Pflegegrad . \r\n' + Er + ' konnte sich teilweise selbst versorgen. ' + Er + ' ging ohne Hilfsmittel am Rollator am Stock. \r\nwar harninkontinent harnkontinent. \r\nAngabe von Nichtrauchen xxx Zigaretten täglich und von xxx Glas Wein Bier täglich in der Woche von seltenem keinem Alkoholgenuss. \r\nEs gibt eine Vorsorgevollmacht (bevollmächtigt: ) und eine Patientenverfügung\r\n\r\nMedikation bei Aufnahme\r\n')">Anamnese</button>
-<button class="bt1 bttext" onclick="ed1('\r\nDie klinische Untersuchung deckte kein neurologisches Defizit auf. \r\nIn der klinischen Untersuchung war ' + der_Patient + ' wach, orientiert und hatte xxx. \r\nDas Schädel-CT zeigte\r\nkeine frische Ischämie oder Blutung. \r\neinen Hirninfarkt im Stromgebiet der Arteria cerebri media posterior anterior rechts links \r\nDas Schädel-CT zeigte Marklagerveränderungen einen Hirninfarkt eine Blutung. \r\nDas Schädel-MRT zeigte \r\nDas Labor war im Normbereich zeigte \r\nDie transthorakale Echokardiografie zeigte keine Emboliequelle. \r\nDie transösophageale Echokardiografie zeigte keine Emboliequelle. \r\nDie Neurosonografie zeigte Plaques und geringgradige Stenose der Karotiden. \r\nDie Elektrophysiologie\r\nwar regelrecht\r\nwaren regelrecht. wegweisend. \r\nWährend der Monitor-Überwachung von Datum bis Datum stellten wir kein Vorhofflimmern fest. \r\nIm Laufe des stationären Aufenthaltes \r\n')">Befunde</button>
-<button class="bt1 bttext" onclick="ed1('\r\nWir gehen bei bestehendem Vorhofflimmern von einem embolischen Hirninfarkt aus. \r\nWir gehen von einem atherothrombotischen Prozess aus. \r\nUrsächlich für den Hirninfarkt war die Stenose der xxx\r\nWir klärten ' + den_Patienten + ' über einen gesunden Lebensstil im kardiovaskulären Sinn auf. \r\nNach ausführlichen Gesprächen mit der Familie entschieden wir uns gemeinsam gemäß dem mutmaßlichen Willen ' + des_Patienten + ' für eine rein palliative Behandlung. \r\nEine ambulante Kontrolle von xxx wird empfohlen. \r\nWir bitten um ein LZ-EKG ambulant.\r\n' + Herr + ' xxx wird am Datum in Ihre Weiterbehandlung entlassen. \r\nwie vereinbart in Ihre Rehabilitations-Klinik zurück verlegt. \r\nWir danken für die freundliche Übernahme. \r\nWir stehen für Fragen gerne zur Verfügung. \r\n')">Schluss</button>
-<p class="stamp">Subjektive Symptome</p>
-<form>
-<select id="symptSubj" class="select1 select2" size="7" onclick="symptSu()">
-<option value="im Arm im Gesicht im Bein im Bauch in der Brust ">Arm Gesicht  Bein Bauch Brust</option>
-<option value="rechts links ">rechts links</option>
-<option value="seit: Dauer: Häufigkeit: / Stärke: (in der Skala 0-10) Linderung durch: Verchlimmerung durch: ">seit: Dauer: Häufigkeit: Stärke: Linderung durch: schlimmer durch:</option>
-<option value="Angst ">Angst</option>
-<option value="Bewusstseinsverlust ">Bewusstseinsverlust</option>
-<option value="Doppeltsehen ">Doppeltsehen</option>
-<option value="Erbrechen ">Erbrechen</option>
-<option value="Kopfschmerzen ">Kopfschmerzen</option>
-<option value="Kribbeln ">Kribbeln</option>
-<option value="Luftnot ">Luftnot</option>
-<option value="Niedergeschlagenheit ">Niedergeschlagenheit</option>
-<option value="Ohnmacht ">Ohnmacht</option>
-<option value="Rückenschmerzen ">Rückenschmerzen</option>
-<option value="Schmerz ">Schmerz</option>
-<option value="Schwäche ">Schwäche </option>
-<option value="Schwierigkeit beim Erinnern ">Schwierigkeit beim Erinnern</option>
-<option value="Schwierigkeit beim Gehen ">Schwierigkeit beim Gehen</option>
-<option value="Schwierigkeit beim Schlucken ">Schwierigkeit beim Schlucken</option>
-<option value="Schwierigkeit beim Sehen ">Schwierigkeit beim Sehen</option>
-<option value="Schwierigkeit beim Sprechen ">Schwierigkeit beim Sprechen</option>
-<option value="Schwierigkeit mit dem Wasserlassen ">Schwierigkeit mit dem Wasserlassen</option>
-<option value="Schwindel ">Schwindel</option>
-<option value="Taubheitsgefühl ">Taubheitsgefühl</option>
-<option value="Übelkeit ">Übelkeit</option>
-<option value="Verschwommensehen ">Verschwommensehen</option>
-<option value="Zittern ">Zittern</option>
-<option value="Zuckungen ">Zuckungen</option>
-</select>
-</form>
-<p class="stamp">Objektive Symptome</p>
-<form>
-<select id="symptObj" class="select1 select2" size="7" onclick="symptOb()">
+			<div class="wrap2" id="levodopa">
+				<h4>Levodopa-Äquivalenzdosis</h4>
+				<fieldset>
+					<form id="levodopaEqDosis">
+						<table class="ldopatable">
+							<tr>
+								<th>Substanz</th>
+								<th>Dosis (mg)</th>
+								<th>Konversionsfaktor</th>
+							</tr>
+							<tr>
+								<td>Levodopa</td>
+								<td><input type="number" id="Levodopa" name="Levodopa" min="0" max="2000" value="0" step="25" onfocus="this.form.Levodopa.value='99 '"></td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>Levodopa ret</td>
+								<td><input type="number" id="Levodopa_ret" name="Levodopa_ret" min="0" max="2000" value="0" step="25" onfocus="this.form.Levodopa_ret.value=' '"></td>
+								<td>0,75</td>
+							</tr>
+							<tr>
+								<td>Duodopa</td>
+								<td><input type="number" id="Duodopa" name="Duodopa" value="0" min="0" max="2000" step="10" onfocus="this.form.Duodopa.value=''"></td>
+								<td>1,1</td>
+							</tr>
+							<tr>
+								<td>Levodopa_Entacapon</td>
+								<td><input type="number" id="Levodopa_Entacapon" name="Levodopa_Entacapon" value="0" min="0" max="2000" step="25" onfocus="this.form.Levodopa_Entacapon.value=''"></td>
+								<td>1,33</td>
+							</tr>
+							<tr>
+								<td>Pramipexolsalz</td>
+								<td><input type="number" id="Pramipexolsalz" name="Pramipexolsalz" value="0" min="0" max="5" step="0.375" onfocus="this.form.Pramipexolsalz.value=''"></td>
+								<td>100</td>
+							</tr>
+							<tr>
+								<td>Ropinirol</td>
+								<td><input type="number" id="Ropinirol" name="Ropinirol" value="0" min="0" max="20" step="1" onfocus="this.form.Ropinirol.value=''"></td>
+								<td>20</td>
+							</tr>
+							<tr>
+								<td>Rotigotin</td>
+								<td><input type="number" id="Rotigotin" name="Rotigotin" value="0" min="0" max="100" step="1" onfocus="this.form.Rotigotin.value=''"></td>
+								<td>30</td>
+							</tr>
+							<tr>
+								<td>Piribedil</td>
+								<td><input type="number" id="Piribedil" name="Piribedil" value="0" min="0" max="1000" step="25" onfocus="this.form.Piribedil.value=''"></td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>Rasagilin</td>
+								<td><input type="number" id="Rasagilin" name="Rasagilin" value="0" step="" onfocus="this.form.Rasagilin.value=''"></td>
+								<td>100</td>
+							</tr>
+							<tr>
+								<td>Amantadin</td>
+								<td><input type="number" id="Amantadin" name="Amantadin" value="0" min="0" max="500" step="50" onfocus="this.form.Amantadin.value=''"></td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>Apomorphin</td>
+								<td><input type="number" id="Apomorphin" name="Apomorphin" value="0" min="0" max="400" step="1" onfocus="this.form.Apomorphin.value=''"></td>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+								<td>&nbsp;&nbsp;</td>
+								<td>&nbsp;&nbsp;</td>
+							</tr>
+							<tr>
+								<td><button type="button" class="bt1" onclick="ldopaCalc()">Levodopa-Äquivalent</button></td>
+								<td><span class="gfrclass" id="led"></span></td>
+								<td>mg</td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+								<td>&nbsp;&nbsp;</td>
+								<td><button type="button" class="bt1" onclick="parkMed()">Alles löschen</button>
+
+								</td>
+							</tr>
+						</table>
+					</form>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	<div id="viert" class="wrap2">
+		<div class="fleft50">
+			<h3>Hilfe</h3>
+			<p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm befindet sich in Entwicklung.<br>Die Texte sind in Zusammenarbeit entstanden. Dirk Bahner verfasste die Texte MS, BSV und BPLS. Den Text <b>Klinischer Befund</b>				verbesserten Csilla Vincze, Dirk Bahner und Axel Saure. Marc Hennies hat viele gute Verbesserungsvorschläge zur Sprache der Texte gemacht.<br>Zum Nachschlagen eines Wortes ist <a href="http://www.duden.de/">www.duden.de</a> eine gute Idee. Für die
+				neurologische Terminologie sollen wir uns nach der <a href="http://www.dgn.org/">DGN</a> richten. <br>Die Knöpfe mit der Umrandung fügen Textbausteine in den Textbereich hinzu oder sind die Eingabe- bzw. die Tab-Taste. <br>Grauer bzw. schwarzer Knopf
+				bedeutet, dass der Textbaustein noch in Vorbereitung ist. <br>Bitte lesen Sie den eingefügten Text im Textbereich kritisch und bearbeiten Sie ihn sorgfältig.<br>Wer lieber diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem
+				Knopf "Alles kopieren" wird der Inhalt des Textbereichs in die Zwischenablage kopiert. Dann kann er z.B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte
+				eingefügt.
+				<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem
+				Browser interpretiert. Wenn Sie HTML-, CSS- und Javascript kostenfrei und ohne Anmeldung lernen möchten, besuchen Sie : <a href="http://www.w3schools.com/">w3schools</a>. Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version
+				mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.4, Letzte Aktualisierung: 26.01.2017<br>GNU General Public License, Version 3
+				<br><a href="https://emanuilg.github.io/N-Brief/">N-Brief-Website</a><br></p>
+		</div>
+		<div class="fright50">
+			<h3>Tastenkkombinationen</h3> Die folgenden Tastenkkombinationen gelten in den meisten Windows-Anwendungen.<br>Sie helfen bei der Textbearbeitung.<br>Sie gelten auch für das weiße Textfeld im 'N-Brief'.
+			<h4>Kopieren, Einfügen, Finden</h4> 'Strg' + C : Die Auswahl kopieren <br>'Strg' + X : Die Auswahl ausschneiden <br>'Strg' + V : Die Auswahl einfügen <br>'Strg' + F : Suchen
+			<h4>Rückgängig</h4> 'Strg' + Z : Die vorherige Aktion rückgängig machen <br>'Strg' + Y : Die zurückgenommene Aktion wiederherstellen
+			<h4>Cursor-Bewegung</h4> 'Strg' + 'Pfeil rechts' : Cursor ein Wort nach rechts<br>'Strg' + 'Pfeil links' : Cursor ein Wort nach links<br>'Pos1' : Cursor zum Beginn der Zeile<br>'Ende' : Cursor zum Ende der Zeile<br>'Strg' + 'Pos1' : Cursor zum Beginn des Textes<br>'Strg'
+			+ 'Ende' : Cursor zum Ende des Textes<br>'Tab' : Die Tab-Taste funktioniert nun normal.
+			<h4>Auswählen</h4>'Strg' + A : Den gesamten Text auswählen<br>'Umschalt' + 'Pfeil rechts' : Eine Stelle rechts vom Cursor auswählen<br>'Strg' + 'Umschalt' + 'Pfeil rechts' : Das Wort rechts vom Cursor auswählen<br>'Umschalt' + 'Pos1' : Bis zum Beginn der Zeile auswählen<br>'Umschalt'
+			+ 'Ende' : Bis zum Ende der Zeile auswählen<br>'Strg' + 'Umschalt' + 'Pos1' : Bis zum Beginn des Textes auswählen<br>'Strg' + 'Umschalt' + 'Ende' : Bis zum Ende des Textes auswählen<br>Doppelklick auf ein Wort : Das Wort auswählen
+		</div>
+	</div>
+	<div id="erst" class="wrap2_1">
+		<div class="fleft">
+			<button class="bt1 nbblock" onclick="showAnr()">Anrede</button>
+			<button class="bt1 nbblock" onclick="showDiagn()">Diagnosen</button><br>
+			<button class="bt1 nbblock" onclick="showKlBef()">Klinischer Befund</button>
+			<button class="bt1 nbblock" onclick="showMedi()">Medikamente</button><br>
+			<button class="bt1 nbblock" onclick="showEpikr()">Epikrise/Symptome</button>
+			<button class="bt1 nbblock" onclick="showBefunde()">Apparativ</button>
+			<br><br>
+			<button class="bt1 nbblock" onclick="showMS()">MS</button>
+			<button class="bt1 nbblock" onclick="showRS()">BSV-Fazialis-BPLS</button><br>
+			<button class="bt1 nbblock" onclick="showDemPark()">Demenz-Parkinson</button>
+			<button class="bt1 nbblock" onclick="showKopfEpi()">Kopfschm - Epil</button><br>
+			<button class="bt1 nbblock" onclick="showGeri()">Geriatrie</button>
+			<hr>
+			<div class="wrap3" id="Anrede">
+				<p class="stamp">Anrede</p>
+				<button class="bt1 bttext" onclick="ed1('Sehr geehrter Herr Kollege ')" title="Sehr geehrter Herr Kollege">Herr Kollege</button>
+				<button class="bt1 bttext" onclick="ed1('Sehr geehrte Frau Kollegin ')" title="Sehr geehrte Frau Kollegin">Frau Kollegin</button><br>
+				<button class="bt1 bttext" onclick="ed1('Sehr geehrter Herr Professor ')" title="Sehr geehrter Herr Professor">Herr Professor</button>
+				<button class="bt1 bttext" onclick="ed1('Sehr geehrte Frau Professorin ')" title="Sehr geehrte Frau Professorin">Frau Professorin</button>
+				<br><br>
+				<!-- <button class="bt1 bttext" onclick="anArzt()">An Arzt/Ärztin:</button> -->
+				<form>
+					<select id="mySelect" class="select1" size="10" onclick="anArzt()">
+					<option value="Ajouri">Ajouri</option>
+					<option value="Auel">Auel</option>
+					<option value="Behr">Behr</option>
+					<option value="Brönneke-Born">Brönneke-Born</option>
+					<option value="Dippel">Dippel</option>
+					<option value="Dürr-Hohenthanner">Dürr-Hohenthanner</option>
+					<option value="Englisch">Englisch</option>
+					<option value="Funck">Funck</option>
+					<option value="Götte">Götte</option>
+					<option value="Handke">Handke</option>
+					<option value="Hejazi">Hejazi</option>
+					<option value="Hussainy">Hussainy</option>
+					<option value="Keimer">Keimer</option>
+					<option value="Keymling">Keymling</option>
+					<option value="Kuhl">Kuhl</option>
+					<option value="Kirchhoff">Kirchhoff</option>
+					<option value="Kurz">Kurz</option>
+					<option value="Lotter">Lotter</option>
+					<option value="Müller-Siebert">Müller-Siebert</option>
+					<option value="Nadjm">Nadjm</option>
+					<option value="Nachtmann">Nachtmann</option>
+					<option value="Neumann-Haefelin">Neumann-Haefelin</option>
+					<option value="Saure">Saure</option>
+					<option value="Schäfer">Schäfer</option>
+					<option value="Schell">Schell</option>
+					<option value="Schieren">Schieren</option>
+					<option value="Schmidtlein">Schmidtlein</option>
+					<option value="Schweitzer">Schweitzer</option>
+					<option value="Teetz">Teetz</option>
+					<option value="Vargas-Leal">Vargas-Leal</option>
+					<option value="Vogelpohl">Vogelpohl</option>
+					<option value="von Manteuffel">von Manteuffel</option>
+					</select>
+				</form><br>
+			</div>
+			<div class="wrap3" id="Diagnosen">
+				<p class="stamp">Diagnosen</p>
+				<form>
+					<select id="diagnosen" class="select1 select2" size="18" onclick="diagn()">
+				<option value="Aktuell:Vordiagnosen:">Aktuell/Vordiagnosen</option>
+				<option value="Adipositas">Adipositas</option><br>
+				<option value="Alkoholkrankheit">Alkoholkrankheit</option>
+				<option value="Arterielle Hypertonie">Art. Hypertonie</option><br>
+				<option value="COPD Stadium">COPD</option>
+				<option value="Delir">Delir</option><br>
+				<option value="Demenz, leicht, mittelschwer, schwer">Demenz</option>
+				<option value="Depression">Depression</option><br>
+				<option value="Diabetes mellitus Typ 1 2">DM</option>
+				<option value="Epileptischer Anfall">Epil. Anfall</option><br>
+				<option value="Funktionelle Körperbeschwerden">Funktionell</option>
+				<option value="Gutartiger Lagerungsschwindel des hinteren Bogengangs rechts links">Lagerungsschwindel</option><br>
+				<option value="Herzinsuffizienz NYHA">Herzinsuffizienz</option>
+				<option value="Hirnblutung ca.  x cm rechts links">Hirnblutung</option><br>
+				<option value="Hirninfarkt im Stromgebiet der A cerebri media posterior anterior rechts links">Hirninfarkt</option>
+				<option value="Hyperlipidämie">Hyperlipidämie</option><br>
+				<option value="Idiopathisches Parkinson-Syndrom">Parkinson</option>
+				<option value="Infarkt im Hirnstamm Kleinhirn rechts links">Hirnstamm-Kleinhirn</option><br>
+				<option value="KHK">KHK</option>
+				<option value="Migräne mit ohne Aura">Migräne</option><br>
+				<option value="Niereninsuffizienz Stadium">Niereninsuffizienz</option>
+				<option value="Periphere Fazialisparese">Fazialisparese</option><br>
+				<option value="Subarachnoidalblutung Hunt Hess mit Ventrikeleinblutung">SAB</option>
+				<option value="Transiente globale Amnesie">TGA</option><br>
+				<option value="Transitorisch-ischämische Attacke">TIA</option>
+				<option value="Vorhofflimmern, Erstdiagnose, ohne unter Antikoagulation mit">VHF</option><br>
+				<option value="Z.n.">Z.n.</option>
+				</select></form>
+				<br>
+			</div>
+			<div class="wrap3" id="Epikrise">
+				<p class="stamp">Epikrise</p>
+				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte wegen Kopfschmerzen Schwäche der rechten linken Körperseite, Schwindels, eines Bewusstseinsverlustes, Taubheitsgefühls der rechten linken Körperseite. \r\nAm Datum ca. Uhrzeit merkte ' + der_Patient + ', dass \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vorgefunden. \r\n' + Der_Patient + ' wurde durch den Rettungsdienst gebracht. \r\n' + Der_Patient + ' stellte sich am Datum in der Notaufnahme vor. \r\n' + Er + ' klagt über xxx seit xxx Stunden Tagen Wochen. \r\n' + Der_Patient + ' berichtet, dass ' + er + ' \r\nDie Angehörigen berichten dass, \r\n' + Der_Patient + ' lebte bisher zu Hause, arbeitete als xxx und konnte sich selbst versorgen. \r\n' + Der_Patient + ' lebte bisher im Heim, hatte Pflegegrad . \r\n' + Er + ' konnte sich teilweise selbst versorgen. ' + Er + ' ging ohne Hilfsmittel am Rollator am Stock. \r\nwar harninkontinent harnkontinent. \r\nAngabe von Nichtrauchen xxx Zigaretten täglich und von xxx Glas Wein Bier täglich in der Woche von seltenem keinem Alkoholgenuss. \r\nEs gibt eine Vorsorgevollmacht (bevollmächtigt: ) und eine Patientenverfügung\r\n\r\nMedikation bei Aufnahme\r\n')">Anamnese</button>
+				<button class="bt1 bttext" onclick="ed1('Die klinische Untersuchung deckte kein neurologisches Defizit auf. \r\nIn der klinischen Untersuchung war ' + der_Patient + ' wach, orientiert und hatte xxx. \r\nDas Schädel-CT zeigte\r\nkeine frische Ischämie oder Blutung. \r\neinen Hirninfarkt im Stromgebiet der Arteria cerebri media posterior anterior rechts links \r\nDas Schädel-CT zeigte Marklagerveränderungen einen Hirninfarkt eine Blutung. \r\nDas Schädel-MRT zeigte \r\nDas Labor war im Normbereich zeigte \r\nDie transthorakale Echokardiografie zeigte keine Emboliequelle. \r\nDie transösophageale Echokardiografie zeigte keine Emboliequelle. \r\nDie Neurosonografie zeigte Plaques und geringgradige Stenose der Karotiden. \r\nDie Elektrophysiologie\r\nwar regelrecht\r\nwaren regelrecht. wegweisend. \r\nWährend der Monitor-Überwachung von Datum bis Datum stellten wir kein Vorhofflimmern fest. \r\nIm Laufe des stationären Aufenthaltes \r\n')">Befunde</button>
+				<button class="bt1 bttext" onclick="ed1('\r\nWir gehen bei bestehendem Vorhofflimmern von einem embolischen Hirninfarkt aus. \r\nWir gehen von einem atherothrombotischen Prozess aus. \r\nUrsächlich für den Hirninfarkt war die Stenose der xxx\r\nWir klärten ' + den_Patienten + ' über einen gesunden Lebensstil im kardiovaskulären Sinn auf. \r\nNach ausführlichen Gesprächen mit der Familie entschieden wir uns gemeinsam gemäß dem mutmaßlichen Willen ' + des_Patienten + ' für eine rein palliative Behandlung. \r\nEine ambulante Kontrolle von xxx wird empfohlen. \r\nWir bitten um ein LZ-EKG ambulant.\r\n' + Herr + ' xxx wird am Datum in Ihre Weiterbehandlung entlassen. \r\nwie vereinbart in Ihre Rehabilitations-Klinik zurück verlegt. \r\nWir danken für die freundliche Übernahme. \r\nWir stehen für Fragen gerne zur Verfügung. \r\n')">Schluss</button>
+				<p class="stamp">Subjektive Symptome</p>
+				<form>
+					<select id="symptSubj" class="select1 select2" size="7" onclick="symptSu()">
+				<option value="im Arm im Gesicht im Bein im Bauch in der Brust ">Arm Gesicht Bein Bauch Brust</option>
+				<option value="rechts links ">rechts links</option>
+				<option value="seit: Dauer: Häufigkeit: / Stärke: (in der Skala 0-10) Linderung durch: Verchlimmerung durch: ">seit: Dauer: Häufigkeit: Stärke: Linderung durch: schlimmer durch:</option>
+				<option value="Angst ">Angst</option>
+				<option value="Bewusstseinsverlust ">Bewusstseinsverlust</option>
+				<option value="Doppeltsehen ">Doppeltsehen</option>
+				<option value="Erbrechen ">Erbrechen</option>
+				<option value="Kopfschmerzen ">Kopfschmerzen</option>
+				<option value="Kribbeln ">Kribbeln</option>
+				<option value="Luftnot ">Luftnot</option>
+				<option value="Niedergeschlagenheit ">Niedergeschlagenheit</option>
+				<option value="Ohnmacht ">Ohnmacht</option>
+				<option value="Rückenschmerzen ">Rückenschmerzen</option>
+				<option value="Schmerz ">Schmerz</option>
+				<option value="Schwäche ">Schwäche </option>
+				<option value="Schwierigkeit beim Erinnern ">Schwierigkeit beim Erinnern</option>
+				<option value="Schwierigkeit beim Gehen ">Schwierigkeit beim Gehen</option>
+				<option value="Schwierigkeit beim Schlucken ">Schwierigkeit beim Schlucken</option>
+				<option value="Schwierigkeit beim Sehen ">Schwierigkeit beim Sehen</option>
+				<option value="Schwierigkeit beim Sprechen ">Schwierigkeit beim Sprechen</option>
+				<option value="Schwierigkeit mit dem Wasserlassen ">Schwierigkeit mit dem Wasserlassen</option>
+				<option value="Schwindel ">Schwindel</option>
+				<option value="Taubheitsgefühl ">Taubheitsgefühl</option>
+				<option value="Übelkeit ">Übelkeit</option>
+				<option value="Verschwommensehen ">Verschwommensehen</option>
+				<option value="Zittern ">Zittern</option>
+				<option value="Zuckungen ">Zuckungen</option>
+				</select>
+				</form>
+				<p class="stamp">Objektive Symptome</p>
+				<form>
+					<select id="symptObj" class="select1 select2" size="7" onclick="symptOb()">
 	<option value="Aggressivität ">Aggressivität</option>
 	<option value="Aphasie, der Ausdruck das Verständnis leicht schwer beeinträchtigt ">Aphasie</option>
 	<option value="Ataxie ">Ataxie</option>
@@ -376,20 +674,20 @@ background-position:right;background-repeat:no-repeat;}
 	<option value="Störung des Kurzzeitgedächtnisses ">Störung des Kurzzeitgedächtnisses</option>
 	<option value="Tremor ">Tremor</option>
 </select>
-</form><br>
+				</form><br>
 
-</div>
-<div class="wrap3" id="Medikamente">
-<p class="stamp">Medikamente</p>
-<form>
-<select id="medikamente" class="select1 select2" size="17" onclick="medi()">
+			</div>
+			<div class="wrap3" id="Medikamente">
+				<p class="stamp">Medikamente</p>
+				<form>
+					<select id="medikamente" class="select1 select2" size="17" onclick="medi()">
 <option value="Amlodipin 5 mg p.o.			1-0-0">Amlodipin</option>
 <option value="Apixaban 5 mg p.o.			1-0-1">Apixaban</option>
 <option value="ASS 100 mg p.o.			1-0-0">ASS</option>
 <option value="Atorvastatin 20 mg p.o.			0-0-1">Atorvastatin</option>
 <option value="Citalopram 20 mg p.o.			0-0-1">Citalopram</option>
 <option value="Clopidogrel 75 mg p.o.			0-0-1">Clopidogrel</option>
-<option value="Enoxaparin 0,4 ml s.c.       			0-0-1">Enoxaparin</option>
+<option value="Enoxaparin 0,4 ml s.c.     			0-0-1">Enoxaparin</option>
 <option value="Furosemid 20 mg p.o. i.v.			1-0-0">Furosemid</option>
 <option value="HCT 25 mg p.o.			1-0-0">HCT</option>
 <option value="Ibuprofen 400 mg p.o.			1-1-1">Ibuprofen</option>
@@ -404,7 +702,7 @@ background-position:right;background-repeat:no-repeat;}
 <option value="Mirtazapin 30 mg p.o.			0-0-1">Mirtazapin</option>
 <option value="Paracetamol 500 mg p.o.			1-1-1">Paracetamol</option>
 <option value="Phenprocoumon 3 mg p.o.		nach INR (Ziel 2-3)">Phenprocoumon</option>
-<option value="Pipamperon Saft (4 mg/ml) 6 ml  p.o.			0-0-1">Pipamperon</option>
+<option value="Pipamperon Saft (4 mg/ml) 6 ml p.o.			0-0-1">Pipamperon</option>
 <option value="Prednisolon 60 mg p.o.			1-0-0 bis Datum,danach täglich um 10 mg reduzieren">Prednisolon</option>
 <option value="Ramipril 5 mg p.o.			1-0-0">Ramipril</option>
 <option value="Risperidon 1 mg p.o.			0-0-1">Risperidon</option>
@@ -417,90 +715,89 @@ background-position:right;background-repeat:no-repeat;}
 <option value="Valproat 500 mg p.o. i.v.			1-0-1">Valproat</option>
 <option value="Valsartan 40 mg p.o.			1-0-1">Valsartan</option>
 </select>
-</form>
-		
-</div>
-<div class="wrap3" id="Klinischer_Befund">
-<p class="stamp">Klinischer Befund</p>
-<button class="bt1 bttext" onclick="ed1('\r\nWach, kooperativ, zeitlich, örtlich und situativ orientiert.\r\nAufmerksamkeit, Merkfähigkeit, Stimmung normal. \r\n'+Rechtshaender+' ' +Linkshaender+'. \r\nSprachverständnis, sprachlicher Ausdruck sowie Artikulation normal. \r\nAugen: Bewegung, Pupillen, Gesichtsfelder fingerperimetrisch normal. Kein pathologischer Nystagmus. Sehkraft mit Brille R und L mindestens xxx mm große Buchstaben in Leseentfernung. \r\nMimik normal, die Zunge wird geradeaus herausgestreckt, der weiche Gaumen hebt sich symmetrisch. Hören von Fingerreiben beiderseits normal. Kein Meningismus. \r\nArmhalteversuch, Beinhalteversuch, Kraft, Trophik, Tonus, Muskeldehnungsreflexe lebhaft/mittellebhaft/schwach, stgl., Plantarreflex normal.\r\nFinger-Nase-Versuch, Knie-Hacke-Versuch o.B. Kein Tremor, keine unwillkürlichen Bewegungen.\r\nAlgesie, Ästhesie normal. Lagesinn im Zeigefinger und im großen Zeh normal. Vibrationssinn im Zeigefinger /8 und im großen Zeh /8. \r\nStehen und Gehen normal, Einbeinstand, Rombergversuch, Zehen- und Hackengang, Strichgang, Aufstehen vom Stuhl normal. \r\n\r\nAllgemeinzustand gut, Ernährungszustand gut. Haut und Schleimhäute normal. Lunge auskultatorisch normales Atemgeräusch, Herzaktion rhythmisch, keine Herzgeräusche, Bauch weich mit Darmgeräuschen, keine Ödeme, große Gelenke frei beweglich, Wirbelsäule ohne Klopfschmerz. \r\nRR / mmHg, Herzfrequenz /min, Temperatur 36, C, SpO2 xxx % bei Raumluft.\r\n\r\n')">Befund</button>
-<button class="bt1 bttext" onclick="ed1('\r\nSchulterblattstabilisierung durch Serratus ant. normal, Schulterhebung 5, Armabduktion 5, Armadduktion 5, Arminnenrotation 5, Armaußenrotation 5, Armbeugung 5, Armstreckung 5, Unterarmpronation 5, Unterarmsupination 5, Handbeugung 5, Handstreckung 5, Fingerstreckung 5, Fingerbeugung 5, Abduktion der Finger II und V 5, Beugung der MCP-Gelenke 5, Streckung der MCP-Gelenke 5, Beugung der IP-Gelenke 5, Streckung der IP-Gelenke 5 nach MRC.\r\n\r\nHüftbeugung 5, Hüftstreckung 5, Hüftinnenrotation 5, Hüftaußenrotation 5, Kniebeugung 5, Kniestreckung 5, Fußhebung 5, Fußsenkung 5, Fußpronation 5, Fußsupination 5, Zehenstreckung 5, Zehenbeugung 5 nach MRC.\r\n\r\nMuskeldehnungsreflexe:  (0: fehlend, 1: schwach, 2: mittellebhaft, 3: lebhaft ohne Klonus, 4: mit Klonus)\r\n')">Peripher</button><br>
-<button class="bt1 bttext" onclick="ed1(Der_Patient + ' liegt im Bett,\r\natmet spontan wird über einen endotrachealen Tubus / Tracheostoma beatmet.\r\nDie Augen sind geschlossen, ' + er + ' reagiert nicht auf Ansprache und Berührung. Nach mäßigem Schmerzreiz bewegt ' +
-er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen nimmt ' + er +
-' keinen Blickkontakt auf, die Augen sind parallel, der okulozephale Reflex, horizontal und vertikal, ist auslösbar. Die Pupillen sind rund und gleich groß, ca. xxx mm, und reagieren auf Licht. Die Muskeldehnungsreflexe lassen sich nicht lebhaft auslösen. Der Plantarreflex ist stumm normal. Babinski-Zeichen rechts links.\r\nGlasgow-Coma-Scale: --. \r\n')">Koma</button>
-</div>
-<div class="wrap3" id="MS">
-<p class="stamp">Multiple Sklerose</p>
-<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie Aufnahme erfolgte bei Verdacht auf eine entzündliche ZNS-Erkrankung. \r\nDie Aufnahme ' + des_Patienten + ' erfolgte bei Verdacht auf erneuten Schub einer bekannten schubförmig remittierenden Multiplen Sklerose.\r\nDie Aufnahme ' + des_Patienten + ' erfolgte geplant zur erneuten Steroidpulstherapie bei bekannter sekundär chronisch progredienter Multipler Sklerose.\r\nIm klinischen Untersuchungsbefund zeigte sich\r\nDie Gehstrecke betrug aktuell xxx m.\r\nDer EDDS lag aktuell bei xxx.\r\n\r\n' + Der_Patient + ' erhielt eine Steroidpulstherapie mit Methylprednisolon 1000 mg über drei Tage unter Magenschutz, Thromboseprophylaxe und Blutzuckerkontrollen.\r\nDie Infusionen wurden von ' + dem_Patienten + ' gut vertragen. \r\nDie Beschwerden erschienen im Verlauf rückläufig.\r\nIm cMRT zeigten sich mehrere Balken-assoziierte Demyelinisierungen, typisch für eine Enzephalomyelitis Disseminata \r\nund Zeichen einer räumlichen Dissemination\r\nund Zeichen einer räumlichen und zeitlichen Dissemination\r\nes waren keine Zeichen einer räumlichen Dissemination nachweisbar\r\nIm MRT der HWS zeigte sich eine Demyelinisierung in Höhe\r\nEs erfolgte ein erneutes MRT mit KM, in dem keine sicheren kontrastmittelaufnehmenden Läsionen dargestellt werden konnten\r\nElektrophysiologische Untersuchungen zeigten\r\neine Leitungsstörung beider Nervi optici wie bei chronischer Retrobulbärneuritis.\r\neine Hintestrangläsion\r\neine Pyramidenbahnläsion \r\nDie oligoklonalen Banden im Liquor waren positiv negativ \r\nDie erneute Liquordiagnostik erfolgte zur ergänzenden Bestimmung von JC-Virus-DNA und fiel negativ aus.\r\nZusammenfassend gingen wir bei ' + Herrn + ' xxx von einem erneuten Schub bei bekannter Multiple Sklerose aus.\r\nWir empfehlen\r\neine ambulante neurologische Anbindung und Verlaufskontrollen.\r\nein Fortführen der Intervalltherapie mit\r\nden Beginn einer immunmodulatorischen Therapie mit\r\n' + Der_Patient + ' wurde über die möglichen therapeutischen Optionen aufgeklärt.\r\nAm Datum entließen wir ' + den_Patienten + ' in Ihre weitere Betreuung und stehen für Rückfragen gerne zur Verfügung. \r\n')">MS-Brief</button>
-</div>
-<div class="wrap3" id="RS">
-<p class="stamp">Bandscheibenvorfall, Fazialisparese, Lagerungsschwindel</p>
-<button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte zur Abklärung von starken, immobilisierenden Rückenschmerzen. \r\n' + Der_Patient + ' berichtete, dass ' + er + ' seit ca. xxx Tagen Wochen Rückenschmerzen mit Ausstrahlung in das rechte/linke Bein habe. Spritzen durch den  Hausarzt, Wärmeanwendungen und eine konservative Schmerzmedikation hätte bisher zu keiner ausreichenden Besserung geführt. \r\n' + Herr + ' gab eine Schmerzausstrahlung in die Lateralseite des rechten linken Oberschenkels und in die Ventralseite des rechten linken Unterschenkels an (dem Dermatom L4/L5 rechts links entsprechend). \r\nIm klinisch neurologischen Befund zeigten sich keine Paresen, die Muskeleigenreflexe (PSR und ASR) waren seitengleich und mittellebhaft. \r\nWir führten ein MRT der LWS durch, hier zeigte sich xxx \r\nDurch eine Schmerzmedikation mit Naproxen und Metamizol sowie begleitender Physiotherapie und Wärmeanwendungen besserten sich die Schmerzen deutlich. \r\nWir stellten ' + den_Patienten + ' neurochirurgisch vor. Es wurde die Indikation zu einer operativen Behandlung gestellt und es erfolgte die Übernahme. \r\n' + Der_Patient + ' wurde über die operative Behandlung aufgeklärt, wünschte jedoch zunächst Bedenkzeit. Die hier angefertigten MRT wurde ' + dem_Patienten + ' auf CD mitgegeben. \r\nWir danken für die freundliche Weiterbehandlung.\r\nWir empfehlen eine Fortführung der konservativen Therapie mit an die Beschwerden adaptierter Schmerzmedikation sowie die Fortführung der Physiotherapie (insbesondere Rückenschule) und Wärmeanwendungen (Fango). \r\nWir konnten ' + Herrn + ' xxx am Datum in Ihre ambulante Weiterbetreuung entlassen und stehen Ihnen für Rückfragen gerne zur Verfügung.\r\n')">BSV</button><br>
-<button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nSchwäche im Gesicht rechts links seit Datum.\r\nIn der klinischen Untersuchung war '+ der_Patient +' wach, orientiert und hatte eine periphere Fazialisparese rechts links. Es bestand kein anderes neurologisches Defizit.\r\nDer Lidschluss war komplett aber schwach / inkomplett, die Lidspalte beim versuchten Lidschluss betrug mm. Der Mundwinkel konnte etwas bewegt werden, war völlig gelähmt.\r\nEs bestand eine Hyperakusis rechts links und eine Verminderung des Geschmacksempfindens in der Zunge rechts links.\r\nEs bestand keine Rötung und keine Bläschen im äußeren Gehörgang oder im Gesicht.\r\nDer Liquor war normal.\r\nWir diagnostizierten eine idiopathische Fazialisparese und setzten Prednisolon 60 mg p.o. für 5 Tage (Beginn: Datum) an, das ab Datum täglich um 10 mg reduziert werden soll. Der Augenschutz ist besonders wichtig. Wir begannen mit künstlichen Tränen tagsüber sowie Dexpanthenol-Augensalbe und Uhrglasverband zur Nacht. Der Augenschutz sollte solange durchgeführt werden bis der Lidschluss objektiv komplett ist.\r\nWir bitten um eine ambulante neurologische und augenärztliche Vorstellung im Verlauf.\r\n')">Fazialis</button><br>
-<button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte wegen rezidivierender, lageabhängiger Drehschwindelattacken. \r\nIn der klinisch-neurologischen Untersuchung zeigte sich kein Nystagmus / ein rotatorischer Nystagmus im Uhrzeigersinn/ gegen den Uhrzeigersinn bei Rechtslagerung / Linkslagerung. \r\n' + Der_Patient + ' gab verstärkten Schwindel nach Rechtslagerung / Linkslagerung an. \r\nIn den apparativen Untersuchungen (CCT, Neurodopplersonografie, cMRT) ergaben sich keine Auffälligkeiten, insbesondere kein Hinweis auf eine zentrale Genese des Schwindels. \r\nWir gingen von einem benignen paroxysmalen Lagerungsschwindel aus. \r\n' + Der_Patient + ' wurde physiotherapeutisch behandelt und in den Lagerungsmanövern nach Semont / nach Epley angeleitet. Wir empfehlen weitere ambulante Physiotherapie. \r\nWir konnten ' + Herrn + ' xxx am Datum in Ihre ambulante Weiterbetreuung entlassen und stehen Ihnen für Rückfragen gerne zur Verfügung. \r\n')">BPLS</button><br>
-</div>
-<div class="wrap3" id="Geri">
-<p class="stamp">Geriatrie</p>
+				</form>
 
-<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 1</button>
-<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 2</button>
-<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 3</button>
-<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 4</button>
-</div>
-<div class="wrap3" id="DemPark">
-<p class="stamp">Demenz und Parkinson</p>
-<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Demenz</button><br>
-<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Parkinson</button><br>
-</div>
-<div class="wrap3" id="KopfEpi">
-<p class="stamp">Kopfschmerz und Epilepsie</p>
-<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Kopfschmerz</button><br>
-<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Epilepsie</button><br>
-</div>
-<div class="wrap3" id="Bef">
-<p class="stamp">Apparative Befunde</p>
-<button class="bt1 bttext" onclick="ed1('Grundrhythmus Hz, normale visuelle Blockade-Reaktion, keine epilepsietypischen Potentiale, kene regionale Verlangsamung. \r\nPulsartefakt \r\nElektrodenartefakt \r\nLidschlagartefakte\r\nMuskelartefakte \r\n\r\nPolymorphe Wellen Hz, keine visuelle Blockade-Reaktion, keine epilepsietypischen Potentiale. \r\n\r\nNormalbefund.\r\n\r\nBefund hinweisend auf eine leichtgradige mittelgradige schwere diffuse Hirnfunktionsstörung. \r\n\r\nBefund hinweisend auf eine Funktionsstörung in der rechten linken Hirnhemisphäre. \r\n\r\nEs ist iktuale Aktivität zu beobachten. \r\n\r\n')">EEG</button>
-<button class="bt1 bttext" onclick="ed1('Extrakraniell: Arteriosklerose. Plaques in den Karotiden. \r\nA. carotis comm. bds. rechts links V.a. Stenose (lokaler Stenosegrad %).\r\nA. carotis int. bds. rechts V.a. geringgradige mittelgradige hochgradige Stenose links V.a. geringgradige mittelgradige hochgradige Stenose Verschluss kein Hinweis auf Stenose. regelrecht.\r\nA. carotis ext. bds. rechts links V.a. Stenose regelrecht. kein Hinweis auf eine Stenose.\r\nA. vertebralis bds. rechts links V.a. Stenose Verschluss regelrecht. kein Hinweis auf Stenose. V.a. Hypoplasie Transnuchal: V.a. Stenose der A. basilaris regelrecht.\r\nTranskraniell: A. cerebri anterior, media und posterior bds. regelrecht.\r\nTranskraniell: keine ausreichenden temporalen Schallfenster.\r\nTranskraniell:\r\nRechts\r\nLinks\r\nkeine ausreichenden temporalen Schallfenster.\r\nA. cerebri anterior, media und posterior bds.regelrecht.\r\nV.a. Stenose der A. cerebri media, anterior, posterior\r\nnicht darstellbar\r\nnicht beurteilbar\r\nProzente\r\n(NASCET <20%, ECST 30-40%)\r\n(NASCET <20%, ECST 45%)\r\n(NASCET <30%, ECST 40-50%)\r\n(NASCET <30%, ECST 50%)\r\n(NASCET 20-40%, ECST 50-60%)\r\n(NASCET 40%, ECST 60%)\r\n(NASCET 40%, ECST 65%)\r\n(NASCET 30-50%, ECST 60-70%)\r\n(NASCET 50%, ECST 70%)\r\n(NASCET 60%, ECST 75%)\r\n(NASCET 70%, ECST 80%)\r\n(NASCET 50-70%, ECST 70-80%)\r\n(NASCET 80%, ECST 90%)\r\n(NASCET 90%, ECST 95%)\r\n\r\n')">Neurosonografie</button>
-<button class="bt1 bttext" onclick="ed1('Motorische Neurografie\r\n\r\nN. medianus rechts links bds. \r\nnormal.\r\ndistal motorische Latenz normal verlängert\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. ulnaris rechts links bds. \r\nnormal.\r\ndistal motorische Latenz normal verlängert\r\nGeschwindigkeit normal vermindert \r\nGeschwindigkeit um den Ellenbogen vermindert\r\nAmplitude normal vermindert\r\nAmplitude nach Stimulation proximal des Ellenbogens vermindert\r\n\r\nN. radialis rechts links bds. \r\nnormal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. tibialis rechts links bds. \r\nnormal.\r\ndistal motorische Latenz normal verlängert\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. peroneus rechts links bds. \r\nnormal.\r\ndistal motorische Latenz normal verlängert\r\nGeschwindigkeit normal vermindert \r\nGeschwindigkeit um das Fibulaköpfchen vermindert\r\nAmplitude normal vermindert\r\nAmplitude nach Stimulation proximal des Fibulaköpfchens vermindert\r\n\r\n\r\nF-Welle \r\n\r\nN. medianus rechts links bds. normal. mit verlängerter Latenz. \r\nN. ulnaris rechts links bds. normal. mit verlängerter Latenz. \r\nN. radialis rechts links bds. normal. mit verlängerter Latenz. \r\nN. tibialis rechts links bds. normal. mit verlängerter Latenz. \r\nN. peroneus rechts links bds. normal. mit verlängerter Latenz. \r\n\r\n\r\nSensible Neurografie\r\n\r\nN. medianus rechts links bds. normal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. ulnaris rechts links bds. normal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. radialis rechts links bds. normal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. suralis rechts links bds. normal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\n\r\nBefund hinweisend auf \r\n\r\nKarpaltunnelsyndrom rechts links \r\nDistal symmetrische axonale Polyneuropathie\r\nLäsion des Spinalnervs\r\n\r\ntechnisch nicht verwertbar\r\n\r\nDer Befund vom rechten linken N. peroneus bedeutet nicht zwangsläufig eine Läsion des Nervenstamms des N. peroneus oder des spinalen Nervs L5 oder S1, es kann sich um eine lokale Läsion des motorischen Astes zum M. ext. dig. brevis handeln. \r\n\r\nDie verminderte Geschwindigkeit im N. suralis bds. kann im altersentsprechenden Normbereich sein.\r\n\r\n')">Neurografie</button>
-<button class="bt1 bttext" onclick="ed1('EMG rechts links \r\nMuskeln\r\n\r\nAlle untersuchten Muskeln hatten keine pathologische Spontanaktivität, die Potentiale motorischer Einheiten erschienen normal und das Interferenzmuster war normal. \r\n\r\nNormalbefund. \r\n\r\nMuskeln\r\n\r\nDeltoideus \r\nBiceps br.\r\nBrachioradialis\r\nTriceps br.\r\nExt. dig. comm.\r\nInt. dors I\r\nPronator teres\r\nAbd. poll. longus\r\nExt. ind. proprius\r\nFlex. dig. prof. (uln.)\r\nAbd. poll. brevis \r\nOpponens poll.\r\nAbd. dig. min. manus\r\nInter. dorsalis I \r\n\r\nRectus fem.\r\nVastus med.\r\nVastus lat.\r\nTib. ant.\r\nSemimembranosus \r\nBiceps fem.\r\nGluteus med. \r\nGluteus max. \r\nPeroneus longus\r\nExt. hall. longus\r\nGastrocn. lat. \r\nGastrocn. med. \r\n\r\nPotentiale motorischer Einheiten polyphasisch normal\r\npathologische Spontanaktivität \r\nFibrillationen\r\nFaszikulationen\r\npositive scharfe Wellen\r\n\r\n\r\nAbkürzungen\r\n\r\nPMA: Potentiale motorischer Einheiten \r\nIF: Interferenzmuster\r\nWA: Willentliche Aktivität \r\nFib: Fibrillationen\r\nPSW: positive scharfe Wellen \r\nFasz: Faszikulationen \r\nKRE: komplexe repetitive Entladungen\r\n\r\nBefund hinweisend auf eine  Läsion xxx \r\n\r\n')">EMG</button>
-<button class="bt1 bttext" onclick="ed1('SEP \r\nN. medianus rechts links bds. normal \r\nverzögert \r\ntechnisch nicht verwertbar\r\n\r\nN. tibialis rechts links bds. normal \r\nverzögert \r\ntechnisch nicht verwertbar\r\n\r\nVEP rechts links bds. normal verzögert \r\n\r\nMEP \r\nArme \r\nHirnrinde rechts - Arm links\r\nHirnrinde links - Arm rechts\r\nnormal fehlend verzögert \r\nZentralmotorische Latenz \r\n\r\nBeine \r\nLinks\r\nRechts\r\nnormal fehlend verzögert \r\nZentralmotorische Latenz \r\n\r\nAEP \r\nbds. normal.\r\n')">EP</button>
-<button class="bt1 bttext" onclick="ed1('Vorhofflimmern Sinusrhythmus /min, Indifferenztyp, Linkstyp, Rechtstyp, keine Erregungsrückbildungsstörungen, Linksschenkelblock, Rechtsschenkelblock, linksanteriorer Hemiblock, T-Negativierung, ST-Hebung, verlängerte QTc-Zeit ( ms), AV-Block I II  \r\n')">EKG</button>
-<button class="bt1 bttext" onclick="ed1('Labor: Großes Blutbild, Elektrolyte, Leberwerte, Nierenwerte, TSH, Gerinnung, Entzündungsparameter und Urinstatus unauffällig. HbA1c xxx (4,8-5,9) %, Triglyzeride xxx (<200) mg/dl, Cholesterin gesamt xxx (<220) mg/dl, LDL-Cholesterin xxx (<150) mg/dl.\r\n\r\n\r\nHervorzuheben sind: Leukozyten Tsd./µl, Hb mg/dl, CRP mg/dl, Kreatinin mg/dl, Na mmol/l, K mmol/l. \r\n')">Labor</button>
-<button class="bt1 bttext" onclick="ed1('Liquor: Kernhaltige Zellen /µl, davon % Lymphozyten, Erythrozyten /µl, Glukose (40-70) mg/dl, Laktat (10-22) mg/dl, Eiweiß (150-450) mg/l. \r\n\r\n\Lumbalpunktion \r\nPunkteur: Name\r\nVorgehen: Aufsuchen der Stichstelle in der unteren LWS, Desinfektion, sterile Abdeckung, Punktion und Entnahme vom ml klarem Liquor, Entfernung der Nadel, steriler Verband. Keine unmittelbaren Komplikationen.\r\n')">Liquor</button>
-</div>
-</div>
-<div class="fcenter" id="Brief">
-<textarea id="hh" spellcheck="false"></textarea><br>
-<p>Lesen Sie bitte alle Texte kritisch.</p>
-</div>
-<div class="fright">
-<p>Patient:</p>
-<p id="gesX">Mann oder Frau?</p>
-<button class="bt2" onclick="mannSx()">Mann</button>
-<button class="bt2" onclick="frauSx()">Frau</button>
-<br><br>
-<button class="bt2 bttext" onclick="ed1(dateGerman() + ' ')">Datum</button>
-<button class="bt2 bttext" onclick="edein('\r\n')">Eingabe</button><br>
-<button class="bt2 bttext" onclick="ed1(timeGerman() + ' ')">Uhrzeit</button>
-<button class="bt2 bttext" onclick="ed1('\t')">Tab</button><br><br>
-<button class="bt1" onclick="ddel()">Lösch alles</button>
-<button class="bt1" onclick="selCopTx()">Kopiere alles</button><br>
-<button class="bt1" onclick="winscroll()" data-tooltip="Scrollt alles nach oben">Scroll hoch</button>
-<button class="bt2" onclick="themeEG1()" data-tooltip="Dunkles Theme">Dunkel</button>
-<button class="bt2" onclick="themeEG2()" data-tooltip="Standard-Theme">Standard</button>
-<button class = "bt1" onclick= "location.reload()">N-Brief aktualisieren</button><br>
-<br><br><br>
-<button class="bt1 bttext" onclick="ed1('\r\nNeurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'): \r\n\r\nFremdanamnese (Angaben des der ): \r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button>
-<button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links  \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\n' + Der_Patient + ' wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiografie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\n' + Der_Patient + ' lebt zu Hause und kann sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur Thrombektomie. Wir bedanken uns für die Übernahme.\r\n\r\n')">Thrombektomie</button>
-<button class="bt1 bttext" onclick="ed1('\r\nVorläufiger Arztbrief\r\nSubarachnoidalblutung\r\nV.a. Aneurysma der A. cerebri media interna anterior posterior communicans rechts links \r\n\r\n\r\nSehr geehrter Herr Prof. Behr, \r\n\r\n' + Der_Patient + ' bekam plötzlich starke Kopfschmerzen wurde vorgefunden. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte Nackensteife eine Hemiparese rechts links. \r\nDas Schädel-CT zeigte Blut subarachnoiddal, die CT-Angiografie zeigte ein Aneurysma.\r\nWir senkten den Blutdruck mit Urapidil.\r\nVormedikation: \r\n' + Der_Patient + ' lebte bisher zu Hause und konnte sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur weiteren Behandlung. \r\nBei Verlegung ist ' + der_Patient + ' spontanatmend intubiert/beatmet, atem/kreislaufstabil, hat einen arteriellen Katheter in der A. radialis rechts links. \r\nWir bedanken uns für die Übernahme.\r\n\r\n')">SAB</button>
-<button class="bt1 bttext" onclick="ed1('\r\nDiagnosen:\r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor. \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\n\r\nEigenanamnese: \r\nFremdanamnese: \r\nVorerkrankungen: \r\nVormedikation: \r\n\r\nKlinischer Befund: \r\nZusatzdiagnostik \r\nLabor: \r\nEKG: \r\nSchädel-CT: \r\n\r\nEmpfehlungen: \r\n\r\n\r\n' + Herr + ' xxx wurde ambulant belassen. Wir stehen für Fragen gerne zur Verfügung. \r\n')">Kurzbrief ZNA</button><br>
-<button class="bt1 bttext" onclick="ed1('Klinik für Neurologie - Aufnahmebogen\r\n\r\nUntersucher: \r\nUntersuchungs-Datum: \r\nUntersuchungs-Uhrzeit: \r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor.\r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\nAufnahme-Diagnose: V.a. \r\n\r\nZuletzt ohne die jetzigen Symptome: \r\nEigenanamnese: \r\n\r\nFremdanamnese: \r\n\r\nVorerkrankungen: \r\n\r\nVormedikation: \r\n\r\nAlkohol/Rauchen/Drogen: \r\n\r\nPsychosoziale Anamnese: \r\n\tLebt zu Hause im Pflegeheim \r\n\tPflegegrad \r\n\tVorsorgevollmacht: Betreuung: Ja Nein \r\n\tBevollmächtigt: \r\n\tAngehöriger (Name): \r\n\tAngehöriger (Tel): \r\n\tHausarzt: \r\n\r\nKlinischer Befund: \r\n\r\nLabor: \r\n\r\nEKG: \r\n\r\nSchädel-CT: \r\n\r\nAufnahme auf \r\nOST1(Stroke) \r\nOST3 \r\n\OST1(Intensiv)\r\n')">Aufnahmebogen</button>
+			</div>
+			<div class="wrap3" id="Klinischer_Befund">
+				<p class="stamp">Klinischer Befund</p>
+				<button class="bt1 bttext" onclick="ed1('Wach, kooperativ, zeitlich, örtlich und situativ orientiert.\r\nAufmerksamkeit, Merkfähigkeit, Stimmung normal. \r\n'+Rechtshaender+' ' +Linkshaender+'. \r\nSprachverständnis, sprachlicher Ausdruck sowie Artikulation normal. \r\nAugen: Bewegung, Pupillen, Gesichtsfelder fingerperimetrisch normal. Kein pathologischer Nystagmus. Sehkraft mit Brille R und L mindestens xxx mm große Buchstaben in Leseentfernung. \r\nMimik normal, die Zunge wird geradeaus herausgestreckt, der weiche Gaumen hebt sich symmetrisch. Hören von Fingerreiben beiderseits normal. Kein Meningismus. \r\nArmhalteversuch, Beinhalteversuch, Kraft, Trophik, Tonus, Muskeldehnungsreflexe lebhaft/mittellebhaft/schwach, stgl., Plantarreflex normal.\r\nFinger-Nase-Versuch, Knie-Hacke-Versuch o.B. Kein Tremor, keine unwillkürlichen Bewegungen.\r\nAlgesie, Ästhesie normal. Lagesinn im Zeigefinger und im großen Zeh normal. Vibrationssinn im Zeigefinger /8 und im großen Zeh /8. \r\nStehen und Gehen normal, Einbeinstand, Rombergversuch, Zehen- und Hackengang, Strichgang, Aufstehen vom Stuhl normal. \r\n\r\nAllgemeinzustand gut, Ernährungszustand gut. Haut und Schleimhäute normal. Lunge auskultatorisch normales Atemgeräusch, Herzaktion rhythmisch, keine Herzgeräusche, Bauch weich mit Darmgeräuschen, keine Ödeme, große Gelenke frei beweglich, Wirbelsäule ohne Klopfschmerz. \r\nRR / mmHg, Herzfrequenz /min, Temperatur 36, °C, SpO2 xxx % bei Raumluft.\r\n\r\n')">Befund</button>
+				<button class="bt1 bttext" onclick="ed1('Schulterblattstabilisierung durch Serratus ant. normal, Schulterhebung 5, Armabduktion 5, Armadduktion 5, Arminnenrotation 5, Armaußenrotation 5, Armbeugung 5, Armstreckung 5, Unterarmpronation 5, Unterarmsupination 5, Handbeugung 5, Handstreckung 5, Fingerstreckung 5, Fingerbeugung 5, Abduktion der Finger II und V 5, Beugung der MCP-Gelenke 5, Streckung der MCP-Gelenke 5, Beugung der IP-Gelenke 5, Streckung der IP-Gelenke 5 nach MRC.\r\n\r\nHüftbeugung 5, Hüftstreckung 5, Hüftinnenrotation 5, Hüftaußenrotation 5, Kniebeugung 5, Kniestreckung 5, Fußhebung 5, Fußsenkung 5, Fußpronation 5, Fußsupination 5, Zehenstreckung 5, Zehenbeugung 5 nach MRC.\r\n\r\nMuskeldehnungsreflexe: (0: fehlend, 1: schwach, 2: mittellebhaft, 3: lebhaft ohne Klonus, 4: mit Klonus)\r\n')">Peripher</button><br>
+				<button class="bt1 bttext" onclick="ed1(Der_Patient + ' liegt im Bett,\r\natmet spontan wird über einen endotrachealen Tubus / Tracheostoma beatmet.\r\nDie Augen sind geschlossen, ' + er + ' reagiert nicht auf Ansprache und Berührung. Nach mäßigem Schmerzreiz bewegt ' + er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen nimmt ' + er + ' keinen Blickkontakt auf, die Augen sind parallel, der okulozephale Reflex, horizontal und vertikal, ist auslösbar. Die Pupillen sind rund und gleich groß, ca. xxx mm, und reagieren auf Licht. Die Muskeldehnungsreflexe lassen sich nicht lebhaft auslösen. Der Plantarreflex ist stumm normal. Babinski-Zeichen rechts links.\r\nGlasgow-Coma-Scale: --. \r\n')">Koma</button>
+			</div>
+			<div class="wrap3" id="MS">
+				<p class="stamp">Multiple Sklerose</p>
+				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie Aufnahme erfolgte bei Verdacht auf eine entzündliche ZNS-Erkrankung. \r\nDie Aufnahme ' + des_Patienten + ' erfolgte bei Verdacht auf erneuten Schub einer bekannten schubförmig remittierenden Multiplen Sklerose.\r\nDie Aufnahme ' + des_Patienten + ' erfolgte geplant zur erneuten Steroidpulstherapie bei bekannter sekundär chronisch progredienter Multipler Sklerose.\r\nIm klinischen Untersuchungsbefund zeigte sich\r\nDie Gehstrecke betrug aktuell xxx m.\r\nDer EDDS lag aktuell bei xxx.\r\n\r\n' + Der_Patient + ' erhielt eine Steroidpulstherapie mit Methylprednisolon 1000 mg über drei Tage unter Magenschutz, Thromboseprophylaxe und Blutzuckerkontrollen.\r\nDie Infusionen wurden von ' + dem_Patienten + ' gut vertragen. \r\nDie Beschwerden erschienen im Verlauf rückläufig.\r\nIm cMRT zeigten sich mehrere Balken-assoziierte Demyelinisierungen, typisch für eine Enzephalomyelitis Disseminata \r\nund Zeichen einer räumlichen Dissemination\r\nund Zeichen einer räumlichen und zeitlichen Dissemination\r\nes waren keine Zeichen einer räumlichen Dissemination nachweisbar\r\nIm MRT der HWS zeigte sich eine Demyelinisierung in Höhe\r\nEs erfolgte ein erneutes MRT mit KM, in dem keine sicheren kontrastmittelaufnehmenden Läsionen dargestellt werden konnten\r\nElektrophysiologische Untersuchungen zeigten\r\neine Leitungsstörung beider Nervi optici wie bei chronischer Retrobulbärneuritis.\r\neine Hintestrangläsion\r\neine Pyramidenbahnläsion \r\nDie oligoklonalen Banden im Liquor waren positiv negativ \r\nDie erneute Liquordiagnostik erfolgte zur ergänzenden Bestimmung von JC-Virus-DNA und fiel negativ aus.\r\nZusammenfassend gingen wir bei ' + Herrn + ' xxx von einem erneuten Schub bei bekannter Multiple Sklerose aus.\r\nWir empfehlen\r\neine ambulante neurologische Anbindung und Verlaufskontrollen.\r\nein Fortführen der Intervalltherapie mit\r\nden Beginn einer immunmodulatorischen Therapie mit\r\n' + Der_Patient + ' wurde über die möglichen therapeutischen Optionen aufgeklärt.\r\nAm Datum entließen wir ' + den_Patienten + ' in Ihre weitere Betreuung und stehen für Rückfragen gerne zur Verfügung. \r\n')">MS-Brief</button>
+			</div>
+			<div class="wrap3" id="RS">
+				<p class="stamp">Bandscheibenvorfall, Fazialisparese, Lagerungsschwindel</p>
+				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte zur Abklärung von starken, immobilisierenden Rückenschmerzen. \r\n' + Der_Patient + ' berichtete, dass ' + er + ' seit ca. xxx Tagen Wochen Rückenschmerzen mit Ausstrahlung in das rechte/linke Bein habe. Spritzen durch den Hausarzt, Wärmeanwendungen und eine konservative Schmerzmedikation hätte bisher zu keiner ausreichenden Besserung geführt. \r\n' + Herr + ' gab eine Schmerzausstrahlung in die Lateralseite des rechten linken Oberschenkels und in die Ventralseite des rechten linken Unterschenkels an (dem Dermatom L4/L5 rechts links entsprechend). \r\nIm klinisch neurologischen Befund zeigten sich keine Paresen, die Muskeleigenreflexe (PSR und ASR) waren seitengleich und mittellebhaft. \r\nWir führten ein MRT der LWS durch, hier zeigte sich xxx \r\nDurch eine Schmerzmedikation mit Naproxen und Metamizol sowie begleitender Physiotherapie und Wärmeanwendungen besserten sich die Schmerzen deutlich. \r\nWir stellten ' + den_Patienten + ' neurochirurgisch vor. Es wurde die Indikation zu einer operativen Behandlung gestellt und es erfolgte die Übernahme. \r\n' + Der_Patient + ' wurde über die operative Behandlung aufgeklärt, wünschte jedoch zunächst Bedenkzeit. Die hier angefertigten MRT wurde ' + dem_Patienten + ' auf CD mitgegeben. \r\nWir danken für die freundliche Weiterbehandlung.\r\nWir empfehlen eine Fortführung der konservativen Therapie mit an die Beschwerden adaptierter Schmerzmedikation sowie die Fortführung der Physiotherapie (insbesondere Rückenschule) und Wärmeanwendungen (Fango). \r\nWir konnten ' + Herrn + ' xxx am Datum in Ihre ambulante Weiterbetreuung entlassen und stehen Ihnen für Rückfragen gerne zur Verfügung.\r\n')">BSV</button><br>
+				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nSchwäche im Gesicht rechts links seit Datum.\r\nIn der klinischen Untersuchung war '+ der_Patient +' wach, orientiert und hatte eine periphere Fazialisparese rechts links. Es bestand kein anderes neurologisches Defizit.\r\nDer Lidschluss war komplett aber schwach / inkomplett, die Lidspalte beim versuchten Lidschluss betrug mm. Der Mundwinkel konnte etwas bewegt werden, war völlig gelähmt.\r\nEs bestand eine Hyperakusis rechts links und eine Verminderung des Geschmacksempfindens in der Zunge rechts links.\r\nEs bestand keine Rötung und keine Bläschen im äußeren Gehörgang oder im Gesicht.\r\nDer Liquor war normal.\r\nWir diagnostizierten eine idiopathische Fazialisparese und setzten Prednisolon 60 mg p.o. für 5 Tage (Beginn: Datum) an, das ab Datum täglich um 10 mg reduziert werden soll. Der Augenschutz ist besonders wichtig. Wir begannen mit künstlichen Tränen tagsüber sowie Dexpanthenol-Augensalbe und Uhrglasverband zur Nacht. Der Augenschutz sollte solange durchgeführt werden bis der Lidschluss objektiv komplett ist.\r\nWir bitten um eine ambulante neurologische und augenärztliche Vorstellung im Verlauf.\r\n')">Fazialis</button><br>
+				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte wegen rezidivierender, lageabhängiger Drehschwindelattacken. \r\nIn der klinisch-neurologischen Untersuchung zeigte sich kein Nystagmus / ein rotatorischer Nystagmus im Uhrzeigersinn/ gegen den Uhrzeigersinn bei Rechtslagerung / Linkslagerung. \r\n' + Der_Patient + ' gab verstärkten Schwindel nach Rechtslagerung / Linkslagerung an. \r\nIn den apparativen Untersuchungen (CCT, Neurodopplersonografie, cMRT) ergaben sich keine Auffälligkeiten, insbesondere kein Hinweis auf eine zentrale Genese des Schwindels. \r\nWir gingen von einem benignen paroxysmalen Lagerungsschwindel aus. \r\n' + Der_Patient + ' wurde physiotherapeutisch behandelt und in den Lagerungsmanövern nach Semont / nach Epley angeleitet. Wir empfehlen weitere ambulante Physiotherapie. \r\nWir konnten ' + Herrn + ' xxx am Datum in Ihre ambulante Weiterbetreuung entlassen und stehen Ihnen für Rückfragen gerne zur Verfügung. \r\n')">BPLS</button><br>
+			</div>
+			<div class="wrap3" id="Geri">
+				<p class="stamp">Geriatrie</p>
 
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 1</button>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 2</button>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 3</button>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 4</button>
+			</div>
+			<div class="wrap3" id="DemPark">
+				<p class="stamp">Demenz und Parkinson</p>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Demenz</button><br>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Parkinson</button><br>
+			</div>
+			<div class="wrap3" id="KopfEpi">
+				<p class="stamp">Kopfschmerz und Epilepsie</p>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Kopfschmerz</button><br>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Epilepsie</button><br>
+			</div>
+			<div class="wrap3" id="Bef">
+				<p class="stamp">Apparative Befunde</p>
+				<button class="bt1 bttext" onclick="ed1('Grundrhythmus Hz, normale visuelle Blockade-Reaktion, keine epilepsietypischen Potentiale, kene regionale Verlangsamung. \r\nPulsartefakt \r\nElektrodenartefakt \r\nLidschlagartefakte\r\nMuskelartefakte \r\n\r\nPolymorphe Wellen Hz, keine visuelle Blockade-Reaktion, keine epilepsietypischen Potentiale. \r\n\r\nNormalbefund.\r\n\r\nBefund hinweisend auf eine leichtgradige mittelgradige schwere diffuse Hirnfunktionsstörung. \r\n\r\nBefund hinweisend auf eine Funktionsstörung in der rechten linken Hirnhemisphäre. \r\n\r\nEs ist iktuale Aktivität zu beobachten. \r\n')">EEG</button>
+				<button class="bt1 bttext" onclick="ed1('Extrakraniell: Arteriosklerose. Plaques in den Karotiden. \r\nA. carotis comm. bds. rechts links V.a. Stenose (lokaler Stenosegrad %).\r\nA. carotis int. bds. rechts V.a. geringgradige mittelgradige hochgradige Stenose links V.a. geringgradige mittelgradige hochgradige Stenose Verschluss kein Hinweis auf Stenose. regelrecht.\r\nA. carotis ext. bds. rechts links V.a. Stenose regelrecht. kein Hinweis auf eine Stenose.\r\nA. vertebralis bds. rechts links V.a. Stenose Verschluss regelrecht. kein Hinweis auf Stenose. V.a. Hypoplasie Transnuchal: V.a. Stenose der A. basilaris regelrecht.\r\nTranskraniell: A. cerebri anterior, media und posterior bds. regelrecht.\r\nTranskraniell: keine ausreichenden temporalen Schallfenster.\r\nTranskraniell:\r\nRechts\r\nLinks\r\nkeine ausreichenden temporalen Schallfenster.\r\nA. cerebri anterior, media und posterior bds.regelrecht.\r\nV.a. Stenose der A. cerebri media, anterior, posterior\r\nnicht darstellbar\r\nnicht beurteilbar\r\nProzente\r\n(NASCET <20%, ECST 30-40%)\r\n(NASCET <20%, ECST 45%)\r\n(NASCET <30%, ECST 40-50%)\r\n(NASCET <30%, ECST 50%)\r\n(NASCET 20-40%, ECST 50-60%)\r\n(NASCET 40%, ECST 60%)\r\n(NASCET 40%, ECST 65%)\r\n(NASCET 30-50%, ECST 60-70%)\r\n(NASCET 50%, ECST 70%)\r\n(NASCET 60%, ECST 75%)\r\n(NASCET 70%, ECST 80%)\r\n(NASCET 50-70%, ECST 70-80%)\r\n(NASCET 80%, ECST 90%)\r\n(NASCET 90%, ECST 95%)\r\n')">Neurosonografie</button>
+				<button class="bt1 bttext" onclick="ed1('Motorische Neurografie\r\n\r\nN. medianus rechts links bds. \r\nnormal.\r\ndistal motorische Latenz normal verlängert\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. ulnaris rechts links bds. \r\nnormal.\r\ndistal motorische Latenz normal verlängert\r\nGeschwindigkeit normal vermindert \r\nGeschwindigkeit um den Ellenbogen vermindert\r\nAmplitude normal vermindert\r\nAmplitude nach Stimulation proximal des Ellenbogens vermindert\r\n\r\nN. radialis rechts links bds. \r\nnormal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. tibialis rechts links bds. \r\nnormal.\r\ndistal motorische Latenz normal verlängert\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. peroneus rechts links bds. \r\nnormal.\r\ndistal motorische Latenz normal verlängert\r\nGeschwindigkeit normal vermindert \r\nGeschwindigkeit um das Fibulaköpfchen vermindert\r\nAmplitude normal vermindert\r\nAmplitude nach Stimulation proximal des Fibulaköpfchens vermindert\r\n\r\n\r\nF-Welle \r\n\r\nN. medianus rechts links bds. normal. mit verlängerter Latenz. \r\nN. ulnaris rechts links bds. normal. mit verlängerter Latenz. \r\nN. radialis rechts links bds. normal. mit verlängerter Latenz. \r\nN. tibialis rechts links bds. normal. mit verlängerter Latenz. \r\nN. peroneus rechts links bds. normal. mit verlängerter Latenz. \r\n\r\n\r\nSensible Neurografie\r\n\r\nN. medianus rechts links bds. normal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. ulnaris rechts links bds. normal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. radialis rechts links bds. normal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. suralis rechts links bds. normal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\n\r\nBefund hinweisend auf \r\n\r\nKarpaltunnelsyndrom rechts links \r\nDistal symmetrische axonale Polyneuropathie\r\nLäsion des Spinalnervs\r\n\r\ntechnisch nicht verwertbar\r\n\r\nDer Befund vom rechten linken N. peroneus bedeutet nicht zwangsläufig eine Läsion des Nervenstamms des N. peroneus oder des spinalen Nervs L5 oder S1, es kann sich um eine lokale Läsion des motorischen Astes zum M. ext. dig. brevis handeln. \r\n\r\nDie verminderte Geschwindigkeit im N. suralis bds. kann im altersentsprechenden Normbereich sein.\r\n')">Neurografie</button>
+				<button class="bt1 bttext" onclick="ed1('EMG rechts links \r\nMuskeln\r\n\r\nAlle untersuchten Muskeln hatten keine pathologische Spontanaktivität, die Potentiale motorischer Einheiten erschienen normal und das Interferenzmuster war normal. \r\n\r\nNormalbefund. \r\n\r\nMuskeln\r\n\r\nDeltoideus \r\nBiceps br.\r\nBrachioradialis\r\nTriceps br.\r\nExt. dig. comm.\r\nInt. dors I\r\nPronator teres\r\nAbd. poll. longus\r\nExt. ind. proprius\r\nFlex. dig. prof. (uln.)\r\nAbd. poll. brevis \r\nOpponens poll.\r\nAbd. dig. min. manus\r\nInter. dorsalis I \r\n\r\nRectus fem.\r\nVastus med.\r\nVastus lat.\r\nTib. ant.\r\nSemimembranosus \r\nBiceps fem.\r\nGluteus med. \r\nGluteus max. \r\nPeroneus longus\r\nExt. hall. longus\r\nGastrocn. lat. \r\nGastrocn. med. \r\n\r\nPotentiale motorischer Einheiten polyphasisch normal\r\npathologische Spontanaktivität \r\nFibrillationen\r\nFaszikulationen\r\npositive scharfe Wellen\r\n\r\n\r\nAbkürzungen\r\n\r\nPMA: Potentiale motorischer Einheiten \r\nIF: Interferenzmuster\r\nWA: Willentliche Aktivität \r\nFib: Fibrillationen\r\nPSW: positive scharfe Wellen \r\nFasz: Faszikulationen \r\nKRE: komplexe repetitive Entladungen\r\n\r\nBefund hinweisend auf eine Läsion xxx \r\n')">EMG</button>
+				<button class="bt1 bttext" onclick="ed1('SEP \r\nN. medianus rechts links bds. normal \r\nverzögert \r\ntechnisch nicht verwertbar\r\n\r\nN. tibialis rechts links bds. normal \r\nverzögert \r\ntechnisch nicht verwertbar\r\n\r\nVEP rechts links bds. normal verzögert \r\n\r\nMEP \r\nArme \r\nHirnrinde rechts - Arm links\r\nHirnrinde links - Arm rechts\r\nnormal fehlend verzögert \r\nZentralmotorische Latenz \r\n\r\nBeine \r\nLinks\r\nRechts\r\nnormal fehlend verzögert \r\nZentralmotorische Latenz \r\n\r\nAEP \r\nbds. normal.\r\n')">EP</button>
+				<button class="bt1 bttext" onclick="ed1('Vorhofflimmern Sinusrhythmus /min, Indifferenztyp, Linkstyp, Rechtstyp, keine Erregungsrückbildungsstörungen, Linksschenkelblock, Rechtsschenkelblock, linksanteriorer Hemiblock, T-Negativierung, ST-Hebung, verlängerte QTc-Zeit ( ms), AV-Block I II \r\n')">EKG</button>
+				<button class="bt1 bttext" onclick="ed1('Labor: Großes Blutbild, Elektrolyte, Leberwerte, Nierenwerte, TSH, Gerinnung, Entzündungsparameter und Urinstatus unauffällig. HbA1c xxx (4,8-5,9) %, Triglyzeride xxx (<200) mg/dl, Cholesterin gesamt xxx (<220) mg/dl, LDL-Cholesterin xxx (<150) mg/dl.\r\n\r\n\r\nHervorzuheben sind: Leukozyten Tsd./µl, Hb mg/dl, CRP mg/dl, Kreatinin mg/dl, Na mmol/l, K mmol/l. \r\n')">Labor</button>
+				<button class="bt1 bttext" onclick="ed1('Liquor: Kernhaltige Zellen /µl, davon % Lymphozyten, Erythrozyten /µl, Glukose (40-70) mg/dl, Laktat (10-22) mg/dl, Eiweiß (150-450) mg/l. \r\n\r\n\Lumbalpunktion \r\nPunkteur: Name\r\nVorgehen: Aufsuchen der Stichstelle in der unteren LWS, Desinfektion, sterile Abdeckung, Punktion und Entnahme vom ml klarem Liquor, Entfernung der Nadel, steriler Verband. Keine unmittelbaren Komplikationen.\r\n')">Liquor</button>
+			</div>
+		</div>
+		<div class="fcenter" id="Brief">
+			<textarea id="hh" spellcheck="false"></textarea><br>
+			<p>Lesen Sie bitte alle Texte kritisch.</p>
+		</div>
+		<div class="fright">
+			<p>Patient:</p>
+			<p id="gesX">Mann oder Frau?</p>
+			<button class="bt1 bt2" onclick="mannSx()">Mann</button>
+			<button class="bt1 bt2" onclick="frauSx()">Frau</button>
+			<br><br>
+			<button class="bt1 bt2 bttext" onclick="ed1(dateGerman() + ' ')">Datum</button>
+			<button class="bt1 bt2 bttext" onclick="edein('\r\n')">Eingabe</button><br>
+			<button class="bt1 bt2 bttext" onclick="ed1(timeGerman() + ' ')">Uhrzeit</button>
+			<button class="bt1 bt2 bttext" onclick="ed1('\t')">Tab</button><br><br>
+			<button class="bt1" onclick="ddel()">Lösch alles</button>
+			<button class="bt1" onclick="selCopTx()">Kopiere alles</button><br>
+			<button class="bt1" onclick="winscroll()" data-tooltip="Scrollt alles nach oben">Scroll hoch</button>
+			<button class="bt1 bt2" onclick="themeEG1()" data-tooltip="Dunkles Theme">Dunkel</button>
+			<button class="bt1 bt2" onclick="themeEG2()" data-tooltip="Standard-Theme">Standard</button>
+			<button class="bt1" onclick="location.reload()">N-Brief aktualisieren</button><br>
+			<br><br><br>
+			<button class="bt1 bttext" onclick="ed1('Neurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'): \r\n\r\nFremdanamnese (Angaben des der ): \r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button>
+			<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\n' + Der_Patient + ' wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiografie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\n' + Der_Patient + ' lebt zu Hause und kann sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur Thrombektomie. Wir bedanken uns für die Übernahme.\r\n\r\n')">Thrombektomie</button>
+			<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nSubarachnoidalblutung\r\nV.a. Aneurysma der A. cerebri media interna anterior posterior communicans rechts links \r\n\r\n\r\nSehr geehrter Herr Prof. Behr, \r\n\r\n' + Der_Patient + ' bekam plötzlich starke Kopfschmerzen wurde vorgefunden. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte Nackensteife eine Hemiparese rechts links. \r\nDas Schädel-CT zeigte Blut subarachnoiddal, die CT-Angiografie zeigte ein Aneurysma.\r\nWir senkten den Blutdruck mit Urapidil.\r\nVormedikation: \r\n' + Der_Patient + ' lebte bisher zu Hause und konnte sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur weiteren Behandlung. \r\nBei Verlegung ist ' + der_Patient + ' spontanatmend intubiert/beatmet, atem/kreislaufstabil, hat einen arteriellen Katheter in der A. radialis rechts links. \r\nWir bedanken uns für die Übernahme.\r\n\r\n')">SAB</button>
+			<button class="bt1 bttext" onclick="ed1('Diagnosen:\r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor. \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\n\r\nEigenanamnese: \r\nFremdanamnese: \r\nVorerkrankungen: \r\nVormedikation: \r\n\r\nKlinischer Befund: \r\nZusatzdiagnostik \r\nLabor: \r\nEKG: \r\nSchädel-CT: \r\n\r\nEmpfehlungen: \r\n\r\n\r\n' + Herr + ' xxx wurde ambulant belassen. Wir stehen für Fragen gerne zur Verfügung. \r\n')">Kurzbrief ZNA</button><br>
+			<button class="bt1 bttext" onclick="ed1('\r\n---------------\r\nDieser Aufnahmebogen ist experimentell\r\n---------------\r\n\r\nKlinik für Neurologie - Aufnahmebogen\r\n\r\nUntersucher: \r\nUntersuchungs-Datum: \r\nUntersuchungs-Uhrzeit: \r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor.\r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\nAufnahme-Diagnose: V.a. \r\n\r\nZuletzt ohne die jetzigen Symptome: \r\nEigenanamnese: \r\n\r\nFremdanamnese: \r\n\r\nVorerkrankungen: \r\n\r\nVormedikation: \r\n\r\nAlkohol/Rauchen/Drogen: \r\n\r\nPsychosoziale Anamnese: \r\n\tLebt zu Hause im Pflegeheim \r\n\tPflegegrad \r\n\tVorsorgevollmacht: Betreuung: Ja Nein \r\n\tBevollmächtigt: \r\n\tAngehöriger (Name): \r\n\tAngehöriger (Tel): \r\n\tHausarzt: \r\n\r\nKlinischer Befund: \r\n\r\nLabor: \r\n\r\nEKG: \r\n\r\nSchädel-CT: \r\n\r\nAufnahme auf \r\nOST1(Stroke) \r\nOST3 \r\n\OST1(Intensiv)\r\n')">Aufnahmebogen</button>
 
-<br><br><br><br>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<svg height="40" width="40"><polygon points="20.0,2.0 8.0,39.6 38.0,15.6 2.0,15.6 32.0,39.6" style="fill:gold;"/></svg></p>
-<span>N-Brief 0.3 <br>25.01.2017</span>
-</div></div>
-<script>
+			<br><br>
+			<!--the star logo-->
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;<svg height="40" width="40"><polygon points="20.0,2.0 8.0,39.6 38.0,15.6 2.0,15.6 32.0,39.6" style="fill:gold;"/></svg></p>
+			<span>N-Brief 0.4 <br>26.01.2017</span>
+		</div>
+	</div>
+	<script>
 // the m/f-related variables are declared
 var Der_Patient;
 var der_Patient;
@@ -508,10 +805,11 @@ var Er;
 var er;
 var ihm;
 var ihn;
+var des_Patienten;
 var dem_Patienten;
 var den_Patienten;
-var des_Patienten;
 var Herr;
+var Herrn;
 var Rechtshaender;
 var Linkshaender;
 var Rechtshaenderin;
@@ -519,218 +817,345 @@ var Linkshaenderin;
 var mofbestimmt;
 // all male forms are set
 function mannSx() {
-var i1 = document.getElementById('gesX');
-i1.innerHTML = "Mann";
-i1.style = "color:#003d66;animation-iteration-count:0;";
-mofbestimmt = "1";
-document.getElementById('mof').style.display="none";
-Der_Patient = "Der Patient";
-der_Patient = "der Patient";
-Er = "Er";
-er = "er";
-ihm = "ihm";
-ihn = "ihn";
-des_Patienten = "des Patienten";
-den_Patienten = "den Patienten";
-dem_Patienten = "dem Patienten";
-Herr = "Herr";
-Herrn = "Herrn";
-Rechtshaender = "Rechtshänder";
-Linkshaender = "Linkshänder";
-};
+	var i1 = document.getElementById('gesX');
+	i1.innerHTML = 'Mann';
+	i1.style = 'color:#003d66;animation-iteration-count:0;';
+	mofbestimmt = '1';
+	document.getElementById('mof').style.display = 'none';
+	Der_Patient = 'Der Patient';
+	der_Patient = 'der Patient';
+	Er = 'Er';
+	er = 'er';
+	ihm = 'ihm';
+	ihn = 'ihn';
+	des_Patienten = 'des Patienten';
+	den_Patienten = 'den Patienten';
+	dem_Patienten = 'dem Patienten';
+	Herr = 'Herr';
+	Herrn = 'Herrn';
+	Rechtshaender = 'Rechtshänder';
+	Linkshaender = 'Linkshänder';
+}
 
 // all female forms are set
 function frauSx() {
-var i1 = document.getElementById('gesX');
-i1.innerHTML = "Frau";
-i1.style = "color:#003d66;animation-iteration-count:0;";
-mofbestimmt = "1";
-document.getElementById('mof').style.display="none";
-Der_Patient = "Die Patientin";
-der_Patient = "die Patientin";
-Er = "Sie";
-er = "sie";
-ihm = "ihr";
-ihn = "sie";
-des_Patienten = "der Patientin";
-den_Patienten = "die Patientin";
-dem_Patienten = "der Patientin";
-Herr = "Frau";
-Herrn = "Frau";
-Rechtshaender = "Rechtshänderin";
-Linkshaender = "Linkshänderin";
-};
+	var i1 = document.getElementById('gesX');
+	i1.innerHTML = 'Frau';
+	i1.style = 'color:#003d66;animation-iteration-count:0;';
+	mofbestimmt = '1';
+	document.getElementById('mof').style.display = 'none';
+	Der_Patient = 'Die Patientin';
+	der_Patient = 'die Patientin';
+	Er = 'Sie';
+	er = 'sie';
+	ihm = 'ihr';
+	ihn = 'sie';
+	des_Patienten = 'der Patientin';
+	den_Patienten = 'die Patientin';
+	dem_Patienten = 'der Patientin';
+	Herr = 'Frau';
+	Herrn = 'Frau';
+	Rechtshaender = 'Rechtshänderin';
+	Linkshaender = 'Linkshänderin';
+}
 
 // hides erst, zweit, viert
 function showNil2() {
-document.getElementById('erst').style.display = 'none';
-document.getElementById('zweit').style.display = 'none';
-document.getElementById('viert').style.display = 'none';
+	document.getElementById('erst').style.display = 'none';
+	document.getElementById('zweit').style.display = 'none';
+	document.getElementById('viert').style.display = 'none';
 }
 // it shows the erst
-function ez1() {showNil2();document.getElementById('erst').style.display='block';}
+function ez1() {
+	showNil2();
+	document.getElementById('erst').style.display = 'block';
+}
 // it shows the zweit
-function ez2() {showNil2();document.getElementById('zweit').style.display='block';}
+function ez2() {
+	showNil2();
+	document.getElementById('zweit').style.display = 'block';
+}
 // it shows the viert
-function ez4() {showNil2();document.getElementById('viert').style.display='block';}
+function ez4() {
+	showNil2();
+	document.getElementById('viert').style.display = 'block';
+}
 // it hides all named elements
 function showNil1() {
-document.getElementById("Anrede").style.display = "none";
-document.getElementById("Diagnosen").style.display = "none";
-document.getElementById("Epikrise").style.display = "none";
-document.getElementById("Medikamente").style.display = "none";
-document.getElementById("Klinischer_Befund").style.display = "none";
-document.getElementById("MS").style.display = "none";
-document.getElementById("RS").style.display = "none";
-document.getElementById("DemPark").style.display = "none";
-document.getElementById("Bef").style.display = "none";
-document.getElementById("KopfEpi").style.display = "none";
-document.getElementById("Geri").style.display = "none";
+	document.getElementById('Anrede').style.display = 'none';
+	document.getElementById('Diagnosen').style.display = 'none';
+	document.getElementById('Epikrise').style.display = 'none';
+	document.getElementById('Medikamente').style.display = 'none';
+	document.getElementById('Klinischer_Befund').style.display = 'none';
+	document.getElementById('MS').style.display = 'none';
+	document.getElementById('RS').style.display = 'none';
+	document.getElementById('DemPark').style.display = 'none';
+	document.getElementById('Bef').style.display = 'none';
+	document.getElementById('KopfEpi').style.display = 'none';
+	document.getElementById('Geri').style.display = 'none';
 }
 // it does what it says
 function showAnr() {
-showNil1();
-document.getElementById("Anrede").style.display = "block";
+	showNil1();
+	document.getElementById('Anrede').style.display = 'block';
 }
-function showDiagn() {showNil1();document.getElementById("Diagnosen").style.display = "block";}
-function showEpikr() {showNil1();document.getElementById("Epikrise").style.display = "block";}
-function showMS() {showNil1();document.getElementById("MS").style.display="block";}
-function showRS() {showNil1();document.getElementById("RS").style.display="block";}
-function showDemPark() {showNil1();document.getElementById("DemPark").style.display = "block";}
-function showBefunde() {showNil1();document.getElementById("Bef").style.display = "block";}
-function showKopfEpi() {showNil1();document.getElementById("KopfEpi").style.display = "block";}
-function showGeri() {showNil1();document.getElementById("Geri").style.display="block";}
-function showMedi() {showNil1();document.getElementById("Medikamente").style.display = "block";}
-function showKlBef() {showNil1();document.getElementById("Klinischer_Befund").style.display ="block";}
-function showNilSkalen() {document.getElementById("levodopa").style.display="none";document.getElementById("Gfr1").style.display = "none";}
-function showGfr() {showNilSkalen();document.getElementById("Gfr1").style.display = "block";}
-function showLdopa() {showNilSkalen();document.getElementById("levodopa").style.display = "block";}
+
+function showDiagn() {
+	showNil1();
+	document.getElementById('Diagnosen').style.display = 'block';
+}
+
+function showEpikr() {
+	showNil1();
+	document.getElementById('Epikrise').style.display = 'block';
+}
+
+function showMS() {
+	showNil1();
+	document.getElementById('MS').style.display = 'block';
+}
+
+function showRS() {
+	showNil1();
+	document.getElementById('RS').style.display = 'block';
+}
+
+function showDemPark() {
+	showNil1();
+	document.getElementById('DemPark').style.display = 'block';
+}
+
+function showBefunde() {
+	showNil1();
+	document.getElementById('Bef').style.display = 'block';
+}
+
+function showKopfEpi() {
+	showNil1();
+	document.getElementById('KopfEpi').style.display = 'block';
+}
+
+function showGeri() {
+	showNil1();
+	document.getElementById('Geri').style.display = 'block';
+}
+
+function showMedi() {
+	showNil1();
+	document.getElementById('Medikamente').style.display = 'block';
+}
+
+function showKlBef() {
+	showNil1();
+	document.getElementById('Klinischer_Befund').style.display = 'block';
+}
+
+function showNilSkalen() {
+	document.getElementById('levodopa').style.display = 'none';
+	document.getElementById('Gfr1').style.display = 'none';
+}
+
+function showGfr() {
+	showNilSkalen();
+	document.getElementById('Gfr1').style.display = 'block';
+}
+
+function showLdopa() {
+	showNilSkalen();
+	document.getElementById('levodopa').style.display = 'block';
+}
 
 function ed1(inp) {
-    if (mofbestimmt=="1"){
-    let tarea = document.getElementById("hh");
-    // find and define the start and end of selection
-    let sst=tarea.selectionStart;
-    let sse=tarea.selectionEnd;
-    // find the whole length of what is in the textarea now
-    let tvl=tarea.value.length;
-    // insert the inp and replace the selection 
-    tarea.value = tarea.value.substring(0,sst) + inp + tarea.value.substring(sse,tvl);
-    // set cursor after the inserted text 
-    tarea.selectionStart=sst + inp.length;
-    tarea.selectionEnd=sst + inp.length;
-    tarea.focus();}
-    else{document.getElementById("mof").style.display="inline-block";}
-    }
+	if (mofbestimmt == '1') {
+		let tarea = document.getElementById('hh');
+		// find and define the start and end of selection
+		let sst = tarea.selectionStart;
+		let sse = tarea.selectionEnd;
+		// find the whole length of what is in the textarea now
+		let tvl = tarea.value.length;
+		// insert the inp and replace the selection 
+		tarea.value = tarea.value.substring(0, sst) + inp + tarea.value.substring(sse, tvl);
+		// set cursor after the inserted text 
+		tarea.selectionStart = sst + inp.length;
+		tarea.selectionEnd = sst + inp.length;
+		tarea.focus();
+	} else {
+		document.getElementById('mof').style.display = 'inline-block';
+	}
+}
 
 function edein(inp) {
-    // just the ed1, only the cursor a place to the left
-    if (mofbestimmt=="1"){
-    let tarea = document.getElementById("hh");
-    let sst=tarea.selectionStart;
-    let sse=tarea.selectionEnd;
-    let tvl=tarea.value.length;
-    tarea.value = tarea.value.substring(0,sst) + inp + tarea.value.substring(sse,tvl);
-    tarea.selectionStart=sst + inp.length - 1;
-    tarea.selectionEnd=sst + inp.length - 1;
-    tarea.focus();}
-    else{document.getElementById("mof").style.display="inline-block";}
-    }
+	// just the ed1, only the cursor a place to the left
+	if (mofbestimmt == '1') {
+		let tarea = document.getElementById('hh');
+		let sst = tarea.selectionStart;
+		let sse = tarea.selectionEnd;
+		let tvl = tarea.value.length;
+		tarea.value = tarea.value.substring(0, sst) + inp + tarea.value.substring(sse, tvl);
+		tarea.selectionStart = sst + inp.length - 1;
+		tarea.selectionEnd = sst + inp.length - 1;
+		tarea.focus();
+	} else {
+		document.getElementById('mof').style.display = 'inline-block';
+	}
+}
 
 // delete all text from the textarea
-function ddel() {document.getElementById("hh").value = "";}
+function ddel() {
+	document.getElementById('hh').value = '';
+}
 
 // copy all text from the textarea
-function selCopTx() {var ta = document.getElementById("hh");
-ta.focus();ta.select();var tz = document.execCommand("copy");return tz;}
+function selCopTx() {
+	var ta = document.getElementById('hh');
+	ta.focus();
+	ta.select();
+	var tz = document.execCommand('copy');
+	return tz;
+}
 
 // a helper function to get the sum of all elements. See function ldopaCalc
-function getSum(total, num) {return total + num;};
+function getSum(total, num) {
+	return total + num;
+}
 
 // get the input of the Parkinson medication dose, calculate the LED for each, then for all of them.
 function ldopaCalc() {
-let Levodopa1 = document.getElementById('Levodopa').value;
-let Levodopa_ret1 = document.getElementById('Levodopa_ret').value;
-let Duodopa1 = document.getElementById('Duodopa').value;
-let Ld_Ent1 = document.getElementById('Levodopa_Entacapon').value;
-let Pram1 = document.getElementById('Pramipexolsalz').value;
-let Rop1 = document.getElementById('Ropinirol').value;
-let Rot1 = document.getElementById('Rotigotin').value;
-let Piri1 = document.getElementById('Piribedil').value;
-let Ras1 = document.getElementById('Rasagilin').value;
-let Aman1 = document.getElementById('Amantadin').value;
-let Apo1 = document.getElementById('Apomorphin').value;
-let parkMed = [Levodopa1 * 1, Levodopa_ret1 * 0.75, Duodopa1 * 1.1, Ld_Ent1 * 1.33, Pram1 * 100, Rop1 * 20, Rot1 * 30, Piri1 * 1, Ras1 * 100, Aman1 * 1, Apo1 * 10];
-document.getElementById("led").innerHTML=Math.round(parkMed.reduce(getSum));};
+	let Levodopa1 = document.getElementById('Levodopa').value;
+	let Levodopa_ret1 = document.getElementById('Levodopa_ret').value;
+	let Duodopa1 = document.getElementById('Duodopa').value;
+	let Ld_Ent1 = document.getElementById('Levodopa_Entacapon').value;
+	let Pram1 = document.getElementById('Pramipexolsalz').value;
+	let Rop1 = document.getElementById('Ropinirol').value;
+	let Rot1 = document.getElementById('Rotigotin').value;
+	let Piri1 = document.getElementById('Piribedil').value;
+	let Ras1 = document.getElementById('Rasagilin').value;
+	let Aman1 = document.getElementById('Amantadin').value;
+	let Apo1 = document.getElementById('Apomorphin').value;
+	let parkMed = [Levodopa1 * 1, Levodopa_ret1 * 0.75, Duodopa1 * 1.1, Ld_Ent1 * 1.33, Pram1 * 100, Rop1 * 20, Rot1 * 30, Piri1 * 1, Ras1 * 100, Aman1 * 1, Apo1 * 10];
+	document.getElementById('led').innerHTML = Math.round(parkMed.reduce(getSum));
+}
 
 // turn all numeric input of the parkinson medication to null
 function parkMed() {
-let allParkMed = document.getElementById('levodopaEqDosis').elements;
-for (let i = 0; i < allParkMed.length - 2; i++) {
-allParkMed[i].value = 0;}};
+	let allParkMed = document.getElementById('levodopaEqDosis').elements;
+	for (let i = 0; i < allParkMed.length - 2; i++) {
+		allParkMed[i].value = 0;
+	}
+}
 
 // GFR Calculator
 function gfrCalc() {
-var krea1 = document.getElementById("gfr").elements['a'].value;
-var krea2 = document.getElementById("gfr").elements['b'].value;
-var al_1 = document.getElementById("gfr").elements['c'].value;
-var ges = document.getElementById("gfr").elements['geschlecht'].value;
-var farbe = document.getElementById("gfr").elements['farbe'].value;
-var al_2 = parseInt(al_1);
-var krea = parseInt(krea1) + parseInt(krea2) / 10;
-var gfr1 = 175 * Math.pow(krea, -1.154) * Math.pow(al_2, -0.203);
-if (ges == 'frau') {gfr1 = gfr1 * 0.742;};
-if (farbe == 'schwarz') {gfr1 = gfr1 * 1.212;};
-var gfr4 = Math.round(gfr1);document.getElementById("gfrp").innerHTML = gfr4;}
+	var krea1 = document.getElementById('gfr').elements['a'].value;
+	var krea2 = document.getElementById('gfr').elements['b'].value;
+	var al_1 = document.getElementById('gfr').elements['c'].value;
+	var ges = document.getElementById('gfr').elements['geschlecht'].value;
+	var farbe = document.getElementById('gfr').elements['farbe'].value;
+	var al_2 = parseInt(al_1);
+	var krea = parseInt(krea1) + parseInt(krea2) / 10;
+	var gfr1 = 175 * Math.pow(krea, -1.154) * Math.pow(al_2, -0.203);
+	if (ges == 'frau') {
+		gfr1 = gfr1 * 0.742;
+	}
+	if (farbe == 'schwarz') {
+		gfr1 = gfr1 * 1.212;
+	}
+	var gfr4 = Math.round(gfr1);
+	document.getElementById('gfrp').innerHTML = gfr4;
+}
+
 // date according to usual German format
-
 function dateGerman() {
-let str = new Date().toISOString();return str.replace(/(\d{4})-(\d{2})-(\d{2}).*$/, "$3.$2.$1");}
+	let str = new Date().toISOString();
+	return str.replace(/(\d{4})-(\d{2})-(\d{2}).*$/, '$3.$2.$1');
+}
+
 // time according to usual German format
-
 function timeGerman() {
-let d = new Date;let hours = d.getHours();let minutes = d.getMinutes();
-if (hours < 10) {hours = "0" + hours};
-if (minutes < 10) {minutes = "0" + minutes};
-let timeGerman = hours + ":" + minutes + " Uhr";
-return timeGerman;}
+	let d = new Date;
+	let hours = d.getHours();
+	let minutes = d.getMinutes();
+	if (hours < 10) {
+		hours = '0' + hours;
+	}
+	if (minutes < 10) {
+		minutes = '0' + minutes;
+	}
+	let timeGerman = hours + ':' + minutes + ' Uhr';
+	return timeGerman;
+}
 
-function anArzt() {let x = document.getElementById("mySelect").value;edein(x+',\r\n');}
+// the functions below get the selected element and insert it into the textarea
+function anArzt() {
+	let x = document.getElementById('mySelect').value;
+	edein(x + ',\r\n');
+}
 
-function medi() {let y0 =
-document.getElementById("medikamente").value;edein(y0 + '\r\n');}
+function medi() {
+	let y0 =
+		document.getElementById('medikamente').value;
+	edein(y0 + '\r\n');
+}
 
-function diagn() {let y7 =
-document.getElementById("diagnosen").value;edein(y7 + '\r\n');}
+function diagn() {
+	let y7 =
+		document.getElementById('diagnosen').value;
+	edein(y7 + '\r\n');
+}
 
-function symptSu() {let y1 =
-document.getElementById("symptSubj").value;ed1(y1);}
+function symptSu() {
+	let y1 =
+		document.getElementById('symptSubj').value;
+	ed1(y1);
+}
 
-function symptOb() {let y2 =
-document.getElementById("symptObj").value;ed1(y2);}
+function symptOb() {
+	let y2 =
+		document.getElementById('symptObj').value;
+	ed1(y2);
+}
 
-function tabJa(){
-let textArea=document.getElementById("hh");
-textArea.onkeydown=function(z){if(z.keyCode===9){ed1('\t');return false;}};}
+// enables tab in textarea
+function tabJa() {
+	let textArea = document.getElementById('hh');
+	textArea.onkeydown = function(z) {
+		if (z.keyCode === 9) {
+			ed1('\t');
+			return false;
+		}
+	};
+}
 tabJa();
-
-function winscroll(){
-	window.scrollTo(0,0);
-	document.getElementById('hh').scrollTo(0,0);}
-
+// it scrolls both the whole body and the textarea up
+function winscroll() {
+	window.scrollTo(0, 0);
+	document.getElementById('hh').scrollTo(0, 0);
+}
+// turn to dark theme: it appends the 'css'-text to the style sheet 
 function themeEG1() {
-    let css = 'body{background-color:#002B36;}textarea{background-color:#002B36;color:#cccccc;border: solid;border-width:1px;border-color:#cccccc;font-family:"dejavu sans mono", "monospace";}.bt1{background-color:#808080;}.bt1:hover {background-color:#b30000;}.bt2{background-color:#808080;}.bt2:hover{background-color:#b30000;}.bttext{border-color:#808080;} .btgrey{background-color: black;} .select1 {background-color:#002B36;}.select1 option{background-color:#002B36;}';
-    style = document.createElement('style');
-    if (style.styleSheet){style.styleSheet.cssText = css;}else{style.appendChild(document.createTextNode(css));
-    }document.getElementsByTagName('head')[0].appendChild(style);    
+	let css =
+		'body{background-color:#002B36;}textarea{background-color:#002B36;color:#cccccc;border: solid;border-width:1px;border-color:#cccccc;font-family:"dejavu sans mono", "monospace";}.bt1{background-color:#808080;}.bt1:hover {background-color:#b30000;} .bttext{border-color:#808080;} .btgrey {background-color: black;} .select1 {background-color:#002B36;} .select1 option{background-color:#002B36;}';
+	let style = document.createElement('style');
+	if (style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		style.appendChild(document.createTextNode(css));
+	}
+	document.getElementsByTagName('head')[0].appendChild(style);
 }
-
+// turn back to standard theme: it appends the 'css'-text to the style sheet 
 function themeEG2() {
-    let css =
-    'body{background-color:#003d66;} textarea {background-color:white;color:#555555;border:none;font-family:sans-serif;} .bt1{background-color:#4CAF50;} .bt1:hover{background-color:red;} .bt2{background-color:#4CAF50;} .bt2:hover{background-color:red;} .bttext{border-color:#4CAF50;} .btgrey{background-color:grey;} .select1{background-color:#003d66;} .select1 option{background-color:#003d66;}';
-    style = document.createElement('style');
-    if (style.styleSheet){style.styleSheet.cssText = css;}else{style.appendChild(document.createTextNode(css));
-    }document.getElementsByTagName('head')[0].appendChild(style);    
+	let css =
+		'body{background-color:#003d66;} textarea {background-color:white;color:#555555;border:none;font-family:sans-serif;} .bt1{background-color:#4CAF50;} .bt1:hover{background-color:red;} .bttext{border-color:#4CAF50;} .btgrey{background-color:grey;} .select1{background-color:#003d66;} .select1 option{background-color:#003d66;}';
+	let style = document.createElement('style');
+	if (style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		style.appendChild(document.createTextNode(css));
+	}
+	document.getElementsByTagName('head')[0].appendChild(style);
 }
+	</script>
+</body>
 
-</script></body></html>
+</html>
