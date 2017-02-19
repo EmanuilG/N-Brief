@@ -340,7 +340,7 @@
 
 <body>
 	<noscript><p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. <br>Dieser Code wird von Ihrem Browser interpretiert. <br>Sie sehen diesen Text, weil Javascript in Ihrem Browser deaktiviert ist. Erwägen Sie bitte, Javascript zu aktivieren. <br>Der N-Brief braucht einen neuen Browser, am besten funktioniert er mit Firefox 45 oder neuer<br>
-<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.9, Letzte Aktualisierung: 12.02.2017</p></noscript>
+<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.9, Letzte Aktualisierung: 19.02.2017</p></noscript>
 	<div id="topBar">
 		<button class="bt1" onclick="ez1()">Arztbrief</button>
 		<button class="bt1" onclick="ez4()">Hilfe</button>
@@ -515,7 +515,7 @@
 				eingefügt.
 				<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem
 				Browser interpretiert. Wenn Sie HTML-, CSS- und Javascript kostenfrei und ohne Anmeldung lernen möchten, besuchen Sie: <a href="http://www.w3schools.com/">w3schools</a>. Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version
-				mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.9, Letzte Aktualisierung: 12.02.2017<br>GNU General Public License, Version 3
+				mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.9, Letzte Aktualisierung: 19.02.2017<br>GNU General Public License, Version 3
 				<br><a href="https://emanuilg.github.io/N-Brief/">N-Brief-Website</a><br></p>
 		</div>
 		<div class="fright50">
@@ -554,6 +554,7 @@
 				<form>
 					<select id="mySelect" class="select1" size="10" onclick="anArzt()">
 					<option value="Ajouri">Ajouri</option>
+					<option value="Amthauer">Amthauer</option>
 					<option value="Auel">Auel</option>
 					<option value="Behr">Behr</option>
 					<option value="Brönneke-Born">Brönneke-Born</option>
@@ -567,6 +568,7 @@
 					<option value="Hussainy">Hussainy</option>
 					<option value="Keimer">Keimer</option>
 					<option value="Keymling">Keymling</option>
+					<option value="Kolb-Fricke">Kolb-Fricke</option>
 					<option value="Kuhl">Kuhl</option>
 					<option value="Kirchhoff">Kirchhoff</option>
 					<option value="Kurz">Kurz</option>
@@ -592,7 +594,7 @@
 				<p class="stamp">Diagnosen</p>
 				<form>
 					<select id="diagnosen" class="select1 select2" size="18" onclick="diagn()">
-				<option value="Aktuell:Vordiagnosen:">Aktuell/Vordiagnosen</option>
+				<option value="Aktuell: Vordiagnosen: ">Aktuell/Vordiagnosen</option>
 				<option value="Adipositas">Adipositas</option><br>
 				<option value="Alkoholkrankheit">Alkoholkrankheit</option>
 				<option value="Arterielle Hypertonie">Art. Hypertonie</option><br>
@@ -698,6 +700,7 @@
 <option value="Apixaban 5 mg p. o.			1-0-1">Apixaban</option>
 <option value="ASS 100 mg p. o.			1-0-0">ASS</option>
 <option value="Atorvastatin 20 mg p. o.			0-0-1">Atorvastatin</option>
+<option value="Augenschutz durch Uhrglasverband, Augensalbe zur Nacht und neutrale Augentropfen tagsüber.">Augenschutz</option>
 <option value="Citalopram 20 mg p. o.			0-0-1">Citalopram</option>
 <option value="Clopidogrel 75 mg p. o.			0-0-1">Clopidogrel</option>
 <option value="Enoxaparin 0,4 ml s. c.     			0-0-1">Enoxaparin</option>
@@ -735,7 +738,7 @@
 				<p class="stamp">Klinischer Befund</p>
 				<button class="bt1 bttext" onclick="ed1('Wach, kooperativ, zeitlich, örtlich und situativ orientiert.\r\nAufmerksamkeit, Merkfähigkeit, Stimmung normal. \r\n'+Rechtshaender+' ' +Linkshaender+'. \r\nSprachverständnis, sprachlicher Ausdruck sowie Artikulation normal. \r\nAugen: Bewegung, Pupillen, Gesichtsfelder fingerperimetrisch normal. Kein pathologischer Nystagmus. Sehkraft mit Brille R und L mindestens xxx mm große Buchstaben in Leseentfernung. \r\nMimik normal, die Zunge wird geradeaus herausgestreckt, der weiche Gaumen hebt sich symmetrisch. Hören von Fingerreiben beiderseits normal. Kein Meningismus. \r\nArmhalteversuch, Beinhalteversuch, Kraft, Trophik, Tonus, Muskeldehnungsreflexe lebhaft/mittellebhaft/schwach, stgl., Plantarreflex normal.\r\nFinger-Nase-Versuch, Knie-Hacke-Versuch o. B. Kein Tremor, keine unwillkürlichen Bewegungen.\r\nAlgesie, Ästhesie normal. Lagesinn im Zeigefinger und im großen Zeh normal. Vibrationssinn im Zeigefinger /8 und im großen Zeh /8. \r\nStehen und Gehen normal, Einbeinstand, Rombergversuch, Zehen- und Hackengang, Strichgang, Aufstehen vom Stuhl normal. \r\n\r\nAllgemeinzustand gut, Ernährungszustand gut. Haut und Schleimhäute normal. Lunge auskultatorisch normales Atemgeräusch, Herzaktion rhythmisch, keine Herzgeräusche, Bauch weich mit Darmgeräuschen, keine Ödeme, große Gelenke frei beweglich, Wirbelsäule ohne Klopfschmerz. \r\nRR / mmHg, Herzfrequenz /min, Temperatur 36, °C, SpO2 xxx % bei Raumluft.\r\n\r\n')">Befund</button>
 				<button class="bt1 bttext" onclick="ed1('Schulterblattstabilisierung durch Serratus ant. normal, Schulterhebung 5, Armabduktion 5, Armadduktion 5, Arminnenrotation 5, Armaußenrotation 5, Armbeugung 5, Armstreckung 5, Unterarmpronation 5, Unterarmsupination 5, Handbeugung 5, Handstreckung 5, Fingerstreckung 5, Fingerbeugung 5, Abduktion der Finger II und V 5, Beugung der MCP-Gelenke 5, Streckung der MCP-Gelenke 5, Beugung der IP-Gelenke 5, Streckung der IP-Gelenke 5 nach MRC.\r\n\r\nHüftbeugung 5, Hüftstreckung 5, Hüftinnenrotation 5, Hüftaußenrotation 5, Kniebeugung 5, Kniestreckung 5, Fußhebung 5, Fußsenkung 5, Fußpronation 5, Fußsupination 5, Zehenstreckung 5, Zehenbeugung 5 nach MRC.\r\n\r\nMuskeldehnungsreflexe: (0: fehlend, 1: schwach, 2: mittellebhaft, 3: lebhaft ohne Klonus, 4: mit Klonus)\r\n')">Peripher</button><br>
-				<button class="bt1 bttext" onclick="ed1(Der_Patient + ' liegt im Bett,\r\natmet spontan wird über einen endotrachealen Tubus / Tracheostoma beatmet.\r\nDie Augen sind geschlossen, ' + er + ' reagiert nicht auf Ansprache und Berührung. Nach mäßigem Schmerzreiz bewegt ' + er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen nimmt ' + er + ' keinen Blickkontakt auf, die Augen sind parallel, der okulozephale Reflex, horizontal und vertikal, ist auslösbar. Die Pupillen sind rund und gleich groß, ca. xxx mm, und reagieren auf Licht. Die Muskeldehnungsreflexe lassen sich nicht lebhaft auslösen. Der Plantarreflex ist stumm normal. Babinski-Zeichen rechts links.\r\nGlasgow-Coma-Scale: --. \r\n')">Koma</button>
+				<button class="bt1 bttext" onclick="ed1(Der_Patient + ' liegt im Bett, atmet spontan wird über eine Beatmungsmaske einen endotrachealen Tubus ein Tracheostoma CPAP- BIPAP- beatmet.\r\nDie Augen sind offen geschlossen, ' + er + ' reagiert nicht auf Ansprache und Berührung. Nach mäßigem Schmerzreiz bewegt ' + er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen nimmt ' + er + ' keinen Blickkontakt auf, die Augen sind parallel, der okulozephale Reflex, horizontal und vertikal, ist auslösbar. Eine Blickparese rechts links ist beim okulozephalen Reflex erkennbar. Der Kornealreflex ist bds. rechts links nicht auslösbar. Die Pupillen sind entrundet rund und gleich groß, ca. xxx mm, und reagieren auf Licht. Der Muskeltonus in Armen und Beinen ist schlaff erhöht rechts links geringer. Die Muskeldehnungsreflexe lassen sich nicht lebhaft auslösen. Es sind keine unwillkürlichen Bewegungen Zuckungen im Gesicht im Arm im Bein rechts links zu sehen. Der Plantarreflex ist stumm normal. Babinski-Zeichen rechts links. \r\nGlasgow-Coma-Scale: --. \r\n')">Koma</button>
 			</div>
 			<div class="wrap3" id="MS">
 				<p class="stamp">Multiple Sklerose</p>
@@ -791,23 +794,23 @@
 			<button class="bt1 bt2 bttext" onclick="edein('\r\n')">Eingabe</button><br>
 			<button class="bt1 bt2 bttext" onclick="ed1(timeGerman() + ' ')">Uhrzeit</button>
 			<button class="bt1 bt2 bttext" onclick="ed1('\t')">Tab</button><br><br>
-			<button class="bt1" onclick="ddel()">Lösch alles</button>
+			<button class="bt1" onclick="ddel()">Lösch alles</button><br>
 			<button class="bt1" onclick="selCopTx()">Kopiere alles</button><br>
-			<button class="bt1" onclick="typogr3()" data-tooltip="Typografische Korrektur">TypKorrekt</button>
+			<button class="bt1" onclick="typogr3()" data-tooltip="Typografische Korrektur">TypKorrekt</button><br>
 			<button class="bt1 bt2" onclick="themeEG1()" data-tooltip="Dunkles Theme">Dunkel</button>
-			<button class="bt1 bt2" onclick="themeEG2()" data-tooltip="Standard-Theme">Standard</button>
+			<button class="bt1 bt2" onclick="themeEG2()" data-tooltip="Standard-Theme">Standard</button><br>
 			<button class="bt1" onclick="location.reload()">N-Brief aktualisieren</button><br>
 			<br><br><br>
-			<button class="bt1 bttext" onclick="ed1('Neurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'): \r\n\r\nFremdanamnese (Angaben des der ): \r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button>
-			<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\n' + Der_Patient + ' wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiografie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\n' + Der_Patient + ' lebt zu Hause und kann sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur Thrombektomie. Wir bedanken uns für die Übernahme.\r\n\r\n')">Thrombektomie</button>
-			<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nSubarachnoidalblutung\r\nV.a. Aneurysma der A. cerebri media interna anterior posterior communicans rechts links \r\n\r\n\r\nSehr geehrter Herr Prof. Behr, \r\n\r\n' + Der_Patient + ' bekam plötzlich starke Kopfschmerzen wurde vorgefunden. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte Nackensteife eine Hemiparese rechts links. \r\nDas Schädel-CT zeigte Blut subarachnoiddal, die CT-Angiografie zeigte ein Aneurysma.\r\nWir senkten den Blutdruck mit Urapidil.\r\nVormedikation: \r\n' + Der_Patient + ' lebte bisher zu Hause und konnte sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur weiteren Behandlung. \r\nBei Verlegung ist ' + der_Patient + ' spontanatmend intubiert/beatmet, atem/kreislaufstabil, hat einen arteriellen Katheter in der A. radialis rechts links. \r\nWir bedanken uns für die Übernahme.\r\n\r\n')">SAB</button>
+			<button class="bt1 bttext" onclick="ed1('Neurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'): \r\n\r\nFremdanamnese (Angaben des der ): \r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button><br>
+			<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\n' + Der_Patient + ' wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiografie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\n' + Der_Patient + ' lebt zu Hause und kann sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur Thrombektomie. Wir bedanken uns für die Übernahme.\r\n\r\n')">Thrombektomie</button><br>
+			<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nSubarachnoidalblutung\r\nV.a. Aneurysma der A. cerebri media interna anterior posterior communicans rechts links \r\n\r\n\r\nSehr geehrter Herr Prof. Behr, \r\n\r\n' + Der_Patient + ' bekam plötzlich starke Kopfschmerzen wurde vorgefunden. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte Nackensteife eine Hemiparese rechts links. \r\nDas Schädel-CT zeigte Blut subarachnoiddal, die CT-Angiografie zeigte ein Aneurysma.\r\nWir senkten den Blutdruck mit Urapidil.\r\nVormedikation: \r\n' + Der_Patient + ' lebte bisher zu Hause und konnte sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur weiteren Behandlung. \r\nBei Verlegung ist ' + der_Patient + ' spontanatmend intubiert/beatmet, atem/kreislaufstabil, hat einen arteriellen Katheter in der A. radialis rechts links. \r\nWir bedanken uns für die Übernahme.\r\n\r\n')">SAB</button><br>
 			<button class="bt1 bttext" onclick="ed1('Diagnosen:\r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor. \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\n\r\nEigenanamnese: \r\nFremdanamnese: \r\nVorerkrankungen: \r\nVormedikation: \r\n\r\nKlinischer Befund: \r\nZusatzdiagnostik \r\nLabor: \r\nEKG: \r\nSchädel-CT: \r\n\r\nEmpfehlungen: \r\n\r\n\r\n' + Herr + ' xxx wurde ambulant belassen. Wir stehen für Fragen gerne zur Verfügung. \r\n')">Kurzbrief ZNA</button><br>
 			<button class="bt1 bttext" onclick="ed1('Klinik für Neurologie - Aufnahmebogen\r\n\r\nUntersucher: \r\nUntersuchungs-Datum: \r\nUntersuchungs-Uhrzeit: \r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor.\r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\nAufnahme-Diagnose: V.a. \r\n\r\nZuletzt ohne die jetzigen Symptome: \r\nEigenanamnese: \r\n\r\nFremdanamnese: \r\n\r\nVorerkrankungen: \r\n\r\nVormedikation: \r\n\r\nAlkohol/Rauchen/Drogen: \r\n\r\nPsychosoziale Anamnese: \r\n\tLebt zu Hause im Pflegeheim \r\n\tPflegegrad \r\n\tVorsorgevollmacht: Betreuung: Ja Nein \r\n\tBevollmächtigt: \r\n\tAngehöriger (Name): \r\n\tAngehöriger (Tel): \r\n\tHausarzt: \r\n\r\nKlinischer Befund: \r\n\r\nLabor: \r\n\r\nEKG: \r\n\r\nSchädel-CT: \r\n\r\nAufnahme auf \r\nOST1(Stroke) \r\nOST3 \r\n\OST1(Intensiv)\r\n')">Aufnahmebogen</button>
 
 			<br><br>
 			<!--the star logo-->
 			<p>&nbsp;&nbsp;&nbsp;&nbsp;<svg height="40" width="40"><polygon points="20.0,2.0 8.0,39.6 38.0,15.6 2.0,15.6 32.0,39.6" style="fill:gold;"/></svg></p>
-			<span>N-Brief 0.9 <br>12.02.2017</span>
+			<span>N-Brief 0.9 <br>19.02.2017</span>
 		</div>
 	</div>
 	<script>
