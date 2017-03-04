@@ -1,0 +1,4086 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Mustertexte und Textbausteine für einen neurologischen Arztbrief in Bad Hersfeld">
+	<meta name="author" content="Emanuil Giuris">
+	<meta license="GNU General Public License 3">
+	<title>N-Brief autoComplete</title>
+	
+	
+	<!-- jquery 1.3.2 follows  -->
+<script>
+		(function() {
+	  function R(a, b) {
+	    b.src ? c.ajax({url:b.src, async:!1, dataType:"script"}) : c.globalEval(b.text || b.textContent || b.innerHTML || "");
+	    b.parentNode && b.parentNode.removeChild(b);
+	  }
+	  function A(a, b) {
+	    return a[0] && parseInt(c.curCSS(a[0], b, !0), 10) || 0;
+	  }
+	  function F() {
+	    return !1;
+	  }
+	  function G() {
+	    return !0;
+	  }
+	  function I(a) {
+	    var b = RegExp("(^|\\.)" + a.type + "(\\.|$)"), d = !0, e = [];
+	    c.each(c.data(this, "events").live || [], function(d, g) {
+	      if (b.test(g.type)) {
+	        var f = c(a.target).closest(g.data)[0];
+	        f && e.push({elem:f, fn:g});
+	      }
+	    });
+	    e.sort(function(a, b) {
+	      return c.data(a.elem, "closest") - c.data(b.elem, "closest");
+	    });
+	    c.each(e, function() {
+	      if (!1 === this.fn.call(this.elem, a, this.fn.data)) {
+	        return d = !1;
+	      }
+	    });
+	    return d;
+	  }
+	  function J(a, b) {
+	    return ["live", a, b.replace(/\./g, "`").replace(/ /g, "|")].join(".");
+	  }
+	  function K() {
+	    L || (L = !0, document.addEventListener ? document.addEventListener("DOMContentLoaded", function() {
+	      document.removeEventListener("DOMContentLoaded", arguments.callee, !1);
+	      c.ready();
+	    }, !1) : document.attachEvent && (document.attachEvent("onreadystatechange", function() {
+	      "complete" === document.readyState && (document.detachEvent("onreadystatechange", arguments.callee), c.ready());
+	    }), document.documentElement.doScroll && n == n.top && function() {
+	      if (!c.isReady) {
+	        try {
+	          document.documentElement.doScroll("left");
+	        } catch (a) {
+	          setTimeout(arguments.callee, 0);
+	          return;
+	        }
+	        c.ready();
+	      }
+	    }()), c.event.add(n, "load", c.ready));
+	  }
+	  function z(a, b) {
+	    var d = {};
+	    c.each(M.concat.apply([], M.slice(0, b)), function() {
+	      d[this] = a;
+	    });
+	    return d;
+	  }
+	  var n = this, S = n.jQuery, T = n.$, c = n.jQuery = n.$ = function(a, b) {
+	    return new c.fn.init(a, b);
+	  }, U = /^[^<]*(<(.|\s)+>)[^>]*$|^#([\w-]+)$/, V = /^.[^:#\[\.,]*$/;
+	  c.fn = c.prototype = {init:function(a, b) {
+	    a = a || document;
+	    if (a.nodeType) {
+	      return this[0] = a, this.length = 1, this.context = a, this;
+	    }
+	    if ("string" === typeof a) {
+	      var d = U.exec(a);
+	      if (!d || !d[1] && b) {
+	        return c(b).find(a);
+	      }
+	      if (d[1]) {
+	        a = c.clean([d[1]], b);
+	      } else {
+	        var e = document.getElementById(d[3]);
+	        if (e && e.id != d[3]) {
+	          return c().find(a);
+	        }
+	        d = c(e || []);
+	        d.context = document;
+	        d.selector = a;
+	        return d;
+	      }
+	    } else {
+	      if (c.isFunction(a)) {
+	        return c(document).ready(a);
+	      }
+	    }
+	    a.selector && a.context && (this.selector = a.selector, this.context = a.context);
+	    return this.setArray(c.isArray(a) ? a : c.makeArray(a));
+	  }, selector:"", jquery:"1.3.2", size:function() {
+	    return this.length;
+	  }, get:function(a) {
+	    return void 0 === a ? Array.prototype.slice.call(this) : this[a];
+	  }, pushStack:function(a, b, d) {
+	    a = c(a);
+	    a.prevObject = this;
+	    a.context = this.context;
+	    "find" === b ? a.selector = this.selector + (this.selector ? " " : "") + d : b && (a.selector = this.selector + "." + b + "(" + d + ")");
+	    return a;
+	  }, setArray:function(a) {
+	    this.length = 0;
+	    Array.prototype.push.apply(this, a);
+	    return this;
+	  }, each:function(a, b) {
+	    return c.each(this, a, b);
+	  }, index:function(a) {
+	    return c.inArray(a && a.jquery ? a[0] : a, this);
+	  }, attr:function(a, b, d) {
+	    var e = a;
+	    if ("string" === typeof a) {
+	      if (void 0 === b) {
+	        return this[0] && c[d || "attr"](this[0], a);
+	      }
+	      e = {};
+	      e[a] = b;
+	    }
+	    return this.each(function(b) {
+	      for (a in e) {
+	        c.attr(d ? this.style : this, a, c.prop(this, e[a], d, b, a));
+	      }
+	    });
+	  }, css:function(a, b) {
+	    ("width" == a || "height" == a) && 0 > parseFloat(b) && (b = void 0);
+	    return this.attr(a, b, "curCSS");
+	  }, text:function(a) {
+	    if ("object" !== typeof a && null != a) {
+	      return this.empty().append((this[0] && this[0].ownerDocument || document).createTextNode(a));
+	    }
+	    var b = "";
+	    c.each(a || this, function() {
+	      c.each(this.childNodes, function() {
+	        8 != this.nodeType && (b += 1 != this.nodeType ? this.nodeValue : c.fn.text([this]));
+	      });
+	    });
+	    return b;
+	  }, wrapAll:function(a) {
+	    this[0] && (a = c(a, this[0].ownerDocument).clone(), this[0].parentNode && a.insertBefore(this[0]), a.map(function() {
+	      for (var a = this;a.firstChild;) {
+	        a = a.firstChild;
+	      }
+	      return a;
+	    }).append(this));
+	    return this;
+	  }, wrapInner:function(a) {
+	    return this.each(function() {
+	      c(this).contents().wrapAll(a);
+	    });
+	  }, wrap:function(a) {
+	    return this.each(function() {
+	      c(this).wrapAll(a);
+	    });
+	  }, append:function() {
+	    return this.domManip(arguments, !0, function(a) {
+	      1 == this.nodeType && this.appendChild(a);
+	    });
+	  }, prepend:function() {
+	    return this.domManip(arguments, !0, function(a) {
+	      1 == this.nodeType && this.insertBefore(a, this.firstChild);
+	    });
+	  }, before:function() {
+	    return this.domManip(arguments, !1, function(a) {
+	      this.parentNode.insertBefore(a, this);
+	    });
+	  }, after:function() {
+	    return this.domManip(arguments, !1, function(a) {
+	      this.parentNode.insertBefore(a, this.nextSibling);
+	    });
+	  }, end:function() {
+	    return this.prevObject || c([]);
+	  }, push:[].push, sort:[].sort, splice:[].splice, find:function(a) {
+	    if (1 === this.length) {
+	      var b = this.pushStack([], "find", a);
+	      b.length = 0;
+	      c.find(a, this[0], b);
+	      return b;
+	    }
+	    return this.pushStack(c.unique(c.map(this, function(b) {
+	      return c.find(a, b);
+	    })), "find", a);
+	  }, clone:function(a) {
+	    var b = this.map(function() {
+	      if (c.support.noCloneEvent || c.isXMLDoc(this)) {
+	        return this.cloneNode(!0);
+	      }
+	      var a = this.outerHTML;
+	      a || (a = this.ownerDocument.createElement("div"), a.appendChild(this.cloneNode(!0)), a = a.innerHTML);
+	      return c.clean([a.replace(/ jQuery\d+="(?:\d+|null)"/g, "").replace(/^\s*/, "")])[0];
+	    });
+	    if (!0 === a) {
+	      var d = this.find("*").andSelf(), e = 0;
+	      b.find("*").andSelf().each(function() {
+	        if (this.nodeName === d[e].nodeName) {
+	          var a = c.data(d[e], "events"), b;
+	          for (b in a) {
+	            for (var h in a[b]) {
+	              c.event.add(this, b, a[b][h], a[b][h].data);
+	            }
+	          }
+	          e++;
+	        }
+	      });
+	    }
+	    return b;
+	  }, filter:function(a) {
+	    return this.pushStack(c.isFunction(a) && c.grep(this, function(b, c) {
+	      return a.call(b, c);
+	    }) || c.multiFilter(a, c.grep(this, function(a) {
+	      return 1 === a.nodeType;
+	    })), "filter", a);
+	  }, closest:function(a) {
+	    var b = c.expr.match.POS.test(a) ? c(a) : null, d = 0;
+	    return this.map(function() {
+	      for (var e = this;e && e.ownerDocument;) {
+	        if (b ? -1 < b.index(e) : c(e).is(a)) {
+	          return c.data(e, "closest", d), e;
+	        }
+	        e = e.parentNode;
+	        d++;
+	      }
+	    });
+	  }, not:function(a) {
+	    if ("string" === typeof a) {
+	      if (V.test(a)) {
+	        return this.pushStack(c.multiFilter(a, this, !0), "not", a);
+	      }
+	      a = c.multiFilter(a, this);
+	    }
+	    var b = a.length && void 0 !== a[a.length - 1] && !a.nodeType;
+	    return this.filter(function() {
+	      return b ? 0 > c.inArray(this, a) : this != a;
+	    });
+	  }, add:function(a) {
+	    return this.pushStack(c.unique(c.merge(this.get(), "string" === typeof a ? c(a) : c.makeArray(a))));
+	  }, is:function(a) {
+	    return !!a && 0 < c.multiFilter(a, this).length;
+	  }, hasClass:function(a) {
+	    return !!a && this.is("." + a);
+	  }, val:function(a) {
+	    if (void 0 === a) {
+	      var b = this[0];
+	      if (b) {
+	        if (c.nodeName(b, "option")) {
+	          return (b.attributes.value || {}).specified ? b.value : b.text;
+	        }
+	        if (c.nodeName(b, "select")) {
+	          var d = b.selectedIndex, e = [], f = b.options, b = "select-one" == b.type;
+	          if (0 > d) {
+	            return null;
+	          }
+	          for (var g = b ? d : 0, d = b ? d + 1 : f.length;g < d;g++) {
+	            var h = f[g];
+	            if (h.selected) {
+	              a = c(h).val();
+	              if (b) {
+	                return a;
+	              }
+	              e.push(a);
+	            }
+	          }
+	          return e;
+	        }
+	        return (b.value || "").replace(/\r/g, "");
+	      }
+	    } else {
+	      return "number" === typeof a && (a += ""), this.each(function() {
+	        if (1 == this.nodeType) {
+	          if (c.isArray(a) && /radio|checkbox/.test(this.type)) {
+	            this.checked = 0 <= c.inArray(this.value, a) || 0 <= c.inArray(this.name, a);
+	          } else {
+	            if (c.nodeName(this, "select")) {
+	              var b = c.makeArray(a);
+	              c("option", this).each(function() {
+	                this.selected = 0 <= c.inArray(this.value, b) || 0 <= c.inArray(this.text, b);
+	              });
+	              b.length || (this.selectedIndex = -1);
+	            } else {
+	              this.value = a;
+	            }
+	          }
+	        }
+	      });
+	    }
+	  }, html:function(a) {
+	    return void 0 === a ? this[0] ? this[0].innerHTML.replace(/ jQuery\d+="(?:\d+|null)"/g, "") : null : this.empty().append(a);
+	  }, replaceWith:function(a) {
+	    return this.after(a).remove();
+	  }, eq:function(a) {
+	    return this.slice(a, +a + 1);
+	  }, slice:function() {
+	    return this.pushStack(Array.prototype.slice.apply(this, arguments), "slice", Array.prototype.slice.call(arguments).join(","));
+	  }, map:function(a) {
+	    return this.pushStack(c.map(this, function(b, c) {
+	      return a.call(b, c, b);
+	    }));
+	  }, andSelf:function() {
+	    return this.add(this.prevObject);
+	  }, domManip:function(a, b, d) {
+	    function e(a, d) {
+	      return b && c.nodeName(a, "table") && c.nodeName(d, "tr") ? a.getElementsByTagName("tbody")[0] || a.appendChild(a.ownerDocument.createElement("tbody")) : a;
+	    }
+	    if (this[0]) {
+	      var f = (this[0].ownerDocument || this[0]).createDocumentFragment();
+	      a = c.clean(a, this[0].ownerDocument || this[0], f);
+	      var g = f.firstChild;
+	      if (g) {
+	        for (var h = 0, m = this.length;h < m;h++) {
+	          d.call(e(this[h], g), 1 < this.length || 0 < h ? f.cloneNode(!0) : f);
+	        }
+	      }
+	      a && c.each(a, R);
+	    }
+	    return this;
+	  }};
+	  c.fn.init.prototype = c.fn;
+	  c.extend = c.fn.extend = function() {
+	    var a = arguments[0] || {}, b = 1, d = arguments.length, e = !1, f;
+	    "boolean" === typeof a && (e = a, a = arguments[1] || {}, b = 2);
+	    "object" === typeof a || c.isFunction(a) || (a = {});
+	    d == b && (a = this, --b);
+	    for (;b < d;b++) {
+	      if (null != (f = arguments[b])) {
+	        for (var g in f) {
+	          var h = a[g], m = f[g];
+	          a !== m && (e && m && "object" === typeof m && !m.nodeType ? a[g] = c.extend(e, h || (null != m.length ? [] : {}), m) : void 0 !== m && (a[g] = m));
+	        }
+	      }
+	    }
+	    return a;
+	  };
+	  var W = /z-?index|font-?weight|opacity|zoom|line-?height/i, N = document.defaultView || {}, O = Object.prototype.toString;
+	  c.extend({noConflict:function(a) {
+	    n.$ = T;
+	    a && (n.jQuery = S);
+	    return c;
+	  }, isFunction:function(a) {
+	    return "[object Function]" === O.call(a);
+	  }, isArray:function(a) {
+	    return "[object Array]" === O.call(a);
+	  }, isXMLDoc:function(a) {
+	    return 9 === a.nodeType && "HTML" !== a.documentElement.nodeName || !!a.ownerDocument && c.isXMLDoc(a.ownerDocument);
+	  }, globalEval:function(a) {
+	    if (a && /\S/.test(a)) {
+	      var b = document.getElementsByTagName("head")[0] || document.documentElement, d = document.createElement("script");
+	      d.type = "text/javascript";
+	      c.support.scriptEval ? d.appendChild(document.createTextNode(a)) : d.text = a;
+	      b.insertBefore(d, b.firstChild);
+	      b.removeChild(d);
+	    }
+	  }, nodeName:function(a, b) {
+	    return a.nodeName && a.nodeName.toUpperCase() == b.toUpperCase();
+	  }, each:function(a, b, c) {
+	    var d, f = 0, g = a.length;
+	    if (c) {
+	      if (void 0 === g) {
+	        for (d in a) {
+	          if (!1 === b.apply(a[d], c)) {
+	            break;
+	          }
+	        }
+	      } else {
+	        for (;f < g && !1 !== b.apply(a[f++], c);) {
+	        }
+	      }
+	    } else {
+	      if (void 0 === g) {
+	        for (d in a) {
+	          if (!1 === b.call(a[d], d, a[d])) {
+	            break;
+	          }
+	        }
+	      } else {
+	        for (c = a[0];f < g && !1 !== b.call(c, f, c);c = a[++f]) {
+	        }
+	      }
+	    }
+	    return a;
+	  }, prop:function(a, b, d, e, f) {
+	    c.isFunction(b) && (b = b.call(a, e));
+	    return "number" !== typeof b || "curCSS" != d || W.test(f) ? b : b + "px";
+	  }, className:{add:function(a, b) {
+	    c.each((b || "").split(/\s+/), function(b, e) {
+	      1 != a.nodeType || c.className.has(a.className, e) || (a.className += (a.className ? " " : "") + e);
+	    });
+	  }, remove:function(a, b) {
+	    1 == a.nodeType && (a.className = void 0 !== b ? c.grep(a.className.split(/\s+/), function(a) {
+	      return !c.className.has(b, a);
+	    }).join(" ") : "");
+	  }, has:function(a, b) {
+	    return a && -1 < c.inArray(b, (a.className || a).toString().split(/\s+/));
+	  }}, swap:function(a, b, c) {
+	    var d = {}, f;
+	    for (f in b) {
+	      d[f] = a.style[f], a.style[f] = b[f];
+	    }
+	    c.call(a);
+	    for (f in b) {
+	      a.style[f] = d[f];
+	    }
+	  }, css:function(a, b, d, e) {
+	    if ("width" == b || "height" == b) {
+	      d = function() {
+	        f = "width" == b ? a.offsetWidth : a.offsetHeight;
+	        "border" !== e && c.each(h, function() {
+	          e || (f -= parseFloat(c.curCSS(a, "padding" + this, !0)) || 0);
+	          f = "margin" === e ? f + (parseFloat(c.curCSS(a, "margin" + this, !0)) || 0) : f - (parseFloat(c.curCSS(a, "border" + this + "Width", !0)) || 0);
+	        });
+	      };
+	      var f, g = {position:"absolute", visibility:"hidden", display:"block"}, h = "width" == b ? ["Left", "Right"] : ["Top", "Bottom"];
+	      0 !== a.offsetWidth ? d() : c.swap(a, g, d);
+	      return Math.max(0, Math.round(f));
+	    }
+	    return c.curCSS(a, b, d);
+	  }, curCSS:function(a, b, d) {
+	    var e, f = a.style;
+	    if ("opacity" == b && !c.support.opacity) {
+	      return e = c.attr(f, "opacity"), "" == e ? "1" : e;
+	    }
+	    b.match(/float/i) && (b = B);
+	    !d && f && f[b] ? e = f[b] : N.getComputedStyle ? (b.match(/float/i) && (b = "float"), b = b.replace(/([A-Z])/g, "-$1").toLowerCase(), (a = N.getComputedStyle(a, null)) && (e = a.getPropertyValue(b)), "opacity" == b && "" == e && (e = "1")) : a.currentStyle && (e = b.replace(/\-(\w)/g, function(a, b) {
+	      return b.toUpperCase();
+	    }), e = a.currentStyle[b] || a.currentStyle[e], !/^\d+(px)?$/i.test(e) && /^\d/.test(e) && (b = f.left, d = a.runtimeStyle.left, a.runtimeStyle.left = a.currentStyle.left, f.left = e || 0, e = f.pixelLeft + "px", f.left = b, a.runtimeStyle.left = d));
+	    return e;
+	  }, clean:function(a, b, d) {
+	    b = b || document;
+	    "undefined" === typeof b.createElement && (b = b.ownerDocument || b[0] && b[0].ownerDocument || document);
+	    if (!d && 1 === a.length && "string" === typeof a[0]) {
+	      var e = /^<(\w+)\s*\/?>$/.exec(a[0]);
+	      if (e) {
+	        return [b.createElement(e[1])];
+	      }
+	    }
+	    var f = [], e = [], g = b.createElement("div");
+	    c.each(a, function(a, d) {
+	      "number" === typeof d && (d += "");
+	      if (d) {
+	        if ("string" === typeof d) {
+	          d = d.replace(/(<(\w+)[^>]*?)\/>/g, function(a, b, c) {
+	            return c.match(/^(abbr|br|col|img|input|link|meta|param|hr|area|embed)$/i) ? a : b + "></" + c + ">";
+	          });
+	          var e = d.replace(/^\s+/, "").substring(0, 10).toLowerCase(), h = !e.indexOf("<opt") && [1, "<select multiple='multiple'>", "</select>"] || !e.indexOf("<leg") && [1, "<fieldset>", "</fieldset>"] || e.match(/^<(thead|tbody|tfoot|colg|cap)/) && [1, "<table>", "</table>"] || !e.indexOf("<tr") && [2, "<table><tbody>", "</tbody></table>"] || (!e.indexOf("<td") || !e.indexOf("<th")) && [3, "<table><tbody><tr>", "</tr></tbody></table>"] || !e.indexOf("<col") && [2, "<table><tbody></tbody><colgroup>", 
+	          "</colgroup></table>"] || !c.support.htmlSerialize && [1, "div<div>", "</div>"] || [0, "", ""];
+	          for (g.innerHTML = h[1] + d + h[2];h[0]--;) {
+	            g = g.lastChild;
+	          }
+	          if (!c.support.tbody) {
+	            for (var m = /<tbody/i.test(d), e = e.indexOf("<table") || m ? "<table>" != h[1] || m ? [] : g.childNodes : g.firstChild && g.firstChild.childNodes, h = e.length - 1;0 <= h;--h) {
+	              c.nodeName(e[h], "tbody") && !e[h].childNodes.length && e[h].parentNode.removeChild(e[h]);
+	            }
+	          }
+	          !c.support.leadingWhitespace && /^\s/.test(d) && g.insertBefore(b.createTextNode(d.match(/^\s*/)[0]), g.firstChild);
+	          d = c.makeArray(g.childNodes);
+	        }
+	        d.nodeType ? f.push(d) : f = c.merge(f, d);
+	      }
+	    });
+	    if (d) {
+	      for (a = 0;f[a];a++) {
+	        !c.nodeName(f[a], "script") || f[a].type && "text/javascript" !== f[a].type.toLowerCase() ? (1 === f[a].nodeType && f.splice.apply(f, [a + 1, 0].concat(c.makeArray(f[a].getElementsByTagName("script")))), d.appendChild(f[a])) : e.push(f[a].parentNode ? f[a].parentNode.removeChild(f[a]) : f[a]);
+	      }
+	      return e;
+	    }
+	    return f;
+	  }, attr:function(a, b, d) {
+	    if (a && 3 != a.nodeType && 8 != a.nodeType) {
+	      var e = !c.isXMLDoc(a), f = void 0 !== d;
+	      b = e && c.props[b] || b;
+	      if (a.tagName) {
+	        var g = /href|src|style/.test(b);
+	        "selected" == b && a.parentNode && a.parentNode.selectedIndex;
+	        if (b in a && e && !g) {
+	          if (f) {
+	            if ("type" == b && c.nodeName(a, "input") && a.parentNode) {
+	              throw "type property can't be changed";
+	            }
+	            a[b] = d;
+	          }
+	          return c.nodeName(a, "form") && a.getAttributeNode(b) ? a.getAttributeNode(b).nodeValue : "tabIndex" == b ? (b = a.getAttributeNode("tabIndex")) && b.specified ? b.value : a.nodeName.match(/(button|input|object|select|textarea)/i) ? 0 : a.nodeName.match(/^(a|area)$/i) && a.href ? 0 : void 0 : a[b];
+	        }
+	        if (!c.support.style && e && "style" == b) {
+	          return c.attr(a.style, "cssText", d);
+	        }
+	        f && a.setAttribute(b, "" + d);
+	        a = !c.support.hrefNormalized && e && g ? a.getAttribute(b, 2) : a.getAttribute(b);
+	        return null === a ? void 0 : a;
+	      }
+	      if (!c.support.opacity && "opacity" == b) {
+	        return f && (a.zoom = 1, a.filter = (a.filter || "").replace(/alpha\([^)]*\)/, "") + ("NaN" == parseInt(d) + "" ? "" : "alpha(opacity=" + 100 * d + ")")), a.filter && 0 <= a.filter.indexOf("opacity=") ? parseFloat(a.filter.match(/opacity=([^)]*)/)[1]) / 100 + "" : "";
+	      }
+	      b = b.replace(/-([a-z])/ig, function(a, b) {
+	        return b.toUpperCase();
+	      });
+	      f && (a[b] = d);
+	      return a[b];
+	    }
+	  }, trim:function(a) {
+	    return (a || "").replace(/^\s+|\s+$/g, "");
+	  }, makeArray:function(a) {
+	    var b = [];
+	    if (null != a) {
+	      var d = a.length;
+	      if (null == d || "string" === typeof a || c.isFunction(a) || a.setInterval) {
+	        b[0] = a;
+	      } else {
+	        for (;d;) {
+	          b[--d] = a[d];
+	        }
+	      }
+	    }
+	    return b;
+	  }, inArray:function(a, b) {
+	    for (var c = 0, e = b.length;c < e;c++) {
+	      if (b[c] === a) {
+	        return c;
+	      }
+	    }
+	    return -1;
+	  }, merge:function(a, b) {
+	    var d = 0, e, f = a.length;
+	    if (c.support.getAll) {
+	      for (;null != (e = b[d++]);) {
+	        a[f++] = e;
+	      }
+	    } else {
+	      for (;null != (e = b[d++]);) {
+	        8 != e.nodeType && (a[f++] = e);
+	      }
+	    }
+	    return a;
+	  }, unique:function(a) {
+	    var b = [], d = {};
+	    try {
+	      for (var e = 0, f = a.length;e < f;e++) {
+	        var g = c.data(a[e]);
+	        d[g] || (d[g] = !0, b.push(a[e]));
+	      }
+	    } catch (h) {
+	      b = a;
+	    }
+	    return b;
+	  }, grep:function(a, b, c) {
+	    for (var d = [], f = 0, g = a.length;f < g;f++) {
+	      !c != !b(a[f], f) && d.push(a[f]);
+	    }
+	    return d;
+	  }, map:function(a, b) {
+	    for (var c = [], e = 0, f = a.length;e < f;e++) {
+	      var g = b(a[e], e);
+	      null != g && (c[c.length] = g);
+	    }
+	    return c.concat.apply([], c);
+	  }});
+	  var y = navigator.userAgent.toLowerCase();
+	  c.browser = {version:(y.match(/.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/) || [0, "0"])[1], safari:/webkit/.test(y), opera:/opera/.test(y), msie:/msie/.test(y) && !/opera/.test(y), mozilla:/mozilla/.test(y) && !/(compatible|webkit)/.test(y)};
+	  c.each({parent:function(a) {
+	    return a.parentNode;
+	  }, parents:function(a) {
+	    return c.dir(a, "parentNode");
+	  }, next:function(a) {
+	    return c.nth(a, 2, "nextSibling");
+	  }, prev:function(a) {
+	    return c.nth(a, 2, "previousSibling");
+	  }, nextAll:function(a) {
+	    return c.dir(a, "nextSibling");
+	  }, prevAll:function(a) {
+	    return c.dir(a, "previousSibling");
+	  }, siblings:function(a) {
+	    return c.sibling(a.parentNode.firstChild, a);
+	  }, children:function(a) {
+	    return c.sibling(a.firstChild);
+	  }, contents:function(a) {
+	    return c.nodeName(a, "iframe") ? a.contentDocument || a.contentWindow.document : c.makeArray(a.childNodes);
+	  }}, function(a, b) {
+	    c.fn[a] = function(d) {
+	      var e = c.map(this, b);
+	      d && "string" == typeof d && (e = c.multiFilter(d, e));
+	      return this.pushStack(c.unique(e), a, d);
+	    };
+	  });
+	  c.each({appendTo:"append", prependTo:"prepend", insertBefore:"before", insertAfter:"after", replaceAll:"replaceWith"}, function(a, b) {
+	    c.fn[a] = function(d) {
+	      for (var e = [], f = c(d), g = 0, h = f.length;g < h;g++) {
+	        var m = (0 < g ? this.clone(!0) : this).get();
+	        c.fn[b].apply(c(f[g]), m);
+	        e = e.concat(m);
+	      }
+	      return this.pushStack(e, a, d);
+	    };
+	  });
+	  c.each({removeAttr:function(a) {
+	    c.attr(this, a, "");
+	    1 == this.nodeType && this.removeAttribute(a);
+	  }, addClass:function(a) {
+	    c.className.add(this, a);
+	  }, removeClass:function(a) {
+	    c.className.remove(this, a);
+	  }, toggleClass:function(a, b) {
+	    "boolean" !== typeof b && (b = !c.className.has(this, a));
+	    c.className[b ? "add" : "remove"](this, a);
+	  }, remove:function(a) {
+	    if (!a || c.filter(a, [this]).length) {
+	      c("*", this).add([this]).each(function() {
+	        c.event.remove(this);
+	        c.removeData(this);
+	      }), this.parentNode && this.parentNode.removeChild(this);
+	    }
+	  }, empty:function() {
+	    for (c(this).children().remove();this.firstChild;) {
+	      this.removeChild(this.firstChild);
+	    }
+	  }}, function(a, b) {
+	    c.fn[a] = function() {
+	      return this.each(b, arguments);
+	    };
+	  });
+	  var x = "jQuery" + +new Date, X = 0, P = {};
+	  c.extend({cache:{}, data:function(a, b, d) {
+	    a = a == n ? P : a;
+	    var e = a[x];
+	    e || (e = a[x] = ++X);
+	    b && !c.cache[e] && (c.cache[e] = {});
+	    void 0 !== d && (c.cache[e][b] = d);
+	    return b ? c.cache[e][b] : e;
+	  }, removeData:function(a, b) {
+	    a = a == n ? P : a;
+	    var d = a[x];
+	    if (b) {
+	      if (c.cache[d]) {
+	        delete c.cache[d][b];
+	        b = "";
+	        for (b in c.cache[d]) {
+	          break;
+	        }
+	        b || c.removeData(a);
+	      }
+	    } else {
+	      try {
+	        delete a[x];
+	      } catch (e) {
+	        a.removeAttribute && a.removeAttribute(x);
+	      }
+	      delete c.cache[d];
+	    }
+	  }, queue:function(a, b, d) {
+	    if (a) {
+	      b = (b || "fx") + "queue";
+	      var e = c.data(a, b);
+	      !e || c.isArray(d) ? e = c.data(a, b, c.makeArray(d)) : d && e.push(d);
+	    }
+	    return e;
+	  }, dequeue:function(a, b) {
+	    var d = c.queue(a, b), e = d.shift();
+	    b && "fx" !== b || (e = d[0]);
+	    void 0 !== e && e.call(a);
+	  }});
+	  c.fn.extend({data:function(a, b) {
+	    var d = a.split(".");
+	    d[1] = d[1] ? "." + d[1] : "";
+	    if (void 0 === b) {
+	      var e = this.triggerHandler("getData" + d[1] + "!", [d[0]]);
+	      void 0 === e && this.length && (e = c.data(this[0], a));
+	      return void 0 === e && d[1] ? this.data(d[0]) : e;
+	    }
+	    return this.trigger("setData" + d[1] + "!", [d[0], b]).each(function() {
+	      c.data(this, a, b);
+	    });
+	  }, removeData:function(a) {
+	    return this.each(function() {
+	      c.removeData(this, a);
+	    });
+	  }, queue:function(a, b) {
+	    "string" !== typeof a && (b = a, a = "fx");
+	    return void 0 === b ? c.queue(this[0], a) : this.each(function() {
+	      var d = c.queue(this, a, b);
+	      "fx" == a && 1 == d.length && d[0].call(this);
+	    });
+	  }, dequeue:function(a) {
+	    return this.each(function() {
+	      c.dequeue(this, a);
+	    });
+	  }});
+	  (function() {
+	    function a(a, b, c, d, e, f) {
+	      e = "previousSibling" == a && !f;
+	      for (var k = 0, p = d.length;k < p;k++) {
+	        var l = d[k];
+	        if (l) {
+	          e && 1 === l.nodeType && (l.sizcache = c, l.sizset = k);
+	          for (var l = l[a], g = !1;l;) {
+	            if (l.sizcache === c) {
+	              g = d[l.sizset];
+	              break;
+	            }
+	            1 !== l.nodeType || f || (l.sizcache = c, l.sizset = k);
+	            if (l.nodeName === b) {
+	              g = l;
+	              break;
+	            }
+	            l = l[a];
+	          }
+	          d[k] = g;
+	        }
+	      }
+	    }
+	    function b(a, b, c, d, e, f) {
+	      e = "previousSibling" == a && !f;
+	      for (var k = 0, p = d.length;k < p;k++) {
+	        var l = d[k];
+	        if (l) {
+	          e && 1 === l.nodeType && (l.sizcache = c, l.sizset = k);
+	          for (var l = l[a], t = !1;l;) {
+	            if (l.sizcache === c) {
+	              t = d[l.sizset];
+	              break;
+	            }
+	            if (1 === l.nodeType) {
+	              if (f || (l.sizcache = c, l.sizset = k), "string" !== typeof b) {
+	                if (l === b) {
+	                  t = !0;
+	                  break;
+	                }
+	              } else {
+	                if (0 < g.filter(b, [l]).length) {
+	                  t = l;
+	                  break;
+	                }
+	              }
+	            }
+	            l = l[a];
+	          }
+	          d[k] = t;
+	        }
+	      }
+	    }
+	    var d = /((?:\((?:\([^()]+\)|[^()]+)+\)|\[(?:\[[^[\]]*\]|['"][^'"]*['"]|[^[\]'"]+)+\]|\\.|[^ >+~,(\[\\]+)+|[>+~])(\s*,\s*)?/g, e = 0, f = Object.prototype.toString, g = function(a, b, c, e) {
+	      c = c || [];
+	      b = b || document;
+	      if (1 !== b.nodeType && 9 !== b.nodeType) {
+	        return [];
+	      }
+	      if (!a || "string" !== typeof a) {
+	        return c;
+	      }
+	      var k = [], p, l, t, n = !0;
+	      for (d.lastIndex = 0;null !== (p = d.exec(a));) {
+	        if (k.push(p[1]), p[2]) {
+	          t = RegExp.rightContext;
+	          break;
+	        }
+	      }
+	      if (1 < k.length && m.exec(a)) {
+	        if (2 === k.length && h.relative[k[0]]) {
+	          p = q(k[0] + k[1], b);
+	        } else {
+	          for (p = h.relative[k[0]] ? [b] : g(k.shift(), b);k.length;) {
+	            a = k.shift(), h.relative[a] && (a += k.shift()), p = q(a, p);
+	          }
+	        }
+	      } else {
+	        for (p = e ? {expr:k.pop(), set:v(e)} : g.find(k.pop(), 1 === k.length && b.parentNode ? b.parentNode : b, w(b)), p = g.filter(p.expr, p.set), 0 < k.length ? l = v(p) : n = !1;k.length;) {
+	          var u = k.pop(), D = u;
+	          h.relative[u] ? D = k.pop() : u = "";
+	          null == D && (D = b);
+	          h.relative[u](l, D, w(b));
+	        }
+	      }
+	      l || (l = p);
+	      if (!l) {
+	        throw "Syntax error, unrecognized expression: " + (u || a);
+	      }
+	      if ("[object Array]" === f.call(l)) {
+	        if (n) {
+	          if (1 === b.nodeType) {
+	            for (a = 0;null != l[a];a++) {
+	              l[a] && (!0 === l[a] || 1 === l[a].nodeType && C(b, l[a])) && c.push(p[a]);
+	            }
+	          } else {
+	            for (a = 0;null != l[a];a++) {
+	              l[a] && 1 === l[a].nodeType && c.push(p[a]);
+	            }
+	          }
+	        } else {
+	          c.push.apply(c, l);
+	        }
+	      } else {
+	        v(l, c);
+	      }
+	      if (t && (g(t, b, c, e), r && (hasDuplicate = !1, c.sort(r), hasDuplicate))) {
+	        for (a = 1;a < c.length;a++) {
+	          c[a] === c[a - 1] && c.splice(a--, 1);
+	        }
+	      }
+	      return c;
+	    };
+	    g.matches = function(a, b) {
+	      return g(a, null, null, b);
+	    };
+	    g.find = function(a, b, c) {
+	      var d, e;
+	      if (!a) {
+	        return [];
+	      }
+	      for (var k = 0, p = h.order.length;k < p;k++) {
+	        var l = h.order[k];
+	        if (e = h.match[l].exec(a)) {
+	          var f = RegExp.leftContext;
+	          if ("\\" !== f.substr(f.length - 1) && (e[1] = (e[1] || "").replace(/\\/g, ""), d = h.find[l](e, b, c), null != d)) {
+	            a = a.replace(h.match[l], "");
+	            break;
+	          }
+	        }
+	      }
+	      d || (d = b.getElementsByTagName("*"));
+	      return {set:d, expr:a};
+	    };
+	    g.filter = function(a, b, c, d) {
+	      for (var e = a, k = [], p = b, l, f, g = b && b[0] && w(b[0]);a && b.length;) {
+	        for (var t in h.filter) {
+	          if (null != (l = h.match[t].exec(a))) {
+	            var m = h.filter[t], q, n;
+	            f = !1;
+	            p == k && (k = []);
+	            if (h.preFilter[t]) {
+	              if (l = h.preFilter[t](l, p, c, k, d, g), !l) {
+	                f = q = !0;
+	              } else {
+	                if (!0 === l) {
+	                  continue;
+	                }
+	              }
+	            }
+	            if (l) {
+	              for (var r = 0;null != (n = p[r]);r++) {
+	                if (n) {
+	                  q = m(n, l, r, p);
+	                  var u = d ^ !!q;
+	                  c && null != q ? u ? f = !0 : p[r] = !1 : u && (k.push(n), f = !0);
+	                }
+	              }
+	            }
+	            if (void 0 !== q) {
+	              c || (p = k);
+	              a = a.replace(h.match[t], "");
+	              if (!f) {
+	                return [];
+	              }
+	              break;
+	            }
+	          }
+	        }
+	        if (a == e) {
+	          if (null == f) {
+	            throw "Syntax error, unrecognized expression: " + a;
+	          }
+	          break;
+	        }
+	        e = a;
+	      }
+	      return p;
+	    };
+	    var h = g.selectors = {order:["ID", "NAME", "TAG"], match:{ID:/#((?:[\w\u00c0-\uFFFF_-]|\\.)+)/, CLASS:/\.((?:[\w\u00c0-\uFFFF_-]|\\.)+)/, NAME:/\[name=['"]*((?:[\w\u00c0-\uFFFF_-]|\\.)+)['"]*\]/, ATTR:/\[\s*((?:[\w\u00c0-\uFFFF_-]|\\.)+)\s*(?:(\S?=)\s*(['"]*)(.*?)\3|)\s*\]/, TAG:/^((?:[\w\u00c0-\uFFFF\*_-]|\\.)+)/, CHILD:/:(only|nth|last|first)-child(?:\((even|odd|[\dn+-]*)\))?/, POS:/:(nth|eq|gt|lt|first|last|even|odd)(?:\((\d*)\))?(?=[^-]|$)/, PSEUDO:/:((?:[\w\u00c0-\uFFFF_-]|\\.)+)(?:\((['"]*)((?:\([^\)]+\)|[^\2\(\)]*)+)\2\))?/}, 
+	    attrMap:{"class":"className", "for":"htmlFor"}, attrHandle:{href:function(a) {
+	      return a.getAttribute("href");
+	    }}, relative:{"+":function(a, b, c) {
+	      var d = "string" === typeof b, e = d && !/\W/.test(b), d = d && !e;
+	      e && !c && (b = b.toUpperCase());
+	      c = 0;
+	      for (var e = a.length, k;c < e;c++) {
+	        if (k = a[c]) {
+	          for (;(k = k.previousSibling) && 1 !== k.nodeType;) {
+	          }
+	          a[c] = d || k && k.nodeName === b ? k || !1 : k === b;
+	        }
+	      }
+	      d && g.filter(b, a, !0);
+	    }, ">":function(a, b, c) {
+	      var d = "string" === typeof b;
+	      if (d && !/\W/.test(b)) {
+	        b = c ? b : b.toUpperCase();
+	        c = 0;
+	        for (var e = a.length;c < e;c++) {
+	          var k = a[c];
+	          k && (d = k.parentNode, a[c] = d.nodeName === b ? d : !1);
+	        }
+	      } else {
+	        c = 0;
+	        for (e = a.length;c < e;c++) {
+	          (k = a[c]) && (a[c] = d ? k.parentNode : k.parentNode === b);
+	        }
+	        d && g.filter(b, a, !0);
+	      }
+	    }, "":function(c, d, f) {
+	      var k = e++, p = b;
+	      if (!d.match(/\W/)) {
+	        var l = d = f ? d : d.toUpperCase(), p = a;
+	      }
+	      p("parentNode", d, k, c, l, f);
+	    }, "~":function(c, d, f) {
+	      var k = e++, p = b;
+	      if ("string" === typeof d && !d.match(/\W/)) {
+	        var l = d = f ? d : d.toUpperCase(), p = a;
+	      }
+	      p("previousSibling", d, k, c, l, f);
+	    }}, find:{ID:function(a, b, c) {
+	      if ("undefined" !== typeof b.getElementById && !c) {
+	        return (a = b.getElementById(a[1])) ? [a] : [];
+	      }
+	    }, NAME:function(a, b, c) {
+	      if ("undefined" !== typeof b.getElementsByName) {
+	        c = [];
+	        b = b.getElementsByName(a[1]);
+	        for (var d = 0, e = b.length;d < e;d++) {
+	          b[d].getAttribute("name") === a[1] && c.push(b[d]);
+	        }
+	        return 0 === c.length ? null : c;
+	      }
+	    }, TAG:function(a, b) {
+	      return b.getElementsByTagName(a[1]);
+	    }}, preFilter:{CLASS:function(a, b, c, d, e, f) {
+	      a = " " + a[1].replace(/\\/g, "") + " ";
+	      if (f) {
+	        return a;
+	      }
+	      f = 0;
+	      for (var k;null != (k = b[f]);f++) {
+	        k && (e ^ (k.className && 0 <= (" " + k.className + " ").indexOf(a)) ? c || d.push(k) : c && (b[f] = !1));
+	      }
+	      return !1;
+	    }, ID:function(a) {
+	      return a[1].replace(/\\/g, "");
+	    }, TAG:function(a, b) {
+	      for (var c = 0;!1 === b[c];c++) {
+	      }
+	      return b[c] && w(b[c]) ? a[1] : a[1].toUpperCase();
+	    }, CHILD:function(a) {
+	      if ("nth" == a[1]) {
+	        var b = /(-?)(\d*)n((?:\+|-)?\d*)/.exec("even" == a[2] && "2n" || "odd" == a[2] && "2n+1" || !/\D/.test(a[2]) && "0n+" + a[2] || a[2]);
+	        a[2] = b[1] + (b[2] || 1) - 0;
+	        a[3] = b[3] - 0;
+	      }
+	      a[0] = e++;
+	      return a;
+	    }, ATTR:function(a, b, c, d, e, f) {
+	      b = a[1].replace(/\\/g, "");
+	      !f && h.attrMap[b] && (a[1] = h.attrMap[b]);
+	      "~=" === a[2] && (a[4] = " " + a[4] + " ");
+	      return a;
+	    }, PSEUDO:function(a, b, c, e, f) {
+	      if ("not" === a[1]) {
+	        if (1 < a[3].match(d).length || /^\w/.test(a[3])) {
+	          a[3] = g(a[3], null, null, b);
+	        } else {
+	          return a = g.filter(a[3], b, c, 1 ^ f), c || e.push.apply(e, a), !1;
+	        }
+	      } else {
+	        if (h.match.POS.test(a[0]) || h.match.CHILD.test(a[0])) {
+	          return !0;
+	        }
+	      }
+	      return a;
+	    }, POS:function(a) {
+	      a.unshift(!0);
+	      return a;
+	    }}, filters:{enabled:function(a) {
+	      return !1 === a.disabled && "hidden" !== a.type;
+	    }, disabled:function(a) {
+	      return !0 === a.disabled;
+	    }, checked:function(a) {
+	      return !0 === a.checked;
+	    }, selected:function(a) {
+	      a.parentNode.selectedIndex;
+	      return !0 === a.selected;
+	    }, parent:function(a) {
+	      return !!a.firstChild;
+	    }, empty:function(a) {
+	      return !a.firstChild;
+	    }, has:function(a, b, c) {
+	      return !!g(c[3], a).length;
+	    }, header:function(a) {
+	      return /h\d/i.test(a.nodeName);
+	    }, text:function(a) {
+	      return "text" === a.type;
+	    }, radio:function(a) {
+	      return "radio" === a.type;
+	    }, checkbox:function(a) {
+	      return "checkbox" === a.type;
+	    }, file:function(a) {
+	      return "file" === a.type;
+	    }, password:function(a) {
+	      return "password" === a.type;
+	    }, submit:function(a) {
+	      return "submit" === a.type;
+	    }, image:function(a) {
+	      return "image" === a.type;
+	    }, reset:function(a) {
+	      return "reset" === a.type;
+	    }, button:function(a) {
+	      return "button" === a.type || "BUTTON" === a.nodeName.toUpperCase();
+	    }, input:function(a) {
+	      return /input|select|textarea|button/i.test(a.nodeName);
+	    }}, setFilters:{first:function(a, b) {
+	      return 0 === b;
+	    }, last:function(a, b, c, d) {
+	      return b === d.length - 1;
+	    }, even:function(a, b) {
+	      return 0 === b % 2;
+	    }, odd:function(a, b) {
+	      return 1 === b % 2;
+	    }, lt:function(a, b, c) {
+	      return b < c[3] - 0;
+	    }, gt:function(a, b, c) {
+	      return b > c[3] - 0;
+	    }, nth:function(a, b, c) {
+	      return c[3] - 0 == b;
+	    }, eq:function(a, b, c) {
+	      return c[3] - 0 == b;
+	    }}, filter:{PSEUDO:function(a, b, c, d) {
+	      var e = b[1], f = h.filters[e];
+	      if (f) {
+	        return f(a, c, b, d);
+	      }
+	      if ("contains" === e) {
+	        return 0 <= (a.textContent || a.innerText || "").indexOf(b[3]);
+	      }
+	      if ("not" === e) {
+	        b = b[3];
+	        c = 0;
+	        for (d = b.length;c < d;c++) {
+	          if (b[c] === a) {
+	            return !1;
+	          }
+	        }
+	        return !0;
+	      }
+	    }, CHILD:function(a, b) {
+	      var c = b[1], d = a;
+	      switch(c) {
+	        case "only":
+	        case "first":
+	          for (;d = d.previousSibling;) {
+	            if (1 === d.nodeType) {
+	              return !1;
+	            }
+	          }
+	          if ("first" == c) {
+	            return !0;
+	          }
+	          d = a;
+	        case "last":
+	          for (;d = d.nextSibling;) {
+	            if (1 === d.nodeType) {
+	              return !1;
+	            }
+	          }
+	          return !0;
+	        case "nth":
+	          var c = b[2], e = b[3];
+	          if (1 == c && 0 == e) {
+	            return !0;
+	          }
+	          var f = b[0], k = a.parentNode;
+	          if (k && (k.sizcache !== f || !a.nodeIndex)) {
+	            for (var g = 0, d = k.firstChild;d;d = d.nextSibling) {
+	              1 === d.nodeType && (d.nodeIndex = ++g);
+	            }
+	            k.sizcache = f;
+	          }
+	          d = a.nodeIndex - e;
+	          return 0 == c ? 0 == d : 0 == d % c && 0 <= d / c;
+	      }
+	    }, ID:function(a, b) {
+	      return 1 === a.nodeType && a.getAttribute("id") === b;
+	    }, TAG:function(a, b) {
+	      return "*" === b && 1 === a.nodeType || a.nodeName === b;
+	    }, CLASS:function(a, b) {
+	      return -1 < (" " + (a.className || a.getAttribute("class")) + " ").indexOf(b);
+	    }, ATTR:function(a, b) {
+	      var c = b[1], c = h.attrHandle[c] ? h.attrHandle[c](a) : null != a[c] ? a[c] : a.getAttribute(c), d = c + "", e = b[2], f = b[4];
+	      return null == c ? "!=" === e : "=" === e ? d === f : "*=" === e ? 0 <= d.indexOf(f) : "~=" === e ? 0 <= (" " + d + " ").indexOf(f) : f ? "!=" === e ? d != f : "^=" === e ? 0 === d.indexOf(f) : "$=" === e ? d.substr(d.length - f.length) === f : "|=" === e ? d === f || d.substr(0, f.length + 1) === f + "-" : !1 : d && !1 !== c;
+	    }, POS:function(a, b, c, d) {
+	      var e = h.setFilters[b[2]];
+	      if (e) {
+	        return e(a, c, b, d);
+	      }
+	    }}}, m = h.match.POS, n;
+	    for (n in h.match) {
+	      h.match[n] = RegExp(h.match[n].source + /(?![^\[]*\])(?![^\(]*\))/.source);
+	    }
+	    var v = function(a, b) {
+	      a = Array.prototype.slice.call(a);
+	      return b ? (b.push.apply(b, a), b) : a;
+	    };
+	    try {
+	      Array.prototype.slice.call(document.documentElement.childNodes);
+	    } catch (k) {
+	      v = function(a, b) {
+	        var c = b || [];
+	        if ("[object Array]" === f.call(a)) {
+	          Array.prototype.push.apply(c, a);
+	        } else {
+	          if ("number" === typeof a.length) {
+	            for (var d = 0, e = a.length;d < e;d++) {
+	              c.push(a[d]);
+	            }
+	          } else {
+	            for (d = 0;a[d];d++) {
+	              c.push(a[d]);
+	            }
+	          }
+	        }
+	        return c;
+	      };
+	    }
+	    var r;
+	    document.documentElement.compareDocumentPosition ? r = function(a, b) {
+	      var c = a.compareDocumentPosition(b) & 4 ? -1 : a === b ? 0 : 1;
+	      0 === c && (hasDuplicate = !0);
+	      return c;
+	    } : "sourceIndex" in document.documentElement ? r = function(a, b) {
+	      var c = a.sourceIndex - b.sourceIndex;
+	      0 === c && (hasDuplicate = !0);
+	      return c;
+	    } : document.createRange && (r = function(a, b) {
+	      var c = a.ownerDocument.createRange(), d = b.ownerDocument.createRange();
+	      c.selectNode(a);
+	      c.collapse(!0);
+	      d.selectNode(b);
+	      d.collapse(!0);
+	      c = c.compareBoundaryPoints(Range.START_TO_END, d);
+	      0 === c && (hasDuplicate = !0);
+	      return c;
+	    });
+	    (function() {
+	      var a = document.createElement("form"), b = "script" + (new Date).getTime();
+	      a.innerHTML = "<input name='" + b + "'/>";
+	      var c = document.documentElement;
+	      c.insertBefore(a, c.firstChild);
+	      document.getElementById(b) && (h.find.ID = function(a, b, c) {
+	        if ("undefined" !== typeof b.getElementById && !c) {
+	          return (b = b.getElementById(a[1])) ? b.id === a[1] || "undefined" !== typeof b.getAttributeNode && b.getAttributeNode("id").nodeValue === a[1] ? [b] : void 0 : [];
+	        }
+	      }, h.filter.ID = function(a, b) {
+	        var c = "undefined" !== typeof a.getAttributeNode && a.getAttributeNode("id");
+	        return 1 === a.nodeType && c && c.nodeValue === b;
+	      });
+	      c.removeChild(a);
+	    })();
+	    (function() {
+	      var a = document.createElement("div");
+	      a.appendChild(document.createComment(""));
+	      0 < a.getElementsByTagName("*").length && (h.find.TAG = function(a, b) {
+	        var c = b.getElementsByTagName(a[1]);
+	        if ("*" === a[1]) {
+	          for (var d = [], e = 0;c[e];e++) {
+	            1 === c[e].nodeType && d.push(c[e]);
+	          }
+	          c = d;
+	        }
+	        return c;
+	      });
+	      a.innerHTML = "<a href='#'></a>";
+	      a.firstChild && "undefined" !== typeof a.firstChild.getAttribute && "#" !== a.firstChild.getAttribute("href") && (h.attrHandle.href = function(a) {
+	        return a.getAttribute("href", 2);
+	      });
+	    })();
+	    document.querySelectorAll && function() {
+	      var a = g, b = document.createElement("div");
+	      b.innerHTML = "<p class='TEST'></p>";
+	      b.querySelectorAll && 0 === b.querySelectorAll(".TEST").length || (g = function(b, c, d, e) {
+	        c = c || document;
+	        if (!e && 9 === c.nodeType && !w(c)) {
+	          try {
+	            return v(c.querySelectorAll(b), d);
+	          } catch (aa) {
+	          }
+	        }
+	        return a(b, c, d, e);
+	      }, g.find = a.find, g.filter = a.filter, g.selectors = a.selectors, g.matches = a.matches);
+	    }();
+	    document.getElementsByClassName && document.documentElement.getElementsByClassName && function() {
+	      var a = document.createElement("div");
+	      a.innerHTML = "<div class='test e'></div><div class='test'></div>";
+	      0 !== a.getElementsByClassName("e").length && (a.lastChild.className = "e", 1 !== a.getElementsByClassName("e").length && (h.order.splice(1, 0, "CLASS"), h.find.CLASS = function(a, b, c) {
+	        if ("undefined" !== typeof b.getElementsByClassName && !c) {
+	          return b.getElementsByClassName(a[1]);
+	        }
+	      }));
+	    }();
+	    var C = document.compareDocumentPosition ? function(a, b) {
+	      return a.compareDocumentPosition(b) & 16;
+	    } : function(a, b) {
+	      return a !== b && (a.contains ? a.contains(b) : !0);
+	    }, w = function(a) {
+	      return 9 === a.nodeType && "HTML" !== a.documentElement.nodeName || !!a.ownerDocument && w(a.ownerDocument);
+	    }, q = function(a, b) {
+	      for (var c = [], d = "", e, f = b.nodeType ? [b] : b;e = h.match.PSEUDO.exec(a);) {
+	        d += e[0], a = a.replace(h.match.PSEUDO, "");
+	      }
+	      a = h.relative[a] ? a + "*" : a;
+	      e = 0;
+	      for (var k = f.length;e < k;e++) {
+	        g(a, f[e], c);
+	      }
+	      return g.filter(d, c);
+	    };
+	    c.find = g;
+	    c.filter = g.filter;
+	    c.expr = g.selectors;
+	    c.expr[":"] = c.expr.filters;
+	    g.selectors.filters.hidden = function(a) {
+	      return 0 === a.offsetWidth || 0 === a.offsetHeight;
+	    };
+	    g.selectors.filters.visible = function(a) {
+	      return 0 < a.offsetWidth || 0 < a.offsetHeight;
+	    };
+	    g.selectors.filters.animated = function(a) {
+	      return c.grep(c.timers, function(b) {
+	        return a === b.elem;
+	      }).length;
+	    };
+	    c.multiFilter = function(a, b, c) {
+	      c && (a = ":not(" + a + ")");
+	      return g.matches(a, b);
+	    };
+	    c.dir = function(a, b) {
+	      for (var c = [], d = a[b];d && d != document;) {
+	        1 == d.nodeType && c.push(d), d = d[b];
+	      }
+	      return c;
+	    };
+	    c.nth = function(a, b, c, d) {
+	      b = b || 1;
+	      for (d = 0;a && (1 != a.nodeType || ++d != b);a = a[c]) {
+	      }
+	      return a;
+	    };
+	    c.sibling = function(a, b) {
+	      for (var c = [];a;a = a.nextSibling) {
+	        1 == a.nodeType && a != b && c.push(a);
+	      }
+	      return c;
+	    };
+	  })();
+	  c.event = {add:function(a, b, d, e) {
+	    if (3 != a.nodeType && 8 != a.nodeType) {
+	      a.setInterval && a != n && (a = n);
+	      d.guid || (d.guid = this.guid++);
+	      void 0 !== e && (d = this.proxy(d), d.data = e);
+	      var f = c.data(a, "events") || c.data(a, "events", {}), g = c.data(a, "handle") || c.data(a, "handle", function() {
+	        return "undefined" === typeof c || c.event.triggered ? void 0 : c.event.handle.apply(arguments.callee.elem, arguments);
+	      });
+	      g.elem = a;
+	      c.each(b.split(/\s+/), function(b, m) {
+	        var h = m.split(".");
+	        m = h.shift();
+	        d.type = h.slice().sort().join(".");
+	        var n = f[m];
+	        c.event.specialAll[m] && c.event.specialAll[m].setup.call(a, e, h);
+	        n || (n = f[m] = {}, c.event.special[m] && !1 !== c.event.special[m].setup.call(a, e, h) || (a.addEventListener ? a.addEventListener(m, g, !1) : a.attachEvent && a.attachEvent("on" + m, g)));
+	        n[d.guid] = d;
+	        c.event.global[m] = !0;
+	      });
+	      a = null;
+	    }
+	  }, guid:1, global:{}, remove:function(a, b, d) {
+	    if (3 != a.nodeType && 8 != a.nodeType) {
+	      var e = c.data(a, "events"), f;
+	      if (e) {
+	        if (void 0 === b || "string" === typeof b && "." == b.charAt(0)) {
+	          for (var g in e) {
+	            this.remove(a, g + (b || ""));
+	          }
+	        } else {
+	          b.type && (d = b.handler, b = b.type), c.each(b.split(/\s+/), function(b, g) {
+	            var h = g.split(".");
+	            g = h.shift();
+	            var m = RegExp("(^|\\.)" + h.slice().sort().join(".*\\.") + "(\\.|$)");
+	            if (e[g]) {
+	              if (d) {
+	                delete e[g][d.guid];
+	              } else {
+	                for (var n in e[g]) {
+	                  m.test(e[g][n].type) && delete e[g][n];
+	                }
+	              }
+	              c.event.specialAll[g] && c.event.specialAll[g].teardown.call(a, h);
+	              for (f in e[g]) {
+	                break;
+	              }
+	              f || (c.event.special[g] && !1 !== c.event.special[g].teardown.call(a, h) || (a.removeEventListener ? a.removeEventListener(g, c.data(a, "handle"), !1) : a.detachEvent && a.detachEvent("on" + g, c.data(a, "handle"))), f = null, delete e[g]);
+	            }
+	          });
+	        }
+	        for (f in e) {
+	          break;
+	        }
+	        if (!f) {
+	          if (b = c.data(a, "handle")) {
+	            b.elem = null;
+	          }
+	          c.removeData(a, "events");
+	          c.removeData(a, "handle");
+	        }
+	      }
+	    }
+	  }, trigger:function(a, b, d, e) {
+	    var f = a.type || a;
+	    if (!e) {
+	      a = "object" === typeof a ? a[x] ? a : c.extend(c.Event(f), a) : c.Event(f);
+	      0 <= f.indexOf("!") && (a.type = f = f.slice(0, -1), a.exclusive = !0);
+	      d || (a.stopPropagation(), this.global[f] && c.each(c.cache, function() {
+	        this.events && this.events[f] && c.event.trigger(a, b, this.handle.elem);
+	      }));
+	      if (!d || 3 == d.nodeType || 8 == d.nodeType) {
+	        return;
+	      }
+	      a.result = void 0;
+	      a.target = d;
+	      b = c.makeArray(b);
+	      b.unshift(a);
+	    }
+	    a.currentTarget = d;
+	    var g = c.data(d, "handle");
+	    g && g.apply(d, b);
+	    (!d[f] || c.nodeName(d, "a") && "click" == f) && d["on" + f] && !1 === d["on" + f].apply(d, b) && (a.result = !1);
+	    if (!(e || !d[f] || a.isDefaultPrevented() || c.nodeName(d, "a") && "click" == f)) {
+	      this.triggered = !0;
+	      try {
+	        d[f]();
+	      } catch (h) {
+	      }
+	    }
+	    this.triggered = !1;
+	    a.isPropagationStopped() || (d = d.parentNode || d.ownerDocument) && c.event.trigger(a, b, d, !0);
+	  }, handle:function(a) {
+	    var b, d;
+	    a = arguments[0] = c.event.fix(a || n.event);
+	    a.currentTarget = this;
+	    d = a.type.split(".");
+	    a.type = d.shift();
+	    b = !d.length && !a.exclusive;
+	    var e = RegExp("(^|\\.)" + d.slice().sort().join(".*\\.") + "(\\.|$)");
+	    d = (c.data(this, "events") || {})[a.type];
+	    for (var f in d) {
+	      var g = d[f];
+	      if (b || e.test(g.type)) {
+	        if (a.handler = g, a.data = g.data, g = g.apply(this, arguments), void 0 !== g && (a.result = g, !1 === g && (a.preventDefault(), a.stopPropagation())), a.isImmediatePropagationStopped()) {
+	          break;
+	        }
+	      }
+	    }
+	  }, props:"altKey attrChange attrName bubbles button cancelable charCode clientX clientY ctrlKey currentTarget data detail eventPhase fromElement handler keyCode metaKey newValue originalTarget pageX pageY prevValue relatedNode relatedTarget screenX screenY shiftKey srcElement target toElement view wheelDelta which".split(" "), fix:function(a) {
+	    if (a[x]) {
+	      return a;
+	    }
+	    var b = a;
+	    a = c.Event(b);
+	    for (var d = this.props.length, e;d;) {
+	      e = this.props[--d], a[e] = b[e];
+	    }
+	    a.target || (a.target = a.srcElement || document);
+	    3 == a.target.nodeType && (a.target = a.target.parentNode);
+	    !a.relatedTarget && a.fromElement && (a.relatedTarget = a.fromElement == a.target ? a.toElement : a.fromElement);
+	    null == a.pageX && null != a.clientX && (b = document.documentElement, d = document.body, a.pageX = a.clientX + (b && b.scrollLeft || d && d.scrollLeft || 0) - (b.clientLeft || 0), a.pageY = a.clientY + (b && b.scrollTop || d && d.scrollTop || 0) - (b.clientTop || 0));
+	    !a.which && (a.charCode || 0 === a.charCode ? a.charCode : a.keyCode) && (a.which = a.charCode || a.keyCode);
+	    !a.metaKey && a.ctrlKey && (a.metaKey = a.ctrlKey);
+	    !a.which && a.button && (a.which = a.button & 1 ? 1 : a.button & 2 ? 3 : a.button & 4 ? 2 : 0);
+	    return a;
+	  }, proxy:function(a, b) {
+	    b = b || function() {
+	      return a.apply(this, arguments);
+	    };
+	    b.guid = a.guid = a.guid || b.guid || this.guid++;
+	    return b;
+	  }, special:{ready:{setup:K, teardown:function() {
+	  }}}, specialAll:{live:{setup:function(a, b) {
+	    c.event.add(this, b[0], I);
+	  }, teardown:function(a) {
+	    if (a.length) {
+	      var b = 0, d = RegExp("(^|\\.)" + a[0] + "(\\.|$)");
+	      c.each(c.data(this, "events").live || {}, function() {
+	        d.test(this.type) && b++;
+	      });
+	      1 > b && c.event.remove(this, a[0], I);
+	    }
+	  }}}};
+	  c.Event = function(a) {
+	    if (!this.preventDefault) {
+	      return new c.Event(a);
+	    }
+	    a && a.type ? (this.originalEvent = a, this.type = a.type) : this.type = a;
+	    this.timeStamp = +new Date;
+	    this[x] = !0;
+	  };
+	  c.Event.prototype = {preventDefault:function() {
+	    this.isDefaultPrevented = G;
+	    var a = this.originalEvent;
+	    a && (a.preventDefault && a.preventDefault(), a.returnValue = !1);
+	  }, stopPropagation:function() {
+	    this.isPropagationStopped = G;
+	    var a = this.originalEvent;
+	    a && (a.stopPropagation && a.stopPropagation(), a.cancelBubble = !0);
+	  }, stopImmediatePropagation:function() {
+	    this.isImmediatePropagationStopped = G;
+	    this.stopPropagation();
+	  }, isDefaultPrevented:F, isPropagationStopped:F, isImmediatePropagationStopped:F};
+	  var Q = function(a) {
+	    for (var b = a.relatedTarget;b && b != this;) {
+	      try {
+	        b = b.parentNode;
+	      } catch (d) {
+	        b = this;
+	      }
+	    }
+	    b != this && (a.type = a.data, c.event.handle.apply(this, arguments));
+	  };
+	  c.each({mouseover:"mouseenter", mouseout:"mouseleave"}, function(a, b) {
+	    c.event.special[b] = {setup:function() {
+	      c.event.add(this, a, Q, b);
+	    }, teardown:function() {
+	      c.event.remove(this, a, Q);
+	    }};
+	  });
+	  c.fn.extend({bind:function(a, b, d) {
+	    return "unload" == a ? this.one(a, b, d) : this.each(function() {
+	      c.event.add(this, a, d || b, d && b);
+	    });
+	  }, one:function(a, b, d) {
+	    var e = c.event.proxy(d || b, function(a) {
+	      c(this).unbind(a, e);
+	      return (d || b).apply(this, arguments);
+	    });
+	    return this.each(function() {
+	      c.event.add(this, a, e, d && b);
+	    });
+	  }, unbind:function(a, b) {
+	    return this.each(function() {
+	      c.event.remove(this, a, b);
+	    });
+	  }, trigger:function(a, b) {
+	    return this.each(function() {
+	      c.event.trigger(a, b, this);
+	    });
+	  }, triggerHandler:function(a, b) {
+	    if (this[0]) {
+	      var d = c.Event(a);
+	      d.preventDefault();
+	      d.stopPropagation();
+	      c.event.trigger(d, b, this[0]);
+	      return d.result;
+	    }
+	  }, toggle:function(a) {
+	    for (var b = arguments, d = 1;d < b.length;) {
+	      c.event.proxy(a, b[d++]);
+	    }
+	    return this.click(c.event.proxy(a, function(a) {
+	      this.lastToggle = (this.lastToggle || 0) % d;
+	      a.preventDefault();
+	      return b[this.lastToggle++].apply(this, arguments) || !1;
+	    }));
+	  }, hover:function(a, b) {
+	    return this.mouseenter(a).mouseleave(b);
+	  }, ready:function(a) {
+	    K();
+	    c.isReady ? a.call(document, c) : c.readyList.push(a);
+	    return this;
+	  }, live:function(a, b) {
+	    var d = c.event.proxy(b);
+	    d.guid += this.selector + a;
+	    c(document).bind(J(a, this.selector), this.selector, d);
+	    return this;
+	  }, die:function(a, b) {
+	    c(document).unbind(J(a, this.selector), b ? {guid:b.guid + this.selector + a} : null);
+	    return this;
+	  }});
+	  c.extend({isReady:!1, readyList:[], ready:function() {
+	    c.isReady || (c.isReady = !0, c.readyList && (c.each(c.readyList, function() {
+	      this.call(document, c);
+	    }), c.readyList = null), c(document).triggerHandler("ready"));
+	  }});
+	  var L = !1;
+	  c.each("blur focus load resize scroll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup error".split(" "), function(a, b) {
+	    c.fn[b] = function(a) {
+	      return a ? this.bind(b, a) : this.trigger(b);
+	    };
+	  });
+	  c(n).bind("unload", function() {
+	    for (var a in c.cache) {
+	      1 != a && c.cache[a].handle && c.event.remove(c.cache[a].handle.elem);
+	    }
+	  });
+	  (function() {
+	    c.support = {};
+	    var a = document.documentElement, b = document.createElement("script"), d = document.createElement("div"), e = "script" + (new Date).getTime();
+	    d.style.display = "none";
+	    d.innerHTML = '   <link/><table></table><a href="/a" style="color:red;float:left;opacity:.5;">a</a><select><option>text</option></select><object><param/></object>';
+	    var f = d.getElementsByTagName("*"), g = d.getElementsByTagName("a")[0];
+	    if (f && f.length && g) {
+	      c.support = {leadingWhitespace:3 == d.firstChild.nodeType, tbody:!d.getElementsByTagName("tbody").length, objectAll:!!d.getElementsByTagName("object")[0].getElementsByTagName("*").length, htmlSerialize:!!d.getElementsByTagName("link").length, style:/red/.test(g.getAttribute("style")), hrefNormalized:"/a" === g.getAttribute("href"), opacity:"0.5" === g.style.opacity, cssFloat:!!g.style.cssFloat, scriptEval:!1, noCloneEvent:!0, boxModel:null};
+	      b.type = "text/javascript";
+	      try {
+	        b.appendChild(document.createTextNode("window." + e + "=1;"));
+	      } catch (h) {
+	      }
+	      a.insertBefore(b, a.firstChild);
+	      n[e] && (c.support.scriptEval = !0, delete n[e]);
+	      a.removeChild(b);
+	      d.attachEvent && d.fireEvent && (d.attachEvent("onclick", function() {
+	        c.support.noCloneEvent = !1;
+	        d.detachEvent("onclick", arguments.callee);
+	      }), d.cloneNode(!0).fireEvent("onclick"));
+	      c(function() {
+	        var a = document.createElement("div");
+	        a.style.width = a.style.paddingLeft = "1px";
+	        document.body.appendChild(a);
+	        c.boxModel = c.support.boxModel = 2 === a.offsetWidth;
+	        document.body.removeChild(a).style.display = "none";
+	      });
+	    }
+	  })();
+	  var B = c.support.cssFloat ? "cssFloat" : "styleFloat";
+	  c.props = {"for":"htmlFor", "class":"className", "float":B, cssFloat:B, styleFloat:B, readonly:"readOnly", maxlength:"maxLength", cellspacing:"cellSpacing", rowspan:"rowSpan", tabindex:"tabIndex"};
+	  c.fn.extend({_load:c.fn.load, load:function(a, b, d) {
+	    if ("string" !== typeof a) {
+	      return this._load(a);
+	    }
+	    var e = a.indexOf(" ");
+	    if (0 <= e) {
+	      var f = a.slice(e, a.length);
+	      a = a.slice(0, e);
+	    }
+	    e = "GET";
+	    b && (c.isFunction(b) ? (d = b, b = null) : "object" === typeof b && (b = c.param(b), e = "POST"));
+	    var g = this;
+	    c.ajax({url:a, type:e, dataType:"html", data:b, complete:function(a, b) {
+	      "success" != b && "notmodified" != b || g.html(f ? c("<div/>").append(a.responseText.replace(/<script(.|\s)*?\/script>/g, "")).find(f) : a.responseText);
+	      d && g.each(d, [a.responseText, b, a]);
+	    }});
+	    return this;
+	  }, serialize:function() {
+	    return c.param(this.serializeArray());
+	  }, serializeArray:function() {
+	    return this.map(function() {
+	      return this.elements ? c.makeArray(this.elements) : this;
+	    }).filter(function() {
+	      return this.name && !this.disabled && (this.checked || /select|textarea/i.test(this.nodeName) || /text|hidden|password|search/i.test(this.type));
+	    }).map(function(a, b) {
+	      var d = c(this).val();
+	      return null == d ? null : c.isArray(d) ? c.map(d, function(a, c) {
+	        return {name:b.name, value:a};
+	      }) : {name:b.name, value:d};
+	    }).get();
+	  }});
+	  c.each("ajaxStart ajaxStop ajaxComplete ajaxError ajaxSuccess ajaxSend".split(" "), function(a, b) {
+	    c.fn[b] = function(a) {
+	      return this.bind(b, a);
+	    };
+	  });
+	  var Z = +new Date;
+	  c.extend({get:function(a, b, d, e) {
+	    c.isFunction(b) && (d = b, b = null);
+	    return c.ajax({type:"GET", url:a, data:b, success:d, dataType:e});
+	  }, getScript:function(a, b) {
+	    return c.get(a, null, b, "script");
+	  }, getJSON:function(a, b, d) {
+	    return c.get(a, b, d, "json");
+	  }, post:function(a, b, d, e) {
+	    c.isFunction(b) && (d = b, b = {});
+	    return c.ajax({type:"POST", url:a, data:b, success:d, dataType:e});
+	  }, ajaxSetup:function(a) {
+	    c.extend(c.ajaxSettings, a);
+	  }, ajaxSettings:{url:location.href, global:!0, type:"GET", contentType:"application/x-www-form-urlencoded", processData:!0, async:!0, xhr:function() {
+	    return n.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest;
+	  }, accepts:{xml:"application/xml, text/xml", html:"text/html", script:"text/javascript, application/javascript", json:"application/json, text/javascript", text:"text/plain", _default:"*/*"}}, lastModified:{}, ajax:function(a) {
+	    function b() {
+	      a.success && a.success(h, g);
+	      a.global && c.event.trigger("ajaxSuccess", [q, a]);
+	    }
+	    function d() {
+	      a.complete && a.complete(q, g);
+	      a.global && c.event.trigger("ajaxComplete", [q, a]);
+	      a.global && !--c.active && c.event.trigger("ajaxStop");
+	    }
+	    a = c.extend(!0, a, c.extend(!0, {}, c.ajaxSettings, a));
+	    var e, f = /=\?(&|$)/g, g, h, m = a.type.toUpperCase();
+	    a.data && a.processData && "string" !== typeof a.data && (a.data = c.param(a.data));
+	    "jsonp" == a.dataType && ("GET" == m ? a.url.match(f) || (a.url += (a.url.match(/\?/) ? "&" : "?") + (a.jsonp || "callback") + "=?") : a.data && a.data.match(f) || (a.data = (a.data ? a.data + "&" : "") + (a.jsonp || "callback") + "=?"), a.dataType = "json");
+	    "json" == a.dataType && (a.data && a.data.match(f) || a.url.match(f)) && (e = "jsonp" + Z++, a.data && (a.data = (a.data + "").replace(f, "=" + e + "$1")), a.url = a.url.replace(f, "=" + e + "$1"), a.dataType = "script", n[e] = function(a) {
+	      h = a;
+	      b();
+	      d();
+	      n[e] = void 0;
+	      try {
+	        delete n[e];
+	      } catch (t) {
+	      }
+	      v && v.removeChild(r);
+	    });
+	    "script" == a.dataType && null == a.cache && (a.cache = !1);
+	    if (!1 === a.cache && "GET" == m) {
+	      var f = +new Date, u = a.url.replace(/(\?|&)_=.*?(&|$)/, "$1_=" + f + "$2");
+	      a.url = u + (u == a.url ? (a.url.match(/\?/) ? "&" : "?") + "_=" + f : "");
+	    }
+	    a.data && "GET" == m && (a.url += (a.url.match(/\?/) ? "&" : "?") + a.data, a.data = null);
+	    a.global && !c.active++ && c.event.trigger("ajaxStart");
+	    f = /^(\w+:)?\/\/([^\/?#]+)/.exec(a.url);
+	    if ("script" == a.dataType && "GET" == m && f && (f[1] && f[1] != location.protocol || f[2] != location.host)) {
+	      var v = document.getElementsByTagName("head")[0], r = document.createElement("script");
+	      r.src = a.url;
+	      a.scriptCharset && (r.charset = a.scriptCharset);
+	      if (!e) {
+	        var C = !1;
+	        r.onload = r.onreadystatechange = function() {
+	          C || this.readyState && "loaded" != this.readyState && "complete" != this.readyState || (C = !0, b(), d(), r.onload = r.onreadystatechange = null, v.removeChild(r));
+	        };
+	      }
+	      v.appendChild(r);
+	    } else {
+	      var w = !1, q = a.xhr();
+	      a.username ? q.open(m, a.url, a.async, a.username, a.password) : q.open(m, a.url, a.async);
+	      try {
+	        a.data && q.setRequestHeader("Content-Type", a.contentType), a.ifModified && q.setRequestHeader("If-Modified-Since", c.lastModified[a.url] || "Thu, 01 Jan 1970 00:00:00 GMT"), q.setRequestHeader("X-Requested-With", "XMLHttpRequest"), q.setRequestHeader("Accept", a.dataType && a.accepts[a.dataType] ? a.accepts[a.dataType] + ", */*" : a.accepts._default);
+	      } catch (l) {
+	      }
+	      if (a.beforeSend && !1 === a.beforeSend(q, a)) {
+	        return a.global && !--c.active && c.event.trigger("ajaxStop"), q.abort(), !1;
+	      }
+	      a.global && c.event.trigger("ajaxSend", [q, a]);
+	      var k = function(f) {
+	        if (0 == q.readyState) {
+	          p && (clearInterval(p), p = null, a.global && !--c.active && c.event.trigger("ajaxStop"));
+	        } else {
+	          if (!w && q && (4 == q.readyState || "timeout" == f)) {
+	            w = !0;
+	            p && (clearInterval(p), p = null);
+	            g = "timeout" == f ? "timeout" : c.httpSuccess(q) ? a.ifModified && c.httpNotModified(q, a.url) ? "notmodified" : "success" : "error";
+	            if ("success" == g) {
+	              try {
+	                h = c.httpData(q, a.dataType, a);
+	              } catch (Y) {
+	                g = "parsererror";
+	              }
+	            }
+	            if ("success" == g) {
+	              var k;
+	              try {
+	                k = q.getResponseHeader("Last-Modified");
+	              } catch (Y) {
+	              }
+	              a.ifModified && k && (c.lastModified[a.url] = k);
+	              e || b();
+	            } else {
+	              c.handleError(a, q, g);
+	            }
+	            d();
+	            f && q.abort();
+	            a.async && (q = null);
+	          }
+	        }
+	      };
+	      if (a.async) {
+	        var p = setInterval(k, 13);
+	        0 < a.timeout && setTimeout(function() {
+	          q && !w && k("timeout");
+	        }, a.timeout);
+	      }
+	      try {
+	        q.send(a.data);
+	      } catch (l) {
+	        c.handleError(a, q, null, l);
+	      }
+	      a.async || k();
+	      return q;
+	    }
+	  }, handleError:function(a, b, d, e) {
+	    a.error && a.error(b, d, e);
+	    a.global && c.event.trigger("ajaxError", [b, a, e]);
+	  }, active:0, httpSuccess:function(a) {
+	    try {
+	      return !a.status && "file:" == location.protocol || 200 <= a.status && 300 > a.status || 304 == a.status || 1223 == a.status;
+	    } catch (b) {
+	    }
+	    return !1;
+	  }, httpNotModified:function(a, b) {
+	    try {
+	      var d = a.getResponseHeader("Last-Modified");
+	      return 304 == a.status || d == c.lastModified[b];
+	    } catch (e) {
+	    }
+	    return !1;
+	  }, httpData:function(a, b, d) {
+	    var e = a.getResponseHeader("content-type");
+	    a = (e = "xml" == b || !b && e && 0 <= e.indexOf("xml")) ? a.responseXML : a.responseText;
+	    if (e && "parsererror" == a.documentElement.tagName) {
+	      throw "parsererror";
+	    }
+	    d && d.dataFilter && (a = d.dataFilter(a, b));
+	    "string" === typeof a && ("script" == b && c.globalEval(a), "json" == b && (a = n.eval("(" + a + ")")));
+	    return a;
+	  }, param:function(a) {
+	    function b(a, b) {
+	      d[d.length] = encodeURIComponent(a) + "=" + encodeURIComponent(b);
+	    }
+	    var d = [];
+	    if (c.isArray(a) || a.jquery) {
+	      c.each(a, function() {
+	        b(this.name, this.value);
+	      });
+	    } else {
+	      for (var e in a) {
+	        c.isArray(a[e]) ? c.each(a[e], function() {
+	          b(e, this);
+	        }) : b(e, c.isFunction(a[e]) ? a[e]() : a[e]);
+	      }
+	    }
+	    return d.join("&").replace(/%20/g, "+");
+	  }});
+	  var H = {}, E, M = [["height", "marginTop", "marginBottom", "paddingTop", "paddingBottom"], ["width", "marginLeft", "marginRight", "paddingLeft", "paddingRight"], ["opacity"]];
+	  c.fn.extend({show:function(a, b) {
+	    if (a) {
+	      return this.animate(z("show", 3), a, b);
+	    }
+	    for (var d = 0, e = this.length;d < e;d++) {
+	      var f = c.data(this[d], "olddisplay");
+	      this[d].style.display = f || "";
+	      if ("none" === c.css(this[d], "display")) {
+	        var f = this[d].tagName, g;
+	        if (H[f]) {
+	          g = H[f];
+	        } else {
+	          var h = c("<" + f + " />").appendTo("body");
+	          g = h.css("display");
+	          "none" === g && (g = "block");
+	          h.remove();
+	          H[f] = g;
+	        }
+	        c.data(this[d], "olddisplay", g);
+	      }
+	    }
+	    d = 0;
+	    for (e = this.length;d < e;d++) {
+	      this[d].style.display = c.data(this[d], "olddisplay") || "";
+	    }
+	    return this;
+	  }, hide:function(a, b) {
+	    if (a) {
+	      return this.animate(z("hide", 3), a, b);
+	    }
+	    for (var d = 0, e = this.length;d < e;d++) {
+	      var f = c.data(this[d], "olddisplay");
+	      f || "none" === f || c.data(this[d], "olddisplay", c.css(this[d], "display"));
+	    }
+	    d = 0;
+	    for (e = this.length;d < e;d++) {
+	      this[d].style.display = "none";
+	    }
+	    return this;
+	  }, _toggle:c.fn.toggle, toggle:function(a, b) {
+	    var d = "boolean" === typeof a;
+	    return c.isFunction(a) && c.isFunction(b) ? this._toggle.apply(this, arguments) : null == a || d ? this.each(function() {
+	      var b = d ? a : c(this).is(":hidden");
+	      c(this)[b ? "show" : "hide"]();
+	    }) : this.animate(z("toggle", 3), a, b);
+	  }, fadeTo:function(a, b, c) {
+	    return this.animate({opacity:b}, a, c);
+	  }, animate:function(a, b, d, e) {
+	    var f = c.speed(b, d, e);
+	    return this[!1 === f.queue ? "each" : "queue"](function() {
+	      var b = c.extend({}, f), d, e = 1 == this.nodeType && c(this).is(":hidden"), n = this;
+	      for (d in a) {
+	        if ("hide" == a[d] && e || "show" == a[d] && !e) {
+	          return b.complete.call(this);
+	        }
+	        "height" != d && "width" != d || !this.style || (b.display = c.css(this, "display"), b.overflow = this.style.overflow);
+	      }
+	      null != b.overflow && (this.style.overflow = "hidden");
+	      b.curAnim = c.extend({}, a);
+	      c.each(a, function(d, f) {
+	        var g = new c.fx(n, b, d);
+	        if (/toggle|show|hide/.test(f)) {
+	          g["toggle" == f ? e ? "show" : "hide" : f](a);
+	        } else {
+	          var h = f.toString().match(/^([+-]=)?([\d+-.]+)(.*)$/), m = g.cur(!0) || 0;
+	          if (h) {
+	            var k = parseFloat(h[2]), p = h[3] || "px";
+	            "px" != p && (n.style[d] = (k || 1) + p, m *= (k || 1) / g.cur(!0), n.style[d] = m + p);
+	            h[1] && (k = ("-=" == h[1] ? -1 : 1) * k + m);
+	            g.custom(m, k, p);
+	          } else {
+	            g.custom(m, f, "");
+	          }
+	        }
+	      });
+	      return !0;
+	    });
+	  }, stop:function(a, b) {
+	    var d = c.timers;
+	    a && this.queue([]);
+	    this.each(function() {
+	      for (var a = d.length - 1;0 <= a;a--) {
+	        if (d[a].elem == this) {
+	          if (b) {
+	            d[a](!0);
+	          }
+	          d.splice(a, 1);
+	        }
+	      }
+	    });
+	    b || this.dequeue();
+	    return this;
+	  }});
+	  c.each({slideDown:z("show", 1), slideUp:z("hide", 1), slideToggle:z("toggle", 1), fadeIn:{opacity:"show"}, fadeOut:{opacity:"hide"}}, function(a, b) {
+	    c.fn[a] = function(a, c) {
+	      return this.animate(b, a, c);
+	    };
+	  });
+	  c.extend({speed:function(a, b, d) {
+	    var e = "object" === typeof a ? a : {complete:d || !d && b || c.isFunction(a) && a, duration:a, easing:d && b || b && !c.isFunction(b) && b};
+	    e.duration = c.fx.off ? 0 : "number" === typeof e.duration ? e.duration : c.fx.speeds[e.duration] || c.fx.speeds._default;
+	    e.old = e.complete;
+	    e.complete = function() {
+	      !1 !== e.queue && c(this).dequeue();
+	      c.isFunction(e.old) && e.old.call(this);
+	    };
+	    return e;
+	  }, easing:{linear:function(a, b, c, e) {
+	    return c + e * a;
+	  }, swing:function(a, b, c, e) {
+	    return (-Math.cos(a * Math.PI) / 2 + .5) * e + c;
+	  }}, timers:[], fx:function(a, b, c) {
+	    this.options = b;
+	    this.elem = a;
+	    this.prop = c;
+	    b.orig || (b.orig = {});
+	  }});
+	  c.fx.prototype = {update:function() {
+	    this.options.step && this.options.step.call(this.elem, this.now, this);
+	    (c.fx.step[this.prop] || c.fx.step._default)(this);
+	    "height" != this.prop && "width" != this.prop || !this.elem.style || (this.elem.style.display = "block");
+	  }, cur:function(a) {
+	    return null == this.elem[this.prop] || this.elem.style && null != this.elem.style[this.prop] ? (a = parseFloat(c.css(this.elem, this.prop, a))) && -1E4 < a ? a : parseFloat(c.curCSS(this.elem, this.prop)) || 0 : this.elem[this.prop];
+	  }, custom:function(a, b, d) {
+	    function e(a) {
+	      return f.step(a);
+	    }
+	    this.startTime = +new Date;
+	    this.start = a;
+	    this.end = b;
+	    this.unit = d || this.unit || "px";
+	    this.now = this.start;
+	    this.pos = this.state = 0;
+	    var f = this;
+	    e.elem = this.elem;
+	    e() && c.timers.push(e) && !E && (E = setInterval(function() {
+	      for (var a = c.timers, b = 0;b < a.length;b++) {
+	        a[b]() || a.splice(b--, 1);
+	      }
+	      a.length || (clearInterval(E), E = void 0);
+	    }, 13));
+	  }, show:function() {
+	    this.options.orig[this.prop] = c.attr(this.elem.style, this.prop);
+	    this.options.show = !0;
+	    this.custom("width" == this.prop || "height" == this.prop ? 1 : 0, this.cur());
+	    c(this.elem).show();
+	  }, hide:function() {
+	    this.options.orig[this.prop] = c.attr(this.elem.style, this.prop);
+	    this.options.hide = !0;
+	    this.custom(this.cur(), 0);
+	  }, step:function(a) {
+	    var b = +new Date;
+	    if (a || b >= this.options.duration + this.startTime) {
+	      this.now = this.end;
+	      this.pos = this.state = 1;
+	      this.update();
+	      a = this.options.curAnim[this.prop] = !0;
+	      for (var d in this.options.curAnim) {
+	        !0 !== this.options.curAnim[d] && (a = !1);
+	      }
+	      if (a) {
+	        null != this.options.display && (this.elem.style.overflow = this.options.overflow, this.elem.style.display = this.options.display, "none" == c.css(this.elem, "display") && (this.elem.style.display = "block"));
+	        this.options.hide && c(this.elem).hide();
+	        if (this.options.hide || this.options.show) {
+	          for (var e in this.options.curAnim) {
+	            c.attr(this.elem.style, e, this.options.orig[e]);
+	          }
+	        }
+	        this.options.complete.call(this.elem);
+	      }
+	      return !1;
+	    }
+	    d = b - this.startTime;
+	    this.state = d / this.options.duration;
+	    this.pos = c.easing[this.options.easing || (c.easing.swing ? "swing" : "linear")](this.state, d, 0, 1, this.options.duration);
+	    this.now = this.start + (this.end - this.start) * this.pos;
+	    this.update();
+	    return !0;
+	  }};
+	  c.extend(c.fx, {speeds:{slow:600, fast:200, _default:400}, step:{opacity:function(a) {
+	    c.attr(a.elem.style, "opacity", a.now);
+	  }, _default:function(a) {
+	    a.elem.style && null != a.elem.style[a.prop] ? a.elem.style[a.prop] = a.now + a.unit : a.elem[a.prop] = a.now;
+	  }}});
+	  c.fn.offset = document.documentElement.getBoundingClientRect ? function() {
+	    if (!this[0]) {
+	      return {top:0, left:0};
+	    }
+	    if (this[0] === this[0].ownerDocument.body) {
+	      return c.offset.bodyOffset(this[0]);
+	    }
+	    var a = this[0].getBoundingClientRect(), b = this[0].ownerDocument, d = b.body, b = b.documentElement;
+	    return {top:a.top + (self.pageYOffset || c.boxModel && b.scrollTop || d.scrollTop) - (b.clientTop || d.clientTop || 0), left:a.left + (self.pageXOffset || c.boxModel && b.scrollLeft || d.scrollLeft) - (b.clientLeft || d.clientLeft || 0)};
+	  } : function() {
+	    if (!this[0]) {
+	      return {top:0, left:0};
+	    }
+	    if (this[0] === this[0].ownerDocument.body) {
+	      return c.offset.bodyOffset(this[0]);
+	    }
+	    c.offset.initialized || c.offset.initialize();
+	    var a = this[0], b = a.offsetParent, d = a.ownerDocument, e, f = d.documentElement, g = d.body, d = d.defaultView;
+	    e = d.getComputedStyle(a, null);
+	    for (var h = a.offsetTop, m = a.offsetLeft;(a = a.parentNode) && a !== g && a !== f;) {
+	      e = d.getComputedStyle(a, null), h -= a.scrollTop, m -= a.scrollLeft, a === b && (h += a.offsetTop, m += a.offsetLeft, !c.offset.doesNotAddBorder || c.offset.doesAddBorderForTableAndCells && /^t(able|d|h)$/i.test(a.tagName) || (h += parseInt(e.borderTopWidth, 10) || 0, m += parseInt(e.borderLeftWidth, 10) || 0), b = a.offsetParent), c.offset.subtractsBorderForOverflowNotVisible && "visible" !== e.overflow && (h += parseInt(e.borderTopWidth, 10) || 0, m += parseInt(e.borderLeftWidth, 10) || 
+	      0);
+	    }
+	    if ("relative" === e.position || "static" === e.position) {
+	      h += g.offsetTop, m += g.offsetLeft;
+	    }
+	    "fixed" === e.position && (h += Math.max(f.scrollTop, g.scrollTop), m += Math.max(f.scrollLeft, g.scrollLeft));
+	    return {top:h, left:m};
+	  };
+	  c.offset = {initialize:function() {
+	    if (!this.initialized) {
+	      var a = document.body, b = document.createElement("div"), c, e, f, g = a.style.marginTop;
+	      c = {position:"absolute", top:0, left:0, margin:0, border:0, width:"1px", height:"1px", visibility:"hidden"};
+	      for (e in c) {
+	        b.style[e] = c[e];
+	      }
+	      b.innerHTML = '<div style="position:absolute;top:0;left:0;margin:0;border:5px solid #000;padding:0;width:1px;height:1px;"><div></div></div><table style="position:absolute;top:0;left:0;margin:0;border:5px solid #000;padding:0;width:1px;height:1px;" cellpadding="0" cellspacing="0"><tr><td></td></tr></table>';
+	      a.insertBefore(b, a.firstChild);
+	      c = b.firstChild;
+	      e = c.firstChild;
+	      f = c.nextSibling.firstChild.firstChild;
+	      this.doesNotAddBorder = 5 !== e.offsetTop;
+	      this.doesAddBorderForTableAndCells = 5 === f.offsetTop;
+	      c.style.overflow = "hidden";
+	      c.style.position = "relative";
+	      this.subtractsBorderForOverflowNotVisible = -5 === e.offsetTop;
+	      a.style.marginTop = "1px";
+	      this.doesNotIncludeMarginInBodyOffset = 0 === a.offsetTop;
+	      a.style.marginTop = g;
+	      a.removeChild(b);
+	      this.initialized = !0;
+	    }
+	  }, bodyOffset:function(a) {
+	    c.offset.initialized || c.offset.initialize();
+	    var b = a.offsetTop, d = a.offsetLeft;
+	    c.offset.doesNotIncludeMarginInBodyOffset && (b += parseInt(c.curCSS(a, "marginTop", !0), 10) || 0, d += parseInt(c.curCSS(a, "marginLeft", !0), 10) || 0);
+	    return {top:b, left:d};
+	  }};
+	  c.fn.extend({position:function() {
+	    var a;
+	    if (this[0]) {
+	      a = this.offsetParent();
+	      var b = this.offset(), c = /^body|html$/i.test(a[0].tagName) ? {top:0, left:0} : a.offset();
+	      b.top -= A(this, "marginTop");
+	      b.left -= A(this, "marginLeft");
+	      c.top += A(a, "borderTopWidth");
+	      c.left += A(a, "borderLeftWidth");
+	      a = {top:b.top - c.top, left:b.left - c.left};
+	    }
+	    return a;
+	  }, offsetParent:function() {
+	    for (var a = this[0].offsetParent || document.body;a && !/^body|html$/i.test(a.tagName) && "static" == c.css(a, "position");) {
+	      a = a.offsetParent;
+	    }
+	    return c(a);
+	  }});
+	  c.each(["Left", "Top"], function(a, b) {
+	    var d = "scroll" + b;
+	    c.fn[d] = function(b) {
+	      return this[0] ? void 0 !== b ? this.each(function() {
+	        this == n || this == document ? n.scrollTo(a ? c(n).scrollLeft() : b, a ? b : c(n).scrollTop()) : this[d] = b;
+	      }) : this[0] == n || this[0] == document ? self[a ? "pageYOffset" : "pageXOffset"] || c.boxModel && document.documentElement[d] || document.body[d] : this[0][d] : null;
+	    };
+	  });
+	  c.each(["Height", "Width"], function(a, b) {
+	    var d = b.toLowerCase();
+	    c.fn["inner" + b] = function() {
+	      return this[0] ? c.css(this[0], d, !1, "padding") : null;
+	    };
+	    c.fn["outer" + b] = function(a) {
+	      return this[0] ? c.css(this[0], d, !1, a ? "margin" : "border") : null;
+	    };
+	    var e = b.toLowerCase();
+	    c.fn[e] = function(a) {
+	      return this[0] == n ? "CSS1Compat" == document.compatMode && document.documentElement["client" + b] || document.body["client" + b] : this[0] == document ? Math.max(document.documentElement["client" + b], document.body["scroll" + b], document.documentElement["scroll" + b], document.body["offset" + b], document.documentElement["offset" + b]) : void 0 === a ? this.length ? c.css(this[0], e) : null : this.css(e, "string" === typeof a ? a : a + "px");
+	    };
+	  });
+	})();
+
+</script>
+		
+		
+<!-- jquery tools 1.4 follows  -->
+
+<script>
+		/*! 
+	 * a-tools 1.4.1
+	 * 
+	 * Copyright (c) 2009 Andrey Kramarev(andrey.kramarev[at]ampparit.com), Ampparit Inc. (www.ampparit.com)
+	 * Licensed under the MIT license.
+	 * http://www.ampparit.fi/a-tools/license.txt
+	 *
+	 * Basic usage:
+	 
+	    <textarea></textarea>
+	    <input type="text" />
+
+	    // Get current selection
+	    var sel = $("textarea").getSelection()
+	    
+	    // Replace current selection
+	    $("input").replaceSelection("foo");
+
+	    // Count characters
+	    alert($("textarea").countCharacters());
+
+	    // Set max length without callback function
+	    $("textarea").setMaxLength(7);
+
+	    // Set max length with callback function which will be called when limit is exceeded
+	    $("textarea").setMaxLength(10, function() {
+	        alert("hello")
+	    });
+
+	    // Removing limit:
+	    $("textarea").setMaxLength(-1);
+	    
+	    // Insert text at current caret position
+	    $("#textarea").insertAtCaretPos("hello");
+	    
+	    // Set caret position (1 = beginning, -1 = end)
+	    $("#textArea").setCaretPos(10);
+	    
+	    // Set Selection
+	    $("#textArea").setSelection(10,15);
+
+	 */
+	var caretPositionAmp;
+
+	jQuery.fn.extend({
+		getSelection: function() {  // function for getting selection, and position of the selected text
+			var input = this.jquery ? this[0] : this;
+			var start;
+			var end;
+			var part;
+			var number = 0;
+	        input.onmousedown = function() { // for IE because it loses caret position when focus changed
+	            if (document.selection && typeof(input.selectionStart) != "number") {
+	                document.selection.empty();
+				} else {
+	                window.getSelection().removeAllRanges();
+	            }
+			}
+			if (document.selection) {
+				// part for IE and Opera
+				var s = document.selection.createRange();
+				var minus = 0;
+				var position = 0;
+				var minusEnd = 0;
+				var re;
+				var rc;
+				if (input.value.match(/\n/g) != null) {
+						number = input.value.match(/\n/g).length;// number of EOL simbols
+				}
+				if (s.text) {
+	                part = s.text;
+					// OPERA support
+					if (typeof(input.selectionStart) == "number") {
+						start = input.selectionStart;
+						end = input.selectionEnd;
+						// return null if the selected text not from the needed area
+						if (start == end) {
+	                        return { start: start, end: end, text: s.text, length: end - start };
+						}
+					} else {
+						// IE support
+						var firstRe;
+						var secondRe;
+						re = input.createTextRange();
+						rc = re.duplicate();
+						firstRe = re.text;
+						re.moveToBookmark(s.getBookmark());
+						secondRe = re.text;
+						rc.setEndPoint("EndToStart", re);
+	                    // return null if the selectyed text not from the needed area
+						if (firstRe == secondRe && firstRe != s.text) {
+							return this;
+						}
+	                    start = rc.text.length; 
+	                    end = rc.text.length + s.text.length;
+	                }
+					// remove all EOL to have the same start and end positons as in MOZILLA
+					if (number > 0) {
+						for (var i = 0; i <= number; i++) {
+							var w = input.value.indexOf("\n", position);
+							if (w != -1 && w < start) {
+								position = w + 1;
+								minus++;
+								minusEnd = minus;
+							} else if (w != -1 && w >= start && w <= end) {
+								if (w == start + 1) {
+									minus--;
+									minusEnd--;
+									position = w + 1;
+									continue;
+								}
+								position = w + 1;
+								minusEnd++;
+							} else {
+								i = number;
+							}
+						}
+					}
+					if (s.text.indexOf("\n", 0) == 1) {
+						minusEnd = minusEnd + 2;
+					}
+	                start = start - minus;
+					end = end - minusEnd;
+					
+	                return { start: start, end: end, text: s.text, length: end - start };
+				}
+				input.focus ();
+				if (typeof(input.selectionStart) == "number") {
+					start = input.selectionStart;
+				} else {
+					s = document.selection.createRange();
+					re = input.createTextRange();
+					rc = re.duplicate();
+					re.moveToBookmark(s.getBookmark());
+					rc.setEndPoint("EndToStart", re);
+					start = rc.text.length;
+				}
+				if (number > 0) {
+					for (var i = 0; i <= number; i++) {
+						var w = input.value.indexOf("\n", position);
+						if (w != -1 && w < start) {
+							position = w + 1;
+							minus++;
+						} else {
+							i = number;
+						}
+					}
+				}
+	            start = start - minus;
+				return { start: start, end: start, text: s.text, length: 0 };
+			} else if (typeof(input.selectionStart) == "number" ) {
+	            start = input.selectionStart;
+				end = input.selectionEnd;
+				part = input.value.substring(input.selectionStart, input.selectionEnd);
+				return { start: start, end: end, text: part, length: end - start };
+			} else { return { start: undefined, end: undefined, text: undefined, length: undefined }; }
+		},
+
+		// function for the replacement of the selected text
+		replaceSelection: function(inputStr) {
+			var input = this.jquery ? this[0] : this; 
+			//part for IE and Opera
+			var start;
+			var end;
+			var position = 0;
+			var rc;
+			var re;
+			var number = 0;
+			var minus = 0;
+			var mozScrollFix = ( input.scrollTop == undefined ) ? 0 : input.scrollTop; 
+			if (document.selection && typeof(input.selectionStart) != "number") {
+				var s = document.selection.createRange();
+				
+				// IE support
+				if (typeof(input.selectionStart) != "number") { // return null if the selected text not from the needed area
+					var firstRe;
+					var secondRe;
+					re = input.createTextRange();
+					rc = re.duplicate();
+					firstRe = re.text;
+					re.moveToBookmark(s.getBookmark());
+					secondRe = re.text;
+					rc.setEndPoint("EndToStart", re);
+					if (firstRe == secondRe && firstRe != s.text) {
+						return this;
+					}
+				}
+				if (s.text) {
+					part = s.text;
+					if (input.value.match(/\n/g) != null) {
+						number = input.value.match(/\n/g).length;// number of EOL simbols
+					}
+					// IE support
+					start = rc.text.length; 
+					// remove all EOL to have the same start and end positons as in MOZILLA
+					if (number > 0) {
+						for (var i = 0; i <= number; i++) {
+							var w = input.value.indexOf("\n", position);
+							if (w != -1 && w < start) {
+								position = w + 1;
+								minus++;
+								
+							} else {
+								i = number;
+							}
+						}
+					}
+					s.text = inputStr;
+					caretPositionAmp = rc.text.length + inputStr.length;
+					re.move("character", caretPositionAmp);
+					document.selection.empty();
+					input.blur();
+				}
+				return this;
+			} else if (typeof(input.selectionStart) == "number" && // MOZILLA support
+					input.selectionStart != input.selectionEnd) {
+				
+				start = input.selectionStart;
+				end = input.selectionEnd;
+				input.value = input.value.substr(0, start) + inputStr + input.value.substr(end);
+				position = start + inputStr.length;
+				input.setSelectionRange(position, position); 
+				input.scrollTop = mozScrollFix;
+				return this;
+			}
+			return this;
+		},
+		
+	    //Set Selection in text
+		setSelection: function(startPosition, endPosition) {
+	        startPosition = parseInt(startPosition);
+	        endPosition = parseInt(endPosition);
+	        
+	        var input = this.jquery ? this[0] : this; 
+	        input.focus ();
+			if (typeof(input.selectionStart) != "number") {
+	            re = input.createTextRange();
+	            if (re.text.length < endPosition) {
+	                endPosition = re.text.length+1;
+	            }
+	        }
+	        if (endPosition < startPosition) {
+	            return this;
+	        }
+	        if (document.selection) { 
+	            var number = 0;
+	            var plus = 0;
+				var position = 0;
+				var plusEnd = 0;
+	            if (typeof(input.selectionStart) != "number") { // IE
+	                re.collapse(true); 
+	                re.moveEnd('character', endPosition); 
+	                re.moveStart('character', startPosition); 
+	                re.select(); 
+	                return this;
+	            } else if (typeof(input.selectionStart) == "number") {      // Opera
+	                if (input.value.match(/\n/g) != null) {
+						number = input.value.match(/\n/g).length;// number of EOL simbols
+	                }
+	                if (number > 0) {
+	                    for (var i = 0; i <= number; i++) {
+							var w = input.value.indexOf("\n", position);
+							if (w != -1 && w < startPosition) {
+	                            position = w + 1;
+								plus++;
+								plusEnd = plus;
+	                        } else if (w != -1 && w >= startPosition && w <= endPosition) {
+								if (w == startPosition + 1) {
+									plus--;
+									plusEnd--;
+									position = w + 1;
+	                                continue;
+								}
+								position = w + 1;
+								plusEnd++;
+							} else {
+								i = number;
+							}
+						}
+					}
+	                startPosition = startPosition +plus;
+	                endPosition = endPosition + plusEnd;
+	                input.selectionStart = startPosition; 
+	                input.selectionEnd = endPosition;
+	                return this;
+	            } else {
+	                return this;
+	            }
+	        }
+	        else if (input.selectionStart) {   // MOZILLA support
+	            input.focus ();
+	            input.selectionStart = startPosition; 
+	            input.selectionEnd = endPosition; 
+	            return this;
+	        } 
+	    },
+		
+		// insert text at current caret position
+		insertAtCaretPos: function(inputStr) {
+			var input = this.jquery ? this[0] : this; 
+			var start;
+			var end;
+			var position;
+			var s;
+			var re;
+			var rc;
+			var point;
+			var minus = 0;
+			var number = 0;
+			var mozScrollFix = ( input.scrollTop == undefined ) ? 0 : input.scrollTop; 
+			input.focus();
+			if (document.selection && typeof(input.selectionStart) != "number") {
+				if (input.value.match(/\n/g) != null) {
+					number = input.value.match(/\n/g).length;// number of EOL simbols
+				}
+				point = parseInt(caretPositionAmp);
+				if (number > 0) {
+					for (var i = 0; i <= number; i++) {
+						var w = input.value.indexOf("\n", position);
+						if (w != -1 && w <= point) {
+							position = w + 1;
+							point = point - 1;
+							minus++;
+						} 
+					}
+				}
+			}
+			caretPositionAmp = parseInt(caretPositionAmp);
+			// IE
+			input.onmouseup = function() { // for IE because it loses caret position when focus changed
+				if (document.selection && typeof(input.selectionStart) != "number") {
+	                input.focus();
+	                s = document.selection.createRange();
+	                re = input.createTextRange();
+					rc = re.duplicate();
+	                re.moveToBookmark(s.getBookmark());
+	                rc.setEndPoint("EndToStart", re);
+	                caretPositionAmp = rc.text.length;
+	            }
+			}
+
+			if (document.selection && typeof(input.selectionStart) != "number") {
+				s = document.selection.createRange();
+				if (s.text.length != 0) {
+					return this;
+				}
+				re = input.createTextRange();
+				textLength = re.text.length;
+				rc = re.duplicate();
+				re.moveToBookmark(s.getBookmark());
+				rc.setEndPoint("EndToStart", re);
+				start = rc.text.length; 
+	            if (caretPositionAmp > 0 && start ==0) {
+	                minus = caretPositionAmp - minus;
+					re.move("character", minus);
+					re.select();
+					s = document.selection.createRange();
+					caretPositionAmp += inputStr.length;
+				} else if (!(caretPositionAmp >= 0) && textLength ==0) {
+	                s = document.selection.createRange();
+					caretPositionAmp = inputStr.length + textLength;
+				} else if (!(caretPositionAmp >= 0) && start ==0) {
+	                re.move("character", textLength);
+					re.select();
+					s = document.selection.createRange();
+					caretPositionAmp = inputStr.length + textLength;
+				} else if (!(caretPositionAmp >= 0) && start > 0) { 
+	                re.move("character", 0);
+	                document.selection.empty();
+	                re.select();
+	                s = document.selection.createRange();
+	                caretPositionAmp = start + inputStr.length;
+	            } else if (caretPositionAmp >= 0 && caretPositionAmp == textLength) { 
+	                if (textLength != 0) {
+	                    re.move("character", textLength);
+	                    re.select();
+	                } else {
+	                    re.move("character", 0);
+	                }
+					s = document.selection.createRange();
+					caretPositionAmp = inputStr.length + textLength;
+				} else if (caretPositionAmp >= 0 && start != 0 && caretPositionAmp >= start) { 
+	                minus = caretPositionAmp - start;
+					re.move("character", minus);
+					document.selection.empty();
+					re.select();
+					s = document.selection.createRange();
+					caretPositionAmp = caretPositionAmp + inputStr.length; 
+				} else if (caretPositionAmp >= 0 && start != 0 && caretPositionAmp < start) { 
+	                re.move("character", 0);
+					document.selection.empty();
+					re.select();
+					s = document.selection.createRange();
+					caretPositionAmp = caretPositionAmp + inputStr.length; 
+				} else { 
+	                document.selection.empty();
+					re.select();
+					s = document.selection.createRange();
+					caretPositionAmp = caretPositionAmp + inputStr.length; 
+				} 
+				s.text = inputStr; 
+				input.focus();
+
+				return this;
+			} else if (typeof(input.selectionStart) == "number" && // MOZILLA support
+					input.selectionStart == input.selectionEnd) {
+				position = input.selectionStart + inputStr.length;
+				start = input.selectionStart;
+				end = input.selectionEnd;
+				input.value = input.value.substr(0, start) + inputStr + input.value.substr(end);
+				input.setSelectionRange(position, position); 
+				input.scrollTop = mozScrollFix; 
+				return this;
+			}
+			return this;
+		},	
+
+		
+		// Set caret position
+		setCaretPos: function(inputStr) {
+
+			var input = this.jquery ? this[0] : this; 
+			var s;
+			var re;
+			var position;
+			var number = 0;
+			var minus = 0;
+			var w;
+			input.focus();
+			if (parseInt(inputStr) == 0) {
+				return this;
+			}
+			//if (document.selection && typeof(input.selectionStart) == "number") {
+			if (parseInt(inputStr) > 0) {
+				inputStr = parseInt(inputStr) - 1;
+				if (document.selection && typeof(input.selectionStart) == "number" && input.selectionStart == input.selectionEnd) {
+					if (input.value.match(/\n/g) != null) {
+						number = input.value.match(/\n/g).length;// number of EOL simbols
+					}
+					if (number > 0) {
+						for (var i = 0; i <= number; i++) {
+							w = input.value.indexOf("\n", position);
+							if (w != -1 && w <= inputStr) {
+								position = w + 1;
+								inputStr = parseInt(inputStr) + 1;
+							} 
+						}
+					}
+				}
+			} 
+			else if (parseInt(inputStr) < 0) {
+				inputStr = parseInt(inputStr) + 1;
+				if (document.selection && typeof(input.selectionStart) != "number") {
+					inputStr = input.value.length + parseInt(inputStr);
+					if (input.value.match(/\n/g) != null) {
+						number = input.value.match(/\n/g).length;// number of EOL simbols
+					}
+					if (number > 0) {
+						for (var i = 0; i <= number; i++) {
+							w = input.value.indexOf("\n", position);
+							if (w != -1 && w <= inputStr) {
+								position = w + 1;
+								inputStr = parseInt(inputStr) - 1;
+								minus += 1;
+							} 
+						}
+						inputStr = inputStr + minus - number;
+					}
+				} else if (document.selection && typeof(input.selectionStart) == "number") {
+					inputStr = input.value.length + parseInt(inputStr);
+					if (input.value.match(/\n/g) != null) {
+						number = input.value.match(/\n/g).length;// number of EOL simbols
+					}
+					if (number > 0) {
+						inputStr = parseInt(inputStr) - number;
+						for (var i = 0; i <= number; i++) {
+							w = input.value.indexOf("\n", position);
+							if (w != -1 && w <= (inputStr)) {
+								position = w + 1;
+								inputStr = parseInt(inputStr) + 1;
+								minus += 1;
+							} 
+						}
+					}
+				} else { inputStr = input.value.length + parseInt(inputStr); }
+			} else { return this; }
+			// IE
+			if (document.selection && typeof(input.selectionStart) != "number") {
+				s = document.selection.createRange();
+				if (s.text != 0) {
+					return this;
+				}
+				re = input.createTextRange();
+				re.collapse(true);
+				re.moveEnd('character', inputStr);
+				re.moveStart('character', inputStr);
+				re.select();
+				caretPositionAmp = inputStr;
+				
+				return this;
+			} else	if (typeof(input.selectionStart) == "number" && // MOZILLA support
+					input.selectionStart == input.selectionEnd) {
+				input.setSelectionRange(inputStr, inputStr); 
+				return this;
+			}
+			return this;
+			
+		},	
+
+		countCharacters: function(str) {
+			var input = this.jquery ? this[0] : this;
+			if (input.value.match(/\r/g) != null) {
+				return input.value.length - input.value.match(/\r/g).length;
+			}
+			return input.value.length;
+		},
+
+		setMaxLength: function(max, f) {
+			this.each(function() {
+				var input = this.jquery ? this[0] : this;
+				var type = input.type;
+				var isSelected;	
+				var maxCharacters;
+				// remove limit if input is a negative number
+				if (parseInt(max) < 0) {
+					max=100000000;
+				}
+				if (type == "text") {
+					input.maxLength = max;
+				}
+				if (type == "textarea" || type == "text") {
+					input.onkeypress = function(e) {
+						var spacesR = input.value.match(/\r/g);
+						maxCharacters = max;
+						if (spacesR != null) {
+							maxCharacters = parseInt(maxCharacters) + spacesR.length;
+						}
+						// get event
+						var key = e || event;
+						var keyCode = key.keyCode;
+						// check if any part of text is selected
+						if (document.selection) {
+							isSelected = document.selection.createRange().text.length > 0;
+						} else {
+							isSelected = input.selectionStart != input.selectionEnd;
+						}
+						if (input.value.length >= maxCharacters && (keyCode > 47 || keyCode == 32 ||
+								keyCode == 0 || keyCode == 13) && !key.ctrlKey && !key.altKey && !isSelected) {
+							input.value = input.value.substring(0,maxCharacters);
+							if (typeof(f) == "function") { f() } //callback function
+							return false;
+						}
+					}
+					input.onkeyup = function() { 
+						var spacesR = input.value.match(/\r/g);
+						var plus = 0;
+						var position = 0;
+						maxCharacters = max;
+						if (spacesR != null) {
+							for (var i = 0; i <= spacesR.length; i++) {
+								if (input.value.indexOf("\n", position) <= parseInt(max)) {
+									plus++;
+									position = input.value.indexOf("\n", position) + 1;
+								}
+							}
+							maxCharacters = parseInt(max) + plus;
+						} 
+						if (input.value.length > maxCharacters) {  
+							input.value = input.value.substring(0, maxCharacters); 
+							if (typeof(f) == "function") { f() }
+							return this;
+						}
+					}
+				} else { return this; }
+			})
+			return this;
+		}
+	}); 
+
+		
+		
+		</script>
+		
+		
+		
+		
+		
+	<script>
+	/*
+	 * jQuery textarea suggest plugin
+	 *
+	 * Copyright (c) 2009-2010 Roman Imankulov
+	 *
+	 * Dual licensed under the MIT and GPL licenses:
+	 *   http://www.opensource.org/licenses/mit-license.php
+	 *   http://www.gnu.org/licenses/gpl.html
+	 *
+	 * Requires:
+	 *   - jQuery (tested with 1.3.x and 1.4.x)
+	 *   - jquery.a-tools >= 1.4.1 (http://plugins.jquery.com/project/a-tools)
+	 */
+
+	/*globals jQuery,document */
+
+	(function ($) {
+	    // workaround for Opera browser
+	    if (navigator.userAgent.match(/opera/i)) {
+	        $(document).keypress(function (e) {
+	            if ($.asuggestFocused) {
+	                $.asuggestFocused.focus();
+	                $.asuggestFocused = null;
+	                e.preventDefault();
+	                e.stopPropagation();
+	            }
+	        });
+	    }
+
+	    $.asuggestKeys = {
+	        UNKNOWN: 0,
+	        SHIFT: 16,
+	        CTRL: 17,
+	        ALT: 18,
+	        LEFT: 37,
+	        UP: 38,
+	        RIGHT: 39,
+	        DOWN: 40,
+	        DEL: 46,
+	        TAB: 9,
+	        RETURN: 13,
+	        ESC: 27,
+	        COMMA: 188,
+	        PAGEUP: 33,
+	        PAGEDOWN: 34,
+	        BACKSPACE: 8,
+	        SPACE: 32
+	    };
+	    $.asuggestFocused = null;
+
+	    $.fn.asuggest = function (suggests, options) {
+	        return this.each(function () {
+	            $.makeSuggest(this, suggests, options);
+	        });
+	    };
+
+	    $.fn.asuggest.defaults = {
+	        'delimiters': '\n ',
+	        'minChunkSize': 1,
+	        'cycleOnTab': true,
+	        'autoComplete': true,
+	        'endingSymbols': ' ',
+	        'stopSuggestionKeys': [$.asuggestKeys.RETURN, $.asuggestKeys.SPACE],
+	        'ignoreCase': true
+	    };
+
+	    /* Make suggest:
+	     *
+	     * create and return jQuery object on the top of DOM object
+	     * and store suggests as part of this object
+	     *
+	     * @param area: HTML DOM element to add suggests to
+	     * @param suggests: The array of suggest strings
+	     * @param options: The options object
+	     */
+	    $.makeSuggest = function (area, suggests, options) {
+	        options = $.extend({}, $.fn.asuggest.defaults, options);
+
+	        var KEY = $.asuggestKeys,
+	            $area = $(area);
+	        $area.suggests = suggests;
+	        $area.options = options;
+
+	        /* Internal method: get the chunk of text before the cursor */
+	        $area.getChunk = function () {
+	            var delimiters = this.options.delimiters.split(''), // array of chars
+	                textBeforeCursor = this.val().substr(0, this.getSelection().start),
+	                indexOfDelimiter = -1,
+	                i,
+	                d,
+	                idx;
+	            for (i = 0; i < delimiters.length; i++) {
+	                d = delimiters[i];
+	                idx = textBeforeCursor.lastIndexOf(d);
+	                if (idx > indexOfDelimiter) {
+	                    indexOfDelimiter = idx;
+	                }
+	            }
+	            if (indexOfDelimiter < 0) {
+	                return textBeforeCursor;
+	            } else {
+	                return textBeforeCursor.substr(indexOfDelimiter + 1);
+	            }
+	        };
+
+	        /* Internal method: get completion.
+	         * If performCycle is true then analyze getChunk() and and getSelection()
+	         */
+	        $area.getCompletion = function (performCycle) {
+	            var text = this.getChunk(),
+	                selectionText = this.getSelection().text,
+	                suggests = this.suggests,
+	                foundAlreadySelectedValue = false,
+	                firstMatchedValue = null,
+	                i,
+	                suggest;
+	            // search the variant
+	            for (i = 0; i < suggests.length; i++) {
+	                suggest = suggests[i];
+	                if ($area.options.ignoreCase) {
+	                    suggest = suggest.toLowerCase();
+	                    text = text.toLowerCase();
+	                }
+	                // some variant is found
+	                if (suggest.indexOf(text) === 0) {
+	                    if (performCycle) {
+	                        if (text + selectionText === suggest) {
+	                            foundAlreadySelectedValue = true;
+	                        } else if (foundAlreadySelectedValue) {
+	                            return suggest.substr(text.length);
+	                        } else if (firstMatchedValue === null) {
+	                            firstMatchedValue = suggest;
+	                        }
+	                    } else {
+	                        return suggest.substr(text.length);
+	                    }
+	                }
+	            }
+	            if (performCycle && firstMatchedValue) {
+	                return firstMatchedValue.substr(text.length);
+	            } else {
+	                return null;
+	            }
+	        };
+
+	        $area.updateSelection = function (completion) {
+	            if (completion) {
+	                var _selectionStart = $area.getSelection().start,
+	                    _selectionEnd = _selectionStart + completion.length;
+	                if ($area.getSelection().text === "") {
+	                    if ($area.val().length === _selectionStart) { // Weird IE workaround, I really have no idea why it works
+	                        $area.setCaretPos(_selectionStart + 10000);
+	                    }
+	                    $area.insertAtCaretPos(completion);
+	                } else {
+	                    $area.replaceSelection(completion);
+	                }
+	                $area.setSelection(_selectionStart, _selectionEnd);
+	            }
+	        };
+
+	        $area.unbind('keydown.asuggest').bind('keydown.asuggest', function (e) {
+	            if (e.keyCode === KEY.TAB) {
+	                if ($area.options.cycleOnTab) {
+	                    var chunk = $area.getChunk();
+	                    if (chunk.length >= $area.options.minChunkSize) {
+	                        $area.updateSelection($area.getCompletion(true));
+	                    }
+	                    e.preventDefault();
+	                    e.stopPropagation();
+	                    $area.focus();
+	                    $.asuggestFocused = this;
+	                    return false;
+	                }
+	            }
+	            // Check for conditions to stop suggestion
+	            if ($area.getSelection().length &&
+	                    $.inArray(e.keyCode, $area.options.stopSuggestionKeys) !== -1) {
+	                // apply suggestion. Clean up selection and insert a space
+	                var _selectionEnd = $area.getSelection().end +
+	                        $area.options.endingSymbols.length;
+	                var _text = $area.getSelection().text +
+	                        $area.options.endingSymbols;
+	                $area.replaceSelection(_text);
+	                $area.setSelection(_selectionEnd, _selectionEnd);
+	                e.preventDefault();
+	                e.stopPropagation();
+	                this.focus();
+	                $.asuggestFocused = this;
+	                return false;
+	            }
+	        });
+
+	        $area.unbind('keyup.asuggest').bind('keyup.asuggest', function (e) {
+	            var hasSpecialKeys = e.altKey || e.metaKey || e.ctrlKey,
+	                hasSpecialKeysOrShift = hasSpecialKeys || e.shiftKey;
+	            switch (e.keyCode) {
+	            case KEY.UNKNOWN: // Special key released
+	            case KEY.SHIFT:
+	            case KEY.CTRL:
+	            case KEY.ALT:
+	            case KEY.RETURN: // we don't want to suggest when RETURN key has pressed (another IE workaround)
+	                break;
+	            case KEY.TAB:
+	                if (!hasSpecialKeysOrShift && $area.options.cycleOnTab) {
+	                    break;
+	                }
+	            case KEY.ESC:
+	            case KEY.BACKSPACE:
+	            case KEY.DEL:
+	            case KEY.UP:
+	            case KEY.DOWN:
+	            case KEY.LEFT:
+	            case KEY.RIGHT:
+	                if (!hasSpecialKeysOrShift && $area.options.autoComplete) {
+	                    $area.replaceSelection("");
+	                }
+	                break;
+	            default:
+	                if (!hasSpecialKeys && $area.options.autoComplete) {
+	                    var chunk = $area.getChunk();
+	                    if (chunk.length >= $area.options.minChunkSize) {
+	                        $area.updateSelection($area.getCompletion(false));
+	                    }
+	                }
+	                break;
+	            }
+	        });
+	        return $area;
+	    };
+	}(jQuery));
+
+
+</script>
+	
+<style>
+		body {
+			position: fixed;
+			background-color: hsla(204, 100%, 20%, 1);
+			font-family: sans-serif;
+			font-size: 0.8rem;
+			color: hsla(0, 0%, 100%, 1);
+			margin-left: 0.625rem;
+		}
+		
+		a {
+			color: hsla(60, 100%, 50%, 1);
+		}
+		
+		textarea {
+			background-color: hsla(0, 0%, 100%, 1);
+			font-family: sans-serif;
+			font-size: 0.8rem;
+			color: hsla(0, 0%, 33%, 1);
+			width: 100%;
+			height: 43.75rem;
+			padding: 0.375rem;
+			border: none;
+			resize: none;
+		}
+		
+		.wrap {
+			position: fixed;
+			margin-top: 2.81rem;
+			width: 100%;
+			/*overflow: auto;*/
+		}
+		
+		.wrap2 {
+			position: fixed;
+			margin-top: 2.5rem;
+			display: none;
+			width: 100%;
+			overflow: auto;
+		}
+		
+		/*add-on class for gfr and levodopa-equivalence calculators*/
+		.wrap2_2 {
+			width: 50%;
+		}
+		
+		.wrap2_1 {
+			position: fixed;
+			margin-top: 2.5rem;
+			display: block;
+			width: 100%;
+			/*overflow: auto;*/
+		}
+		
+		.wrap3 {
+			margin-top: 0.625rem;
+			display: none;
+			width: 100%;
+			/*overflow: auto;*/
+		}
+		
+		.fleft {
+			float: left;
+			width: 25%;
+			height: 60rem;
+			margin: 0px;
+		}
+		
+		.fcenter {
+			float: left;
+			width: 57%;
+			height: 60rem;
+			margin-right: 2rem;
+		}
+		
+		.fright {
+			float: left;
+			height: 60rem;
+			width: 14%;
+			margin: 0px;
+		}
+		
+		.fleft50 {
+			float: left;
+			height: 60rem;
+			width: 45%;
+			margin: 0px;
+		}
+		
+		.fright50 {
+			float: right;
+			height: 60rem;
+			width: 45%;
+			margin: 0px;
+		}
+		
+		.bt1 {
+			height: 1.875rem;
+			width: 9.375rem;
+			color: hsla(0, 0%, 100%, 1);
+			font-family: sans-serif;
+			font-size: 0.8rem;
+			border-style: none;
+			background-color: hsla(122, 39%, 49%, 1);
+			color: hsla(0, 0%, 100%, 1);
+		}
+		
+		.bt1:hover {
+			background-color: hsla(0, 100%, 50%, 1);
+			color: hsla(0, 0%, 100%, 1);
+		}
+		
+		.bt2 {
+			width: 4.5625rem;
+		}
+		
+		.btgrey {
+			background-color: hsla(0, 0%, 50%, 1);
+		}
+		
+		.bttext {
+			border-style: ridge;
+			border-width: 0.1875rem;
+			border-color: hsla(122, 39%, 49%, 1);
+		}
+		
+		.stamp {
+			font-family: sans-serif;
+			font-size: 0.8rem;
+			margin-left: 0.125rem;
+			width: 40%;
+			width: 40%;
+		}
+		
+		#topBar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 2rem;
+			background-color: inherit;
+			font-size: 0.8rem;
+			margin-left: 0.625rem;
+		}
+		
+		.h1_1 {
+			text-align: center;
+			margin-top: 5rem;
+			font-weight: bold;
+			font-family: monospace;
+			font-size: 3rem;
+		}
+		
+		.gfrclass {
+			background-color: hsla(0, 0%, 100%, 1);
+			color: hsla(0, 0%, 0%, 1);
+			font-weight: bold;
+			padding: 0.25rem;
+			display: inline-block;
+			height: 0.9375rem;
+			width: 2.5rem;
+			text-align: right;
+		}
+		
+		input[type="number"] {
+			width: 3.125rem;
+			height: 0.9375rem;
+		}
+		
+		.gfrtable {
+			padding: 0.625rem;
+			text-align: left;
+			vertical-align: text-bottom;
+		}
+		
+		.gfrtable th,
+		.gfrtable td {
+			padding: 0.625rem;
+		}
+		
+		/*display flex, align-items and justify-content are to display the text horiz and vert centered*/
+		#gesX {
+			color: hsla(0, 100%, 50%, 1);
+			font-weight: bold;
+			background-color: hsla(0, 0%, 100%, 1);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 9.375rem;
+			height: 1.5625rem;
+			animation-name: mannfrau;
+			animation-duration: 3s;
+			animation-iteration-count: 1;
+		}
+		
+		hr {
+			display: block;
+			margin-left: 0;
+			width: 19rem;
+			border-style: solid;
+			border-width: 0.0625rem;
+			color: hsla(0, 0%, 100%, 1);
+		}
+		
+		.select1 {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			border: none;
+			border-radius: 0;
+			font-size: 0.8rem;
+		}
+		
+		.select1 {
+			width: 50%;
+			border: 0.0625rem solid;
+			padding: .75rem 1rem .5rem 1rem;
+			box-shadow: 0 0.01875rem 0.0625rem 0;
+			background-position: right;
+			background-repeat: no-repeat;
+		}
+		
+		.select1:hover {
+			box-shadow: 0 0.0625rem 0.0625rem 0 hsla(0, 0%, 0%, 0.1);
+		}
+		
+		.select1::-ms-expand {
+			display: none;
+		}
+		
+		.select1 {
+			border-width: 0.0625rem;
+			padding: 0.1rem 0.1rem 0.1rem 1rem;
+			background-color: hsla(204, 100%, 20%, 1);
+			color: hsla(0, 0%, 100%, 1);
+		}
+		
+		.select1 option {
+			background: hsla(204, 100%, 20%, 1);
+			padding: 0.2rem;
+		}
+		
+		.select2 {
+			width: 80%
+		}
+		
+		@keyframes mannfrau {
+			0% {
+				background-color: hsla(0, 100%, 50%, 1);
+			}
+			10% {
+				background-color: hsla(39, 100%, 50%, 1);
+			}
+			30% {
+				background-color: hsla(60, 100%, 50%, 1);
+			}
+			100% {
+				background-color: hsla(0, 0%, 100%, 1);
+			}
+		}
+		
+		#mof {
+			padding-left: 9.375rem;
+			display: none;
+		}
+		/**
+ * Tooltip Styles
+ */
+		/* Add this attribute to the element that needs a tooltip */
+		
+		[data-tooltip] {
+			position: relative;
+			z-index: 2;
+			cursor: pointer;
+		}
+		/* Hide the tooltip content by default */
+		
+		[data-tooltip]:before,
+		[data-tooltip]:after {
+			visibility: hidden;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+			filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+			opacity: 0;
+			pointer-events: none;
+		}
+		/* Position tooltip above the element */
+		
+		[data-tooltip]:before {
+			position: absolute;
+			bottom: 150%;
+			left: 50%;
+			margin-bottom: 0.3125rem;
+			margin-left: -5rem;
+			padding: 0.4375rem;
+			width: 10rem;
+			-webkit-border-radius: 0.1875rem;
+			-moz-border-radius: 0.1875rem;
+			border-radius: 0.1875rem;
+			background-color: hsla(0, 0%, 0%, 1);
+			color: hsla(0, 0%, 100%, 1);
+			content: attr(data-tooltip);
+			text-align: center;
+			font-size: 0.875rem;
+			line-height: 1.2;
+		}
+		/* Triangle hack to make tooltip look like a speech bubble */
+		
+		[data-tooltip]:after {
+			position: absolute;
+			bottom: 150%;
+			left: 50%;
+			margin-left: -0.3125rem;
+			width: 0;
+			border-top: 0.3125rem solid hsla(0, 0%, 0%, 1);
+			border-right: 0.3125rem solid transparent;
+			border-left: 0.3125rem solid transparent;
+			content: " ";
+			font-size: 0;
+			line-height: 0;
+		}
+		/* Show tooltip content on hover */
+		
+		[data-tooltip]:hover:before,
+		[data-tooltip]:hover:after {
+			visibility: visible;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+			filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+			opacity: 1;
+		}
+		
+#jscode {
+display: none;
+}
+</style>
+</head>
+
+<body>
+	<noscript><p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. <br>Dieser Code wird von Ihrem Browser interpretiert. <br>Sie sehen diesen Text, weil Javascript in Ihrem Browser deaktiviert ist. Erwägen Sie bitte, Javascript zu aktivieren. <br>Der N-Brief braucht einen neuen Browser, am besten funktioniert er mit Firefox 45 oder neuer<br>
+<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.9, Letzte Aktualisierung: 05.03.2017</p></noscript>
+	<div id="topBar">
+		<button class="bt1" onclick="ez1()">Arztbrief</button>
+		<button class="bt1" onclick="ez4()">Hilfe</button>
+		<button class="bt1" onclick="ez2()">Rechner / Skalen</button>
+		<span id="mof">Ist der Patient Mann oder Frau?</span>
+	</div>
+
+	<div id="zweit" class="wrap2">
+
+		<h3>Skalen und Rechner</h3>
+		<div class="fleft" id="panelSkalen">
+			<button class="bt1" onclick="showGfr()">GFR</button><br><br>
+			<button class="bt1" onclick="showLdopa()">L-Dopa-Dosis</button><br><br>
+			<button class="bt1" onclick="showOpiat()">Opioid-Äquivalente</button>
+		</div>
+
+		<div class="fcenter" id="Skalen">
+
+			<div class="wrap2 wrap2_2" id="Gfr1">
+				<h4>GFR</h4>
+				<fieldset>
+					<form id="gfr">
+						<table class="gfrtable">
+							<tr>
+								<th>Kreatinin<br>mg/dl</th>
+								<th>Alter<br>(Jahre)</th>
+								<th>Geschlecht</th>
+								<th>Hautfarbe</th>
+								<th>GFR nach MDRD</th>
+							</tr>
+							<tr>
+								<td><label for="a"></label>
+									<select id="a" onfocus="this.form.a.value='1'">
+										<option value="0">0</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										</select>
+
+									<label for="b"><b>,</b></label>
+									<select id="b" onfocus="this.form.b.value='0'">
+										<option value="0">0</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										</select></td>
+								<td><label for="c"></label>
+									<input type="number" id="c" name="c" value="60" min="18" max="99" onfocus="this.form.c.value='65'">
+									<output name="x" for="a, b"></output>
+								</td>
+								<td><label for="geschlecht"></label>
+									<input type="radio" name="geschlecht" value="mann" checked>Mann<br>
+									<input type="radio" name="geschlecht" value="frau">Frau</td>
+								<td><label for="farbe"></label>
+									<input type="radio" name="farbe" value="weiss" checked="checked">Nicht schwarz<br>
+									<input type="radio" name="farbe" value="schwarz">Schwarz</td>
+								<td><span class="gfrclass" id="gfrp"></span><span> ml/min/1,73 m<sup>2</sup></span>
+									<br><br><button type="button" class="bt1" onclick="gfrCalc()">GFR</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</fieldset>
+			</div>
+
+			<div class="wrap2 wrap2_2" id="levodopa">
+				<h4>Levodopa-Äquivalenzdosis</h4>
+				<fieldset>
+					<form id="levodopaEqDosis">
+						<table class="ldopatable">
+							<tr>
+								<th>Substanz</th>
+								<th>Dosis (mg)</th>
+								<th>Konversionsfaktor</th>
+							</tr>
+							<tr>
+								<td>Levodopa</td>
+								<td><input type="number" id="Levodopa" name="Levodopa" min="0" max="2000" value="0" step="25" onfocus="this.form.Levodopa.value='99 '"></td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>Levodopa ret</td>
+								<td><input type="number" id="Levodopa_ret" name="Levodopa_ret" min="0" max="2000" value="0" step="25" onfocus="this.form.Levodopa_ret.value=' '"></td>
+								<td>0,75</td>
+							</tr>
+							<tr>
+								<td>Duodopa</td>
+								<td><input type="number" id="Duodopa" name="Duodopa" value="0" min="0" max="2000" step="10" onfocus="this.form.Duodopa.value=''"></td>
+								<td>1,1</td>
+							</tr>
+							<tr>
+								<td>Levodopa_Entacapon</td>
+								<td><input type="number" id="Levodopa_Entacapon" name="Levodopa_Entacapon" value="0" min="0" max="2000" step="25" onfocus="this.form.Levodopa_Entacapon.value=''"></td>
+								<td>1,33</td>
+							</tr>
+							<tr>
+								<td>Pramipexolsalz</td>
+								<td><input type="number" id="Pramipexolsalz" name="Pramipexolsalz" value="0" min="0" max="5" step="0.375" onfocus="this.form.Pramipexolsalz.value=''"></td>
+								<td>100</td>
+							</tr>
+							<tr>
+								<td>Ropinirol</td>
+								<td><input type="number" id="Ropinirol" name="Ropinirol" value="0" min="0" max="20" step="1" onfocus="this.form.Ropinirol.value=''"></td>
+								<td>20</td>
+							</tr>
+							<tr>
+								<td>Rotigotin</td>
+								<td><input type="number" id="Rotigotin" name="Rotigotin" value="0" min="0" max="100" step="1" onfocus="this.form.Rotigotin.value=''"></td>
+								<td>30</td>
+							</tr>
+							<tr>
+								<td>Piribedil</td>
+								<td><input type="number" id="Piribedil" name="Piribedil" value="0" min="0" max="1000" step="25" onfocus="this.form.Piribedil.value=''"></td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>Rasagilin</td>
+								<td><input type="number" id="Rasagilin" name="Rasagilin" value="0" step="" onfocus="this.form.Rasagilin.value=''"></td>
+								<td>100</td>
+							</tr>
+							<tr>
+								<td>Amantadin</td>
+								<td><input type="number" id="Amantadin" name="Amantadin" value="0" min="0" max="500" step="50" onfocus="this.form.Amantadin.value=''"></td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>Apomorphin</td>
+								<td><input type="number" id="Apomorphin" name="Apomorphin" value="0" min="0" max="400" step="1" onfocus="this.form.Apomorphin.value=''"></td>
+								<td>10</td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+								<td>&nbsp;&nbsp;</td>
+								<td>&nbsp;&nbsp;</td>
+							</tr>
+							<tr>
+								<td><button type="button" class="bt1" onclick="ldopaCalc()">Levodopa-Äquivalent</button></td>
+								<td><span class="gfrclass" id="led"></span></td>
+								<td>mg</td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+								<td>&nbsp;&nbsp;</td>
+								<td><button type="button" class="bt1" onclick="parkMed()">Alles löschen</button>
+
+								</td>
+							</tr>
+						</table>
+					</form>
+				</fieldset>
+			</div>
+			
+			<div class="wrap2 wrap2_2" id="Opiat">
+				<h4>Opioid-Äquivalente</h4>
+			</div>
+			
+					
+			
+		</div>
+	</div>
+	<div id="viert" class="wrap2">
+		<div class="fleft50">
+			<h3>Hilfe</h3>
+			<p>Diese Version ist mit Wortvervollständigung und ist experimentell. Sie enthält <a href="https:/jquery.com/">jquery</a>, <a href="http://jquerytools.github.io/">jquerytools</a>, und das <a href="https://github.com/imankulov/asuggest">jquery-plugin asuggest</a>. Diese Software-Komponenten behalten selbstveständlich ihre eigene Lizenz. <br>
+Mit der Eingabe-Taste bestätigen Sie die Wortvervollständigung, mit der Tab-Taste sehen sie nacheinander alle Möglichkeiten der Vervollständigung, mit der Leer-Taste stoppen Sie die Wortvervollständigung.<br><br><br>	Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm befindet sich in Entwicklung.<br>Die Texte sind in Zusammenarbeit entstanden. Dirk Bahner verfasste die Texte MS, BSV und BPLS. Den Text <b>Klinischer Befund</b> verbesserten Csilla Vincze, Dirk Bahner und Axel Saure. Marc Hennies hat viele gute Verbesserungsvorschläge zur Sprache der Texte gemacht.<br>Zum Nachschlagen eines Wortes ist <a href="http://www.duden.de/">www.duden.de</a> eine gute Idee. Für die neurologische Terminologie sollen wir uns nach der <a href="http://www.dgn.org/">DGN</a> richten. <br>Die Knöpfe mit der Umrandung fügen Textbausteine in den Textbereich hinzu oder sind die Eingabe- bzw. die Tab-Taste.<br>Der  Typ-korrekt-Knopf verschönert typografisch:<br>1. Wenn Leerzeichen, nur ein Leerzeichen<br>2. Kein Leerzeichen vor . , ? : )<br>3. Kein Leerzeichen nach (<br>4. Ein Leerzeichen nach . , : wenn keine Zahl folgt<br>5. Ein Leerzeichen vor %<br>6. Ein Leerzeichen nach einer Zahl, wenn ein Buchstabe folgt<br>7. 10.30 Uhr wird 10:30 Uhr<br><br>Grauer bzw. schwarzer Knopf bedeutet, dass der Textbaustein noch in Vorbereitung ist. <br>Bitte lesen Sie den eingefügten Text im Textbereich kritisch und bearbeiten Sie ihn sorgfältig.<br>Wer lieber diktiert, kann die Texte als Anleitung oder Inspiration nutzen. <br>Mit dem Knopf "Alles kopieren" wird der Inhalt des Textbereichs in die Zwischenablage kopiert. Dann kann er z. B. ins Orbis eingefügt werden.<br>Klicken Sie auf die Knöpfe <b>Mann</b> oder <b>Frau</b>. So wird das richtige Geschlecht des Patienten in die Texte eingefügt. <br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem
+				Browser interpretiert. Wenn Sie HTML-, CSS- und Javascript kostenfrei und ohne Anmeldung lernen möchten, besuchen Sie: <a href="http://www.w3schools.com/">w3schools</a>. Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version
+				mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.9, Letzte Aktualisierung: 05.03.2017<br>Lizenz für den N-Brief außer jquery, jquerytools und asuggest: GNU General Public License, Version 3
+				<br><a href="https://emanuilg.github.io/N-Brief/">N-Brief-Website</a><br></p>
+		</div>
+		<div class="fright50">
+			<h3>Tastenkombinationen</h3> Die folgenden Tastenkombinationen gelten in den meisten Windows-Anwendungen.<br>Sie helfen bei der Textbearbeitung.<br>Sie gelten auch für das weiße Textfeld im 'N-Brief'.
+			<h4>Kopieren, Einfügen, Finden</h4> 'Strg' + C : Die Auswahl kopieren <br>'Strg' + X : Die Auswahl ausschneiden <br>'Strg' + V : Die Auswahl einfügen <br>'Strg' + F : Suchen
+			<h4>Rückgängig</h4> 'Strg' + Z : Die vorherige Aktion rückgängig machen <br>'Strg' + Y : Die zurückgenommene Aktion wiederherstellen
+			<h4>Cursor-Bewegung</h4> 'Strg' + 'Pfeil rechts' : Cursor ein Wort nach rechts<br>'Strg' + 'Pfeil links' : Cursor ein Wort nach links<br>'Pos1' : Cursor zum Beginn der Zeile<br>'Ende' : Cursor zum Ende der Zeile<br>'Strg' + 'Pos1' : Cursor zum Beginn des Textes<br>'Strg'
+			+ 'Ende' : Cursor zum Ende des Textes<br>'Tab' : Die Tab-Taste funktioniert nun normal.
+			<h4>Auswählen</h4>'Strg' + A : Den gesamten Text auswählen<br>'Umschalt' + 'Pfeil rechts' : Eine Stelle rechts vom Cursor auswählen<br>'Strg' + 'Umschalt' + 'Pfeil rechts' : Das Wort rechts vom Cursor auswählen<br>'Umschalt' + 'Pos1' : Bis zum Beginn der Zeile auswählen<br>'Umschalt'
+			+ 'Ende' : Bis zum Ende der Zeile auswählen<br>'Strg' + 'Umschalt' + 'Pos1' : Bis zum Beginn des Textes auswählen<br>'Strg' + 'Umschalt' + 'Ende' : Bis zum Ende des Textes auswählen<br>Doppelklick auf ein Wort : Das Wort auswählen
+		</div>
+	</div>
+	<div id="erst" class="wrap2_1">
+		<div class="fleft">
+			<button class="bt1 nbblock" onclick="showAnr()">Anrede</button>
+			<button class="bt1 nbblock" onclick="showDiagn()">Diagnosen</button><br>
+			<button class="bt1 nbblock" onclick="showKlBef()">Klinischer Befund</button>
+			<button class="bt1 nbblock" onclick="showMedi()">Medikamente</button><br>
+			<button class="bt1 nbblock" onclick="showEpikr()">Epikrise/Symptome</button>
+			<button class="bt1 nbblock" onclick="showBefunde()">Apparativ</button>
+			<br><br>
+			<button class="bt1 nbblock" onclick="showMS()">MS</button>
+			<button class="bt1 nbblock" onclick="showRS()">BSV-Fazialis-BPLS</button><br>
+			<button class="bt1 nbblock" onclick="showDemPark()">Demenz-Parkinson</button>
+			<button class="bt1 nbblock" onclick="showKopfEpi()">Kopfschm - Epil</button><br>
+			<button class="bt1 nbblock" onclick="showGeri()">Geriatrie</button>
+			<hr>
+			<div class="wrap3" id="Anrede">
+				<p class="stamp">Anrede</p>
+				<button class="bt1 bttext" onclick="ed1('Sehr geehrter Herr Kollege ')" title="Sehr geehrter Herr Kollege">Herr Kollege</button>
+				<button class="bt1 bttext" onclick="ed1('Sehr geehrte Frau Kollegin ')" title="Sehr geehrte Frau Kollegin">Frau Kollegin</button><br>
+				<button class="bt1 bttext" onclick="ed1('Sehr geehrter Herr Professor ')" title="Sehr geehrter Herr Professor">Herr Professor</button>
+				<button class="bt1 bttext" onclick="ed1('Sehr geehrte Frau Professorin ')" title="Sehr geehrte Frau Professorin">Frau Professorin</button>
+				<br><br>
+				<!-- <button class="bt1 bttext" onclick="anArzt()">An Arzt/Ärztin:</button> -->
+				<form>
+					<select id="mySelect" class="select1" size="10" onclick="anArzt()">
+					<option value="Ajouri">Ajouri</option>
+					<option value="Amthauer">Amthauer</option>
+					<option value="Auel">Auel</option>
+					<option value="Behr">Behr</option>
+					<option value="Brönneke-Born">Brönneke-Born</option>
+					<option value="Bucka">Bucka</option>
+					<option value="Dippel">Dippel</option>
+					<option value="Dürr-Hohenthanner">Dürr-Hohenthanner</option>
+					<option value="Englisch">Englisch</option>
+					<option value="Funck">Funck</option>
+					<option value="Götte">Götte</option>
+					<option value="Handke">Handke</option>
+					<option value="Hejazi">Hejazi</option>
+					<option value="Hennig">Hennig</option>
+					<option value="Hussainy">Hussainy</option>
+					<option value="Keimer">Keimer</option>
+					<option value="Keymling">Keymling</option>
+					<option value="Kolb-Fricke">Kolb-Fricke</option>
+					<option value="Kuhl">Kuhl</option>
+					<option value="Kirchhoff">Kirchhoff</option>
+					<option value="Kurz">Kurz</option>
+					<option value="Malsch">Malsch</option>
+					<option value="Lepper">Lepper</option>
+					<option value="Lotter">Lotter</option>
+					<option value="Müller-Siebert">Müller-Siebert</option>
+					<option value="Nadjm">Nadjm</option>
+					<option value="Nachtmann">Nachtmann</option>
+					<option value="Neumann-Haefelin">Neumann-Haefelin</option>
+					<option value="Saure">Saure</option>
+					<option value="Schäfer">Schäfer</option>
+					<option value="Schell">Schell</option>
+					<option value="Schieren">Schieren</option>
+					<option value="Schiller">Schiller</option>
+					<option value="Schmidtlein">Schmidtlein</option>
+					<option value="Schweitzer">Schweitzer</option>
+					<option value="Teetz">Teetz</option>
+					<option value="Vargas-Leal">Vargas-Leal</option>
+					<option value="Vogelpohl">Vogelpohl</option>
+					<option value="von Manteuffel">von Manteuffel</option>
+					</select>
+				</form><br>
+			</div>
+			<div class="wrap3" id="Diagnosen">
+				<p class="stamp">Diagnosen</p>
+				<form>
+					<select id="diagnosen" class="select1 select2" size="18" onclick="diagn()">
+				<option value="Aktuell: Vordiagnosen: ">Aktuell/Vordiagnosen</option>
+				<option value="Adipositas">Adipositas</option><br>
+				<option value="Alkoholkrankheit">Alkoholkrankheit</option>
+				<option value="Arterielle Hypertonie">Art. Hypertonie</option><br>
+				<option value="COPD Stadium">COPD</option>
+				<option value="Delir">Delir</option><br>
+				<option value="Demenz, leicht, mittelschwer, schwer">Demenz</option>
+				<option value="Depression">Depression</option><br>
+				<option value="Diabetes mellitus Typ 1 2">DM</option>
+				<option value="Epileptischer Anfall">Epil. Anfall</option><br>
+				<option value="Funktionelle Körperbeschwerden">Funktionell</option>
+				<option value="Gutartiger Lagerungsschwindel des hinteren Bogengangs rechts links">Lagerungsschwindel</option><br>
+				<option value="Herzinsuffizienz NYHA">Herzinsuffizienz</option>
+				<option value="Hirnblutung ca.  x cm rechts links">Hirnblutung</option><br>
+				<option value="Hirninfarkt im Stromgebiet der A cerebri media posterior anterior rechts links">Hirninfarkt</option>
+				<option value="Hyperlipidämie">Hyperlipidämie</option><br>
+				<option value="Idiopathisches Parkinson-Syndrom">Parkinson</option>
+				<option value="Infarkt im Hirnstamm Kleinhirn rechts links">Hirnstamm-Kleinhirn</option><br>
+				<option value="KHK">KHK</option>
+				<option value="Migräne mit ohne Aura">Migräne</option><br>
+				<option value="Multiple Sklerose, schubförmig, sekundär primär progredient, EDSS ">Multiple Sklerose</option><br>
+				<option value="Niereninsuffizienz Stadium">Niereninsuffizienz</option>
+				<option value="Periphere Fazialisparese">Fazialisparese</option><br>
+				<option value="Subarachnoidalblutung Hunt Hess mit Ventrikeleinblutung">SAB</option>
+				<option value="Transiente globale Amnesie">TGA</option><br>
+				<option value="Transitorisch-ischämische Attacke">TIA</option>
+				<option value="Vorhofflimmern, Erstdiagnose, ohne unter Antikoagulation mit">VHF</option><br>
+				<option value="Z.n.">Z.n.</option>
+				</select></form>
+				<br>
+			</div>
+			<div class="wrap3" id="Epikrise">
+				<p class="stamp">Epikrise</p>
+				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte wegen Kopfschmerzen Schwäche der rechten linken Körperseite, Schwindels, eines Bewusstseinsverlustes, Taubheitsgefühls der rechten linken Körperseite. \r\nAm Datum ca. Uhrzeit merkte ' + der_Patient + ', dass \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vorgefunden. \r\n' + Der_Patient + ' wurde durch den Rettungsdienst gebracht. \r\n' + Der_Patient + ' stellte sich am Datum in der Notaufnahme vor. \r\n' + Er + ' klagt über xxx seit xxx Stunden Tagen Wochen. \r\n' + Der_Patient + ' berichtet, dass ' + er + ' \r\nDie Angehörigen berichten dass, \r\n' + Der_Patient + ' lebte bisher zu Hause, arbeitete als xxx und konnte sich selbst versorgen. \r\n' + Der_Patient + ' lebte bisher im Heim, hatte Pflegegrad . \r\n' + Er + ' konnte sich teilweise selbst versorgen. ' + Er + ' ging ohne Hilfsmittel am Rollator am Stock. \r\nwar harninkontinent harnkontinent. \r\n' + Der_Patient + ' ist ' + Nichtraucher + ' raucht xxx Zigaretten täglich (xxx Packungsjahre) und trinkt keinen Alkohol xxx Glas Wein Bier täglich in der Woche. \r\nEs gibt eine Vorsorgevollmacht (bevollmächtigt: ) und eine Patientenverfügung\r\n\r\nMedikation bei Aufnahme\r\n')">Anamnese</button>
+				<button class="bt1 bttext" onclick="ed1('Die klinische Untersuchung deckte kein neurologisches Defizit auf. \r\nIn der klinischen Untersuchung war ' + der_Patient + ' wach, orientiert und hatte xxx. \r\nDas Schädel-CT zeigte\r\nkeine frische Ischämie oder Blutung. \r\neinen Hirninfarkt im Stromgebiet der Arteria cerebri media posterior anterior rechts links \r\nDas Schädel-CT zeigte Marklagerveränderungen einen Hirninfarkt eine Blutung. \r\nDas Schädel-MRT zeigte \r\nDas Labor war im Normbereich zeigte \r\nDie transthorakale Echokardiografie zeigte keine Emboliequelle. \r\nDie transösophageale Echokardiografie zeigte keine Emboliequelle. \r\nDie Neurosonografie zeigte Plaques und geringgradige Stenose der Karotiden. \r\nDie Elektrophysiologie\r\nwar regelrecht\r\nwaren regelrecht. wegweisend. \r\nWährend der Monitor-Überwachung von Datum bis Datum stellten wir kein Vorhofflimmern fest. \r\nIm Laufe des stationären Aufenthaltes \r\n')">Befunde</button>
+				<button class="bt1 bttext" onclick="ed1('\r\nWir gehen bei bestehendem Vorhofflimmern von einem embolischen Hirninfarkt aus. \r\nWir gehen von einem atherothrombotischen Prozess aus. \r\nUrsächlich für den Hirninfarkt war die Stenose der xxx\r\nWir klärten ' + den_Patienten + ' über einen gesunden Lebensstil im kardiovaskulären Sinn auf. \r\nNach ausführlichen Gesprächen mit der Familie entschieden wir uns gemeinsam gemäß dem mutmaßlichen Willen ' + des_Patienten + ' für eine rein palliative Behandlung. \r\nEine ambulante Kontrolle von xxx wird empfohlen. \r\nWir bitten um ein LZ-EKG ambulant.\r\n' + Herr + ' xxx wird am Datum in Ihre Weiterbehandlung entlassen. \r\nwie vereinbart in Ihre Rehabilitations-Klinik zurück verlegt. \r\nWir danken für die freundliche Übernahme. \r\nWir stehen für Fragen gerne zur Verfügung. \r\n')">Schluss</button>
+				<p class="stamp">Subjektive Symptome</p>
+				<form>
+					<select id="symptSubj" class="select1 select2" size="7" onclick="symptSu()">
+				<option value="im Arm im Gesicht im Bein im Bauch in der Brust ">Arm Gesicht Bein Bauch Brust</option>
+				<option value="rechts links ">rechts links</option>
+				<option value="seit: Dauer: Häufigkeit: / Stärke: (in der Skala 0-10) Linderung durch: Verchlimmerung durch: ">seit: Dauer: Häufigkeit: Stärke: Linderung durch: schlimmer durch:</option>
+				<option value="Angst ">Angst</option>
+				<option value="Bewusstseinsverlust ">Bewusstseinsverlust</option>
+				<option value="Doppeltsehen ">Doppeltsehen</option>
+				<option value="Erbrechen ">Erbrechen</option>
+				<option value="Kopfschmerzen ">Kopfschmerzen</option>
+				<option value="Kribbeln ">Kribbeln</option>
+				<option value="Luftnot ">Luftnot</option>
+				<option value="Niedergeschlagenheit ">Niedergeschlagenheit</option>
+				<option value="Ohnmacht ">Ohnmacht</option>
+				<option value="Rückenschmerzen ">Rückenschmerzen</option>
+				<option value="Schmerz ">Schmerz</option>
+				<option value="Schwäche ">Schwäche </option>
+				<option value="Schwierigkeit beim Erinnern ">Schwierigkeit beim Erinnern</option>
+				<option value="Schwierigkeit beim Gehen ">Schwierigkeit beim Gehen</option>
+				<option value="Schwierigkeit beim Schlucken ">Schwierigkeit beim Schlucken</option>
+				<option value="Schwierigkeit beim Sehen ">Schwierigkeit beim Sehen</option>
+				<option value="Schwierigkeit beim Sprechen ">Schwierigkeit beim Sprechen</option>
+				<option value="Schwierigkeit mit dem Wasserlassen ">Schwierigkeit mit dem Wasserlassen</option>
+				<option value="Schwindel ">Schwindel</option>
+				<option value="Taubheitsgefühl ">Taubheitsgefühl</option>
+				<option value="Übelkeit ">Übelkeit</option>
+				<option value="Verschwommensehen ">Verschwommensehen</option>
+				<option value="Zittern ">Zittern</option>
+				<option value="Zuckungen ">Zuckungen</option>
+				</select>
+				</form>
+				<p class="stamp">Objektive Symptome</p>
+				<form>
+					<select id="symptObj" class="select1 select2" size="7" onclick="symptOb()">
+	<option value="Aggressivität ">Aggressivität</option>
+	<option value="Aphasie, der Ausdruck das Verständnis leicht schwer beeinträchtigt ">Aphasie</option>
+	<option value="Ataxie ">Ataxie</option>
+	<option value="Auslöschungsphänomen visuell taktil ">Auslöschungsphänomen </option>
+	<option value="Babinski-Zeichen ">Babinski-Zeichen</option>
+	<option value="Blickparese ">Blickparese</option>
+	<option value="Depression ">Depression</option>
+	<option value="Diplopie ">Diplopie</option>
+	<option value="Dysarthrie ">Dysarthrie</option>
+	<option value="Erregung ">Erregung</option>
+	<option value="Gangstörung ">Gangstörung</option>
+	<option value="Hemianopsie ">Hemianopsie </option>
+	<option value="Hemihypästhesie ">Hemihypästhesie </option>
+	<option value="Hemiparese ">Hemiparese </option>
+	<option value="Koma ">Koma</option>
+	<option value="Kopfimpulstest negativ positiv ">Kopfimpulstest</option>
+	<option value="Parese ">Parese</option>
+	<option value="Rasselgeräusche ">Rasselgeräusche</option>
+	<option value="Rigor ">Rigor</option>
+	<option value="Somnolenz ">Somnolenz</option>
+	<option value="Störung der Aufmerksamkeit ">Störung der Aufmerksamkeit </option>
+	<option value="Störung des Kurzzeitgedächtnisses ">Störung des Kurzzeitgedächtnisses</option>
+	<option value="Tremor ">Tremor</option>
+</select>
+				</form><br>
+
+			</div>
+			<div class="wrap3" id="Medikamente">
+				<p class="stamp">Medikamente</p>
+				<form>
+					<select id="medikamente" class="select1 select2" size="17" onclick="medi()">
+<option value="Amlodipin 5 mg p. o.			1-0-0">Amlodipin</option>
+<option value="Apixaban 5 mg p. o.			1-0-1">Apixaban</option>
+<option value="ASS 100 mg p. o.			1-0-0">ASS</option>
+<option value="Atorvastatin 20 mg p. o.			0-0-1">Atorvastatin</option>
+<option value="Augenschutz durch Uhrglasverband, Augensalbe zur Nacht und neutrale Augentropfen tagsüber.">Augenschutz</option>
+<option value="Citalopram 20 mg p. o.			0-0-1">Citalopram</option>
+<option value="Clopidogrel 75 mg p. o.			0-0-1">Clopidogrel</option>
+<option value="Enoxaparin 0,4 ml s. c.     			0-0-1">Enoxaparin</option>
+<option value="Furosemid 20 mg p. o. i. v.			1-0-0">Furosemid</option>
+<option value="HCT 25 mg p. o.			1-0-0">HCT</option>
+<option value="Ibuprofen 400 mg p. o.			1-1-1">Ibuprofen</option>
+<option value="Insulin glargin (Lantus) (Abasaglar) I. E. s. c.			0-0-10">Insulin glargin</option>
+<option value="L-Thyroxin 100 µg p. o.			1-0-0">L-Thyroxin</option>
+<option value="Levetiracetam 1000 mg p. o. i. v.			1-0-1">Levetiracetam</option>
+<option value="Levodopa 100/25 mg p. o.			1-1-1">Levodopa</option>
+<option value="Lorazepam 1 mg p. o.			1-1-1">Lorazepam</option>
+<option value="Metformin 1000 mg p. o.			1-0-1">Metformin</option>
+<option value="Metoprolol 95 mg p. o.			1-0-0">Metoprolol</option>
+<option value="Midazolam-Perfusor">Midazolam-Perfusor</option>
+<option value="Mirtazapin 30 mg p. o.			0-0-1">Mirtazapin</option>
+<option value="Paracetamol 500 mg p. o.			1-1-1">Paracetamol</option>
+<option value="Phenprocoumon 3 mg p. o.		nach INR (Ziel 2-3)">Phenprocoumon</option>
+<option value="Pipamperon Saft (4 mg/ml) 6 ml p. o.			0-0-1">Pipamperon</option>
+<option value="Prednisolon 60 mg p. o.			1-0-0 bis Datum,danach täglich um 10 mg reduzieren">Prednisolon</option>
+<option value="Ramipril 5 mg p. o.			1-0-0">Ramipril</option>
+<option value="Risperidon 1 mg p. o.			0-0-1">Risperidon</option>
+<option value="Simvastatin 40 mg p. o.			0-0-1">Simvastatin</option>
+<option value="Sterofundin 	 2000 ml/d">Sterofundin</option>
+<option value="Sufentanil-Perfusor">Sufentanil-Perfusor</option>
+<option value="Tilidin 50 mg p. o.			1-1-1">Tilidin</option>
+<option value="Torasemid 5 mg p. o.			1-0-0">Torasemid</option>
+<option value="Urapidil-Perfusor	 nach RR">Urapidil-Perfusor</option>
+<option value="Valproat 500 mg p. o. i. v.			1-0-1">Valproat</option>
+<option value="Valsartan 40 mg p. o.			1-0-1">Valsartan</option>
+</select>
+				</form>
+
+			</div>
+			<div class="wrap3" id="Klinischer_Befund">
+				<p class="stamp">Klinischer Befund</p>
+				<button class="bt1 bttext" onclick="ed1('Wach, kooperativ, zeitlich, örtlich und situativ orientiert.\r\nAufmerksamkeit, Merkfähigkeit, Stimmung normal. \r\n'+Rechtshaender+' ' +Linkshaender+'. \r\nSprachverständnis, sprachlicher Ausdruck sowie Artikulation normal. \r\nAugen: Bewegung, Pupillen, Gesichtsfelder fingerperimetrisch normal. Kein pathologischer Nystagmus. Sehkraft mit Brille R und L mindestens xxx mm große Buchstaben in Leseentfernung. \r\nMimik normal, die Zunge wird geradeaus herausgestreckt, der weiche Gaumen hebt sich symmetrisch. Hören von Fingerreiben beiderseits normal. Kein Meningismus. \r\nArmhalteversuch, Beinhalteversuch, Kraft, Trophik, Tonus, Muskeldehnungsreflexe lebhaft/mittellebhaft/schwach, stgl., Plantarreflex normal.\r\nFinger-Nase-Versuch, Knie-Hacke-Versuch o. B. Kein Tremor, keine unwillkürlichen Bewegungen.\r\nAlgesie, Ästhesie normal. Lagesinn im Zeigefinger und im großen Zeh normal. Vibrationssinn im Zeigefinger /8 und im großen Zeh /8. \r\nStehen und Gehen normal, Einbeinstand, Rombergversuch, Zehen- und Hackengang, Strichgang, Aufstehen vom Stuhl normal. \r\n\r\nAllgemeinzustand gut, Ernährungszustand gut. Haut und Schleimhäute normal. Lunge auskultatorisch normales Atemgeräusch, Herzaktion rhythmisch, keine Herzgeräusche, Bauch weich mit Darmgeräuschen, keine Ödeme, große Gelenke frei beweglich, Wirbelsäule ohne Klopfschmerz. \r\nRR / mmHg, Herzfrequenz /min, Temperatur 36, °C, SpO2 xxx % bei Raumluft.\r\n\r\n')">Befund</button>
+				<button class="bt1 bttext" onclick="ed1('Schulterblattstabilisierung durch Serratus ant. normal, Schulterhebung 5, Armabduktion 5, Armadduktion 5, Arminnenrotation 5, Armaußenrotation 5, Armbeugung 5, Armstreckung 5, Unterarmpronation 5, Unterarmsupination 5, Handbeugung 5, Handstreckung 5, Fingerstreckung 5, Fingerbeugung 5, Abduktion der Finger II und V 5, Beugung der MCP-Gelenke 5, Streckung der MCP-Gelenke 5, Beugung der IP-Gelenke 5, Streckung der IP-Gelenke 5 nach MRC.\r\n\r\nHüftbeugung 5, Hüftstreckung 5, Hüftinnenrotation 5, Hüftaußenrotation 5, Kniebeugung 5, Kniestreckung 5, Fußhebung 5, Fußsenkung 5, Fußpronation 5, Fußsupination 5, Zehenstreckung 5, Zehenbeugung 5 nach MRC.\r\n\r\nMuskeldehnungsreflexe: (0: fehlend, 1: schwach, 2: mittellebhaft, 3: lebhaft ohne Klonus, 4: mit Klonus)\r\n')">Peripher</button><br>
+				<button class="bt1 bttext" onclick="ed1(Der_Patient + ' liegt im Bett, atmet spontan wird über eine Beatmungsmaske einen endotrachealen Tubus ein Tracheostoma CPAP- BIPAP- beatmet.\r\nDie Augen sind offen geschlossen, ' + er + ' reagiert nicht auf Ansprache und Berührung. Nach mäßigem Schmerzreiz bewegt ' + er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen nimmt ' + er + ' keinen Blickkontakt auf, die Augen sind parallel, der okulozephale Reflex, horizontal und vertikal, ist auslösbar. Eine Blickparese rechts links ist beim okulozephalen Reflex erkennbar. Der Kornealreflex ist bds. rechts links nicht auslösbar. Die Pupillen sind entrundet rund und gleich groß, ca. xxx mm, und reagieren auf Licht. Der Muskeltonus in Armen und Beinen ist schlaff erhöht rechts links geringer. Die Muskeldehnungsreflexe lassen sich nicht lebhaft auslösen. Es sind keine unwillkürlichen Bewegungen Zuckungen im Gesicht im Arm im Bein rechts links zu sehen. Der Plantarreflex ist stumm normal. Babinski-Zeichen rechts links. \r\nGlasgow-Coma-Scale: --. \r\n')">Koma</button>
+			</div>
+			<div class="wrap3" id="MS">
+				<p class="stamp">Multiple Sklerose</p>
+				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie Aufnahme erfolgte bei Verdacht auf eine entzündliche ZNS-Erkrankung. \r\nDie Aufnahme ' + des_Patienten + ' erfolgte bei Verdacht auf erneuten Schub einer bekannten schubförmig remittierenden Multiplen Sklerose.\r\nDie Aufnahme ' + des_Patienten + ' erfolgte geplant zur erneuten Steroidpulstherapie bei bekannter sekundär chronisch progredienter Multipler Sklerose.\r\nIm klinischen Untersuchungsbefund zeigte sich\r\nDie Gehstrecke betrug aktuell xxx m.\r\nDer EDDS lag aktuell bei xxx.\r\n\r\n' + Der_Patient + ' erhielt eine Steroidpulstherapie mit Methylprednisolon 1000 mg über drei Tage unter Magenschutz, Thromboseprophylaxe und Blutzuckerkontrollen.\r\nDie Infusionen wurden von ' + dem_Patienten + ' gut vertragen. \r\nDie Beschwerden erschienen im Verlauf rückläufig.\r\nIm cMRT zeigten sich mehrere Balken-assoziierte Demyelinisierungen, typisch für eine Enzephalomyelitis disseminata \r\nund Zeichen einer räumlichen Dissemination\r\nund Zeichen einer räumlichen und zeitlichen Dissemination\r\nes waren keine Zeichen einer räumlichen Dissemination nachweisbar\r\nIm MRT der HWS zeigte sich eine Demyelinisierung in Höhe\r\nEs erfolgte ein erneutes MRT mit KM, in dem keine sicheren kontrastmittelaufnehmenden Läsionen dargestellt werden konnten\r\nElektrophysiologische Untersuchungen zeigten\r\neine Leitungsstörung beider Nervi optici wie bei chronischer Retrobulbärneuritis.\r\neine Hintestrangläsion\r\neine Pyramidenbahnläsion \r\nDie oligoklonalen Banden im Liquor waren positiv negativ \r\nDie erneute Liquordiagnostik erfolgte zur ergänzenden Bestimmung von JC-Virus-DNA und fiel negativ aus.\r\nZusammenfassend gingen wir bei ' + Herrn + ' xxx von einem erneuten Schub bei bekannter Multiple Sklerose aus.\r\nWir empfehlen\r\neine ambulante neurologische Anbindung und Verlaufskontrollen.\r\nein Fortführen der Intervalltherapie mit\r\nden Beginn einer immunmodulatorischen Therapie mit\r\n' + Der_Patient + ' wurde über die möglichen therapeutischen Optionen aufgeklärt.\r\nAm Datum entließen wir ' + den_Patienten + ' in Ihre weitere Betreuung und stehen für Rückfragen gerne zur Verfügung. \r\n')">MS-Brief</button>
+			</div>
+			<div class="wrap3" id="RS">
+				<p class="stamp">Bandscheibenvorfall, Fazialisparese, Lagerungsschwindel</p>
+				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte zur Abklärung von starken, immobilisierenden Rückenschmerzen. \r\n' + Der_Patient + ' berichtete, dass ' + er + ' seit ca. xxx Tagen Wochen Rückenschmerzen mit Ausstrahlung in das rechte/linke Bein habe. Spritzen durch den Hausarzt, Wärmeanwendungen und eine konservative Schmerzmedikation hätte bisher zu keiner ausreichenden Besserung geführt. \r\n' + Herr + ' gab eine Schmerzausstrahlung in die Lateralseite des rechten linken Oberschenkels und in die Ventralseite des rechten linken Unterschenkels an (dem Dermatom L4/L5 rechts links entsprechend). \r\nIm klinisch neurologischen Befund zeigten sich keine Paresen, die Muskeleigenreflexe (PSR und ASR) waren seitengleich und mittellebhaft. \r\nWir führten ein MRT der LWS durch, hier zeigte sich xxx \r\nDurch eine Schmerzmedikation mit Naproxen und Metamizol sowie begleitender Physiotherapie und Wärmeanwendungen besserten sich die Schmerzen deutlich. \r\nWir stellten ' + den_Patienten + ' neurochirurgisch vor. Es wurde die Indikation zu einer operativen Behandlung gestellt und es erfolgte die Übernahme. \r\n' + Der_Patient + ' wurde über die operative Behandlung aufgeklärt, wünschte jedoch zunächst Bedenkzeit. Die hier angefertigten MRT wurde ' + dem_Patienten + ' auf CD mitgegeben. \r\nWir danken für die freundliche Weiterbehandlung.\r\nWir empfehlen eine Fortführung der konservativen Therapie mit an die Beschwerden adaptierter Schmerzmedikation sowie die Fortführung der Physiotherapie (insbesondere Rückenschule) und Wärmeanwendungen (Fango). \r\nWir konnten ' + Herrn + ' xxx am Datum in Ihre ambulante Weiterbetreuung entlassen und stehen Ihnen für Rückfragen gerne zur Verfügung.\r\n')">BSV</button><br>
+				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nSchwäche im Gesicht rechts links seit Datum.\r\nIn der klinischen Untersuchung war '+ der_Patient +' wach, orientiert und hatte eine periphere Fazialisparese rechts links. Es bestand kein anderes neurologisches Defizit.\r\nDer Lidschluss war komplett aber schwach / inkomplett, die Lidspalte beim versuchten Lidschluss betrug mm. Der Mundwinkel konnte etwas bewegt werden, war völlig gelähmt.\r\nEs bestand eine Hyperakusis rechts links und eine Verminderung des Geschmacksempfindens in der Zunge rechts links.\r\nEs bestand keine Rötung und keine Bläschen im äußeren Gehörgang oder im Gesicht.\r\nDer Liquor war normal.\r\nWir diagnostizierten eine idiopathische Fazialisparese und setzten Prednisolon 60 mg p. o. für 5 Tage (Beginn: Datum) an, das ab Datum täglich um 10 mg reduziert werden soll. Der Augenschutz ist besonders wichtig. Wir begannen mit künstlichen Tränen tagsüber sowie Dexpanthenol-Augensalbe und Uhrglasverband zur Nacht. Der Augenschutz sollte solange durchgeführt werden bis der Lidschluss objektiv komplett ist.\r\nWir bitten um eine ambulante neurologische und augenärztliche Vorstellung im Verlauf.\r\n')">Fazialis</button><br>
+				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte wegen rezidivierender, lageabhängiger Drehschwindelattacken. \r\nIn der klinisch-neurologischen Untersuchung zeigte sich kein Nystagmus / ein rotatorischer Nystagmus im Uhrzeigersinn/ gegen den Uhrzeigersinn bei Rechtslagerung / Linkslagerung. \r\n' + Der_Patient + ' gab verstärkten Schwindel nach Rechtslagerung / Linkslagerung an. \r\nIn den apparativen Untersuchungen (CCT, Neurodopplersonografie, cMRT) ergaben sich keine Auffälligkeiten, insbesondere kein Hinweis auf eine zentrale Genese des Schwindels. \r\nWir gingen von einem benignen paroxysmalen Lagerungsschwindel aus. \r\n' + Der_Patient + ' wurde physiotherapeutisch behandelt und in den Lagerungsmanövern nach Semont / nach Epley angeleitet. Wir empfehlen weitere ambulante Physiotherapie. \r\nWir konnten ' + Herrn + ' xxx am Datum in Ihre ambulante Weiterbetreuung entlassen und stehen Ihnen für Rückfragen gerne zur Verfügung. \r\n')">BPLS</button><br>
+			</div>
+			<div class="wrap3" id="Geri">
+				<p class="stamp">Geriatrie</p>
+
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 1</button>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 2</button>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 3</button>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Geriatrie 4</button>
+			</div>
+			<div class="wrap3" id="DemPark">
+				<p class="stamp">Demenz und Parkinson</p>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Demenz</button><br>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Parkinson</button><br>
+			</div>
+			<div class="wrap3" id="KopfEpi">
+				<p class="stamp">Kopfschmerz und Epilepsie</p>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Kopfschmerz</button><br>
+				<button class="bt1 bttext btgrey" data-tooltip="Text in Vorbereitung">Epilepsie</button><br>
+			</div>
+			<div class="wrap3" id="Bef">
+				<p class="stamp">Apparative Befunde</p>
+				<button class="bt1 bttext" onclick="ed1('Grundrhythmus Hz, normale visuelle Blockade-Reaktion, keine epilepsietypischen Potentiale, keine regionale Verlangsamung. \r\nPulsartefakt \r\nElektrodenartefakt \r\nLidschlagartefakte\r\nMuskelartefakte \r\n\r\nPolymorphe Wellen Hz, keine visuelle Blockade-Reaktion, keine epilepsietypischen Potentiale. \r\n\r\nNormalbefund.\r\n\r\nBefund hinweisend auf eine leichtgradige mittelgradige schwere diffuse Hirnfunktionsstörung. \r\n\r\nBefund hinweisend auf eine Funktionsstörung in der rechten linken Hirnhemisphäre. \r\n\r\nEs ist iktuale Aktivität zu beobachten. \r\n')">EEG</button>
+				<button class="bt1 bttext" onclick="ed1('Extrakraniell: Arteriosklerose. Plaques in den Karotiden. \r\nA. carotis comm. bds. rechts links V.a. Stenose (lokaler Stenosegrad %).\r\nA. carotis int. bds. rechts V.a. geringgradige mittelgradige hochgradige Stenose links V.a. geringgradige mittelgradige hochgradige Stenose Verschluss kein Hinweis auf Stenose. regelrecht.\r\nA. carotis ext. bds. rechts links V.a. Stenose regelrecht. kein Hinweis auf eine Stenose.\r\nA. vertebralis bds. rechts links V.a. Stenose Verschluss regelrecht. kein Hinweis auf Stenose. V.a. Hypoplasie Transnuchal: V.a. Stenose der A. basilaris regelrecht.\r\nTranskraniell: A. cerebri anterior, media und posterior bds. regelrecht.\r\nTranskraniell: keine ausreichenden temporalen Schallfenster.\r\nTranskraniell:\r\nRechts\r\nLinks\r\nkeine ausreichenden temporalen Schallfenster.\r\nA. cerebri anterior, media und posterior bds.regelrecht.\r\nV.a. Stenose der A. cerebri media, anterior, posterior\r\nnicht darstellbar\r\nnicht beurteilbar\r\nProzente\r\n(NASCET <20%, ECST 30-40%)\r\n(NASCET <20%, ECST 45%)\r\n(NASCET <30%, ECST 40-50%)\r\n(NASCET <30%, ECST 50%)\r\n(NASCET 20-40%, ECST 50-60%)\r\n(NASCET 40%, ECST 60%)\r\n(NASCET 40%, ECST 65%)\r\n(NASCET 30-50%, ECST 60-70%)\r\n(NASCET 50%, ECST 70%)\r\n(NASCET 60%, ECST 75%)\r\n(NASCET 70%, ECST 80%)\r\n(NASCET 50-70%, ECST 70-80%)\r\n(NASCET 80%, ECST 90%)\r\n(NASCET 90%, ECST 95%)\r\n')">Neurosonografie</button>
+				<button class="bt1 bttext" onclick="ed1('Motorische Neurografie\r\n\r\nN. medianus rechts links bds. \r\nnormal.\r\ndistal motorische Latenz normal verlängert\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. ulnaris rechts links bds. \r\nnormal.\r\ndistal motorische Latenz normal verlängert\r\nGeschwindigkeit normal vermindert \r\nGeschwindigkeit um den Ellenbogen vermindert\r\nAmplitude normal vermindert\r\nAmplitude nach Stimulation proximal des Ellenbogens vermindert\r\n\r\nN. radialis rechts links bds. \r\nnormal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. tibialis rechts links bds. \r\nnormal.\r\ndistal motorische Latenz normal verlängert\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. peroneus rechts links bds. \r\nnormal.\r\ndistal motorische Latenz normal verlängert\r\nGeschwindigkeit normal vermindert \r\nGeschwindigkeit um das Fibulaköpfchen vermindert\r\nAmplitude normal vermindert\r\nAmplitude nach Stimulation proximal des Fibulaköpfchens vermindert\r\n\r\n\r\nF-Welle \r\n\r\nN. medianus rechts links bds. normal. mit verlängerter Latenz. \r\nN. ulnaris rechts links bds. normal. mit verlängerter Latenz. \r\nN. radialis rechts links bds. normal. mit verlängerter Latenz. \r\nN. tibialis rechts links bds. normal. mit verlängerter Latenz. \r\nN. peroneus rechts links bds. normal. mit verlängerter Latenz. \r\n\r\n\r\nSensible Neurografie\r\n\r\nN. medianus rechts links bds. normal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. ulnaris rechts links bds. normal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. radialis rechts links bds. normal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\nN. suralis rechts links bds. normal.\r\nGeschwindigkeit normal vermindert \r\nAmplitude normal vermindert\r\n\r\n\r\nBefund hinweisend auf \r\n\r\nKarpaltunnelsyndrom rechts links \r\nDistal symmetrische axonale Polyneuropathie\r\nLäsion des Spinalnervs\r\n\r\ntechnisch nicht verwertbar\r\n\r\nDer Befund vom rechten linken N. peroneus bedeutet nicht zwangsläufig eine Läsion des Nervenstamms des N. peroneus oder des spinalen Nervs L5 oder S1, es kann sich um eine lokale Läsion des motorischen Astes zum M. ext. dig. brevis handeln. \r\n\r\nDie verminderte Geschwindigkeit im N. suralis bds. kann im altersentsprechenden Normbereich sein.\r\nNormalbefund.')">Neurografie</button>
+				<button class="bt1 bttext" onclick="ed1('EMG rechts links \r\nMuskeln\r\n\r\nAlle untersuchten Muskeln hatten keine pathologische Spontanaktivität, die Potentiale motorischer Einheiten erschienen normal und das Interferenzmuster war normal. \r\n\r\nNormalbefund. \r\n\r\nMuskeln\r\n\r\nDeltoideus \r\nBiceps br.\r\nBrachioradialis\r\nTriceps br.\r\nExt. dig. comm.\r\nInt. dors I\r\nPronator teres\r\nAbd. poll. longus\r\nExt. ind. proprius\r\nFlex. dig. prof. (uln.)\r\nAbd. poll. brevis \r\nOpponens poll.\r\nAbd. dig. min. manus\r\nInter. dorsalis I \r\n\r\nRectus fem.\r\nVastus med.\r\nVastus lat.\r\nTib. ant.\r\nSemimembranosus \r\nBiceps fem.\r\nGluteus med. \r\nGluteus max. \r\nPeroneus longus\r\nExt. hall. longus\r\nGastrocn. lat. \r\nGastrocn. med. \r\n\r\nPotentiale motorischer Einheiten polyphasisch normal\r\npathologische Spontanaktivität \r\nFibrillationen\r\nFaszikulationen\r\npositive scharfe Wellen\r\n\r\n\r\nAbkürzungen\r\n\r\nPMA: Potentiale motorischer Einheiten \r\nIF: Interferenzmuster\r\nWA: Willentliche Aktivität \r\nFib: Fibrillationen\r\nPSW: positive scharfe Wellen \r\nFasz: Faszikulationen \r\nKRE: komplexe repetitive Entladungen\r\n\r\nBefund hinweisend auf eine Läsion xxx \r\n')">EMG</button>
+				<button class="bt1 bttext" onclick="ed1('SEP \r\nN. medianus rechts links bds. normal \r\nverzögert \r\ntechnisch nicht verwertbar\r\n\r\nN. tibialis rechts links bds. normal \r\nverzögert \r\ntechnisch nicht verwertbar\r\n\r\nVEP rechts links bds. normal verzögert \r\n\r\nMEP \r\nArme \r\nHirnrinde rechts - Arm links\r\nHirnrinde links - Arm rechts\r\nnormal fehlend verzögert \r\nZentralmotorische Latenz \r\n\r\nBeine \r\nLinks\r\nRechts\r\nnormal fehlend verzögert \r\nZentralmotorische Latenz \r\n\r\nAEP \r\nbds. normal.\r\nNormalbefund.')">EP</button>
+				<button class="bt1 bttext" onclick="ed1('Vorhofflimmern Sinusrhythmus /min, Indifferenztyp, Linkstyp, Rechtstyp, keine Erregungsrückbildungsstörungen, Linksschenkelblock, Rechtsschenkelblock, linksanteriorer Hemiblock, T-Negativierung, ST-Hebung, verlängerte QTc-Zeit ( ms), AV-Block I II \r\n')">EKG</button>
+				<button class="bt1 bttext" onclick="ed1('Labor: Großes Blutbild, Elektrolyte, Leberwerte, Nierenwerte, TSH, Gerinnung, Entzündungsparameter und Urinstatus unauffällig. HbA1c xxx (4,8-5,9) %, Triglyzeride xxx (<200) mg/dl, Cholesterin gesamt xxx (<220) mg/dl, LDL-Cholesterin xxx (<150) mg/dl.\r\n\r\n\r\nHervorzuheben sind: Leukozyten Tsd./µl, Hb mg/dl, CRP mg/dl, Kreatinin mg/dl, Na mmol/l, K mmol/l. \r\n')">Labor</button>
+				<button class="bt1 bttext" onclick="ed1('Liquor: Kernhaltige Zellen /µl, davon % Lymphozyten, Erythrozyten /µl, Glukose (40-70) mg/dl, Laktat (10-22) mg/dl, Eiweiß (150-450) mg/l. \r\n\r\n\Lumbalpunktion \r\nPunkteur: Name\r\nVorgehen: Aufsuchen der Stichstelle in der unteren LWS, Desinfektion, sterile Abdeckung, Punktion und Entnahme vom ml klarem Liquor, Entfernung der Nadel, steriler Verband. Keine unmittelbaren Komplikationen.\r\n')">Liquor</button>
+			</div>
+		</div>
+		<div class="fcenter" id="Brief">
+			<textarea id="hh" spellcheck="false"></textarea><br>
+			<p>Lesen Sie bitte alle Texte kritisch.</p>
+		</div>
+		<div class="fright">
+			<p>Patient:</p>
+			<p id="gesX">Mann oder Frau?</p>
+			<button class="bt1 bt2" onclick="mannSx()">Mann</button>
+			<button class="bt1 bt2" onclick="frauSx()">Frau</button>
+			<br><br>
+			<button class="bt1 bt2 bttext" onclick="ed1(dateGerman() + ' ')">Datum</button>
+			<button class="bt1 bt2 bttext" onclick="edein('\r\n')">Eingabe</button><br>
+			<button class="bt1 bt2 bttext" onclick="ed1(timeGerman() + ' ')">Uhrzeit</button>
+			<button class="bt1 bt2 bttext" onclick="ed1('\t')">Tab</button><br><br>
+			<button class="bt1" onclick="ddel()">Lösch alles</button><br>
+			<button class="bt1" onclick="selCopTx()">Kopiere alles</button><br>
+			<button class="bt1" onclick="typogr3()" data-tooltip="Typografische Korrektur">TypKorrekt</button><br>
+			<button class="bt1 bt2" onclick="themeEG1()" data-tooltip="Dunkles Theme">Dunkel</button>
+			<button class="bt1 bt2" onclick="themeEG2()" data-tooltip="Standard-Theme">Standard</button><br>
+			<button class="bt1" onclick="location.reload()">N-Brief aktualisieren</button><br>
+			<br><br><br>
+			<button class="bt1 bttext" onclick="ed1('Neurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'): \r\n\r\nFremdanamnese (Angaben des der ): \r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button><br>
+			<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\n' + Der_Patient + ' wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiografie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\n' + Der_Patient + ' lebt zu Hause und kann sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur Thrombektomie. Wir bedanken uns für die Übernahme.\r\n\r\n')">Thrombektomie</button><br>
+			<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nSubarachnoidalblutung\r\nV.a. Aneurysma der A. cerebri media interna anterior posterior communicans rechts links \r\n\r\n\r\nSehr geehrter Herr Prof. Behr, \r\n\r\n' + Der_Patient + ' bekam plötzlich starke Kopfschmerzen wurde vorgefunden. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte Nackensteife eine Hemiparese rechts links. \r\nDas Schädel-CT zeigte Blut subarachnoiddal, die CT-Angiografie zeigte ein Aneurysma.\r\nWir senkten den Blutdruck mit Urapidil.\r\nVormedikation: \r\n' + Der_Patient + ' lebte bisher zu Hause und konnte sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur weiteren Behandlung. \r\nBei Verlegung ist ' + der_Patient + ' spontanatmend intubiert/beatmet, atem/kreislaufstabil, hat einen arteriellen Katheter in der A. radialis rechts links. \r\nWir bedanken uns für die Übernahme.\r\n\r\n')">SAB</button><br>
+			<button class="bt1 bttext" onclick="ed1('Diagnosen:\r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor. \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\n\r\nEigenanamnese: \r\nFremdanamnese: \r\nVorerkrankungen: \r\nVormedikation: \r\n\r\nKlinischer Befund: \r\nZusatzdiagnostik \r\nLabor: \r\nEKG: \r\nSchädel-CT: \r\n\r\nEmpfehlungen: \r\n\r\n\r\n' + Herr + ' xxx wurde ambulant belassen. Wir stehen für Fragen gerne zur Verfügung. \r\n')">Kurzbrief ZNA</button><br>
+			<button class="bt1 bttext" onclick="ed1('Klinik für Neurologie - Aufnahmebogen\r\n\r\nUntersucher: \r\nUntersuchungs-Datum: \r\nUntersuchungs-Uhrzeit: \r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor.\r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\nAufnahme-Diagnose: V.a. \r\n\r\nZuletzt ohne die jetzigen Symptome: \r\nEigenanamnese: \r\n\r\nFremdanamnese: \r\n\r\nVorerkrankungen: \r\n\r\nVormedikation: \r\n\r\nAlkohol/Rauchen/Drogen: \r\n\r\nPsychosoziale Anamnese: \r\n\tLebt zu Hause im Pflegeheim \r\n\tPflegegrad \r\n\tVorsorgevollmacht: Betreuung: Ja Nein \r\n\tBevollmächtigt: \r\n\tAngehöriger (Name): \r\n\tAngehöriger (Tel): \r\n\tHausarzt: \r\n\r\nKlinischer Befund: \r\n\r\nLabor: \r\n\r\nEKG: \r\n\r\nSchädel-CT: \r\n\r\nAufnahme auf \r\nOST1(Stroke) \r\nOST3 \r\n\OST1(Intensiv)\r\n')">Aufnahmebogen</button>
+
+			<br><br>
+			<!--the star logo-->
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;<svg height="40" width="40"><polygon points="20.0,2.0 8.0,39.6 38.0,15.6 2.0,15.6 32.0,39.6" style="fill:hsla(40, 100%, 70%, 1);"/></svg></p>
+			<span>N-Brief 0.9 autocomplete<br>05.03.2017</span>
+		</div>
+	</div>
+
+	<div id='jscode'>
+	$("#hh").asuggest(suggests, {
+	        'endingSymbols': ' ',
+	        'stopSuggestionKeys': [$.asuggestKeys.RETURN],
+	        'minChunkSize': 1,
+	        'delimiters': ', \n'
+	    });
+	</div>
+
+
+<script>
+var suggests = ['abasaglar', 'abdeckung', 'abduktion', 'abklärung', 'abkürzungen', 'actilyse', 'adaptierter', 'adduktion', 'adipositas', 'aggressivität', 'aktivität', 'aktuell', 'algesie', 'alkohol', 'alkoholkrankheit', 'allgemeinzustand', 'altersentsprechend', 'ambulante', 'amlodipin', 'amnesie', 'amplitude', 'amthauer', 'anamnese', 'anbindung', 'anderes', 'aneurysma', 'angaben', 'angehörigen', 'angeleitet', 'ansprache', 'anterior', 'antikoagulation', 'aphasie', 'apixaban', 'apparative', 'arbeitet', 'armhalteversuch', 'arteria', 'arterielle', 'arteriosklerose', 'artikulation', 'arztbrief', 'atemgeräusch', 'atherothrombotisch', 'atorvastatin', 'attacke', 'aufenthalt', 'auffälligkeit', 'aufgeklärt', 'aufmerksamkeit', 'aufnahme', 'aufnahmebogen', 'aufstehen', 'aufsuchen', 'augensalbe', 'augenschutz', 'augentropfen', 'augenärztlich', 'ausdruck', 'ausführliche', 'auskultatorisch', 'auslösbar', 'auslöschungsphänomen', 'auslösen', 'ausreichend', 'ausstrahlung', 'außenrotation', 'av-block', 'axonale', 'babinski-zeichen', 'balken-assoziierte', 'basilaris', 'beatmet', 'beatmung', 'bedanken', 'bedenkzeit', 'bedeutet', 'beeinträchtigt', 'begleitend', 'behandelt', 'behandlung', 'beiderseits', 'beinhalteversuch', 'bekannte', 'belassen', 'benigne', 'beobachten', 'berichtet', 'berührung', 'beschwerden', 'besonders', 'besserte', 'besserung', 'besteht', 'bestimmung', 'betreuung', 'beugung', 'beurteilbar', 'beurteilung', 'bevollmächtigt', 'beweglich', 'bewegung', 'bewusstseinsverlust', 'blickkontakt', 'blickparese', 'blockade-reaktion', 'blutbild', 'blutdruck', 'blutung', 'blutzucker', 'bläschen', 'bogengang', 'brachioradialis', 'brönneke-born', 'buchstaben', 'carotis', 'cerebri', 'cholesterin', 'chronisch', 'citalopram', 'clopidogrel', 'communicans', 'ct-angiografie', 'dargestellt', 'darmgeräusche', 'darstellbar', 'defizit', 'deltoideus', 'demyelinisierung', 'depression', 'dermatom', 'desinfektion', 'deutlich', 'diabetes', 'diagnose', 'diffuse', 'diplopie', 'dissemination', 'doppeltsehen', 'dorsalis', 'drehschwindel', 'durchgeführt', 'dysarthrie', 'dürr-hohenthanner', 'echokardiografie', 'eigenanamnese', 'einbeinstand', 'einheiten', 'elektrodenartefakt', 'elektrolyte', 'elektrophysiologie', 'ellenbogen', 'embolisch', 'empfehlen', 'endotracheal', 'englisch', 'enoxaparin', 'entfernung', 'entladung', 'entlassen', 'entließen', 'entnahme', 'entrundet', 'entschieden', 'entsprechend', 'entzündliche', 'entzündungsparameter', 'enzephalomyelitis', 'epilepsietypische', 'epileptischer', 'erbrechen', 'erfolgte', 'ergaben', 'erhielt', 'erinnern', 'erkennbar', 'erkrankung', 'erneute', 'ernährungszustand', 'erregung', 'erregungsrückbildungsstörungen', 'erschienen', 'erstdiagnose', 'erythrozyten', 'extrakraniell', 'f-welle', 'familie', 'faszikulationen', 'fazialisparese', 'fehlend', 'fibrillationen', 'fibulaköpfchen', 'finger-nase-versuch', 'fingerperimetrisch', 'fingerreiben', 'fingerzählen', 'fortführen', 'fortführung', 'fremdanamnese', 'freundliche', 'frische', 'frühzeichen', 'funktionelle', 'funktionsstörung', 'furosemid', 'führten', 'gangstörung', 'gebracht', 'geehrte', 'geführt', 'gehstrecke', 'gehörgang', 'gelenke', 'gelähmt', 'gemeinsam', 'geplant', 'geradeaus', 'geringer', 'geringgradige', 'gerinnung', 'geschickt', 'geschlossen', 'geschmacksempfinden', 'geschwindigkeit', 'gesehen', 'gesicht', 'gesichtsfelder', 'gespräche', 'gestellt', 'gesunden', 'glargin', 'glasgow-coma-scale', 'globale', 'glukose', 'gluteus', 'grundrhythmus', 'gutartiger', 'hackengang', 'handeln', 'harninkontinent', 'harnkontinent', 'hausarzt', 'hemianopsie', 'hemiblock', 'hemihypästhesie', 'hemiparese', 'hemiplegie', 'herausgestreckt', 'herzfrequenz', 'herzgeräusche', 'herzinsuffizienz', 'hilfsmittel', 'hintere', 'hinweis', 'hinweisend', 'hirnblutung', 'hirnfunktionsstörung', 'hirninfarkt', 'hirnrinde', 'hirnstamm', 'hochgradige', 'horizontal', 'hussainy', 'hyperakusis', 'hyperlipidämie', 'hypertonie', 'hypoplasie', 'ibuprofen', 'idiopathische', 'iktuale', 'immobilisierend', 'immunmodulatorisch', 'indifferenztyp', 'indikation', 'infarkt', 'infusion', 'inkomplett', 'innenrotation', 'insbesondere', 'insulin', 'intensiv', 'interferenzmuster', 'interna', 'intervalltherapie', 'intrakraniell', 'intubiert', 'ip-gelenke', 'ischämie', 'jc-virus-dna', 'jetzige', 'kardiovaskuläre', 'karotiden', 'karpaltunnelsyndrom', 'katheter', 'kernhaltige', 'keymling', 'kirchhoff', 'kleinhirn', 'klinisch', 'klinische', 'klopfschmerz', 'klärten', 'knie-hacke-versuch', 'kolb-fricke', 'kollege', 'kollegin', 'komplett', 'komplexe', 'komplikationen', 'konnten', 'konservative', 'kontrastmittelaufnehmende', 'kontrolle', 'kooperativ', 'kopfimpulstest', 'kopfschmerzen', 'kornealreflex', 'kreatinin', 'kreislaufstabil', 'kribbeln', 'kurzzeitgedächtniss', 'körperbeschwerden', 'körperseite', 'künstliche', 'l-thyroxin', 'lageabhängiger', 'lagerungsmanöver', 'lagerungsschwindel', 'lagesinn', 'ldl-cholesterin', 'lebensstil', 'leberwerte', 'lebhaft', 'leichtgradige', 'leitungsstörung', 'leseentfernung', 'leukozyten', 'levetiracetam', 'levodopa', 'lidschlagartefakte', 'lidschluss', 'lidspalte', 'linksanteriorer', 'linkshänder', 'linkslagerung', 'linksschenkelblock', 'linkstyp', 'liquordiagnostik', 'lokaler', 'lorazepam', 'luftnot', 'lumbalpunktion', 'lymphozyten', 'läsionen', 'magenschutz', 'manteuffel', 'marklagerveränderungen', 'mcp-gelenke', 'medianus', 'medikamente', 'medikation', 'mehrere', 'mellitus', 'meningismus', 'merkfähigkeit', 'metamizol', 'metformin', 'methylprednisolon', 'metoprolol', 'midazolam', 'migräne', 'mindestens', 'mirtazapin', 'mittelgradige', 'mittellebhaft', 'mittelschwer', 'motorische', 'multiple', 'mundwinkel', 'muskelartefakte', 'muskeldehnungsreflexe', 'muskeln', 'muskeltonus', 'mutmaßlichen', 'mögliche', 'müller-siebert', 'nachtmann', 'nachweisbar', 'nackensteife', 'naproxen', 'negativ', 'nervenstamm', 'neumann-haefelin', 'neurochirurgisch', 'neurografie', 'neurologie', 'neurologisch', 'neurosonografie', 'neurostatus', 'neutrale', 'nichtraucher', 'niedergeschlagenheit', 'niereninsuffizienz', 'normalbefund', 'normale', 'normbereich', 'notaufnahme', 'notfallmäßig', 'nystagmus', 'oberschenkel', 'objektiv', 'ohnmacht', 'okulozephale', 'oligoklonale', 'onclick', 'operative', 'opponens', 'optionen', 'orientiert', 'packungsjahre', 'palliative', 'paracetamol', 'parallel', 'paresen', 'parkinson', 'paroxysmale', 'passive', 'pathologisch', 'patient', 'patientenverfügung', 'periphere', 'peroneus', 'pflegegrad', 'pflegeheim', 'phenprocoumon', 'physiotherapie', 'pipamperon', 'plantarreflex', 'plaques', 'plötzlich', 'polymorphe', 'polyneuropathie', 'polyphasisch', 'positiv', 'posterior', 'potentiale', 'prednisolon', 'professor', 'progredient', 'pronation', 'pronator', 'proprius', 'proximal', 'prozente', 'prozess', 'psychosoziale', 'pulsartefakt', 'punktion', 'pupillen', 'pyramidenbahnläsion', 'qtc-zeit', 'radialis', 'ramipril', 'rasselgeräusche', 'rauchen', 'raumluft', 'reagieren', 'rechten', 'rechtshänder', 'rechtslagerung', 'rechtsschenkelblock', 'rechtstyp', 'reduzieren', 'regelrecht', 'regionale', 'rehabilitations-klinik', 'remittierende', 'repetitive', 'rettungsdienst', 'rezidivierend', 'rhythmisch', 'risperidon', 'rollator', 'rombergversuch', 'rotatorischer', 'räumliche', 'rückenschmerzen', 'rückläufig', 'rücksprache', 'schallfenster', 'scharfe', 'schieren', 'schiller', 'schlaff', 'schleimhäute', 'schlucken', 'schmerzausstrahlung', 'schmerzen', 'schmerzreiz', 'schmidtlein', 'schubförmig', 'schulterblattstabilisierung', 'schulterhebung', 'schwach', 'schweitzer', 'schwere', 'schwierigkeit', 'schwindel', 'schwäche', 'schädel-ct', 'schädel-mrt', 'schäfer', 'sehkraft', 'seitengleich', 'sekundär', 'semimembranosus', 'senkten', 'sensible', 'serratus', 'setzten', 'sicheren', 'simvastatin', 'sinusrhythmus', 'sklerose', 'solange', 'somnolent', 'spinalen', 'spinalnervs', 'spontan', 'spontanaktivität', 'spontanatmend', 'sprachliche', 'sprachverständnis', 'sprechen', 'spritzen', 'st-hebung', 'stadium', 'stationäre', 'stellte', 'stenose', 'stenosegrad', 'sterile', 'sterofundin', 'stichstelle', 'stimmung', 'stimulation', 'streckung', 'stromgebiet', 'stunden', 'störung', 'subarachnoidal', 'sufentanil', 'supination', 'suralis', 'symmetrisch', 'symptome', 'systemische', 't-negativierung', 'tagsüber', 'taubheitsgefühl', 'technisch', 'teilweise', 'telefon', 'temperatur', 'temporalen', 'therapeutische', 'therapie', 'thrombektomie', 'thrombolyse', 'thromboseprophylaxe', 'tibialis', 'tilidin', 'torasemid', 'tracheostoma', 'transiente', 'transitorisch-ischämische', 'transkraniell', 'transnuchal', 'transthorakale', 'transösophageale', 'triceps', 'triglyzeride', 'trophik', 'typisch', 'täglich', 'uhrglasverband', 'uhrzeigersinn', 'uhrzeit', 'ulnaris', 'unauffällig', 'unmittelbare', 'unserer', 'unteren', 'unterschenkel', 'untersucher', 'untersuchung', 'unwillkürliche', 'urapidil', 'urinstatus', 'ursächlich', 'valproat', 'valsartan', 'vargas-leal', 'ventrikeleinblutung', 'verband', 'verdacht', 'vereinbart', 'verfügung', 'verlangsamung', 'verlauf', 'verlegen', 'verlegung', 'verlängert', 'verminderte', 'verschluss', 'verschwommensehen', 'versorgen', 'verständnis', 'verstärkte', 'versuchte', 'vertebralis', 'vertikal', 'vertragen', 'verwertbar', 'verzögert', 'vibrationssinn', 'visuell', 'vogelpohl', 'vordiagnosen', 'vorerkrankungen', 'vorgefunden', 'vorgehen', 'vorhofflimmern', 'vorläufiger', 'vormedikation', 'vorsorgevollmacht', 'vorstellung', 'wasserlassen', 'wegweisend', 'weiterbehandlung', 'weiterbetreuung', 'weitere', 'wichtig', 'willentliche', 'wirbelsäule', 'während', 'wünschte', 'zeichen', 'zeigefinger', 'zeigten', 'zeitlich', 'zentrale', 'zigaretten', 'zittern', 'zns-erkrankung', 'zuckungen', 'zuletzt', 'zunächst', 'zusammenfassend', 'zusatzdiagnostik', 'zwangsläufig', 'ästhesie', 'örtlich', 'übelkeit', 'übernahme']
+
+</script>
+
+
+	<script>
+	$("#jscode").each(function(){eval($(this).text());});
+	</script>
+
+
+	<script>
+// the m/f-related variables are declared
+var Der_Patient;
+var der_Patient;
+var Er;
+var er;
+var ihm;
+var ihn;
+var des_Patienten;
+var dem_Patienten;
+var den_Patienten;
+var Herr;
+var Herrn;
+var Rechtshaender;
+var Linkshaender;
+var Rechtshaenderin;
+var Linkshaenderin;
+var Nichtraucher;
+var mofbestimmt;
+// all male forms are set
+function mannSx() {
+	var i1 = document.getElementById('gesX');
+	i1.innerHTML = 'Mann';
+	i1.style = 'color:#003d66;animation-iteration-count:0;';
+	mofbestimmt = '1';
+	document.getElementById('mof').style.display = 'none';
+	Der_Patient = 'Der Patient';
+	der_Patient = 'der Patient';
+	Er = 'Er';
+	er = 'er';
+	ihm = 'ihm';
+	ihn = 'ihn';
+	des_Patienten = 'des Patienten';
+	den_Patienten = 'den Patienten';
+	dem_Patienten = 'dem Patienten';
+	Herr = 'Herr';
+	Herrn = 'Herrn';
+	Rechtshaender = 'Rechtshänder';
+	Linkshaender = 'Linkshänder';
+	Nichtraucher = 'Nichtraucher';
+}
+
+// all female forms are set
+function frauSx() {
+	var i1 = document.getElementById('gesX');
+	i1.innerHTML = 'Frau';
+	i1.style = 'color:#003d66;animation-iteration-count:0;';
+	mofbestimmt = '1';
+	document.getElementById('mof').style.display = 'none';
+	Der_Patient = 'Die Patientin';
+	der_Patient = 'die Patientin';
+	Er = 'Sie';
+	er = 'sie';
+	ihm = 'ihr';
+	ihn = 'sie';
+	des_Patienten = 'der Patientin';
+	den_Patienten = 'die Patientin';
+	dem_Patienten = 'der Patientin';
+	Herr = 'Frau';
+	Herrn = 'Frau';
+	Rechtshaender = 'Rechtshänderin';
+	Linkshaender = 'Linkshänderin';
+	Nichtraucher = 'Nichtraucherin';
+}
+
+// hides erst, zweit, viert
+function showNil2() {
+	document.getElementById('erst').style.display = 'none';
+	document.getElementById('zweit').style.display = 'none';
+	document.getElementById('viert').style.display = 'none';
+}
+// it shows the erst
+function ez1() {
+	showNil2();
+	document.getElementById('erst').style.display = 'block';
+}
+// it shows the zweit
+function ez2() {
+	showNil2();
+	document.getElementById('zweit').style.display = 'block';
+}
+// it shows the viert
+function ez4() {
+	showNil2();
+	document.getElementById('viert').style.display = 'block';
+}
+// it hides all named elements
+function showNil1() {
+	document.getElementById('Anrede').style.display = 'none';
+	document.getElementById('Diagnosen').style.display = 'none';
+	document.getElementById('Epikrise').style.display = 'none';
+	document.getElementById('Medikamente').style.display = 'none';
+	document.getElementById('Klinischer_Befund').style.display = 'none';
+	document.getElementById('MS').style.display = 'none';
+	document.getElementById('RS').style.display = 'none';
+	document.getElementById('DemPark').style.display = 'none';
+	document.getElementById('Bef').style.display = 'none';
+	document.getElementById('KopfEpi').style.display = 'none';
+	document.getElementById('Geri').style.display = 'none';
+}
+// it does what it says
+function showAnr() {
+	showNil1();
+	document.getElementById('Anrede').style.display = 'block';
+}
+
+function showDiagn() {
+	showNil1();
+	document.getElementById('Diagnosen').style.display = 'block';
+}
+
+function showEpikr() {
+	showNil1();
+	document.getElementById('Epikrise').style.display = 'block';
+}
+
+function showMS() {
+	showNil1();
+	document.getElementById('MS').style.display = 'block';
+}
+
+function showRS() {
+	showNil1();
+	document.getElementById('RS').style.display = 'block';
+}
+
+function showDemPark() {
+	showNil1();
+	document.getElementById('DemPark').style.display = 'block';
+}
+
+function showBefunde() {
+	showNil1();
+	document.getElementById('Bef').style.display = 'block';
+}
+
+function showKopfEpi() {
+	showNil1();
+	document.getElementById('KopfEpi').style.display = 'block';
+}
+
+function showGeri() {
+	showNil1();
+	document.getElementById('Geri').style.display = 'block';
+}
+
+function showMedi() {
+	showNil1();
+	document.getElementById('Medikamente').style.display = 'block';
+}
+
+function showKlBef() {
+	showNil1();
+	document.getElementById('Klinischer_Befund').style.display = 'block';
+}
+
+function showNilSkalen() {
+	document.getElementById('levodopa').style.display = 'none';
+	document.getElementById('Gfr1').style.display = 'none';
+	document.getElementById('Opiat').style.display = 'none';
+}
+
+function showGfr() {
+	showNilSkalen();
+	document.getElementById('Gfr1').style.display = 'block';
+}
+
+function showLdopa() {
+	showNilSkalen();
+	document.getElementById('levodopa').style.display = 'block';
+}
+
+function showOpiat() {
+	showNilSkalen();
+	document.getElementById('Opiat').style.display = 'block';
+}
+
+function ed1(inp) {
+	if (mofbestimmt == '1') {
+		let tarea = document.getElementById('hh');
+		// find and define the start and end of selection
+		let sst = tarea.selectionStart;
+		let sse = tarea.selectionEnd;
+		// find the whole length of what is in the textarea now
+		let tvl = tarea.value.length;
+		// insert the inp and replace the selection 
+		tarea.value = tarea.value.substring(0, sst) + inp + tarea.value.substring(sse, tvl);
+		// set cursor after the inserted text 
+		tarea.selectionStart = sst + inp.length;
+		tarea.selectionEnd = sst + inp.length;
+		tarea.focus();
+	} else {
+		document.getElementById('mof').style.display = 'inline-block';
+	}
+}
+
+function edein(inp) {
+	// just the ed1, only the cursor a place to the left
+	if (mofbestimmt == '1') {
+		let tarea = document.getElementById('hh');
+		let sst = tarea.selectionStart;
+		let sse = tarea.selectionEnd;
+		let tvl = tarea.value.length;
+		tarea.value = tarea.value.substring(0, sst) + inp + tarea.value.substring(sse, tvl);
+		tarea.selectionStart = sst + inp.length - 1;
+		tarea.selectionEnd = sst + inp.length - 1;
+		tarea.focus();
+	} else {
+		document.getElementById('mof').style.display = 'inline-block';
+	}
+}
+
+// delete all text from the textarea
+function ddel() {
+	document.getElementById('hh').value = '';
+}
+
+// copy all text from the textarea
+function selCopTx() {
+	var ta = document.getElementById('hh');
+	ta.focus();
+	ta.select();
+	var tz = document.execCommand('copy');
+	return tz;
+}
+
+// a helper function to get the sum of all elements. See function ldopaCalc
+function getSum(total, num) {
+	return total + num;
+}
+
+// get the input of the Parkinson medication dose, calculate the LED for each, then for all of them.
+function ldopaCalc() {
+	let Levodopa1 = document.getElementById('Levodopa').value;
+	let Levodopa_ret1 = document.getElementById('Levodopa_ret').value;
+	let Duodopa1 = document.getElementById('Duodopa').value;
+	let Ld_Ent1 = document.getElementById('Levodopa_Entacapon').value;
+	let Pram1 = document.getElementById('Pramipexolsalz').value;
+	let Rop1 = document.getElementById('Ropinirol').value;
+	let Rot1 = document.getElementById('Rotigotin').value;
+	let Piri1 = document.getElementById('Piribedil').value;
+	let Ras1 = document.getElementById('Rasagilin').value;
+	let Aman1 = document.getElementById('Amantadin').value;
+	let Apo1 = document.getElementById('Apomorphin').value;
+	let parkMed = [Levodopa1 * 1, Levodopa_ret1 * 0.75, Duodopa1 * 1.1, Ld_Ent1 * 1.33, Pram1 * 100, Rop1 * 20, Rot1 * 30, Piri1 * 1, Ras1 * 100, Aman1 * 1, Apo1 * 10];
+	document.getElementById('led').innerHTML = Math.round(parkMed.reduce(getSum));
+}
+
+// turn all numeric input of the parkinson medication to null
+function parkMed() {
+	let allParkMed = document.getElementById('levodopaEqDosis').elements;
+	for (let i = 0; i < allParkMed.length - 2; i++) {
+		allParkMed[i].value = 0;
+	}
+}
+
+// GFR Calculator
+function gfrCalc() {
+	var krea1 = document.getElementById('gfr').elements['a'].value;
+	var krea2 = document.getElementById('gfr').elements['b'].value;
+	var al_1 = document.getElementById('gfr').elements['c'].value;
+	var ges = document.getElementById('gfr').elements['geschlecht'].value;
+	var farbe = document.getElementById('gfr').elements['farbe'].value;
+	var al_2 = parseInt(al_1);
+	var krea = parseInt(krea1) + parseInt(krea2) / 10;
+	var gfr1 = 175 * Math.pow(krea, -1.154) * Math.pow(al_2, -0.203);
+	if (ges == 'frau') {
+		gfr1 = gfr1 * 0.742;
+	}
+	if (farbe == 'schwarz') {
+		gfr1 = gfr1 * 1.212;
+	}
+	var gfr4 = Math.round(gfr1);
+	document.getElementById('gfrp').innerHTML = gfr4;
+}
+
+// date according to usual German format
+function dateGerman() {
+	let str = new Date().toISOString();
+	return str.replace(/(\d{4})-(\d{2})-(\d{2}).*$/, '$3.$2.$1');
+}
+
+// time according to usual German format
+function timeGerman() {
+	let d = new Date;
+	let hours = d.getHours();
+	let minutes = d.getMinutes();
+	if (hours < 10) {
+		hours = '0' + hours;
+	}
+	if (minutes < 10) {
+		minutes = '0' + minutes;
+	}
+	let timeGerman = hours + ':' + minutes + ' Uhr';
+	return timeGerman;
+}
+
+// the functions below get the selected element and insert it into the textarea
+function anArzt() {
+	let x = document.getElementById('mySelect').value;
+	edein(x + ',\r\n');
+}
+
+function medi() {
+	let y0 =
+		document.getElementById('medikamente').value;
+	edein(y0 + '\r\n');
+}
+
+function diagn() {
+	let y7 =
+		document.getElementById('diagnosen').value;
+	edein(y7 + '\r\n');
+}
+
+function symptSu() {
+	let y1 =
+		document.getElementById('symptSubj').value;
+	ed1(y1);
+}
+
+function symptOb() {
+	let y2 =
+		document.getElementById('symptObj').value;
+	ed1(y2);
+}
+
+// enables tab in textarea
+function tabJa() {
+	let textArea = document.getElementById('hh');
+	textArea.onkeydown = function(z) {
+		if (z.keyCode === 9) {
+			ed1('\t');
+			return false;
+		}
+	};
+}
+// tabJa();
+// it scrolls both the whole body and the textarea up
+function winscroll() {
+	window.scrollTo(0, 0);
+	document.getElementById('hh').scrollTo(0, 0);
+}
+// turn to dark theme: it appends the 'css'-text to the style sheet 
+function themeEG1() {
+	let css =
+	'body{background-color: hsla(192, 100%, 11%, 1);} textarea{background-color: hsla(192, 100%, 11%, 1); color: hsla(40, 100%, 70%, 1); border: solid;border-width: 1px;border-color: hsla(0, 0%, 80%, 1);}.bt1{background-color: hsla(40, 100%, 30%, 1);color: hsla(0, 0%, 100%, 1);} .bt1:hover {background-color: hsla(40, 100%, 55%, 1);color: hsla(190, 100%, 10%, 1);} .bttext{border-color:hsla(0, 0%, 50%, 1);} .btgrey {background-color: hsla(0, 0%, 0%, 1);} .select1 {background-color:hsla(192, 100%, 11%, 1);} .select1 option{background-color:hsla(192, 100%, 11%, 1);}';
+	let style = document.createElement('style');
+	if (style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		style.appendChild(document.createTextNode(css));
+	}
+	document.getElementsByTagName('head')[0].appendChild(style);
+}
+// turn back to standard theme: it appends the 'css'-text to the style sheet 
+function themeEG2() {
+	let css =
+		'body{background-color:hsla(204, 100%, 20%, 1);} textarea {background-color:hsla(0, 0%, 100%, 1);color:hsla(0, 0%, 33%, 1);border:none;font-family:sans-serif;} .bt1{background-color:hsla(122, 39%, 49%, 1);} .bt1:hover{background-color:hsla(0, 100%, 50%, 1);} .bttext{border-color:hsla(122, 39%, 49%, 1);} .btgrey{background-color:hsla(0, 0%, 50%, 1);} .select1{background-color:hsla(204, 100%, 20%, 1);} .select1 option{background-color:hsla(204, 100%, 20%, 1);}';
+	let style = document.createElement('style');
+	if (style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		style.appendChild(document.createTextNode(css));
+	}
+	document.getElementsByTagName('head')[0].appendChild(style);
+}
+
+function typogr1 (string, [rg1, rp1], [rg2, rp2], [rg3, rp3], [rg4, rp4], [rg5, rp5], [rg6, rp6], [rg7, rp7]){
+	let z1 = string.replace(rg1, rp1);
+	let z2 = z1.replace(rg2, rp2);
+	let z3 = z2.replace(rg3, rp3);
+	let z4 = z3.replace(rg4, rp4);
+	let z5 = z4.replace(rg5, rp5);
+	let z6 = z5.replace(rg6, rp6);
+	let z7 = z6.replace(rg7, rp7);
+	return z7;
+	}
+
+function typogr2 (string){
+	return typogr1(string, 
+		[/[ ]{2,99}/gi, ' '], 
+		[/([,.?!:\d])(?=[a-züäöµ])/gi, '$1 '], 
+		[/[ ](?=[.,)?:])/gi, ''], 
+		[/(\S)%/gi, '$1 %'], 
+		[/\(\s/gi, '('], 
+		[/HbA1 c/gi, 'HbA1c'], 
+		[/(\d\d)\.(\d\d) Uhr/gi, '$1:$2 Uhr']); 
+		}
+
+function typogr3(){
+	let tz = document.getElementById('hh').value;
+	let tu = typogr2(tz);
+	document.getElementById('hh').value = tu;
+	}
+
+</script>
+</body>
+
+</html>

@@ -10,6 +10,8 @@ There is a big textarea in the middle. You can insert text into the textarea on 
 
 You have to tell the app whether the patient is male or female. Please press the  correct button on the right upper side of the screen. The texts will be modified accordingly.
 
+An experimental version, N-Brief autocomplete, has word completion in the textarea. Usual words of a neurological report are in an array in the code. They get completed with the ENTER-key and the completion stops with the SPACE-key.  
+
 ## Additional material
 
 Under Rechner/Skalen you can find now two medical calculators. I thought we need a quick GFR estimate and a Levodopa equivalent dose calculator. I am not sure if I should make more calculators.
