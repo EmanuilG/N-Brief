@@ -340,7 +340,7 @@
 
 <body>
 	<noscript><p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. <br>Dieser Code wird von Ihrem Browser interpretiert. <br>Sie sehen diesen Text, weil Javascript in Ihrem Browser deaktiviert ist. Erwägen Sie bitte, Javascript zu aktivieren. <br>Der N-Brief braucht einen neuen Browser, am besten funktioniert er mit Firefox 45 oder neuer<br>
-<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.9, Letzte Aktualisierung: 05.03.2017</p></noscript>
+<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 1.0, Letzte Aktualisierung: 11.03.2017</p></noscript>
 	<div id="topBar">
 		<button class="bt1" onclick="ez1()">Arztbrief</button>
 		<button class="bt1" onclick="ez4()">Hilfe</button>
@@ -515,7 +515,7 @@
 				eingefügt.
 				<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem
 				Browser interpretiert. Wenn Sie HTML-, CSS- und Javascript kostenfrei und ohne Anmeldung lernen möchten, besuchen Sie: <a href="http://www.w3schools.com/">w3schools</a>. Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version
-				mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 0.9, Letzte Aktualisierung: 05.03.2017<br>GNU General Public License, Version 3
+				mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 1.0, Letzte Aktualisierung: 11.03.2017<br>GNU General Public License, Version 3
 				<br><a href="https://emanuilg.github.io/N-Brief/">N-Brief-Website</a><br></p>
 		</div>
 		<div class="fright50">
@@ -539,9 +539,9 @@
 			<br><br>
 			<button class="bt1 nbblock" onclick="showMS()">MS</button>
 			<button class="bt1 nbblock" onclick="showRS()">BSV-Fazialis-BPLS</button><br>
-			<button class="bt1 nbblock" onclick="showDemPark()">Demenz-Parkinson</button>
+			<!-- <button class="bt1 nbblock" onclick="showDemPark()">Demenz-Parkinson</button>
 			<button class="bt1 nbblock" onclick="showKopfEpi()">Kopfschm - Epil</button><br>
-			<button class="bt1 nbblock" onclick="showGeri()">Geriatrie</button>
+			<button class="bt1 nbblock" onclick="showGeri()">Geriatrie</button> -->
 			<hr>
 			<div class="wrap3" id="Anrede">
 				<p class="stamp">Anrede</p>
@@ -806,7 +806,7 @@
 			<button class="bt1 bt2" onclick="themeEG2()" data-tooltip="Standard-Theme">Standard</button><br>
 			<button class="bt1" onclick="location.reload()">N-Brief aktualisieren</button><br>
 			<br><br><br>
-			<button class="bt1 bttext" onclick="ed1('Neurologisches Konsil Datum Uhrzeit\r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'): \r\n\r\nFremdanamnese (Angaben des der ): \r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button><br>
+			<button class="bt1 bttext" onclick="ed1('Neurologisches Konsil Datum \r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'): \r\n\r\nFremdanamnese (Angaben des der ): \r\n\r\nBefund: \r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button><br>
 			<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\n' + Der_Patient + ' wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiografie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\n' + Der_Patient + ' lebt zu Hause und kann sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur Thrombektomie. Wir bedanken uns für die Übernahme.\r\n\r\n')">Thrombektomie</button><br>
 			<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nSubarachnoidalblutung\r\nV.a. Aneurysma der A. cerebri media interna anterior posterior communicans rechts links \r\n\r\n\r\nSehr geehrter Herr Prof. Behr, \r\n\r\n' + Der_Patient + ' bekam plötzlich starke Kopfschmerzen wurde vorgefunden. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte Nackensteife eine Hemiparese rechts links. \r\nDas Schädel-CT zeigte Blut subarachnoiddal, die CT-Angiografie zeigte ein Aneurysma.\r\nWir senkten den Blutdruck mit Urapidil.\r\nVormedikation: \r\n' + Der_Patient + ' lebte bisher zu Hause und konnte sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur weiteren Behandlung. \r\nBei Verlegung ist ' + der_Patient + ' spontanatmend intubiert/beatmet, atem/kreislaufstabil, hat einen arteriellen Katheter in der A. radialis rechts links. \r\nWir bedanken uns für die Übernahme.\r\n\r\n')">SAB</button><br>
 			<button class="bt1 bttext" onclick="ed1('Diagnosen:\r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor. \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\n\r\nEigenanamnese: \r\nFremdanamnese: \r\nVorerkrankungen: \r\nVormedikation: \r\n\r\nKlinischer Befund: \r\nZusatzdiagnostik \r\nLabor: \r\nEKG: \r\nSchädel-CT: \r\n\r\nEmpfehlungen: \r\n\r\n\r\n' + Herr + ' xxx wurde ambulant belassen. Wir stehen für Fragen gerne zur Verfügung. \r\n')">Kurzbrief ZNA</button><br>
@@ -815,7 +815,7 @@
 			<br><br>
 			<!--the star logo-->
 			<p>&nbsp;&nbsp;&nbsp;&nbsp;<svg height="40" width="40"><polygon points="20.0,2.0 8.0,39.6 38.0,15.6 2.0,15.6 32.0,39.6" style="fill:hsla(40, 100%, 70%, 1);"/></svg></p>
-			<span>N-Brief 0.9 <br>05.03.2017</span>
+			<span>N-Brief 1.0 <br>11.03.2017</span>
 		</div>
 	</div>
 	<script>
@@ -1158,7 +1158,7 @@ function winscroll() {
 // turn to dark theme: it appends the 'css'-text to the style sheet 
 function themeEG1() {
 	let css =
-		'body{background-color: hsla(192, 100%, 11%, 1);} textarea{background-color: hsla(192, 100%, 11%, 1); color: hsla(40, 100%, 70%, 1); border: solid;border-width: 1px;border-color: hsla(0, 0%, 80%, 1);}.bt1{background-color: hsla(40, 100%, 30%, 1);color: hsla(0, 0%, 100%, 1);} .bt1:hover {background-color: hsla(40, 100%, 55%, 1);color: hsla(190, 100%, 10%, 1);} .bttext{border-color:hsla(0, 0%, 50%, 1);} .btgrey {background-color: hsla(0, 0%, 0%, 1);} .select1 {background-color:hsla(192, 100%, 11%, 1);} .select1 option{background-color:hsla(192, 100%, 11%, 1);}';
+		'body{background-color: hsla(190, 100%, 10%, 1);} textarea{background-color: hsla(190, 100%, 10%, 1); color: hsla(40, 0%, 80%, 1); border: solid;border-width: 1px;border-color: hsla(0, 0%, 80%, 1);}.bt1{background-color: hsla(40, 100%, 30%, 1);color: hsla(0, 0%, 100%, 1);} .bt1:hover {background-color: hsla(40, 100%, 55%, 1);color: hsla(190, 100%, 10%, 1);} .bttext{border-color:hsla(0, 0%, 50%, 1);} .btgrey {background-color: hsla(0, 0%, 0%, 1);} .select1 {background-color:hsla(190, 100%, 10%, 1);} .select1 option{background-color:hsla(190, 100%, 10%, 1);}';
 	let style = document.createElement('style');
 	if (style.styleSheet) {
 		style.styleSheet.cssText = css;

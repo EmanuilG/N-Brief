@@ -10,7 +10,7 @@ There is a big textarea in the middle. You can insert text into the textarea on 
 
 You have to tell the app whether the patient is male or female. Please press the  correct button on the right upper side of the screen. The texts will be modified accordingly.
 
-An experimental version, N-Brief autocomplete, has word completion in the textarea. Usual words of a neurological report are in an array in the code. They get completed with the ENTER-key and the completion stops with the SPACE-key.  
+An experimental version, N-Brief_autocomplete, has word completion in the textarea. Usual words of a neurological report are in an array in the code. They get completed with the ENTER-key and the completion stops with the SPACE-key. The word completion feature was made possible by Roman Imankulov’s <a href="https://github.com/imankulov/asuggest">jquery-plugin asuggest</a> as well as by <a href="https:/jquery.com/">jquery</a> and <a href="http://jquerytools.github.io/">jquerytools</a>. 
 
 ## Additional material
 
@@ -18,4 +18,5 @@ Under Rechner/Skalen you can find now two medical calculators. I thought we need
 
 ## N-Brief-App online
 
-You can try the N-Brief-App: <a href="NBrief.html">N-Brief</a>.
+You can try the N-Brief-App: <a href="NBrief.html">N-Brief</a>.  
+The experimental N-Brief_autocomplete is at: <a href="NBrief_autocomplete.html">N-Brief</a>. 
