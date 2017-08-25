@@ -340,7 +340,7 @@
 
 <body>
 	<noscript><p>Der N-Brief hilft mit Textbausteinen einen Arztbrief zusammenzustellen.<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. <br>Dieser Code wird von Ihrem Browser interpretiert. <br>Sie sehen diesen Text, weil Javascript in Ihrem Browser deaktiviert ist. Erwägen Sie bitte, Javascript zu aktivieren. <br>Der N-Brief braucht einen neuen Browser, am besten funktioniert er mit Firefox 45 oder neuer<br>
-<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 1.0, Letzte Aktualisierung: 21.08.2017</p></noscript>
+<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 1.0, Letzte Aktualisierung: 25.08.2017</p></noscript>
 	<div id="topBar">
 		<button class="bt1" onclick="ez1()">Arztbrief</button>
 		<button class="bt1" onclick="ez4()">Hilfe</button>
@@ -515,7 +515,7 @@
 				eingefügt.
 				<br>Das Programm verändert nichts an Ihrem Rechner, es verbindet sich nicht mit dem Internet, es braucht keine Installation. Es besteht aus einer einzigen einfachen Text-Datei, die HTML-, CSS- und Javascript-Code enthält. Dieser Code wird von Ihrem
 				Browser interpretiert. Wenn Sie HTML-, CSS- und Javascript kostenfrei und ohne Anmeldung lernen möchten, besuchen Sie: <a href="http://www.w3schools.com/">w3schools</a>. Der N-Brief funktioniert mit einem neuen Browser, am besten mit Firefox, Version
-				mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 1.0, Letzte Aktualisierung: 21.08.2017<br>GNU General Public License, Version 3
+				mindestens 45.<br>Das Programm soll nützlich sein, sagen Sie bitte, was Sie sich wünschen.<br>Emanuil Giuris<br>giuris@gmail.com<br><br>N-Brief 1.0, Letzte Aktualisierung: 25.08.2017<br>GNU General Public License, Version 3
 				<br><a href="https://emanuilg.github.io/N-Brief/">N-Brief-Website</a><br></p>
 		</div>
 		<div class="fright50">
@@ -609,7 +609,6 @@
 				<p class="stamp">Diagnosen</p>
 				<form>
 					<select id="diagnosen" class="select1 select2" size="18" onclick="diagn()">
-				<option value="Aktuell: Vordiagnosen: ">Aktuell/Vordiagnosen</option>
 				<option value="Adipositas">Adipositas</option><br>
 				<option value="Alkoholkrankheit">Alkoholkrankheit</option>
 				<option value="Arterielle Hypertonie">Art. Hypertonie</option><br>
@@ -628,6 +627,7 @@
 				<option value="Hirnblutung ca.  x cm rechts links">Hirnblutung</option><br>
 				<option value="Hirninfarkt im Stromgebiet der A. cerebri media posterior anterior rechts links">Hirninfarkt</option>
 				<option value="Hyperlipidämie">Hyperlipidämie</option><br>
+				<option value="Hypothyreose">Hypothyreose</option><br>
 				<option value="Guillain-Barré-Syndrom">Guillain-Barré-Syndrom</option><br>
 				<option value="Idiopathisches Parkinson-Syndrom">Parkinson</option>
 				<option value="Infarkt im Hirnstamm Kleinhirn rechts links">Hirnstamm-Kleinhirn</option><br>
@@ -651,8 +651,9 @@
 			</div>
 			<div class="wrap3" id="Epikrise">
 				<p class="stamp">Epikrise</p>
-				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte wegen Kopfschmerzen Schwäche der rechten linken Körperseite, Schwindels, eines Bewusstseinsverlustes, Taubheitsgefühls der rechten linken Körperseite. \r\nAm Datum ca. Uhrzeit merkte ' + der_Patient + ', dass \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vorgefunden. \r\n' + Der_Patient + ' wurde durch den Rettungsdienst gebracht. \r\n' + Der_Patient + ' stellte sich am Datum in der Notaufnahme vor. \r\n' + Er + ' klagt über xxx seit xxx Stunden Tagen Wochen. \r\n' + Der_Patient + ' berichtet, dass ' + er + ' \r\nDie Angehörigen berichten dass, \r\n' + Der_Patient + ' lebte bisher zu Hause, arbeitete als xxx und konnte sich selbst versorgen. \r\n' + Der_Patient + ' lebte bisher im Heim, hatte Pflegegrad . \r\n' + Er + ' konnte sich teilweise selbst versorgen. ' + Er + ' war ohne Hilfsmittel am Rollator am Stock gehfähig. ' + Er + ' war auf einen Rollstuhl angewiesen. ' + Er + ' war harninkontinent harnkontinent. \r\n' + Der_Patient + ' ist ' + Nichtraucher + ' raucht xxx Zigaretten täglich (xxx Packungsjahre) und trinkt keinen Alkohol xxx Glas Wein Bier täglich in der Woche. \r\nEs gibt eine Vorsorgevollmacht (bevollmächtigt: ) und eine Patientenverfügung\r\n\r\nMedikation bei Aufnahme\r\n')">Anamnese</button>
+				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie stationäre Aufnahme erfolgte wegen Kopfschmerzen Schwäche der rechten linken Körperseite, Schwindels, eines Bewusstseinsverlustes, Taubheitsgefühls der rechten linken Körperseite. \r\nAm Datum ca. Uhrzeit merkte ' + der_Patient + ', dass \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vorgefunden. \r\n' + Der_Patient + ' wurde durch den Rettungsdienst gebracht. \r\n' + Der_Patient + ' stellte sich am Datum in der Notaufnahme vor. \r\n' + Er + ' klagt über xxx seit xxx Stunden Tagen Wochen. \r\n' + Der_Patient + ' berichtet, dass ' + er + ' \r\nDie Angehörigen berichten dass, \r\n')">Anamnese</button>
 				<button class="bt1 bttext" onclick="ed1('Die klinische Untersuchung deckte kein neurologisches Defizit auf. \r\nIn der klinischen Untersuchung war ' + der_Patient + ' wach, orientiert und hatte xxx. \r\nDas Schädel-CT zeigte\r\nkeine frische Ischämie oder Blutung. \r\neinen Hirninfarkt im Stromgebiet der Arteria cerebri media posterior anterior rechts links \r\nDas Schädel-CT zeigte Marklagerveränderungen einen Hirninfarkt eine Blutung. \r\nDas Schädel-MRT zeigte \r\nDas Labor war im Normbereich zeigte \r\nDie transthorakale Echokardiographie zeigte keine Emboliequelle. \r\nDie transösophageale Echokardiographie zeigte keine Emboliequelle. \r\nDer Ultraschall der Hirngefäße zeigte Plaques und geringgradige Stenose der Karotiden. \r\nDie Elektrophysiologie\r\nwar regelrecht\r\nwaren regelrecht. wegweisend. \r\nWährend der Monitor-Überwachung von Datum bis Datum stellten wir kein Vorhofflimmern fest. \r\nIm Laufe des stationären Aufenthaltes \r\n')">Befunde</button>
+				<button class="bt1 bttext" onclick="ed1('\r\n' + Der_Patient + ' lebte bisher zu Hause, arbeitete als xxx und konnte sich selbst versorgen. \r\n' + Der_Patient + ' lebte bisher im Heim, hatte Pflegegrad . \r\n' + Er + ' konnte sich teilweise selbst versorgen. ' + Er + ' war ohne Hilfsmittel am Rollator am Stock gehfähig. ' + Er + ' war auf einen Rollstuhl angewiesen. ' + Er + ' war harninkontinent harnkontinent. \r\n' + Der_Patient + ' ist ' + Nichtraucher + ' raucht xxx Zigaretten täglich (xxx Packungsjahre) und trinkt keinen Alkohol xxx Glas Wein Bier täglich in der Woche. \r\nEs gibt eine Vorsorgevollmacht (bevollmächtigt: ) und eine Patientenverfügung\r\n\r\n')">Psychosozial</button>
 				<button class="bt1 bttext" onclick="ed1('\r\nWir gehen bei bestehendem Vorhofflimmern von einem embolischen Hirninfarkt aus. \r\nWir gehen von einem atherothrombotischen Prozess aus. \r\nUrsächlich für den Hirninfarkt war die Stenose der xxx\r\nWir klärten ' + den_Patienten + ' über einen gesunden Lebensstil im kardiovaskulären Sinn auf. \r\nNach ausführlichen Gesprächen mit der Familie entschieden wir uns gemeinsam gemäß dem mutmaßlichen Willen ' + des_Patienten + ' für eine rein palliative Behandlung. \r\nWir klärten ' + den_Patienten + ' auf, dass die Kraftfahreignung für mindestens 6 Monate nicht besteht. Danach sollte die Kraftfahreignung von einem Neurologen beurteilt werden. \r\nEine ambulante Kontrolle von xxx wird empfohlen. \r\nWir bitten um ein LZ-EKG ambulant.\r\n' + Herr + ' xxx wird am Datum in Ihre Weiterbehandlung entlassen. \r\nwie vereinbart in Ihre Rehabilitations-Klinik zurück verlegt. \r\nWir danken für die freundliche Übernahme. \r\nWir stehen für Fragen gerne zur Verfügung. \r\n')">Schluss</button>
 				<p class="stamp">Subjektive Symptome</p>
 				<form>
@@ -694,20 +695,22 @@
 	<option value="Ataxie ">Ataxie</option>
 	<option value="Aufmerksamkeitsstörung ">Aufmerksamkeitsstörung</option>
 	<option value="Auslöschungsphänomen visuell taktil ">Auslöschungsphänomen </option>
-	<option value="Babinski-Zeichen ">Babinski-Zeichen</option>
-	<option value="Blickparese ">Blickparese</option>
+	<option value="Babinski-Zeichen  rechts links">Babinski-Zeichen</option>
+	<option value="Blickparese  rechts links">Blickparese</option>
 	<option value="Depression ">Depression</option>
 	<option value="Diplopie ">Diplopie</option>
 	<option value="Dysarthrie ">Dysarthrie</option>
 	<option value="Erregung ">Erregung</option>
+	<option value="Faziale Parese rechts links">Faziale Parese</option>
 	<option value="Gangstörung ">Gangstörung</option>
 	<option value="Gedächtnisstörung ">Gedächtnisstörung</option>
-	<option value="Hemianopsie ">Hemianopsie </option>
-	<option value="Hemihypästhesie ">Hemihypästhesie </option>
-	<option value="Hemiparese ">Hemiparese </option>
+	<option value="Hemianopsie  rechts links">Hemianopsie </option>
+	<option value="Hemihypästhesie  rechts links">Hemihypästhesie </option>
+	<option value="Hemiparese  rechts links">Hemiparese </option>
 	<option value="Koma ">Koma</option>
 	<option value="Kopfimpulstest negativ positiv ">Kopfimpulstest</option>
-	<option value="Parese ">Parese</option>
+	<option value="Nystagmus ">Nystagmus</option>
+	<option value="Parese  rechts links">Parese</option>
 	<option value="Rasselgeräusche ">Rasselgeräusche</option>
 	<option value="Rigor ">Rigor</option>
 	<option value="Somnolenz ">Somnolenz</option>
@@ -730,10 +733,13 @@
 <option value="Ceftriaxon 2 g i. v.			1-0-0">Ceftriaxon</option>
 <option value="Cefuroxim 1,5 g i. v.			1-1-1">Cefuroxim</option>
 <option value="Dexamethason 10 mg i. v.			1-1-1-1 bis Datum">Dexamethason</option>
+<option value="Digitoxin 0,07 mg p. o.			1-0-0">Digitoxin</option>
+<option value="Digoxin 0,25 mg p. o.			1-0-0">Digoxin</option>
 <option value="Citalopram 20 mg p. o.			0-0-1">Citalopram</option>
 <option value="Clopidogrel 75 mg p. o.			0-0-1">Clopidogrel</option>
 <option value="Dabigatran 110 mg p. o.			1-0-1">Dabigatran</option>
 <option value="Dihydralazin(Nepresol)-Perfusor">Dihydralazin-Perfusor</option>
+<option value="Enalapril 10 mg p. o.			1-0-1">Enalapril</option>
 <option value="Enoxaparin 0,4 ml s. c.     			0-0-1">Enoxaparin</option>
 <option value="FrekaVit lipidlösl. Fl.			1-0-0">FrekaVit lipidlöslich</option>
 <option value="FrekaVit wasserlösl. Fl.		1-0-0">FrekaVit wasserlöslich</option>
@@ -783,18 +789,18 @@
 			</div>
 			<div class="wrap3" id="Klinischer_Befund">
 				<p class="stamp">Klinischer Befund</p>
-				<button class="bt1 bttext" onclick="ed1('Wach, kooperativ, zeitlich, örtlich und situativ orientiert.\r\nAufmerksamkeit, Merkfähigkeit, Stimmung normal. \r\n'+Rechtshaender+' ' +Linkshaender+'. \r\nSprachverständnis, sprachlicher Ausdruck sowie Artikulation normal. \r\nAugen: Bewegung, Pupillen, Gesichtsfelder fingerperimetrisch normal. Kein pathologischer Nystagmus. Sehkraft mit Brille R und L mindestens Fingerzählen xxx mm große Buchstaben Zahlen in Leseentfernung. \r\nMimik normal, die Zunge wird geradeaus herausgestreckt, der weiche Gaumen hebt sich symmetrisch. Hören von Fingerreiben beiderseits normal. Kein Meningismus. \r\nArmhalteversuch, Beinhalteversuch, Kraft, Trophik, Tonus, Muskeldehnungsreflexe lebhaft/mittellebhaft/schwach, stgl., Plantarreflex normal.\r\nFinger-Nase-Versuch, Knie-Hacke-Versuch o. B. Kein Tremor, keine unwillkürlichen Bewegungen.\r\nAlgesie, Ästhesie normal. Lagesinn im Zeigefinger und im großen Zeh normal. Vibrationssinn im Zeigefinger /8 und im großen Zeh /8. \r\nStehen und Gehen normal, Einbeinstand, Rombergversuch, Zehen- und Hackengang, Strichgang, Aufstehen vom Stuhl normal. \r\n\r\nAllgemeinzustand gut, Ernährungszustand gut. Haut und Schleimhäute normal. Lunge auskultatorisch normales Atemgeräusch, Herzaktion rhythmisch, keine Herzgeräusche, Bauch weich mit Darmgeräuschen, keine Ödeme, große Gelenke frei beweglich, Wirbelsäule ohne Klopfschmerz. \r\nRR / mmHg, Herzfrequenz /min, Temperatur 36, °C, SpO2 xxx % bei Raumluft.\r\n\r\n')">Befund</button>
+				<button class="bt1 bttext" onclick="ed1('Wach, kooperativ, aufmerksam, zeitlich, örtlich und situativ orientiert.\r\nMerkfähigkeit, Stimmung normal. \r\n'+Rechtshaender+' ' +Linkshaender+'. \r\nSprachverständnis, sprachlicher Ausdruck sowie Artikulation normal. \r\nAugen: Bewegung, Pupillen, Gesichtsfelder fingerperimetrisch normal. Kein pathologischer Nystagmus. Sehkraft mit Brille R und L mindestens Fingerzählen xxx mm große Buchstaben Zahlen in Leseentfernung. \r\nMimik normal, die Zunge wird geradeaus herausgestreckt, der weiche Gaumen hebt sich symmetrisch. Hören von Fingerreiben beiderseits normal. Kein Meningismus. \r\nArmhalteversuch, Beinhalteversuch, Kraft, Trophik, Tonus, Muskeldehnungsreflexe lebhaft/mittellebhaft/schwach, stgl., Plantarreflex normal.\r\nFinger-Nase-Versuch, Knie-Hacke-Versuch o. B. Kein Tremor, keine unwillkürlichen Bewegungen.\r\nAlgesie, Ästhesie normal. Lagesinn im Zeigefinger und im großen Zeh normal. Vibrationssinn im Zeigefinger /8 und im großen Zeh /8. \r\nStehen und Gehen normal, Einbeinstand, Rombergversuch, Zehen- und Hackengang, Strichgang, Aufstehen vom Stuhl normal. \r\n\r\nAllgemeinzustand gut, Ernährungszustand gut. Haut und Schleimhäute normal. Lunge auskultatorisch normales Atemgeräusch, Herzaktion rhythmisch, keine Herzgeräusche, Bauch weich mit Darmgeräuschen, keine Ödeme, große Gelenke frei beweglich, Wirbelsäule ohne Klopfschmerz. \r\nRR / mmHg, Herzfrequenz /min, Temperatur 36, °C, SpO2 xxx % bei Raumluft.\r\n')">Befund</button>
 				<button class="bt1 bttext" onclick="ed1('Schulterblattstabilisierung durch Serratus ant. normal, Schulterhebung 5, Armabduktion 5, Armadduktion 5, Arminnenrotation 5, Armaußenrotation 5, Armbeugung 5, Armstreckung 5, Unterarmpronation 5, Unterarmsupination 5, Handbeugung 5, Handstreckung 5, Fingerstreckung 5, Fingerbeugung 5, Abduktion der Finger II und V 5, Beugung der MCP-Gelenke 5, Streckung der MCP-Gelenke 5, Beugung der IP-Gelenke 5, Streckung der IP-Gelenke 5 nach MRC.\r\n\r\nHüftbeugung 5, Hüftstreckung 5, Hüftinnenrotation 5, Hüftaußenrotation 5, Kniebeugung 5, Kniestreckung 5, Fußhebung 5, Fußsenkung 5, Fußpronation 5, Fußsupination 5, Zehenstreckung 5, Zehenbeugung 5 nach MRC.\r\n\r\nMuskeldehnungsreflexe: (0: fehlend, 1: schwach, 2: mittellebhaft, 3: lebhaft ohne Klonus, 4: mit Klonus)\r\n')">Peripher</button><br>
 				<button class="bt1 bttext" onclick="ed1(Der_Patient + ' liegt im Bett, atmet spontan wird über eine Beatmungsmaske einen endotrachealen Tubus ein Tracheostoma CPAP- BIPAP- beatmet.\r\nDie Augen sind offen geschlossen, ' + er + ' reagiert nicht auf Ansprache und Berührung. Nach mäßigem Schmerzreiz bewegt ' + er + ' Arme Beine rechts links symmetrisch.\r\nNach passivem Öffnen der Augen nimmt ' + er + ' keinen Blickkontakt auf, die Augen sind parallel, der okulozephale Reflex, horizontal und vertikal, ist auslösbar. Eine Blickparese rechts links ist beim okulozephalen Reflex erkennbar. Der Kornealreflex ist bds. rechts links nicht auslösbar. Die Pupillen sind entrundet rund und gleich groß, ca. xxx mm, und reagieren auf Licht. Der Muskeltonus in Armen und Beinen ist schlaff erhöht rechts links geringer. Die Muskeldehnungsreflexe lassen sich nicht lebhaft auslösen. Es sind keine unwillkürlichen Bewegungen Zuckungen im Gesicht im Arm im Bein rechts links zu sehen. Der Plantarreflex ist stumm normal. Babinski-Zeichen rechts links. \r\nGlasgow-Coma-Scale: --. \r\n')">Koma</button>
 			</div>
 			<div class="wrap3" id="MS">
 				<p class="stamp">Multiple Sklerose, TGA, Kopfschmerz</p>
 				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie Aufnahme erfolgte bei Verdacht auf eine entzündliche ZNS-Erkrankung. \r\nDie Aufnahme ' + des_Patienten + ' erfolgte bei Verdacht auf erneuten Schub einer bekannten schubförmig remittierenden Multiplen Sklerose.\r\nDie Aufnahme ' + des_Patienten + ' erfolgte geplant zur erneuten Steroidpulstherapie bei bekannter sekundär chronisch progredienter Multipler Sklerose.\r\nIm klinischen Untersuchungsbefund zeigte sich\r\nDie Gehstrecke betrug aktuell xxx m.\r\nDer EDDS lag aktuell bei xxx.\r\n\r\n' + Der_Patient + ' erhielt eine Steroidpulstherapie mit Methylprednisolon 1000 mg über drei Tage unter Magenschutz, Thromboseprophylaxe und Blutzuckerkontrollen.\r\nDie Infusionen wurden von ' + dem_Patienten + ' gut vertragen. \r\nDie Beschwerden erschienen im Verlauf rückläufig.\r\nIm cMRT zeigten sich mehrere Balken-assoziierte Demyelinisierungen, typisch für eine Enzephalomyelitis disseminata \r\nund Zeichen einer räumlichen Dissemination\r\nund Zeichen einer räumlichen und zeitlichen Dissemination\r\nes waren keine Zeichen einer räumlichen Dissemination nachweisbar\r\nIm MRT der HWS zeigte sich eine Demyelinisierung in Höhe\r\nEs erfolgte ein erneutes MRT mit KM, in dem keine sicheren kontrastmittelaufnehmenden Läsionen dargestellt werden konnten\r\nElektrophysiologische Untersuchungen zeigten\r\neine Leitungsstörung beider Nervi optici wie bei chronischer Retrobulbärneuritis.\r\neine Hintestrangläsion\r\neine Pyramidenbahnläsion \r\nDie oligoklonalen Banden im Liquor waren positiv negativ \r\nDie erneute Liquordiagnostik erfolgte zur ergänzenden Bestimmung von JC-Virus-DNA und fiel negativ aus.\r\nZusammenfassend gingen wir bei ' + Herrn + ' xxx von einem erneuten Schub bei bekannter Multiple Sklerose aus.\r\nWir empfehlen\r\neine ambulante neurologische Anbindung und Verlaufskontrollen.\r\nein Fortführen der Intervalltherapie mit\r\nden Beginn einer immunmodulatorischen Therapie mit\r\n' + Der_Patient + ' wurde über die möglichen therapeutischen Optionen aufgeklärt.\r\nAm Datum entließen wir ' + den_Patienten + ' in Ihre weitere Betreuung und stehen für Rückfragen gerne zur Verfügung. \r\n')">MS-Brief</button>
-				
+
 				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie Aufnahme erfolgte wegen akuter Gedächtnisstörungen und Orientierungsstörungen.\r\n' + Der_Patient + ' konnte keine neuen Gedächtnisinhalte behalten, fragte immer wieder nach gleichen Sachverhalten und war zeitlich und örtlich desorientiert. Es bestand eine Amnesie für einen Zeitraum von xxx Stunden.\r\nIm initalen Schädel-CT ergab sich bis auf xxx ein Normalbefund.\r\nDas Schädel-MRT zeigte \r\nkeinen Hinweis für eine Ischämie oder Blutung.\r\neine Diffusionsstörung im temporo-mesialen Bereich rechts links.\r\nDer Ultraschall der Hirngefäße \r\nergab einen Normalbefund.\r\nzeigte leichte mittelgradige arteriosklerotische Wandveränderungen keine Auffälligkeiten.\r\nIm EEG ergab sich ein Normalbefund.\r\nZusammenfassend gingen wir von einer transienten globalen Amnesie aus.\r\nSpezifischer neurologischer Handlungsbedarf ergibt sich derzeit nicht.\r\nWir konnten ' + Herrn + ' xxx am Datum in Ihre ambulante Betreuung entlassen.\r\n')">TGA</button>
-				
+
 				<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nDie Vorstellung ' + des_Patienten + ' erfolgte wegen akuter subakuter holokranieller okzipital betonter Kopfschmerzen mit ohne Übelkeit und Erbrechen mit Licht und Lärmempfindlichkeit.\r\nKlinisch imponierte ein holocranieller Kopfschmerz Nackenschmerz Nackensteifigkeit.\r\nLaborchemisch waren die Entzündungswerte nicht erhöht erhöht.\r\nIm initialen CCT ergab sich ein Normalbefund\r\nzeigte sich eine SAB.\r\nIn der notfallmäßig durchgeführten Liquordiagnostik ergab sich kein Hinweis auf eine SAB\r\nZeigte sich eine Xantochromie\r\nein fleischfarbener Liquor\r\neine Zellzahlerhöhung mit xy Zellen (überwiegend Granolozyten Lymphozyten).\r\nWir behandelten symptomatisch.\r\nWir ergänzten eine CT-Angiographie. Hier zeigte sich ein Aneurysma im Bereich der ACP ACM A. communicans anterior distalen A. basilaris.\r\nEs erfolgte eine notfallmäßige Verlegung des Patienten zur weiteren Versorgung in das Klinikum Fulda.\r\nWir begannen eine antibiotische Therapie mit Ceftriaxon, Ampicillin und Vancomycin Gentamycin Fosfomycin.\r\nZunächst behandelten wir antibiotisch und antiviral mit Ceftriaxon und Aciclovir intravenös.\r\nIm Verlauf besserten sich unter symptomatischer Therapie die Symptome.\r\nWir gingen von einer Migräne mit Aura ohne Aura einem Spannungskopfschmerz aus.\r\nWir empfehlen das Führen eines Kopfschmerzkalenders und verlaufsabhängig die Einstellung auf eine prophylaktische Therapie.\r\nBei erneuter akuter Kopfschmerzattacke empfehlen wir die Einnahme von Naproxen 500 mg Ibuprofen 600 mg  Aspirin 500 mg.Wir leiteten ' + den_Patienten + ' zu Entspannungsübungen an und empfehlen die Fortführung der Maßnahmen.\r\nIn gebesserten Zustand konnten wir ' + Herrn + ' xxx in ihre weitere Betreuung entlassen.\r\nWir danken für die freundliche Weiterbetreuung.\r\n\r\n')">Kopfschmerz</button>
-				
+
 			</div>
 			<div class="wrap3" id="RS">
 				<p class="stamp">Bandscheibenvorfall, Fazialisparese, Lagerungsschwindel</p>
@@ -854,7 +860,7 @@
 			<button class="bt1 bt2" onclick="themeEG2()" data-tooltip="Standard-Theme">Standard</button><br>
 			<button class="bt1" onclick="location.reload()">N-Brief aktualisieren</button><br>
 			<br><br><br>
-			<button class="bt1 bttext" onclick="ed1('Neurologisches Konsil Datum \r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'): \r\n\r\nFremdanamnese (Angaben des der ): \r\n\r\nBefund: \r\n\r\nFundoskopisch keine Stauungspapille bds.\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button><br>
+			<button class="bt1 bttext" onclick="ed1('Neurologisches Konsil Datum \r\n\r\nKonsil wegen \r\n\r\nEigenanamnese (Angaben ' + des_Patienten +'): \r\n\r\nFremdanamnese (Angaben des der ): \r\n\r\nBefund: \r\nFundoskopisch keine Stauungspapille bds.\r\n\r\nBeurteilung: Neurostatus regelrecht. Kein Anhalt für eine akute neurologische Erkrankung. Gerne Rücksprache.\r\n')">Konsil</button><br>
 			<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nV.a. Hirninfarkt rechts links \r\nVerschluss der A. cerebri media rechts links \r\nVerschluss der A. carotis int. intrakraniell rechts links \r\nVerschluss der A. basilaris \r\n\r\n\r\nSehr geehrter Herr Prof. Neumann-Haefelin, \r\n\r\n' + Der_Patient + ' wurde zuletzt am Datum um Uhrzeit ohne die Symptome gesehen. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte eine Hemiplegie Hemianopsie Blickparese rechts links (NIHSS ). \r\nDas Schädel-CT zeigte keine Frühzeichen, die CT-Angiographie zeigte einen Verschluss der A. cerebri media rechts links \r\nWir begannen mit einer systemischen Thrombolyse (xx mg Actilyse) um Uhrzeit. \r\nVormedikation: \r\n' + Der_Patient + ' lebt zu Hause und kann sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur Thrombektomie. Wir bedanken uns für die Übernahme.\r\n\r\n')">Thrombektomie</button><br>
 			<button class="bt1 bttext" onclick="ed1('Vorläufiger Arztbrief\r\nSubarachnoidalblutung\r\nV.a. Aneurysma der A. cerebri media interna anterior posterior communicans rechts links \r\n\r\n\r\nSehr geehrter Herr Prof. Behr, \r\n\r\n' + Der_Patient + ' bekam plötzlich starke Kopfschmerzen wurde vorgefunden. ' + Er + ' wurde vom Rettungsdienst gebracht. \r\nBei Aufnahme war ' + er + ' wach somnolent und hatte Nackensteife eine Hemiparese rechts links. \r\nDas Schädel-CT zeigte Blut subarachnoiddal, die CT-Angiographie zeigte ein Aneurysma.\r\nWir senkten den Blutdruck mit Urapidil.\r\nVormedikation: \r\n' + Der_Patient + ' lebte bisher zu Hause und konnte sich selbst versorgen. \r\nTelefon der Angehörigen: \r\nDie Bilder (CT und CTA) sind Ihnen über die Datenleitung geschickt worden. \r\nNach Rücksprache mit Ihnen verlegen wir ' + den_Patienten + ' notfallmäßig zur weiteren Behandlung. \r\nBei Verlegung ist ' + der_Patient + ' spontanatmend intubiert/beatmet, atem/kreislaufstabil, hat einen arteriellen Katheter in der A. radialis rechts links. \r\nWir bedanken uns für die Übernahme.\r\n\r\n')">SAB</button><br>
 			<button class="bt1 bttext" onclick="ed1('Diagnosen:\r\n\r\nAm Datum ca. Uhrzeit stellte sich ' + der_Patient + ' in unserer Notaufnahme vor. \r\nAm Datum ca. Uhrzeit wurde ' + der_Patient + ' vom Rettungsdienst in unsere Notaufnahme gebracht. \r\n\r\nEigenanamnese: \r\nFremdanamnese: \r\nVorerkrankungen: \r\nVormedikation: \r\n\r\nKlinischer Befund: \r\nZusatzdiagnostik \r\nLabor: \r\nEKG: \r\nSchädel-CT: \r\n\r\nEmpfehlungen: \r\n\r\n\r\n' + Herr + ' xxx wurde ambulant belassen. Wir stehen für Fragen gerne zur Verfügung. \r\n')">Kurzbrief ZNA</button><br>
@@ -863,7 +869,7 @@
 			<br><br>
 			<!--the star logo-->
 			<p>&nbsp;&nbsp;&nbsp;&nbsp;<svg height="40" width="40"><polygon points="20.0,2.0 8.0,39.6 38.0,15.6 2.0,15.6 32.0,39.6" style="fill:hsla(40, 100%, 70%, 1);"/></svg></p>
-			<span>N-Brief 1.0 <br>21.08.2017</span>
+			<span>N-Brief 1.0 <br>25.08.2017</span>
 		</div>
 	</div>
 	<script>
