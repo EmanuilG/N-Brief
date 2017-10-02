@@ -10,7 +10,7 @@ There is a big textarea in the middle. You can insert text into the textarea on 
 
 You have to tell the app whether the patient is male or female. Please press the  correct button on the right upper side of the screen. The texts will be modified accordingly.
 
-A new feature (October 2017) is the markdown editor. It uses the library showdown.js. Many thanks to the developers https://github.com/showdownjs/showdown/blob/master/CREDITS.md.
+A new feature (October 2017) is the markdown editor. It uses the library showdown.js. Many thanks to the developers <https://github.com/showdownjs/showdown/blob/master/CREDITS.md>.
 
 ## Additional material
 
