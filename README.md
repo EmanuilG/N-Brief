@@ -14,7 +14,7 @@ A new feature (October 2017) is the markdown editor. It uses the library showdow
 
 ## Additional material
 
-Under Rechner/Skalen you can find now two medical calculators. I thought we need a quick GFR estimate and a Levodopa equivalent dose calculator. I am not sure if I should make more calculators.
+Under Rechner/Skalen you can find now three medical calculators, a GFR estimate, a Levodopa equivalent dose calculator and a alcohol-amount-drunk-calculator. 
 
 ## N-Brief-App online
 
