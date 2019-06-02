@@ -16,8 +16,9 @@ There are other hopefully useful texts, e.g. a neurological consult, an EEG repo
 
 Under Rechner/Skalen you can find four medical calculators, a GFR estimate, a Levodopa equivalent dose calculator, a alcohol-amount-drunk-calculator and a BMI-calculator. 
 
-There is also the markdown editor. It uses the library showdown.js. Many thanks to the developers https://github.com/showdownjs/showdown/blob/master/CREDITS.md.
+There is also the markdown editor. It uses the library showdown.js. Many thanks to the developers 
+<a href= "https://github.com/showdownjs/showdown">showdown</a>.
 
 ## N-Brief-App online
 
-You can try the N-Brief-App: <a href="NBrief.html">N-Brief</a>.  
+You can try the N-Brief-App: <a href="NBrief.html">N-Brief</a>.
